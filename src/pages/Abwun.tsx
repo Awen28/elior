@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, Fragment } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowLeft, Sun, CloudSun, Moon, BookOpen, Sprout, MessageCircleHeart, Settings, Download, ChevronRight, Heart, Feather, HandHeart, Sparkles, FlameKindling } from 'lucide-react';
+import { ArrowLeft, Sun, CloudSun, Moon, BookOpen, Sprout, MessageCircleHeart, Settings, Download, ChevronRight, Heart, Feather, HandHeart, Sparkles, FlameKindling, Cross, Church, CircleDot, HeartCrack, Eye, MessageSquareText, VolumeX } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
@@ -64,9 +64,39 @@ const features = [
     description: 'Your personal overview of prayers and surrenders. Watch how faithfully God has carried each day and commit.',
   },
   {
-    icon: Feather,
-    title: 'Heart Talk',
-    description: 'A quiet space to unburden your heart. Shared with God - honored, never judged, always safe.',
+    icon: CircleDot,
+    title: 'Prayer Rope',
+    description: 'The ancient Jesus Prayer ("Lord Jesus Christ, Son of God, have mercy on me") on a prayer rope with 33, 50 or 100 knots. Tap at your own pace or follow the breath rhythm.',
+  },
+  {
+    icon: Church,
+    title: 'The Rosary',
+    description: 'The complete Rosary in the traditional order - cross, cream, five decades with the mysteries of the day, in the official liturgical wording.',
+  },
+  {
+    icon: Cross,
+    title: 'The Simple Way',
+    description: 'A christ-centered prayer path from God\'s word alone: incarnation, cross, resurrection, presence and surrender - for those who pray neither catholic nor orthodox.',
+  },
+  {
+    icon: HeartCrack,
+    title: 'Lament & Unanswered Prayer',
+    description: 'The place for "God has not answered" - without placating. Honest lament in the language of the lament psalms. "I trust Him anyway" or "I can\'t yet" - both may stand before God.',
+  },
+  {
+    icon: MessageSquareText,
+    title: 'Faith & Answers',
+    description: 'A chat for every question about God, Jesus, the Bible and faith. Every answer is Bible-anchored with verses, told in parables, with proven facts. Jesus at the center.',
+  },
+  {
+    icon: VolumeX,
+    title: 'Silence',
+    description: 'The contemplative heart of the path: Lectio Divina, the presence mode in stillness, and letting-go moments - always skippable, never forced.',
+  },
+  {
+    icon: Eye,
+    title: 'The Examen',
+    description: 'The Ignatian evening review in five steps: gratitude, light, review, guilt and tomorrow. Not self-improvement - but the recognition that you live by grace.',
   },
   {
     icon: Settings,
@@ -81,6 +111,70 @@ const gratitude = [
   'You experience peace, not restless expectation',
   'Isaiah 55,8 comforts your thoughts',
   '"Ego death": you step back, Christ grows in you',
+];
+
+const prayerPaths = [
+  {
+    icon: CircleDot,
+    label: 'Orthodox',
+    title: 'The Prayer Rope',
+    verse: '"Pray without ceasing." — 1 Thessalonians 5,17',
+    color: OCHRE,
+    soft: `${OCHRE}15`,
+    points: [
+      'The ancient Jesus Prayer on 33, 50 or 100 knots',
+      'Two modes: "Tap" (your own pace) or "Breath" (one knot per breath: 4.5s in, 5.5s out)',
+      'Visually guided knot circle with cross pendant',
+      'Soft haptics per knot, stronger every tenth, gong at the end',
+    ],
+  },
+  {
+    icon: Church,
+    label: 'Catholic',
+    title: 'The Rosary',
+    verse: '"Rejoice, Mary, full of grace." — Luke 1,28',
+    color: TERRACOTTA,
+    soft: `${TERRACOTTA}15`,
+    points: [
+      'Complete Rosary in the traditional order: cross, chain, medallion',
+      'Five decades with the mysteries of the weekday (joyful, sorrowful, glorious, luminous)',
+      'Official liturgical wording in every language',
+      'Visual Rosary shape with loop, glowing active bead and progress arc',
+    ],
+  },
+  {
+    icon: Cross,
+    label: 'Christ-centered',
+    title: 'The Simple Way',
+    verse: '"He must increase, but I must decrease." — John 3,30',
+    color: SAGE,
+    soft: `${SAGE}15`,
+    points: [
+      'A prayer path from God\'s word alone - no Marian invocations',
+      'Five sections through the Christ mystery: incarnation, cross, resurrection, presence, surrender',
+      'One large bead with Scripture, seven small ones with a breath prayer each',
+      'For everyone who prays neither catholic nor orthodox',
+    ],
+  },
+];
+
+const lamentSteps = [
+  {
+    title: 'Tell Him honestly',
+    description: 'No pious words, no prettifying. God can bear your raw words - He invented them.',
+  },
+  {
+    title: 'You are not the first',
+    description: 'A lament psalm gives you the language: Psalm 13, 22, 42, 88, 130 or Lamentations 3 - readable aloud.',
+  },
+  {
+    title: 'And now?',
+    description: 'Two equal answers stand before God: "I trust Him anyway" OR "I can\'t yet." Nothing is forced, no turning is demanded.',
+  },
+  {
+    title: 'The close',
+    description: '"The LORD is near to those who are brokenhearted." — Psalm 34,19. Acknowledged, heard, held.',
+  },
 ];
 
 const screenshots = [
@@ -101,8 +195,8 @@ const appStructuredData = generateAppStructuredData(
   "ReferenceApplication",
   "4.9",
   "4800",
-  ["Prayer", "Bible", "AI Prayer Companion", "Surrender", "Faith", "Spirituality", "Inner Peace", "Trust God", "Ego Death", "Daily Devotion"],
-  ["/apps/Abwun_home.png", "/apps/Abwun_prayer.png", "/apps/Abwun_wishes.png"],
+  ["Prayer", "Bible", "AI Prayer Companion", "Surrender", "Faith", "Spirituality", "Inner Peace", "Trust God", "Ego Death", "Daily Devotion", "Prayer Rope", "Rosary", "Lament", "Examen", "Lectio Divina", "Jesus Prayer", "Christian Chat", "Contemplation"],
+  ["/apps/Abwun_home.png", "/apps/Abwun_prayer.png", "/apps/Abwun_wishes.png", "/apps/Abwun_heartTalk.png", "/apps/Abwun_meditation.png"],
   "2026-06-01",
   "45MB",
   "4+"
@@ -116,6 +210,9 @@ const breadcrumbData = generateBreadcrumbData([
 const faqData = generateFAQData([
   { question: "What does ABWUN mean?", answer: "ABWUN is Aramaic and means 'Our Father'. It is the exact word Jesus used in the Lord's Prayer when he taught his disciples to pray. It is one unified name worldwide - regardless of whether you pray in German, English, Spanish, Italian or Romanian." },
   { question: "Is ABWUN a manifestation app?", answer: "No. ABWUN is the opposite of New-Age manifestation. Manifestation forces your own will onto the world. ABWUN surrenders your own will: 'Not my will, but your will be done.' (Luke 22,42) Your dreams are not thrown away - they are humbly placed in God's hands with trust, not control." },
+  { question: "Does ABWUN include the Prayer Rope with the Jesus Prayer?", answer: "Yes. ABWUN contains a guided prayer rope (komboskini) with 33, 50 or 100 knots. On every knot the Jesus Prayer is spoken: 'Lord Jesus Christ, Son of God, have mercy on me.' You can tap at your own pace or pray in breath rhythm (4.5s in, 5.5s out) - with soft haptics, a stronger pulse every ten knots and a gong at the end." },
+  { question: "Is the full Rosary included in ABWUN?", answer: "Yes. The complete Rosary is included in the traditional order - cross, chain, medallion, and five decades. All 20 mysteries appear by weekday (joyful, sorrowful, glorious, luminous), and every fixed prayer is available in the official liturgical wording of each language - not machine-translated." },
+  { question: "What is Lament & Unanswered Prayer in ABWUN?", answer: "It is the place for 'God has not answered' - without placating. You can speak honestly, find your words in the lament psalms (Psalm 13, 22, 42, 88, 130, Lamentations 3), and then choose between two equal answers: 'I trust Him anyway' or 'I can't yet.' Both may stand before God." },
   { question: "How does the AI prayer companion work?", answer: "At each time of day you can write your current heart's concern. An AI prayer companion (GPT-4o-mini) then crafts a personal, biblically founded prayer for you that always ends 'in Jesus' name' - never manifestation, always surrender." },
   { question: "Is ABWUN free?", answer: "Yes, ABWUN is free to download. You can delete your account at any time in the settings - this deletes ALL your data: prayers, dreams, promises and heart conversations, as well as your account itself." },
   { question: "Which languages does ABWUN support?", answer: "ABWUN is available in German, English (fallback), Spanish, Italian and Romanian - with the unified name 'ABWUN' and a localized subtitle, e.g. 'ABWUN - Trust Him' or 'ABWUN - Überlass es Gott'." },
@@ -163,9 +260,9 @@ const Abwun = () => {
   return (
     <Fragment>
       <SEO
-        title="ABWUN | Trust Him - The Prayer App that Surrenders, not Manifests"
-        description="ABWUN - the opposite of manifestation. A daily path with God in three surrenders: Morning, Noon and Evening. AI prayer companion, biblically grounded prayers ending 'in Jesus' name'. 'Trust Him.' Free on iOS."
-        keywords="ABWUN, prayer app, AI prayer companion, Trust Him, surrender to God, not my will but your will, Lord's Prayer Aramaic, Abwun Our Father, christian app 2026, daily devotion app, ego death, spiritual freedom, bible based prayer, prayer journal app, Gospel app, faith app iOS"
+        title="ABWUN | Trust Him - Prayer App with Prayer Rope, Rosary & AI Companion"
+        description="ABWUN - the opposite of manifestation. Daily surrenders with AI prayer companion, Prayer Rope (Jesus Prayer), full Rosary, Lament for unanswered prayer, Examen and Faith & Answers. 'Trust Him.' Free on iOS."
+        keywords="ABWUN, prayer app, AI prayer companion, Prayer Rope, Gebetsschnur, Jesus Prayer, Rosary, Rosenkranz, Lament, unanswered prayer, unbeantwortetes Gebet, Klage, Examen, Lectio Divina, Trust Him, surrender to God, not my will but your will, Lord's Prayer Aramaic, Abwun Our Father, christian app 2026, daily devotion app, ego death, spiritual freedom, bible based prayer, prayer journal app, Gospel app, faith app iOS"
         ogImage="https://www.awen28.com/apps/Abwun_home.png"
         ogType="product"
         canonical="https://www.awen28.com/abwun"
@@ -715,6 +812,84 @@ const Abwun = () => {
           </div>
         </section>
 
+        {/* Prayer Paths Section */}
+        <section className="py-32 px-6 md:px-8" style={{ background: IVORY }}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-20"
+            >
+              <span className="font-serif italic text-sm tracking-[0.3em] block mb-6" style={{ color: OCHRE }}>
+                Guided Prayer Paths
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6" style={{ color: INK }}>
+                Beads, knots & the quiet path
+              </h2>
+              <p className="max-w-2xl mx-auto" style={{ color: INK_SOFT }}>
+                Repeating prayer is lived "ego death": your own thinking grows quiet in the
+                repetition - and Christ remains. Three traditions, one heart. Choose freely;
+                none is imposed on you.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {prayerPaths.map((path, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.15 }}
+                  whileHover={{ y: -8 }}
+                  className="p-8 rounded-[32px] relative overflow-hidden"
+                  style={{
+                    background: SAND_SOFT,
+                    boxShadow: `
+                      inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+                      inset -2px -2px 4px rgba(74, 64, 56, 0.04),
+                      8px 8px 16px rgba(74, 64, 56, 0.06),
+                      -8px -8px 16px rgba(255, 255, 255, 0.9)
+                    `,
+                  }}
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-1"
+                    style={{ background: `linear-gradient(90deg, ${path.color}, transparent)` }}
+                  />
+                  <div className="flex items-center justify-between mb-6">
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                      style={{ background: path.soft }}
+                    >
+                      <path.icon className="w-7 h-7" style={{ color: path.color }} />
+                    </div>
+                    <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: `${path.color}18`, color: INK_SOFT }}>
+                      {path.label}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-2xl mb-1" style={{ color: INK }}>
+                    {path.title}
+                  </h3>
+                  <p className="font-serif italic text-sm mb-6" style={{ color: path.color }}>
+                    {path.verse}
+                  </p>
+                  <ul className="space-y-4">
+                    {path.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ background: path.color }} />
+                        <span style={{ color: INK_SOFT }}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-32 px-6 md:px-8" style={{ background: IVORY }}>
           <div className="max-w-7xl mx-auto">
@@ -766,6 +941,86 @@ const Abwun = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Lament & Unanswered Prayer Section */}
+        <section className="py-32 px-6 md:px-8 relative overflow-hidden" style={{ background: SAND_SOFT }}>
+          {/* Soft dimmed glow - quiet heaviness */}
+          <motion.div
+            className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full opacity-30 pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse, rgba(196, 144, 112, 0.12) 0%, transparent 70%)' }}
+            variants={sighAnimation}
+            animate="animate"
+          />
+          <div className="max-w-7xl mx-auto relative">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-20"
+            >
+              <span className="font-serif italic text-sm tracking-[0.3em] block mb-6" style={{ color: TERRACOTTA }}>
+                Lament & Unanswered Prayer
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6" style={{ color: INK }}>
+                "God has not answered."
+              </h2>
+              <p className="max-w-2xl mx-auto" style={{ color: INK_SOFT }}>
+                Manifestation apps have no category for this. The Bible has an entire book.
+                ABWUN is the place for the unanswered - without placating, without shame.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-4 gap-6">
+              {lamentSteps.map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.12 }}
+                  whileHover={{ y: -8 }}
+                  className="p-8 rounded-[32px]"
+                  style={{
+                    background: IVORY,
+                    boxShadow: `
+                      inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+                      inset -2px -2px 4px rgba(74, 64, 56, 0.04),
+                      8px 8px 16px rgba(74, 64, 56, 0.06),
+                      -8px -8px 16px rgba(255, 255, 255, 0.9)
+                    `,
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center font-serif text-lg shrink-0"
+                      style={{ background: `${TERRACOTTA}20` }}
+                    >
+                      <span style={{ color: TERRACOTTA }}>{idx + 1}</span>
+                    </div>
+                    <h3 className="font-serif text-xl leading-snug" style={{ color: INK }}>
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p style={{ color: INK_SOFT }}>{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-center mt-16"
+            >
+              <p className="font-serif italic text-lg" style={{ color: TERRACOTTA }}>
+                Psalm 88 is deliberately included - the only psalm that ends without comfort.
+                Yet it stands in Scripture. That too is allowed.
+              </p>
+            </motion.div>
           </div>
         </section>
 

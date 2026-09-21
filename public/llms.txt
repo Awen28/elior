@@ -192,8 +192,14 @@ ABWUN - the opposite of manifestation. A daily path with God in three surrenders
 **Key Features**:
 - Three daily surrenders (morning, noon, evening)
 - Heart Conversation: AI prayer companion (GPT-4o-mini)
-- Bible verse of the day
-- Personal prayer journal
+- Prayer Rope (Gebetsschnur): Jesus Prayer on 33/50/100 knots with breath mode
+- Full Rosary (Rosenkranz): all 20 mysteries by weekday, official liturgical wording
+- The Simple Way: christ-centered prayer path from God's word alone
+- Lament & Unanswered Prayer (Klage & unbeantwortetes Gebet): the lament psalms as language
+- The Examen: Ignatian evening review in five steps
+- Faith & Answers: chat for every question about God, Jesus, Bible and faith
+- Silence: Lectio Divina, presence mode, letting-go moments
+- Bible verse of the day, personal prayer journal
 - Available in German, English, Spanish, Italian, Romanian
 
 **Best for**: Christians, people seeking prayer guidance, daily devotionals, spiritual growth and inner freedom through surrender to God.
