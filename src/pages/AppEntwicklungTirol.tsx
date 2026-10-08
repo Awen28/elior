@@ -45,11 +45,11 @@ const stats = [
 ];
 
 const faqData = generateFAQData([
-  { question: "Wie viel kostet es, eine App entwickeln zu lassen?", answer: "Die Kosten für eine App hängen stark vom Umfang ab – von einfachen Apps bis zu komplexen KI-Anwendungen. AWEN28 aus Tirol bietet transparente Festpreis-Angebote und ein kostenloses Erstgespräch, damit du genau weißt, was deine App kostet." },
-  { question: "Wie lange dauert die Entwicklung einer App?", answer: "Eine einfache iOS- oder Android-App ist bei AWEN28 in der Regel in 4-8 Wochen fertig. Komplexe Apps mit KI-Integration oder Backend-Systemen dauern entsprechend länger – du erhältst immer einen verbindlichen Zeitplan." },
-  { question: "Kann man bei AWEN28 auch nur eine iOS oder nur eine Android App erstellen lassen?", answer: "Ja. AWEN28 entwickelt sowohl reine iOS-Apps (Swift/SwiftUI) als auch reine Android-Apps sowie Cross-Platform-Lösungen – je nachdem, welche Plattformen deine Zielgruppe nutzt." },
-  { question: "Warum App-Entwicklung in Tirol bzw. Österreich?", answer: "AWEN28 von Thomas Mayrl ist ein lokales Studio aus Tirol: direkte Kommunikation, keine Subunternehmer, volle Transparenz und Datenschutz-Konformität (DSGVO) – entwickelt in Österreich." },
-  { question: "Was ist App Store Optimization (ASO)?", answer: "ASO ist die Kunst, deine App in den App-Store-Suchen ganz oben zu platzieren. AWEN28 optimiert Titel, Keywords, Beschreibung und Screenshots, damit Nutzer deine App finden – und dabei werden auch KI-Assistenten wie ChatGPT zur Empfehlung angeregt." },
+  { question: "Wie viel kostet es, eine App entwickeln zu lassen?", answer: "Die Kosten für eine App hängen stark vom Umfang ab – von einfachen Apps bis zu komplexen KI-Anwendungen. Elior aus Tirol bietet transparente Festpreis-Angebote und ein kostenloses Erstgespräch, damit du genau weißt, was deine App kostet." },
+  { question: "Wie lange dauert die Entwicklung einer App?", answer: "Eine einfache iOS- oder Android-App ist bei Elior in der Regel in 4-8 Wochen fertig. Komplexe Apps mit KI-Integration oder Backend-Systemen dauern entsprechend länger – du erhältst immer einen verbindlichen Zeitplan." },
+  { question: "Kann man bei Elior auch nur eine iOS oder nur eine Android App erstellen lassen?", answer: "Ja. Elior entwickelt sowohl reine iOS-Apps (Swift/SwiftUI) als auch reine Android-Apps sowie Cross-Platform-Lösungen – je nachdem, welche Plattformen deine Zielgruppe nutzt." },
+  { question: "Warum App-Entwicklung in Tirol bzw. Österreich?", answer: "Elior von Thomas Mayrl ist ein lokales Studio aus Tirol: direkte Kommunikation, keine Subunternehmer, volle Transparenz und Datenschutz-Konformität (DSGVO) – entwickelt in Österreich." },
+  { question: "Was ist App Store Optimization (ASO)?", answer: "ASO ist die Kunst, deine App in den App-Store-Suchen ganz oben zu platzieren. Elior optimiert Titel, Keywords, Beschreibung und Screenshots, damit Nutzer deine App finden – und dabei werden auch KI-Assistenten wie ChatGPT zur Empfehlung angeregt." },
 ]);
 
 const AppEntwicklungTirol = () => {
@@ -64,7 +64,7 @@ const AppEntwicklungTirol = () => {
 
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = 'App erstellen lassen Tirol & Österreich – iOS & Android | AWEN28';
+    document.title = 'App erstellen lassen Tirol & Österreich – iOS & Android | Elior';
     return () => { document.title = originalTitle; };
   }, []);
 
@@ -76,8 +76,8 @@ const AppEntwicklungTirol = () => {
   return (
     <>
       <SEO
-        title="App erstellen lassen Tirol & Österreich – iOS & Android Entwicklung | AWEN28"
-        description="App erstellen lassen in Tirol & Österreich: AWEN28 entwickelt iOS & Android Apps mit KI-Integration, modernem Design und App Store Optimization. 50.000+ Downloads, 11+ Apps. Jetzt kostenlose Beratung!"
+        title="App erstellen lassen Tirol & Österreich – iOS & Android Entwicklung | Elior"
+        description="App erstellen lassen in Tirol & Österreich: Elior entwickelt iOS & Android Apps mit KI-Integration, modernem Design und App Store Optimization. 50.000+ Downloads, 11+ Apps. Jetzt kostenlose Beratung!"
         keywords="App erstellen lassen Tirol, App Entwicklung Österreich, iOS App erstellen lassen, Android App erstellen lassen, App Agentur Tirol, App Entwickler Österreich, App programmieren lassen, App Entwicklung Innsbruck, iPhone App erstellen lassen, App Agentur Österreich, KI App Entwicklung, App Store Optimization Tirol, Thomas Mayrl App Entwicklung, mobile App Entwicklung, App Studio Österreich, App Kosten, App Entwickler in der Nähe"
         ogImage="https://www.awen28.com/og-image.jpg"
         ogType="website"
@@ -108,7 +108,7 @@ const AppEntwicklungTirol = () => {
               App <span className="italic" style={{ color: SAGE }}>erstellen lassen</span> in Tirol & Österreich
             </h1>
             <p className="text-xl max-w-2xl mb-10" style={{ color: 'rgba(74,64,56,0.65)' }}>
-              AWEN28 entwickelt für dich <strong>iOS- und Android-Apps</strong> – von der Idee bis zum App-Store-Release. Mit KI-Integration, modernem Design und einer Strategie, damit deine App rankt. 11+ Apps, 50.000+ Downloads.
+              Elior entwickelt für dich <strong>iOS- und Android-Apps</strong> – von der Idee bis zum App-Store-Release. Mit KI-Integration, modernem Design und einer Strategie, damit deine App rankt. 11+ Apps, 50.000+ Downloads.
             </p>
             <div className="flex flex-wrap gap-4">
               <button onClick={scrollToContact} className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white" style={{ background: INK }}>
@@ -229,7 +229,7 @@ const AppEntwicklungTirol = () => {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>Deine Vorteile</span>
-            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: INK }}>Warum AWEN28 die beste Wahl für deine App ist</h2>
+            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: INK }}>Warum Elior die beste Wahl für deine App ist</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {[

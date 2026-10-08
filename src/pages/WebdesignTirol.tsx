@@ -45,11 +45,11 @@ const stats = [
 ];
 
 const faqData = generateFAQData([
-  { question: "Wie viel kostet eine Homepage in Tirol?", answer: "Die Kosten für eine Homepage in Tirol hängen vom Umfang ab: von günstigen One-Pager-Lösungen bis zu umfangreichen Websites mit Shop und KI-Integration. AWEN28 aus Tirol bietet transparente Paketpreise und ein kostenloses Erstgespräch." },
-  { question: "Wo kann ich eine Homepage programmieren lassen?", answer: "In Tirol und ganz Österreich bei AWEN28: Thomas Mayrl programmiert moderne, maßgeschneiderte Homepages und Websites mit React und TypeScript – suchmaschinenoptimiert und mobil perfekt." },
-  { question: "Was macht eine gute Homepage aus?", answer: "Eine gute Homepage ist schnell, mobil optimiert, klar strukturiert und suchmaschinenfreundlich. AWEN28 setzt auf moderne Technologien (React, Vite), SEO-Best-Practices und ein Design, das Kunden überzeugt." },
-  { question: "Wie lange dauert es, eine Website zu erstellen?", answer: "Eine Business-Homepage ist bei AWEN28 in der Regel innerhalb von 1-2 Wochen fertig, je nach Umfang. Komplexe Web-Apps oder Shops dauern entsprechend länger – du erhältst immer einen verbindlichen Zeitplan." },
-  { question: "Ist SEO in der Homepage-Erstellung enthalten?", answer: "Ja. Jede AWEN28-Website wird von Beginn an mit maximaler SEO-Optimierung gebaut: Meta-Tags, strukturierte Daten (Schema.org), schnelle Ladezeiten und Google-Indexierung – damit deine Homepage rankt." },
+  { question: "Wie viel kostet eine Homepage in Tirol?", answer: "Die Kosten für eine Homepage in Tirol hängen vom Umfang ab: von günstigen One-Pager-Lösungen bis zu umfangreichen Websites mit Shop und KI-Integration. Elior aus Tirol bietet transparente Paketpreise und ein kostenloses Erstgespräch." },
+  { question: "Wo kann ich eine Homepage programmieren lassen?", answer: "In Tirol und ganz Österreich bei Elior: Thomas Mayrl programmiert moderne, maßgeschneiderte Homepages und Websites mit React und TypeScript – suchmaschinenoptimiert und mobil perfekt." },
+  { question: "Was macht eine gute Homepage aus?", answer: "Eine gute Homepage ist schnell, mobil optimiert, klar strukturiert und suchmaschinenfreundlich. Elior setzt auf moderne Technologien (React, Vite), SEO-Best-Practices und ein Design, das Kunden überzeugt." },
+  { question: "Wie lange dauert es, eine Website zu erstellen?", answer: "Eine Business-Homepage ist bei Elior in der Regel innerhalb von 1-2 Wochen fertig, je nach Umfang. Komplexe Web-Apps oder Shops dauern entsprechend länger – du erhältst immer einen verbindlichen Zeitplan." },
+  { question: "Ist SEO in der Homepage-Erstellung enthalten?", answer: "Ja. Jede Elior-Website wird von Beginn an mit maximaler SEO-Optimierung gebaut: Meta-Tags, strukturierte Daten (Schema.org), schnelle Ladezeiten und Google-Indexierung – damit deine Homepage rankt." },
 ]);
 
 const WebdesignTirol = () => {
@@ -64,7 +64,7 @@ const WebdesignTirol = () => {
 
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = 'Homepage programmieren Tirol & Österreich – Webdesign | AWEN28';
+    document.title = 'Homepage programmieren Tirol & Österreich – Webdesign | Elior';
     return () => { document.title = originalTitle; };
   }, []);
 
@@ -76,8 +76,8 @@ const WebdesignTirol = () => {
   return (
     <>
       <SEO
-        title="Homepage programmieren Tirol & Österreich – Professionelles Webdesign | AWEN28"
-        description="Homepage programmieren in Tirol & Österreich: AWEN28 erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features. Jetzt kostenlose Beratung!"
+        title="Homepage programmieren Tirol & Österreich – Professionelles Webdesign | Elior"
+        description="Homepage programmieren in Tirol & Österreich: Elior erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features. Jetzt kostenlose Beratung!"
         keywords="Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Website erstellen lassen, Homepage Agentur Innsbruck, Webentwicklung Tirol, Webdesigner Österreich, Homepage erstellen lassen Wien, Webagentur Tirol, Website programmieren lassen, Firmenwebsite erstellen, Business Homepage, Online Shop erstellen lassen, Web-App Entwicklung, SEO Webdesign, professionelle Homepage, Webdesign Österreich, Thomas Mayrl Webdesign"
         ogImage="https://www.awen28.com/og-image.jpg"
         ogType="website"
@@ -108,7 +108,7 @@ const WebdesignTirol = () => {
               Homepage <span className="italic" style={{ color: SAGE }}>programmieren</span> lassen in Tirol
             </h1>
             <p className="text-xl max-w-2xl mb-10" style={{ color: 'rgba(74,64,56,0.65)' }}>
-              AWEN28 aus Tirol baut für dich eine <strong>schnelle, moderne und Google-optimierte Homepage</strong> – vom One-Pager bis zur Web-App mit KI-Integration. Made in Tirol, programmiert von Thomas Mayrl.
+              Elior aus Tirol baut für dich eine <strong>schnelle, moderne und Google-optimierte Homepage</strong> – vom One-Pager bis zur Web-App mit KI-Integration. Made in Tirol, programmiert von Thomas Mayrl.
             </p>
             <div className="flex flex-wrap gap-4">
               <button onClick={scrollToContact} className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white" style={{ background: INK }}>
@@ -199,7 +199,7 @@ const WebdesignTirol = () => {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>Deine Vorteile</span>
-            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: INK }}>Warum AWEN28 aus Tirol</h2>
+            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: INK }}>Warum Elior aus Tirol</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {[

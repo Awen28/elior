@@ -168,7 +168,7 @@ const breadcrumbData = generateBreadcrumbData([
 ]);
 
 const faqData = generateFAQData([
-  { question: "Was ist die beste Astrologie App in Österreich?", answer: "NumiStellar von AWEN28 ist die beste Astrologie und Numerologie App in Österreich mit Energy Chat AI, Angel Numbers, Daily Energy, Birth Charts und Astrocartography." },
+  { question: "Was ist die beste Astrologie App in Österreich?", answer: "NumiStellar von Elior ist die beste Astrologie und Numerologie App in Österreich mit Energy Chat AI, Angel Numbers, Daily Energy, Birth Charts und Astrocartography." },
   { question: "Was ist der Energy Chat in NumiStellar?", answer: "Der Energy Chat ist eine AI-gestützte spirituelle Beratung. Du kannst dein höheres Selbst fragen und bekommst personalisierte Antworten mit Best-Case, Worst-Case und DOs/DONTs basierend auf Astrologie und Numerologie." },
   { question: "Was ist Numerologie und wie funktioniert sie?", answer: "Numerologie ist die Lehre von der Bedeutung von Zahlen in deinem Leben. NumiStellar berechnet deine Lebenszahl, Schicksalszahl und Tageszahl für persönliche Einblicke." },
   { question: "Was ist Schumann Resonanz?", answer: "Die Schumann Resonanz ist die natürliche Frequenz der Erde (7.83 Hz). NumiStellar zeigt aktuelle Resonanzwerte und deren Einfluss auf dein Wohlbefinden." },
@@ -262,7 +262,7 @@ const NumiStellar = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
         </div>
       </nav>
@@ -707,14 +707,14 @@ const NumiStellar = () => {
             <span className="font-serif text-xl text-white">NumiStellar</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2026 NumiStellar. A product by AWEN28.
+            © 2026 NumiStellar. A product by Elior.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm transition-colors hover:text-white"
             style={{ color: colors.accentLight }}
           >
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

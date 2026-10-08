@@ -56,8 +56,8 @@ const PrivacyApps = () => {
   return (
     <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
       <SEO 
-        title="Privacy Policy | AWEN28 Apps"
-        description="Privacy Policy for AWEN28 iOS Apps."
+        title="Privacy Policy | Elior Apps"
+        description="Privacy Policy for Elior iOS Apps."
       />
 
       {/* Header */}
@@ -103,7 +103,7 @@ const PrivacyApps = () => {
                   Privacy Policy
                 </h1>
                 <p style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
-                  Für alle AWEN28 iOS Apps
+                  Für alle Elior iOS Apps
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ const PrivacyApps = () => {
                   className="text-sm leading-relaxed"
                   style={{ color: 'rgba(82, 80, 72, 0.7)' }}
                 >
-                  Diese Datenschutzerklärung gilt für alle iOS-Anwendungen von AWEN28, 
+                  Diese Datenschutzerklärung gilt für alle iOS-Anwendungen von Elior, 
                   einschließlich aber nicht beschränkt auf: kiBook, Suremate, Suremate Pro, 
                   VisAI, 369 Manifestation, NumiStellar und Elow.
                 </p>

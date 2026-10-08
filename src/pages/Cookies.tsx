@@ -11,8 +11,8 @@ const Cookies = () => {
   return (
     <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
       <SEO 
-        title="Cookie-Einstellungen | AWEN28"
-        description="Informationen über Cookies auf der AWEN28 Website."
+        title="Cookie-Einstellungen | Elior"
+        description="Informationen über Cookies auf der Elior Website."
       />
 
       {/* Header */}

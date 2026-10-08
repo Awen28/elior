@@ -60,7 +60,7 @@ const breadcrumbData = generateBreadcrumbData([
 const faqData = generateFAQData([
   { question: "What is Orbit game?", answer: "Orbit is an epic space adventure arcade game for iOS where players navigate through cosmic environments, dodge asteroids, and collect power-ups." },
   { question: "Is Orbit free?", answer: "Yes, Orbit is free to download on the App Store with optional in-app purchases for premium features." },
-  { question: "What are the best iOS games 2026?", answer: "Orbit by AWEN28 is among the best iOS games of 2026, offering unique arcade gameplay with stunning visuals and an epic space journey." },
+  { question: "What are the best iOS games 2026?", answer: "Orbit by Elior is among the best iOS games of 2026, offering unique arcade gameplay with stunning visuals and an epic space journey." },
 ]);
 
 // Easter egg components
@@ -206,7 +206,7 @@ const Orbit = () => {
       <SEO 
         title="Orbit | #1 Best iOS Space Arcade Game 2026 - Free Download"
         description="Orbit - Epic space adventure arcade game for iOS. Dodge asteroids, collect power-ups, compete on global leaderboards. Best space game 2026. Download free on App Store!"
-        keywords="Orbit game, best iOS game 2026, space arcade game, asteroid dodge game, space adventure mobile, best iPhone game, free arcade game iOS, cosmic game, space shooter iOS, top rated iOS game 2026, AWEN28 games"
+        keywords="Orbit game, best iOS game 2026, space arcade game, asteroid dodge game, space adventure mobile, best iPhone game, free arcade game iOS, cosmic game, space shooter iOS, top rated iOS game 2026, Elior games"
         ogImage="https://www.awen28.com/apps/orbit_gameplay1.png"
         ogType="product"
         canonical="https://www.awen28.com/orbit"
@@ -223,7 +223,7 @@ const Orbit = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" onClick={handleBackClick} className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}>
@@ -626,14 +626,14 @@ const Orbit = () => {
             <span className="font-serif text-2xl text-white">Orbit</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2026 Orbit. A product by AWEN28.
+            © 2026 Orbit. A product by Elior.
           </p>
           <div className="flex items-center gap-4">
             <Link to="/orbit/privacy" className="text-sm text-white/40 hover:text-white/60 transition-colors">
               Privacy Policy
             </Link>
             <Link to="/" onClick={handleBackClick} className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
-              Visit AWEN28
+              Visit Elior
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

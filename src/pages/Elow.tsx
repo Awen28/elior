@@ -264,7 +264,7 @@ const Elow = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
         </div>
       </nav>
@@ -817,13 +817,13 @@ const Elow = () => {
             <span className="font-serif text-2xl text-white">Elow</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2025 Elow. A product by AWEN28.
+            © 2025 Elow. A product by Elior.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm text-[#B29F86]"
           >
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

@@ -29,7 +29,7 @@ const StradaHubPrivacy = () => {
     <Fragment>
       <SEO
         title="Datenschutzerklärung | StradaHub - Community-Verkehrs-App"
-        description="Datenschutzerklärung für StradaHub iOS App von AWEN28. Transparente Informationen über Datenverarbeitung, Standortnutzung und Ihre Rechte nach DSGVO."
+        description="Datenschutzerklärung für StradaHub iOS App von Elior. Transparente Informationen über Datenverarbeitung, Standortnutzung und Ihre Rechte nach DSGVO."
         canonical="https://www.awen28.com/stradahub/privacy"
       />
       <div className="min-h-screen" style={{ background: CREAM }}>
@@ -143,7 +143,7 @@ const StradaHubPrivacy = () => {
                 {/* Einleitung */}
                 <section>
                   <p className="text-sm leading-relaxed" style={{ color: INK_SOFT }}>
-                    Diese Datenschutzerklärung erläutert, wie AWEN28 ("wir", "uns") Ihre personenbezogenen Daten
+                    Diese Datenschutzerklärung erläutert, wie Elior ("wir", "uns") Ihre personenbezogenen Daten
                     verarbeitet, wenn Sie die StradaHub Mobile-Anwendung (die "App") nutzen. Die App wird von
                     Thomas Mayrl, Johannesfeldstrasse 44, 6111 Volders, Österreich betrieben. Wir nehmen den
                     Schutz Ihrer Daten ernst und halten uns an die DSGVO (EU-Verordnung 2016/679) sowie das
@@ -517,14 +517,14 @@ const StradaHubPrivacy = () => {
               <span className="font-serif text-2xl" style={{ color: INK }}>StradaHub</span>
             </div>
             <p className="text-sm" style={{ color: INK_SOFT }}>
-              © 2026 StradaHub. A product by AWEN28.
+              © 2026 StradaHub. A product by Elior.
             </p>
             <Link
               to="/"
               className="flex items-center gap-2 text-sm"
               style={{ color: TERRACOTTA }}
             >
-              Visit AWEN28
+              Visit Elior
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

@@ -290,14 +290,14 @@ const AgentRegister = () => {
               <span className="font-serif text-xl" style={{ color: '#525048' }}>Suremate Pro</span>
             </div>
             <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
-              © 2024 Suremate Pro. A product by AWEN28.
+              © 2024 Suremate Pro. A product by Elior.
             </p>
             <Link 
               to="/"
               className="flex items-center gap-2 text-sm"
               style={{ color: '#B29F86' }}
             >
-              Visit AWEN28
+              Visit Elior
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

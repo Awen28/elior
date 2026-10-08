@@ -50,30 +50,30 @@ function App() {
   // Update document title based on route
   useEffect(() => {
     const titles: { [key: string]: string } = {
-      '/': 'AWEN28 | Premium iOS Apps & Web Development Tirol Österreich',
-      '/369': '369 Manifestation App - AI Vision Board & Meditation | AWEN28',
-      '/numistellar': 'NumiStellar - Astrology & Numerology App | AWEN28',
-      '/kibook': 'kiBook - AI Story Generator for Kids | AWEN28',
-      '/elow': 'Elow - AI Music Generator | AWEN28',
-      '/suremate': 'Suremate - Smart Insurance Management | AWEN28',
-      '/suremate-pro': 'Suremate Pro - Insurance Agent Tools | AWEN28',
-      '/agentregister': 'Suremate Pro - Agent Registration | AWEN28',
-      '/createAgent': 'Suremate Pro - Create Agent Profile | AWEN28',
-      '/forgotcode': 'Suremate Pro - Forgot Agent Code | AWEN28',
+      '/': 'Elior | Premium iOS Apps & Web Development Tirol Österreich',
+      '/369': '369 Manifestation App - AI Vision Board & Meditation | Elior',
+      '/numistellar': 'NumiStellar - Astrology & Numerology App | Elior',
+      '/kibook': 'kiBook - AI Story Generator for Kids | Elior',
+      '/elow': 'Elow - AI Music Generator | Elior',
+      '/suremate': 'Suremate - Smart Insurance Management | Elior',
+      '/suremate-pro': 'Suremate Pro - Insurance Agent Tools | Elior',
+      '/agentregister': 'Suremate Pro - Agent Registration | Elior',
+      '/createAgent': 'Suremate Pro - Create Agent Profile | Elior',
+      '/forgotcode': 'Suremate Pro - Forgot Agent Code | Elior',
       '/download-suremate-pro': 'Download Suremate Pro | iOS App',
-      '/visai': 'VisAI - AI Vision Board App | AWEN28',
-      '/stradahub': 'StradaHub - Community-Verkehrs-App für DACH | AWEN28',
-      '/abwun': 'ABWUN - Trust Him | Prayer App | AWEN28',
-      '/webdesign-tirol': 'Homepage programmieren Tirol & Österreich - Webdesign | AWEN28',
-      '/app-entwicklung-tirol': 'App erstellen lassen Tirol & Österreich - iOS & Android | AWEN28',
+      '/visai': 'VisAI - AI Vision Board App | Elior',
+      '/stradahub': 'StradaHub - Community-Verkehrs-App für DACH | Elior',
+      '/abwun': 'ABWUN - Trust Him | Prayer App | Elior',
+      '/webdesign-tirol': 'Homepage programmieren Tirol & Österreich - Webdesign | Elior',
+      '/app-entwicklung-tirol': 'App erstellen lassen Tirol & Österreich - iOS & Android | Elior',
     };
     
-    const defaultTitle = 'AWEN28 | Premium iOS Apps & Web Development Tirol';
+    const defaultTitle = 'Elior | Premium iOS Apps & Web Development Tirol';
     document.title = titles[location.pathname] || defaultTitle;
     
     // Update meta description based on route
     const descriptions: { [key: string]: string } = {
-      '/': 'AWEN28 ist ein Premium Digital Studio aus Tirol, Österreich. Entwickler Thomas Mayrl. Spezialisiert auf AI-gestützte iOS Apps und Webentwicklung.',
+      '/': 'Elior ist ein Premium Digital Studio aus Tirol, Österreich, das Produkte mit Bedeutung baut. Entwickler Thomas Mayrl. Spezialisiert auf AI-gestützte iOS Apps und Webentwicklung.',
       '/369': '369 Manifestation App mit AI Vision Board, täglichen Affirmationen und Meditationen. Die 369 Methode für Manifestation - Morgens 3x, Mittags 6x, Abends 9x.',
       '/numistellar': 'NumiStellar vereint Astrologie, Numerologie und kosmische Energie. Echtzeit Planetenpositionen, Schumann Resonanz und Astrocartographie.',
       '/kibook': 'kiBook verwandelt Ideen in wunderschön illustrierte Geschichten. AI Story Generator für Kinder mit verschiedenen Kunststilen.',
@@ -87,8 +87,8 @@ function App() {
       '/visai': 'VisAI - Erstelle Vision Boards mit KI-Unterstützung. Visualisiere deine Ziele und Träume.',
       '/stradahub': 'StradaHub - Die Community-Verkehrs-App für den DACH-Raum. Unfälle, Baustellen, Straßensperren, Stau und Gefahren in Echtzeit auf der Karte. Kostenlos, ohne Registrierung, ohne Werbung. Keine Blitzer- oder Radarwarnung.',
       '/abwun': 'ABWUN ist das Gegenteil von Manifestation. Ein täglicher Weg mit Gott in drei Übergaben: Morgen, Mittag und Abend. KI-Gebetsbegleiter, biblisch fundierte Gebete, die mit "im Namen Jesu" enden. "Trust Him."',
-      '/webdesign-tirol': 'Homepage programmieren lassen in Tirol & Österreich: AWEN28 erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features.',
-      '/app-entwicklung-tirol': 'App erstellen lassen in Tirol & Österreich: AWEN28 entwickelt iOS & Android Apps mit KI-Integration, modernem Design und ASO. 50.000+ Downloads, 11+ Apps im App Store.',
+      '/webdesign-tirol': 'Homepage programmieren lassen in Tirol & Österreich: Elior erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features.',
+      '/app-entwicklung-tirol': 'App erstellen lassen in Tirol & Österreich: Elior entwickelt iOS & Android Apps mit KI-Integration, modernem Design und ASO. 50.000+ Downloads, 11+ Apps im App Store.',
     };
     
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -99,7 +99,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+      <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {!isAppPage && <Navigation />}
         <Routes>
           <Route path="/" element={<Home />} />

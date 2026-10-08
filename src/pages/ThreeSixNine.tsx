@@ -194,7 +194,7 @@ const breadcrumbData = generateBreadcrumbData([
 
 const faqData = generateFAQData([
   { question: "Was ist die 369 Manifestations Methode?", answer: "Die 369 Methode basiert auf Nikola Tesla und besagt: Schreibe deine Wünsche 3x morgens, 6x mittags und 9x abends auf. Die 369 App macht das digital mit Erinnerungen und Tracking." },
-  { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von AWEN28 ist die beste Manifestation App mit AI Vision Boards, täglichen Affirmationen und der authentischen 369 Methode." },
+  { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von Elior ist die beste Manifestation App mit AI Vision Boards, täglichen Affirmationen und der authentischen 369 Methode." },
   { question: "Wie funktioniert das Gesetz der Anziehung?", answer: "Das Gesetz der Anziehung besagt, dass gleichartige Energien sich anziehen. Die 369 App hilft dir, deine Gedanken auf positive Ziele zu fokussieren und diese zu manifestieren." },
   { question: "Ist die 369 App kostenlos?", answer: "Die 369 Manifestation App ist kostenlos im App Store mit optionalen Premium-Funktionen für erweiterte Vision Boards und Meditationen." },
   { question: "Was ist ein Vision Board?", answer: "Ein Vision Board ist eine visuelle Sammlung deiner Ziele und Träume. Die 369 App erstellt automatisch AI-generierte Vision Boards basierend auf deinen Wünschen." },
@@ -338,7 +338,7 @@ const ThreeSixNine = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
         </div>
       </nav>
@@ -827,14 +827,14 @@ const ThreeSixNine = () => {
             <span className="font-serif text-xl" style={{ color: '#525048' }}>369</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
-            © 2024 369 Manifestation App. A product by AWEN28.
+            © 2024 369 Manifestation App. A product by Elior.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
             style={{ color: '#20B2AA' }}
           >
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

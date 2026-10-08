@@ -248,7 +248,7 @@ const KiBook = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
         </div>
       </nav>
@@ -929,14 +929,14 @@ const KiBook = () => {
             <span className="font-serif text-2xl" style={{ color: '#525048' }}>kiBook</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
-            © 2024 kiBook. A product by AWEN28. Made with ✨ for little storytellers.
+            © 2024 kiBook. A product by Elior. Made with ✨ for little storytellers.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
             style={{ color: '#B29F86' }}
           >
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

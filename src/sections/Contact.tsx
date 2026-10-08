@@ -37,7 +37,7 @@ const Contact = () => {
         email: formData.email,
         project: formData.project,
         message: formData.message,
-        from_name: 'AWEN28 Website',
+        from_name: 'Elior Website',
         subject: `New Message from ${formData.name} - ${formData.project}`,
         botcheck: '',
       };
@@ -82,26 +82,26 @@ const Contact = () => {
       ref={sectionRef}
       id="contact"
       className="relative py-32 px-8"
-      style={{ background: '#F5F3F0' }}
+      style={{ background: '#F7F3ED' }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 0.15, scale: 1 } : {}}
+          animate={isInView ? { opacity: 0.18, scale: 1 } : {}}
           transition={{ duration: 1 }}
           className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, #E9CFB9 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(210, 180, 136, 0.7) 0%, transparent 70%)',
           }}
         />
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
+          animate={isInView ? { opacity: 0.14, scale: 1 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, #B29F86 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(154, 143, 128, 0.6) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -114,7 +114,7 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-            style={{ color: '#B29F86' }}
+            style={{ color: '#BA986A' }}
           >
             Get In Touch
           </motion.span>
@@ -123,23 +123,23 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-5xl md:text-7xl leading-tight mb-6"
-            style={{ color: '#525048' }}
+            style={{ color: '#20201E' }}
           >
             Let us create
             <br />
             <span 
               className="italic"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BA986A' }}
             >
-              something amazing
+              something with meaning
             </span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl max-w-2xl mx-auto"
-            style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+            className="font-sans text-xl max-w-2xl mx-auto"
+            style={{ color: 'rgba(32, 32, 30, 0.6)' }}
           >
             Whether you have a project in mind or just want to say hello, we would love to hear from you.
           </motion.p>
@@ -153,7 +153,7 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-serif text-3xl mb-10"
-              style={{ color: '#525048' }}
+              style={{ color: '#20201E' }}
             >
               Contact Information
             </motion.h3>
@@ -168,36 +168,45 @@ const Contact = () => {
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="group flex items-center gap-6 p-6 rounded-2xl transition-all duration-300"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.8)',
-                    border: '1px solid rgba(82, 80, 72, 0.06)',
+                    background: 'linear-gradient(145deg, rgba(247, 243, 237, 0.95) 0%, rgba(241, 237, 230, 0.85) 100%)',
+                    boxShadow: `
+                      inset 2px 2px 4px rgba(255, 255, 255, 0.7),
+                      inset -2px -2px 5px rgba(154, 143, 128, 0.14),
+                      4px 4px 10px rgba(154, 143, 128, 0.20),
+                      8px 8px 20px rgba(154, 143, 128, 0.12)
+                    `,
                   }}
                 >
                   <div 
                     className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300"
                     style={{ 
-                      background: 'linear-gradient(135deg, #E9CFB920 0%, #B29F8615 100%)',
-                      border: '1px solid rgba(178, 159, 134, 0.2)',
+                      background: 'linear-gradient(145deg, rgba(210, 180, 136, 0.3) 0%, rgba(186, 152, 106, 0.18) 100%)',
+                      boxShadow: `
+                        inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+                        inset -1px -1px 3px rgba(154, 128, 80, 0.2),
+                        2px 2px 5px rgba(154, 143, 128, 0.15)
+                      `,
                     }}
                   >
-                    <link.icon className="w-6 h-6" style={{ color: '#B29F86' }} />
+                    <link.icon className="w-6 h-6" style={{ color: '#BA986A' }} />
                   </div>
                   <div>
                     <p 
-                      className="text-sm mb-1"
-                      style={{ color: 'rgba(82, 80, 72, 0.5)' }}
+                      className="font-sans text-sm mb-1"
+                      style={{ color: 'rgba(32, 32, 30, 0.5)' }}
                     >
                       {link.label}
                     </p>
                     <p 
-                      className="text-lg"
-                      style={{ color: '#525048' }}
+                      className="font-sans text-lg"
+                      style={{ color: '#20201E' }}
                     >
                       {link.value}
                     </p>
                   </div>
                   <ArrowRight 
                     className="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1"
-                    style={{ color: '#B29F86' }}
+                    style={{ color: '#BA986A' }}
                   />
                 </motion.a>
               ))}
@@ -210,11 +219,15 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-8 p-6 rounded-2xl"
               style={{
-                background: 'rgba(233, 207, 185, 0.2)',
-                border: '1px solid rgba(178, 159, 134, 0.2)',
+                background: 'rgba(210, 180, 136, 0.2)',
+                boxShadow: `
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                  inset -2px -2px 5px rgba(154, 143, 128, 0.12),
+                  3px 3px 8px rgba(154, 143, 128, 0.16)
+                `,
               }}
             >
-              <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.7)' }}>
+              <p className="font-sans text-sm" style={{ color: 'rgba(32, 32, 30, 0.7)' }}>
                 <strong>Quick Response Time:</strong> We typically reply within 24 hours during business days.
               </p>
             </motion.div>
@@ -231,9 +244,13 @@ const Contact = () => {
               onSubmit={handleSubmit} 
               className="p-8 rounded-3xl"
               style={{
-                background: 'rgba(255, 255, 255, 0.9)',
-                border: '1px solid rgba(82, 80, 72, 0.06)',
-                boxShadow: '0 30px 60px rgba(82, 80, 72, 0.06)',
+                background: 'linear-gradient(145deg, #F7F3ED 0%, #F1EDE6 50%, #E9E2D7 100%)',
+                boxShadow: `
+                  inset 3px 3px 6px rgba(255, 255, 255, 0.9),
+                  inset -3px -3px 8px rgba(154, 143, 128, 0.16),
+                  8px 8px 20px rgba(154, 143, 128, 0.22),
+                  16px 16px 40px rgba(154, 143, 128, 0.14)
+                `,
               }}
             >
               {/* Status Messages */}
@@ -269,8 +286,8 @@ const Contact = () => {
                 <div>
                   <label 
                     htmlFor="name" 
-                    className="block text-sm mb-2"
-                    style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+                    className="block font-sans text-sm mb-2"
+                    style={{ color: 'rgba(32, 32, 30, 0.6)' }}
                   >
                     Your Name *
                   </label>
@@ -280,11 +297,14 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-5 py-3.5 rounded-xl text-base transition-all duration-300 focus:outline-none"
+                    className="w-full px-5 py-3.5 rounded-xl font-sans text-base transition-all duration-300 focus:outline-none"
                     style={{
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      border: '1px solid rgba(82, 80, 72, 0.1)',
-                      color: '#525048',
+                      background: '#F1EDE6',
+                      boxShadow: `
+                        inset 3px 3px 6px rgba(154, 143, 128, 0.18),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.8)
+                      `,
+                      color: '#20201E',
                     }}
                     placeholder="John Doe"
                     required
@@ -293,8 +313,8 @@ const Contact = () => {
                 <div>
                   <label 
                     htmlFor="email" 
-                    className="block text-sm mb-2"
-                    style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+                    className="block font-sans text-sm mb-2"
+                    style={{ color: 'rgba(32, 32, 30, 0.6)' }}
                   >
                     Email Address *
                   </label>
@@ -304,11 +324,14 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-5 py-3.5 rounded-xl text-base transition-all duration-300 focus:outline-none"
+                    className="w-full px-5 py-3.5 rounded-xl font-sans text-base transition-all duration-300 focus:outline-none"
                     style={{
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      border: '1px solid rgba(82, 80, 72, 0.1)',
-                      color: '#525048',
+                      background: '#F1EDE6',
+                      boxShadow: `
+                        inset 3px 3px 6px rgba(154, 143, 128, 0.18),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.8)
+                      `,
+                      color: '#20201E',
                     }}
                     placeholder="john@example.com"
                     required
@@ -317,8 +340,8 @@ const Contact = () => {
                 <div>
                   <label 
                     htmlFor="project" 
-                    className="block text-sm mb-2"
-                    style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+                    className="block font-sans text-sm mb-2"
+                    style={{ color: 'rgba(32, 32, 30, 0.6)' }}
                   >
                     Project Type *
                   </label>
@@ -327,11 +350,14 @@ const Contact = () => {
                     name="project"
                     value={formData.project}
                     onChange={handleChange}
-                    className="w-full px-5 py-3.5 rounded-xl text-base transition-all duration-300 focus:outline-none cursor-pointer"
+                    className="w-full px-5 py-3.5 rounded-xl font-sans text-base transition-all duration-300 focus:outline-none cursor-pointer"
                     style={{
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      border: '1px solid rgba(82, 80, 72, 0.1)',
-                      color: '#525048',
+                      background: '#F1EDE6',
+                      boxShadow: `
+                        inset 3px 3px 6px rgba(154, 143, 128, 0.18),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.8)
+                      `,
+                      color: '#20201E',
                     }}
                     required
                   >
@@ -347,8 +373,8 @@ const Contact = () => {
                 <div>
                   <label 
                     htmlFor="message" 
-                    className="block text-sm mb-2"
-                    style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+                    className="block font-sans text-sm mb-2"
+                    style={{ color: 'rgba(32, 32, 30, 0.6)' }}
                   >
                     Your Message *
                   </label>
@@ -358,11 +384,14 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-5 py-3.5 rounded-xl text-base transition-all duration-300 focus:outline-none resize-none"
+                    className="w-full px-5 py-3.5 rounded-xl font-sans text-base transition-all duration-300 focus:outline-none resize-none"
                     style={{
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      border: '1px solid rgba(82, 80, 72, 0.1)',
-                      color: '#525048',
+                      background: '#F1EDE6',
+                      boxShadow: `
+                        inset 3px 3px 6px rgba(154, 143, 128, 0.18),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.8)
+                      `,
+                      color: '#20201E',
                     }}
                     placeholder="Tell us about your project..."
                     required
@@ -374,11 +403,8 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full mt-6 py-4 rounded-xl flex items-center justify-center gap-3 text-base transition-all duration-300 disabled:opacity-70"
-                style={{
-                  background: '#525048',
-                  color: '#FAF9F7',
-                }}
+                className="w-full mt-6 py-4 rounded-xl flex items-center justify-center gap-3 font-sans text-base transition-all duration-300 disabled:opacity-70 clay-dark"
+                style={{ color: '#F7F3ED' }}
               >
                 {isSubmitting ? (
                   <>

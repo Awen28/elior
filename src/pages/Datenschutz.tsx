@@ -11,8 +11,8 @@ const Datenschutz = () => {
   return (
     <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
       <SEO 
-        title="Datenschutz | AWEN28"
-        description="Datenschutzerklärung für die AWEN28 Website."
+        title="Datenschutz | Elior"
+        description="Datenschutzerklärung für die Elior Website."
       />
 
       {/* Header */}

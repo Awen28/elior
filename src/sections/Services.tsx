@@ -8,42 +8,42 @@ const services = [
     title: 'iOS App Development',
     description: 'Native SwiftUI applications crafted for performance, elegance, and seamless user experience.',
     features: ['SwiftUI', 'SwiftData', 'HealthKit'],
-    color: '#B29F86',
+    color: '#525240',
   },
   {
     icon: Globe,
-    title: 'Web Development',
+    title: 'Web Development / Homepage',
     description: 'Modern, performant websites and web applications built with cutting-edge technologies.',
-    features: ['React', 'Next.js', 'TypeScript'],
-    color: '#E9CFB9',
+    features: ['React', 'TypeScript', 'SEO'],
+    color: '#BA986A',
   },
   {
     icon: Palette,
     title: 'Brand Identity',
     description: 'Comprehensive brand systems including logo design, visual identity, and guidelines.',
     features: ['Logo Design', 'Visual Identity', 'Print'],
-    color: '#525048',
+    color: '#20201E',
   },
   {
     icon: Brain,
     title: 'AI Integration',
     description: 'Intelligent features powered by GPT, computer vision, and machine learning.',
     features: ['OpenAI', 'Computer Vision', 'Automation'],
-    color: '#B29F86',
+    color: '#9A8F80',
   },
   {
     icon: Database,
     title: 'Backend Systems',
     description: 'Scalable backend solutions, APIs, and cloud infrastructure architecture.',
     features: ['Firebase', 'Node.js', 'REST APIs'],
-    color: '#E9CFB9',
+    color: '#BA986A',
   },
   {
     icon: LineChart,
     title: 'Digital Strategy',
     description: 'Data-driven strategy, SEO optimization, and growth consulting.',
     features: ['SEO', 'ASO', 'Analytics'],
-    color: '#525048',
+    color: '#525240',
   },
 ];
 
@@ -79,42 +79,41 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       }}
       className="group h-full cursor-default"
     >
-      {/* Claymorphism Card */}
+      {/* Claymorphism Card - formed out of the background */}
       <div
         className="h-full p-8 rounded-[32px] relative overflow-hidden"
         style={{
-          background: '#FAF9F7',
-          // Multiple layered shadows for clay effect
+          background: 'linear-gradient(145deg, #F7F3ED 0%, #F1EDE6 30%, #E4DED2 100%)',
           boxShadow: `
-            inset 2px 2px 4px rgba(255, 255, 255, 0.8),
-            inset -2px -2px 4px rgba(82, 80, 72, 0.05),
-            8px 8px 16px rgba(82, 80, 72, 0.08),
-            -8px -8px 16px rgba(255, 255, 255, 0.9),
-            1px 1px 0 rgba(255, 255, 255, 1)
+            inset 3px 3px 6px 0 rgba(255, 255, 255, 0.9),
+            inset -4px -4px 10px 0 rgba(154, 143, 128, 0.22),
+            6px 6px 14px 0 rgba(154, 143, 128, 0.28),
+            12px 12px 28px 0 rgba(154, 143, 128, 0.42),
+            2px 2px 0 0 rgba(255, 255, 255, 0.6)
           `,
         }}
       >
-        {/* Soft inner glow on hover */}
+        {/* Soft inner glow on hover - god-light */}
         <div 
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
-            background: `radial-gradient(circle at 50% 0%, ${service.color}15 0%, transparent 70%)`,
+            background: `radial-gradient(circle at 50% 0%, ${service.color === '#BA986A' ? 'rgba(186, 152, 106, 0.18)' : service.color + '18'} 0%, transparent 70%)`,
           }}
         />
 
-        {/* Icon */}
+        {/* Icon - raised clay */}
         <motion.div 
           className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 relative z-10"
           style={{ 
-            background: '#FAF9F7',
+            background: 'linear-gradient(145deg, #F7F3ED 0%, #EEE8DE 100%)',
             boxShadow: `
-              inset 1px 1px 2px rgba(255, 255, 255, 0.9),
-              inset -1px -1px 2px rgba(82, 80, 72, 0.06),
-              4px 4px 8px rgba(82, 80, 72, 0.08),
-              -4px -4px 8px rgba(255, 255, 255, 0.95)
+              inset 2px 2px 4px 0 rgba(255, 255, 255, 0.9),
+              inset -3px -3px 7px 0 rgba(154, 143, 128, 0.2),
+              4px 4px 9px 0 rgba(154, 143, 128, 0.26),
+              8px 8px 18px 0 rgba(154, 143, 128, 0.16)
             `,
           }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.2 }}
         >
           <service.icon 
@@ -126,13 +125,13 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
         {/* Content */}
         <h3 
           className="font-serif text-2xl mb-3 relative z-10"
-          style={{ color: '#525048' }}
+          style={{ color: '#20201E' }}
         >
           {service.title}
         </h3>
         <p 
-          className="text-sm leading-relaxed mb-6 relative z-10"
-          style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+          className="font-sans text-sm leading-relaxed mb-6 relative z-10"
+          style={{ color: 'rgba(32, 32, 30, 0.6)' }}
         >
           {service.description}
         </p>
@@ -144,13 +143,13 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
               key={i}
               className="px-3 py-1.5 text-xs rounded-xl"
               style={{ 
-                background: '#FAF9F7',
-                color: 'rgba(82, 80, 72, 0.7)',
+                background: '#F1EDE6',
+                color: 'rgba(32, 32, 30, 0.7)',
                 boxShadow: `
-                  inset 1px 1px 1px rgba(255, 255, 255, 0.9),
-                  inset -1px -1px 1px rgba(82, 80, 72, 0.04),
-                  2px 2px 4px rgba(82, 80, 72, 0.06),
-                  -2px -2px 4px rgba(255, 255, 255, 0.9)
+                  inset 2px 2px 3px rgba(255, 255, 255, 0.85),
+                  inset -2px -2px 4px rgba(154, 143, 128, 0.15),
+                  2px 2px 5px rgba(154, 143, 128, 0.18),
+                  5px 5px 12px rgba(154, 143, 128, 0.1)
                 `,
               }}
             >
@@ -162,7 +161,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
         {/* Link */}
         <motion.a 
           href="#contact" 
-          className="inline-flex items-center gap-2 text-sm relative z-10"
+          className="inline-flex items-center gap-2 font-sans text-sm relative z-10"
           style={{ color: service.color }}
           whileHover={{ x: 5 }}
           onClick={(e) => {
@@ -187,7 +186,7 @@ const Services = () => {
       ref={sectionRef}
       id="services"
       className="relative py-32 px-8"
-      style={{ background: '#F5F3F0' }}
+      style={{ background: '#F1EDE6' }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -197,7 +196,7 @@ const Services = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-            style={{ color: '#B29F86' }}
+            style={{ color: '#BA986A' }}
           >
             What We Do
           </motion.span>
@@ -206,12 +205,12 @@ const Services = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-5xl md:text-6xl lg:text-7xl mb-6"
-            style={{ color: '#525048' }}
+            style={{ color: '#20201E' }}
           >
             Full-service{' '}
             <span 
               className="italic"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BA986A' }}
             >
               studio
             </span>
@@ -220,11 +219,11 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+            className="font-sans text-lg max-w-2xl mx-auto"
+            style={{ color: 'rgba(32, 32, 30, 0.6)' }}
           >
             From concept to launch. We architect, design, and build digital 
-            experiences that stand out.
+            experiences that stand out — and mean something.
           </motion.p>
         </div>
 

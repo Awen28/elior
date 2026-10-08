@@ -53,7 +53,7 @@ const projects = [
     category: 'iOS App',
     description: 'Create your unique sound. AI composer transforms emotions into original soundscapes.',
     image: '/apps/elow_homescreen.png',
-    color: '#525048',
+    color: '#20201E',
     year: '2026',
     tags: ['AI', 'Audio'],
   },
@@ -241,17 +241,17 @@ const AppShowcase = () => {
       ref={sectionRef}
       id="work"
       className="relative w-full h-screen overflow-hidden"
-      style={{ background: '#FAF9F7' }}
+      style={{ background: '#F1EDE6' }}
     >
       {/* Progress Bar at top */}
       <div 
         className="fixed top-0 left-0 right-0 h-1 z-50"
-        style={{ background: 'rgba(82, 80, 72, 0.05)' }}
+        style={{ background: 'rgba(32, 32, 30, 0.05)' }}
       >
         <div 
           className="h-full transition-none"
           style={{ 
-            background: 'linear-gradient(90deg, #E8E5E0, #E9CFB9, #B29F86)',
+            background: 'linear-gradient(90deg, #D2B488, #BA986A, #525240)',
             width: `${progress * 100}%`,
           }}
         />
@@ -264,7 +264,7 @@ const AppShowcase = () => {
             key={idx}
             className="w-1.5 h-1.5 rounded-full transition-all duration-300"
             style={{
-              background: idx === currentApp ? '#B29F86' : 'rgba(82, 80, 72, 0.2)',
+              background: idx === currentApp ? '#BA986A' : 'rgba(32, 32, 30, 0.2)',
               transform: idx === currentApp ? 'scale(1.3)' : 'scale(1)',
             }}
           />
@@ -277,23 +277,23 @@ const AppShowcase = () => {
           <div>
             <span 
               className="font-serif italic text-sm tracking-wider block mb-2"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BA986A' }}
             >
-              Selected Works
+              Built with meaning
             </span>
             <h2 
               className="font-serif text-4xl md:text-5xl"
-              style={{ color: '#525048' }}
+              style={{ color: '#20201E' }}
             >
               iOS{' '}
-              <span className="italic" style={{ color: '#B29F86' }}>
+              <span className="italic" style={{ color: '#BA986A' }}>
                 Applications
               </span>
             </h2>
           </div>
           <span 
             className="text-sm tracking-widest hidden md:block"
-            style={{ color: 'rgba(82, 80, 72, 0.4)' }}
+            style={{ color: 'rgba(32, 32, 30, 0.45)' }}
           >
             {String(currentApp + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
           </span>
@@ -325,11 +325,11 @@ const AppShowcase = () => {
                   style={{
                     transform: `perspective(1000px) rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg)`,
                     transition: 'transform 0.3s ease-out',
-                    background: '#F5F3F0',
+                    background: '#F1EDE6',
                     boxShadow: `
-                      inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                      inset -2px -2px 4px rgba(82, 80, 72, 0.05),
-                      12px 12px 24px rgba(82, 80, 72, 0.1),
+                      inset 2px 2px 4px rgba(255, 255, 255, 0.85),
+                      inset -2px -2px 4px rgba(154, 143, 128, 0.12),
+                      12px 12px 24px rgba(154, 143, 128, 0.3),
                       -12px -12px 24px rgba(255, 255, 255, 0.9)
                     `,
                   }}
@@ -338,10 +338,10 @@ const AppShowcase = () => {
                   <div
                     className="p-2 md:p-3 rounded-[24px] md:rounded-[32px]"
                     style={{
-                      background: '#FAF9F7',
+                      background: '#F7F3ED',
                       boxShadow: `
-                        inset 1px 1px 2px rgba(82, 80, 72, 0.04),
-                        inset -1px -1px 2px rgba(255, 255, 255, 0.8)
+                        inset 1px 1px 2px rgba(32, 32, 30, 0.06),
+                        inset -1px -1px 2px rgba(255, 255, 255, 0.85)
                       `,
                     }}
                   >
@@ -374,12 +374,12 @@ const AppShowcase = () => {
                 <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                   <span 
                     className="text-xs md:text-sm tracking-widest font-light"
-                    style={{ color: 'rgba(82, 80, 72, 0.4)' }}
+                    style={{ color: 'rgba(32, 32, 30, 0.45)' }}
                   >
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <div className="w-6 md:w-8 h-px" style={{ background: 'rgba(82, 80, 72, 0.2)' }} />
-                  <span className="text-xs md:text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                  <div className="w-6 md:w-8 h-px" style={{ background: 'rgba(32, 32, 30, 0.2)' }} />
+                  <span className="text-xs md:text-sm" style={{ color: 'rgba(32, 32, 30, 0.62)' }}>
                     {project.category} • {project.year}
                   </span>
                 </div>
@@ -387,7 +387,7 @@ const AppShowcase = () => {
                 {/* Name */}
                 <h3 
                   className="font-serif text-4xl md:text-6xl lg:text-7xl mb-3 md:mb-4 tracking-tight"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#20201E' }}
                 >
                   {project.name}
                 </h3>
@@ -399,12 +399,12 @@ const AppShowcase = () => {
                       key={i}
                       className="px-2 md:px-3 py-1 md:py-1.5 text-xs rounded-lg md:rounded-xl"
                       style={{ 
-                        background: '#FAF9F7',
-                        color: 'rgba(82, 80, 72, 0.7)',
+                        background: '#F7F3ED',
+                        color: 'rgba(32, 32, 30, 0.72)',
                         boxShadow: `
                           inset 1px 1px 1px rgba(255, 255, 255, 0.9),
-                          inset -1px -1px 1px rgba(82, 80, 72, 0.03),
-                          1px 1px 2px rgba(82, 80, 72, 0.04),
+                          inset -1px -1px 1px rgba(32, 32, 30, 0.04),
+                          1px 1px 2px rgba(32, 32, 30, 0.06),
                           -1px -1px 2px rgba(255, 255, 255, 0.9)
                         `,
                       }}
@@ -417,7 +417,7 @@ const AppShowcase = () => {
                 {/* Description */}
                 <p 
                   className="text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-md"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(32, 32, 30, 0.72)' }}
                 >
                   {project.description}
                 </p>
@@ -429,7 +429,7 @@ const AppShowcase = () => {
                       to="/suremate"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -439,7 +439,7 @@ const AppShowcase = () => {
                       to="/suremate-pro"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -449,7 +449,7 @@ const AppShowcase = () => {
                       to="/visai"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -459,7 +459,7 @@ const AppShowcase = () => {
                       to="/369"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -469,7 +469,7 @@ const AppShowcase = () => {
                       to="/numistellar"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -479,7 +479,7 @@ const AppShowcase = () => {
                       to="/kibook"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -489,7 +489,7 @@ const AppShowcase = () => {
                       to="/elow"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -499,7 +499,7 @@ const AppShowcase = () => {
                       to="/orbit"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       Play Game
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -509,7 +509,7 @@ const AppShowcase = () => {
                       to="/abwun"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View App
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -519,7 +519,7 @@ const AppShowcase = () => {
                       to="/stradahub"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View App
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -531,7 +531,7 @@ const AppShowcase = () => {
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Project
                       <ExternalLink className="w-3 md:w-4 h-3 md:h-4" />
@@ -539,7 +539,7 @@ const AppShowcase = () => {
                   ) : (
                     <button 
                       className="group px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm tracking-wider transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
-                      style={{ background: '#525048', color: '#FAF9F7' }}
+                      style={{ background: '#525240', color: '#F7F3ED' }}
                     >
                       View Case
                       <ArrowRight className="w-3 md:w-4 h-3 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -557,7 +557,7 @@ const AppShowcase = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-center">
           <p 
             className="text-xs tracking-widest uppercase"
-            style={{ color: 'rgba(82, 80, 72, 0.3)' }}
+            style={{ color: 'rgba(32, 32, 30, 0.35)' }}
           >
             Scroll to explore
           </p>

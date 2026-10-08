@@ -11,8 +11,8 @@ const Impressum = () => {
   return (
     <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
       <SEO 
-        title="Impressum | AWEN28"
-        description="Impressum und rechtliche Informationen für AWEN28."
+        title="Impressum | Elior"
+        description="Impressum und rechtliche Informationen für Elior."
       />
 
       {/* Header */}
@@ -64,7 +64,7 @@ const Impressum = () => {
                   style={{ background: 'rgba(233, 207, 185, 0.2)' }}
                 >
                   <p className="font-medium" style={{ color: '#525048' }}>
-                    AWEN28
+                    Elior
                   </p>
                   <p style={{ color: 'rgba(82, 80, 72, 0.8)' }}>
                     Inhaber: Thomas Mayrl

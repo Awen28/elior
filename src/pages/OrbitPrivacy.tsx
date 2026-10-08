@@ -15,8 +15,8 @@ const OrbitPrivacy = () => {
   return (
     <div className="min-h-screen" style={{ background: '#0a0a12' }}>
       <SEO
-        title="Privacy Policy | Orbit - The Game | AWEN28"
-        description="Privacy Policy for Orbit - The Game iOS app by AWEN28."
+        title="Privacy Policy | Orbit - The Game | Elior"
+        description="Privacy Policy for Orbit - The Game iOS app by Elior."
         canonical="https://www.awen28.com/orbit/privacy"
       />
 
@@ -120,7 +120,7 @@ const OrbitPrivacy = () => {
 
               <section>
                 <p className="text-sm leading-relaxed text-white/60">
-                  This Privacy Policy describes how AWEN28 ("we", "us", or "our") collects, uses, and protects your personal information when you use the Orbit mobile application (the "App"). By using the App, you agree to the collection and use of information in accordance with this policy.
+                  This Privacy Policy describes how Elior ("we", "us", or "our") collects, uses, and protects your personal information when you use the Orbit mobile application (the "App"). By using the App, you agree to the collection and use of information in accordance with this policy.
                 </p>
               </section>
 
@@ -366,10 +366,10 @@ const OrbitPrivacy = () => {
             <span className="font-serif text-2xl text-white">Orbit</span>
           </div>
           <p className="text-sm text-white/40">
-            &copy; 2026 Orbit. A product by AWEN28.
+            &copy; 2026 Orbit. A product by Elior.
           </p>
           <Link to="/" onClick={handleBackClick} className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

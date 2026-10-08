@@ -247,7 +247,7 @@ const StradaHub = () => {
               }}
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to AWEN28
+              Back to Elior
             </Link>
           </div>
         </nav>
@@ -864,7 +864,7 @@ const StradaHub = () => {
               </span>
             </div>
             <p className="text-sm" style={{ color: INK_SOFT }}>
-              © 2026 StradaHub. A product by AWEN28.
+              © 2026 StradaHub. A product by Elior.
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -879,7 +879,7 @@ const StradaHub = () => {
                 className="flex items-center gap-2 text-sm"
                 style={{ color: TERRACOTTA }}
               >
-                Visit AWEN28
+                Visit Elior
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

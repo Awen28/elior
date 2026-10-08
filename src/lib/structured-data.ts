@@ -1,8 +1,8 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'AWEN28 - Thomas Mayrl',
-  alternateName: 'AWEN28',
+  name: 'Elior - Thomas Mayrl',
+  alternateName: 'Elior',
   description:
     'Professionelle iOS App-Entwicklung, Website-Erstellung, KI-Integrationen und Logo-Design in Tirol. Komplette Medienagentur für digitale Lösungen.',
   url: 'https://awen28.com',
@@ -99,7 +99,7 @@ export const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Thomas Mayrl',
-  alternateName: 'AWEN28',
+  alternateName: 'Elior',
   jobTitle: 'iOS App Developer & Web Developer',
   description:
     'Independent app developer specializing in iOS applications, web development, and AI integrations.',
@@ -127,15 +127,15 @@ export const personSchema = {
   ],
   worksFor: {
     '@type': 'Organization',
-    name: 'AWEN28',
+    name: 'Elior',
   },
 };
 
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'AWEN28 Portfolio',
-  alternateName: 'AWEN28',
+  name: 'Elior Portfolio',
+  alternateName: 'Elior',
   url: 'https://awen28.com',
   description:
     'Portfolio of iOS apps and web development projects by Thomas Mayrl',
@@ -182,7 +182,7 @@ export const softwareAppSchema = (app: {
   },
   creator: {
     '@type': 'Organization',
-    name: 'AWEN28',
+    name: 'Elior',
   },
   ...(app.url && { url: app.url }),
   ...(app.icon && { image: app.icon }),

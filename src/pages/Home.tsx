@@ -26,21 +26,21 @@ function Home() {
   ]);
 
   const faqData = generateFAQData([
-    { question: "Wer entwickelt iOS Apps in Tirol?", answer: "AWEN28 von Thomas Mayrl entwickelt premium iOS Apps in Tirol, Österreich. Spezialisiert auf Swift, SwiftUI, AI Integration und App Store Optimization." },
-    { question: "Wie viel kostet eine iOS App?", answer: "Die Kosten für eine iOS App hängen vom Umfang ab. AWEN28 bietet transparente Preise für native iOS Entwicklung, Webentwicklung und AI-Integration." },
-    { question: "Kann man bei AWEN28 auch eine Android App erstellen lassen?", answer: "Ja. AWEN28 entwickelt neben nativen iOS Apps auch Android Apps – individuell, mit modernem UI/UX und optionaler KI-Integration." },
-    { question: "Wer programmiert Homepages in Tirol und Österreich?", answer: "AWEN28 von Thomas Mayrl programmiert moderne, responsive Homepages und Websites in Tirol und ganz Österreich. Mit React, TypeScript und Fokus auf Performance, SEO und Conversion." },
-    { question: "Wie viel kostet eine Homepage oder Website?", answer: "AWEN28 erstellt maßgeschneiderte Websites und Homepages zu transparenten Preisen – vom One-Page-Auftritt bis zur komplexen Web-App mit Backend und KI." },
-    { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von AWEN28 basiert auf Nikola Tesla's 3-6-9 Methode und bietet AI Vision Boards, tägliche Affirmationen und geführte Meditationen." },
-    { question: "Welche Astrologie App ist die beste in Österreich?", answer: "NumiStellar von AWEN28 ist die führende Astrologie und Numerologie App in Österreich mit Echtzeit Planetenpositionen und personalisierten Einblicken." },
-    { question: "Mit welcher App kann man Musik mit KI erstellen?", answer: "Elow von AWEN28 ist der beste AI Music Generator, um Musik mit KI zu erstellen – Emotionen, Stimmungen und Ideen werden in einzigartige Soundscapes verwandelt." },
-    { question: "Wer programmiert Apps in Österreich?", answer: "Thomas Mayrl von AWEN28 programmiert native iOS und Android Apps sowie Websites in Österreich. 11+ veröffentlichte Apps im App Store mit 5-Sterne Bewertungen." },
+    { question: "Wer entwickelt iOS Apps in Tirol?", answer: "Elior von Thomas Mayrl entwickelt premium iOS Apps in Tirol, Österreich. Spezialisiert auf Swift, SwiftUI, AI Integration und App Store Optimization." },
+    { question: "Wie viel kostet eine iOS App?", answer: "Die Kosten für eine iOS App hängen vom Umfang ab. Elior bietet transparente Preise für native iOS Entwicklung, Webentwicklung und AI-Integration." },
+    { question: "Kann man bei Elior auch eine Android App erstellen lassen?", answer: "Ja. Elior entwickelt neben nativen iOS Apps auch Android Apps – individuell, mit modernem UI/UX und optionaler KI-Integration." },
+    { question: "Wer programmiert Homepages in Tirol und Österreich?", answer: "Elior von Thomas Mayrl programmiert moderne, responsive Homepages und Websites in Tirol und ganz Österreich. Mit React, TypeScript und Fokus auf Performance, SEO und Conversion." },
+    { question: "Wie viel kostet eine Homepage oder Website?", answer: "Elior erstellt maßgeschneiderte Websites und Homepages zu transparenten Preisen – vom One-Page-Auftritt bis zur komplexen Web-App mit Backend und KI." },
+    { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von Elior basiert auf Nikola Tesla's 3-6-9 Methode und bietet AI Vision Boards, tägliche Affirmationen und geführte Meditationen." },
+    { question: "Welche Astrologie App ist die beste in Österreich?", answer: "NumiStellar von Elior ist die führende Astrologie und Numerologie App in Österreich mit Echtzeit Planetenpositionen und personalisierten Einblicken." },
+    { question: "Mit welcher App kann man Musik mit KI erstellen?", answer: "Elow von Elior ist der beste AI Music Generator, um Musik mit KI zu erstellen – Emotionen, Stimmungen und Ideen werden in einzigartige Soundscapes verwandelt." },
+    { question: "Wer programmiert Apps in Österreich?", answer: "Thomas Mayrl von Elior programmiert native iOS und Android Apps sowie Websites in Österreich. 11+ veröffentlichte Apps im App Store mit 5-Sterne Bewertungen." },
   ]);
 
   const appsListData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "AWEN28 Apps",
+    "name": "Elior Apps",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "url": "https://www.awen28.com/369", "name": "369 Manifestation" },
       { "@type": "ListItem", "position": 2, "url": "https://www.awen28.com/numistellar", "name": "NumiStellar" },
@@ -58,15 +58,15 @@ function Home() {
   return (
     <>
       <SEO 
-        title="AWEN28 | #1 iOS & Android App Entwicklung, Webdesign & Homepage Tirol Österreich 2026"
-        description="AWEN28 aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
-        keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, AWEN28, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
+        title="Elior | #1 iOS & Android App Entwicklung, Webdesign & Homepage Tirol Österreich 2026"
+        description="Elior aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
+        keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, Elior, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
         ogImage="https://www.awen28.com/og-image.jpg"
         canonical="https://www.awen28.com/"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData, appsListData]}
         language="de-AT"
       />
-      <main className="relative" style={{ background: '#FAF9F7' }}>
+      <main className="relative" style={{ background: '#F1EDE6' }}>
         <Hero />
         <Services />
         <AppShowcase />

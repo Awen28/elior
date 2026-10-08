@@ -118,7 +118,7 @@ const Suremate = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to AWEN28
+            Back to Elior
           </Link>
         </div>
       </nav>
@@ -510,14 +510,14 @@ const Suremate = () => {
             <span className="font-serif text-xl" style={{ color: '#525048' }}>Suremate</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
-            © 2024 Suremate. A product by AWEN28.
+            © 2024 Suremate. A product by Elior.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
             style={{ color: '#1e3a5f' }}
           >
-            Visit AWEN28
+            Visit Elior
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

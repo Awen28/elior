@@ -11,8 +11,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#FAF9F7' }}>
       <SEO 
-        title="Page Not Found | AWEN28"
-        description="The page you are looking for does not exist. Return to AWEN28 homepage."
+        title="Page Not Found | Elior"
+        description="The page you are looking for does not exist. Return to Elior homepage."
       />
 
       {/* Header */}
@@ -29,7 +29,7 @@ const NotFound = () => {
             >
               <span className="text-white font-serif text-lg">A</span>
             </div>
-            <span className="font-serif">AWEN28</span>
+            <span className="font-serif">Elior</span>
           </Link>
         </div>
       </header>
@@ -201,7 +201,7 @@ const NotFound = () => {
       <footer className="py-8 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.4)' }}>
-            © {new Date().getFullYear()} AWEN28. All rights reserved.
+            © {new Date().getFullYear()} Elior. All rights reserved.
           </p>
         </div>
       </footer>

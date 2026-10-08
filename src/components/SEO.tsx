@@ -39,7 +39,7 @@ export const SEO = ({
   articlePublished,
   articleModified,
 }: SEOProps) => {
-  const fullTitle = title.includes('AWEN28') ? title : `${title} | AWEN28`;
+  const fullTitle = title.includes('Elior') ? title : `${title} | Elior`;
   
   return (
     <Helmet>
@@ -81,7 +81,7 @@ export const SEO = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:locale" content="de_AT" />
-      <meta property="og:site_name" content="AWEN28" />
+      <meta property="og:site_name" content="Elior" />
       {canonical && <meta property="og:url" content={canonical} />}
       {articlePublished && <meta property="article:published_time" content={articlePublished} />}
       {articleModified && <meta property="article:modified_time" content={articleModified} />}
@@ -127,7 +127,7 @@ export const SEO = ({
       <meta name="DC.title" content={fullTitle} />
       <meta name="DC.description" content={description} />
       <meta name="DC.creator" content={author} />
-      <meta name="DC.publisher" content="AWEN28" />
+      <meta name="DC.publisher" content="Elior" />
       <meta name="DC.date" content={articlePublished || new Date().toISOString()} />
       <meta name="DC.language" content={language} />
       <meta name="DC.coverage" content="Austria, Germany, Switzerland, International" />
@@ -194,7 +194,7 @@ export const generateAppStructuredData = (
     },
     "publisher": {
       "@type": "Organization",
-      "name": "AWEN28",
+      "name": "Elior",
       "url": "https://www.awen28.com",
       "logo": {
         "@type": "ImageObject",
@@ -223,7 +223,7 @@ export const generateAppStructuredData = (
     "inLanguage": ["de", "en"],
     "isPartOf": {
       "@type": "WebSite",
-      "name": "AWEN28",
+      "name": "Elior",
       "url": "https://www.awen28.com"
     }
   };
@@ -233,9 +233,9 @@ export const generateLocalBusinessData = () => ({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Organization", "ProfessionalService"],
   "@id": "https://www.awen28.com/#business",
-  "name": "AWEN28 Digital Studio",
-  "alternateName": ["AWEN28 App Development", "Awen28 Austria"],
-  "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich. Award-winning mobile apps by Thomas Mayrl.",
+  "name": "Elior Digital Studio",
+  "alternateName": ["Elior App Development", "Elior Austria"],
+  "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich. Award-winning mobile apps by Thomas Mayrl. Elior bedeutet „Gott ist mein Licht\" – Built with meaning.",
   "url": "https://www.awen28.com",
   "logo": {
     "@type": "ImageObject",
@@ -313,7 +313,7 @@ export const generateLocalBusinessData = () => ({
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "AWEN28 Digital Services",
+    "name": "Elior Digital Services",
     "itemListElement": [
       {
         "@type": "Offer",
@@ -384,13 +384,13 @@ export const generateWebSiteData = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.awen28.com/#website",
-  "name": "AWEN28",
-  "alternateName": "AWEN28 Digital Studio",
+  "name": "Elior",
+  "alternateName": "Elior Digital Studio",
   "url": "https://www.awen28.com",
   "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich",
   "publisher": {
     "@type": "Organization",
-    "name": "AWEN28",
+    "name": "Elior",
     "logo": {
       "@type": "ImageObject",
       "url": "https://www.awen28.com/og-image.jpg"
