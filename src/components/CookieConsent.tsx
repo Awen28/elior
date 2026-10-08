@@ -42,15 +42,15 @@ const CookieConsent = () => {
             className="max-w-4xl mx-auto p-5 md:p-6 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-4"
             style={{
               background: 'rgba(250, 249, 247, 0.98)',
-              border: '1px solid rgba(82, 80, 72, 0.1)',
-              boxShadow: '0 -10px 40px rgba(82, 80, 72, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05)',
+              border: '1px solid rgba(82, 82, 64, 0.1)',
+              boxShadow: '0 -10px 40px rgba(82, 82, 64, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05)',
               backdropFilter: 'blur(10px)',
             }}
           >
             {/* Icon */}
             <div 
               className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'linear-gradient(135deg, #E9CFB9, #B29F86)' }}
+              style={{ background: 'linear-gradient(135deg, #E3DED5, #BBB1A4)' }}
             >
               <Cookie className="w-6 h-6 text-white" />
             </div>
@@ -59,20 +59,20 @@ const CookieConsent = () => {
             <div className="flex-1">
               <h3 
                 className="font-medium text-base mb-1"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Wir verwenden Cookies
               </h3>
               <p 
                 className="text-sm leading-relaxed"
-                style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+                style={{ color: 'rgba(82, 82, 64, 0.6)' }}
               >
                 Diese Website nutzt ausschließlich technisch notwendige Cookies für den Betrieb der Seite. 
                 Weitere Informationen finden Sie in unserer{' '}
                 <a 
                   href="/cookies"
                   className="underline hover:no-underline"
-                  style={{ color: '#B29F86' }}
+                  style={{ color: '#BBB1A4' }}
                 >
                   Cookie-Richtlinie
                 </a>.
@@ -85,8 +85,8 @@ const CookieConsent = () => {
                 onClick={handleAccept}
                 className="flex-1 md:flex-none px-6 py-3 rounded-xl text-sm font-medium transition-all hover:scale-105"
                 style={{
-                  background: '#525048',
-                  color: '#FAF9F7',
+                  background: '#525240',
+                  color: '#F1EDE6',
                 }}
               >
                 Verstanden
@@ -95,7 +95,7 @@ const CookieConsent = () => {
               <button
                 onClick={handleClose}
                 className="p-3 rounded-xl transition-colors hover:bg-black/5"
-                style={{ color: 'rgba(82, 80, 72, 0.4)' }}
+                style={{ color: 'rgba(82, 82, 64, 0.4)' }}
                 aria-label="Schließen"
               >
                 <X className="w-5 h-5" />

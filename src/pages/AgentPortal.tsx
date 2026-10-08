@@ -473,7 +473,7 @@ const AgentPortal = () => {
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           className="w-12 h-12 border-4 rounded-full"
-          style={{ borderColor: 'rgba(178, 159, 134, 0.3)', borderTopColor: '#B29F86' }}
+          style={{ borderColor: 'rgba(178, 159, 134, 0.3)', borderTopColor: '#BBB1A4' }}
         />
       </div>
     );
@@ -540,7 +540,7 @@ const AgentPortal = () => {
                   <div className="text-center mb-8">
                     <div 
                       className="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center"
-                      style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                      style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
                     >
                       <User className="w-8 h-8 text-white" />
                     </div>
@@ -592,7 +592,7 @@ const AgentPortal = () => {
                     <button
                       type="submit"
                       className="w-full py-4 rounded-xl font-medium text-white transition-all hover:scale-[1.02]"
-                      style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                      style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
                     >
                       Anmelden
                     </button>
@@ -654,7 +654,7 @@ const AgentPortal = () => {
                         <div className="flex items-center gap-4">
                           <div 
                             className="w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                            style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
                           >
                             <User className="w-6 h-6 text-white" />
                           </div>
@@ -694,7 +694,7 @@ const AgentPortal = () => {
                   <div className="flex items-center gap-6 mb-8">
                     <div 
                       className="w-20 h-20 rounded-2xl flex items-center justify-center"
-                      style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                      style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
                     >
                       <User className="w-10 h-10 text-white" />
                     </div>
@@ -709,7 +709,7 @@ const AgentPortal = () => {
                       className="p-5 rounded-2xl flex items-center gap-4"
                       style={{ background: 'rgba(255, 255, 255, 0.05)' }}
                     >
-                      <Mail className="w-5 h-5 text-[#B29F86]" />
+                      <Mail className="w-5 h-5 text-[#BBB1A4]" />
                       <div>
                         <p className="text-white/50 text-sm mb-1">E-Mail</p>
                         <p className="text-white">{currentClientData.email}</p>
@@ -719,7 +719,7 @@ const AgentPortal = () => {
                       className="p-5 rounded-2xl flex items-center gap-4"
                       style={{ background: 'rgba(255, 255, 255, 0.05)' }}
                     >
-                      <Phone className="w-5 h-5 text-[#B29F86]" />
+                      <Phone className="w-5 h-5 text-[#BBB1A4]" />
                       <div>
                         <p className="text-white/50 text-sm mb-1">Telefon</p>
                         <p className="text-white">{currentClientData.phoneNumber}</p>
@@ -739,7 +739,7 @@ const AgentPortal = () => {
                       border: '1px solid rgba(178, 159, 134, 0.3)'
                     }}
                   >
-                    <Car className="w-8 h-8 text-[#B29F86] mb-4" />
+                    <Car className="w-8 h-8 text-[#BBB1A4] mb-4" />
                     <h3 className="text-white font-medium mb-1">KFZ-Schäden</h3>
                     <p className="text-white/50 text-sm">Fahrzeugschäden anzeigen</p>
                   </motion.div>
@@ -753,7 +753,7 @@ const AgentPortal = () => {
                       border: '1px solid rgba(178, 159, 134, 0.3)'
                     }}
                   >
-                    <Home className="w-8 h-8 text-[#B29F86] mb-4" />
+                    <Home className="w-8 h-8 text-[#BBB1A4] mb-4" />
                     <h3 className="text-white font-medium mb-1">Haushalt-Schäden</h3>
                     <p className="text-white/50 text-sm">Hausrat & Gebäude</p>
                   </motion.div>
@@ -767,7 +767,7 @@ const AgentPortal = () => {
                       border: '1px solid rgba(178, 159, 134, 0.3)'
                     }}
                   >
-                    <AlertTriangle className="w-8 h-8 text-[#B29F86] mb-4" />
+                    <AlertTriangle className="w-8 h-8 text-[#BBB1A4] mb-4" />
                     <h3 className="text-white font-medium mb-1">Unfälle</h3>
                     <p className="text-white/50 text-sm">Unfallberichte</p>
                   </motion.div>
@@ -930,7 +930,7 @@ const AgentPortal = () => {
                             className="w-12 h-12 rounded-xl flex items-center justify-center"
                             style={{ background: 'rgba(178, 159, 134, 0.3)' }}
                           >
-                            <FileText className="w-6 h-6 text-[#B29F86]" />
+                            <FileText className="w-6 h-6 text-[#BBB1A4]" />
                           </div>
                           <span className="text-white text-lg font-medium">Schaden ID: {damageId}</span>
                         </div>
@@ -985,7 +985,7 @@ const AgentPortal = () => {
                 >
                   <div 
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                    style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
                   >
                     <FileText className="w-6 h-6 text-white" />
                   </div>

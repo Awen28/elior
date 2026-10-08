@@ -4,10 +4,10 @@ import { ArrowLeft, Smartphone, Brain, Mail, Phone, MapPin, ChevronRight, Sparkl
 import { Link } from 'react-router-dom';
 import { SEO, generateLocalBusinessData, generateWebSiteData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const CREAM = '#FAF9F7';
+const CREAM = '#F1EDE6';
 const CREAM_SOFT = '#F5F1EC';
 const INK = '#4A4038';
-const SAGE = '#B29F86';
+const SAGE = '#BBB1A4';
 
 const services = [
   {
@@ -133,7 +133,7 @@ const AppEntwicklungTirol = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-24 px-8" style={{ background: '#F5F3F0' }}>
+      <section className="relative py-24 px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>Deine App-Lösung</span>
@@ -196,7 +196,7 @@ const AppEntwicklungTirol = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="relative py-24 px-8" style={{ background: '#F5F3F0' }}>
+      <section className="relative py-24 px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>So läuft dein App-Projekt ab</span>
@@ -251,7 +251,7 @@ const AppEntwicklungTirol = () => {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="relative py-24 px-8" style={{ background: '#F5F3F0' }}>
+      <section id="contact" className="relative py-24 px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-serif text-4xl md:text-5xl mb-4" style={{ color: INK }}>App entwickeln lassen – jetzt unverbindlich anfragen</h2>

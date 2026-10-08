@@ -89,7 +89,7 @@ const Suremate = () => {
   };
 
   return (
-    <div ref={containerRef} className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+    <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
 <SEO 
   title="Suremate | #1 Beste Schadensmeldung App Österreich 2026 - Kfz & Haushalt"
   description="Suremate - Die WELTBESTE digitale Schadensmeldung App für Österreich. 1.200+ Downloads, 4.7★ Rating. Autounfälle, Haushaltsschäden, Personenschäden digital dokumentieren. Direkt an Versicherung senden. KOSTENLOS!"
@@ -113,8 +113,8 @@ const Suremate = () => {
             style={{ 
               background: 'rgba(255, 255, 255, 0.8)',
               backdropFilter: 'blur(10px)',
-              color: '#525048',
-              boxShadow: '0 4px 12px rgba(82, 80, 72, 0.08)',
+              color: '#525240',
+              boxShadow: '0 4px 12px rgba(82, 82, 64, 0.08)',
             }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -169,13 +169,13 @@ const Suremate = () => {
               </div>
               <div>
                 <h1 className="font-serif text-3xl" style={{ color: '#1e3a5f' }}>Suremate</h1>
-                <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>Insurance Made Simple</p>
+                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>Insurance Made Simple</p>
               </div>
             </motion.div>
 
             <motion.h2 
               className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -187,7 +187,7 @@ const Suremate = () => {
 
             <motion.p 
               className="text-lg mb-8 max-w-md"
-              style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.7)' }}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -233,10 +233,10 @@ const Suremate = () => {
               style={{
                 transform: `perspective(1000px) rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg)`,
                 transition: 'transform 0.3s ease-out',
-                background: '#F5F3F0',
+                background: '#F7F3ED',
                 boxShadow: `
                   inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                  inset -3px -3px 6px rgba(82, 80, 72, 0.05),
+                  inset -3px -3px 6px rgba(82, 82, 64, 0.05),
                   20px 20px 40px rgba(30, 58, 95, 0.15),
                   -20px -20px 40px rgba(255, 255, 255, 0.9)
                 `,
@@ -245,9 +245,9 @@ const Suremate = () => {
               <div
                 className="p-3 rounded-[28px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
-                    inset 2px 2px 4px rgba(82, 80, 72, 0.04),
+                    inset 2px 2px 4px rgba(82, 82, 64, 0.04),
                     inset -2px -2px 4px rgba(255, 255, 255, 0.8)
                   `,
                 }}
@@ -264,7 +264,7 @@ const Suremate = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -281,7 +281,7 @@ const Suremate = () => {
             </span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Everything you need
             </h2>
@@ -297,11 +297,11 @@ const Suremate = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="p-8 rounded-[32px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
                     inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                    inset -2px -2px 4px rgba(82, 80, 72, 0.04),
-                    8px 8px 16px rgba(82, 80, 72, 0.06),
+                    inset -2px -2px 4px rgba(82, 82, 64, 0.04),
+                    8px 8px 16px rgba(82, 82, 64, 0.06),
                     -8px -8px 16px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -316,11 +316,11 @@ const Suremate = () => {
                 </div>
                 <h3 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   {feature.title}
                 </h3>
-                <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                   {feature.description}
                 </p>
               </motion.div>
@@ -330,7 +330,7 @@ const Suremate = () => {
       </section>
 
       {/* App Showcase - Screenshots */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -347,7 +347,7 @@ const Suremate = () => {
             </span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Simple. Fast. Digital.
             </h2>
@@ -364,11 +364,11 @@ const Suremate = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="p-3 rounded-[24px] cursor-pointer"
                 style={{
-                  background: '#F5F3F0',
+                  background: '#F7F3ED',
                   boxShadow: `
                     inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                    inset -2px -2px 4px rgba(82, 80, 72, 0.04),
-                    6px 6px 12px rgba(82, 80, 72, 0.06),
+                    inset -2px -2px 4px rgba(82, 82, 64, 0.04),
+                    6px 6px 12px rgba(82, 82, 64, 0.06),
                     -6px -6px 12px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -385,7 +385,7 @@ const Suremate = () => {
       </section>
 
       {/* Benefits List */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -396,7 +396,7 @@ const Suremate = () => {
             >
               <h2 
                 className="font-serif text-4xl md:text-5xl mb-8"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Why Suremate?
               </h2>
@@ -425,7 +425,7 @@ const Suremate = () => {
                     >
                       <Check className="w-4 h-4" style={{ color: '#1e3a5f' }} />
                     </div>
-                    <span style={{ color: 'rgba(82, 80, 72, 0.8)' }}>{item}</span>
+                    <span style={{ color: 'rgba(82, 82, 64, 0.8)' }}>{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -441,11 +441,11 @@ const Suremate = () => {
               <div
                 className="p-4 rounded-[40px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
                     inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                    inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-                    16px 16px 32px rgba(82, 80, 72, 0.08),
+                    inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+                    16px 16px 32px rgba(82, 82, 64, 0.08),
                     -16px -16px 32px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -462,7 +462,7 @@ const Suremate = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -507,9 +507,9 @@ const Suremate = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <img src="/apps/suremate_logo.png" alt="Suremate" className="w-8 h-8" />
-            <span className="font-serif text-xl" style={{ color: '#525048' }}>Suremate</span>
+            <span className="font-serif text-xl" style={{ color: '#525240' }}>Suremate</span>
           </div>
-          <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+          <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
             © 2024 Suremate. A product by Elior.
           </p>
           <Link 

@@ -60,8 +60,8 @@ const starVariants = {
 // Book page component for the flip effect
 const BookPage = ({ pageNum, isFlipped, onClick }: { pageNum: number; isFlipped: boolean; onClick: () => void }) => {
   const pageContent = [
-    { color: '#E9CFB9', text: 'Once upon a time...', emoji: '🏖️' },
-    { color: '#B29F86', text: 'A magical adventure', emoji: '🌊' },
+    { color: '#E3DED5', text: 'Once upon a time...', emoji: '🏖️' },
+    { color: '#BBB1A4', text: 'A magical adventure', emoji: '🌊' },
     { color: '#D4A574', text: 'Beautiful dreams', emoji: '✨' },
     { color: '#E8D5C4', text: 'The end', emoji: '📖' },
   ];
@@ -97,7 +97,7 @@ const BookPage = ({ pageNum, isFlipped, onClick }: { pageNum: number; isFlipped:
         >
           {content.emoji}
         </motion.span>
-        <p className="text-sm text-center font-serif" style={{ color: '#525048' }}>
+        <p className="text-sm text-center font-serif" style={{ color: '#525240' }}>
           {content.text}
         </p>
         <div className="absolute bottom-4 right-4 text-xs opacity-50">
@@ -198,7 +198,7 @@ const KiBook = () => {
         reviewCount="15000"
         language="de-AT"
       />
-    <div ref={containerRef} className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+    <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
       {/* Decorative floating stars */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <motion.div 
@@ -206,7 +206,7 @@ const KiBook = () => {
           variants={starVariants}
           animate="animate"
         >
-          <Star className="w-6 h-6" style={{ color: '#E9CFB9', fill: '#E9CFB9' }} />
+          <Star className="w-6 h-6" style={{ color: '#E3DED5', fill: '#E3DED5' }} />
         </motion.div>
         <motion.div 
           className="absolute top-40 right-20"
@@ -214,7 +214,7 @@ const KiBook = () => {
           animate="animate"
           style={{ animationDelay: '0.5s' }}
         >
-          <Star className="w-4 h-4" style={{ color: '#B29F86', fill: '#B29F86' }} />
+          <Star className="w-4 h-4" style={{ color: '#BBB1A4', fill: '#BBB1A4' }} />
         </motion.div>
         <motion.div 
           className="absolute bottom-40 left-20"
@@ -230,7 +230,7 @@ const KiBook = () => {
           animate="animate"
           style={{ animationDelay: '1.5s' }}
         >
-          <Heart className="w-4 h-4" style={{ color: '#E9CFB9', fill: '#E9CFB9' }} />
+          <Heart className="w-4 h-4" style={{ color: '#E3DED5', fill: '#E3DED5' }} />
         </motion.div>
       </div>
 
@@ -243,8 +243,8 @@ const KiBook = () => {
             style={{ 
               background: 'rgba(255, 255, 255, 0.9)',
               backdropFilter: 'blur(10px)',
-              color: '#525048',
-              boxShadow: '0 4px 12px rgba(82, 80, 72, 0.08)',
+              color: '#525240',
+              boxShadow: '0 4px 12px rgba(82, 82, 64, 0.08)',
             }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -297,33 +297,33 @@ const KiBook = () => {
               <div 
                 className="w-20 h-20 rounded-3xl flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)',
+                  background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)',
                   boxShadow: '0 12px 32px rgba(233, 207, 185, 0.4), inset 0 2px 4px rgba(255,255,255,0.5)',
                 }}
               >
                 <BookOpen className="w-10 h-10 text-white" strokeWidth={2.5} />
               </div>
               <div>
-                <h1 className="font-serif text-4xl" style={{ color: '#525048' }}>kiBook</h1>
-                <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>Magic Story Creator</p>
+                <h1 className="font-serif text-4xl" style={{ color: '#525240' }}>kiBook</h1>
+                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>Magic Story Creator</p>
               </div>
             </motion.div>
 
             <motion.h2 
               className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Create magical
               <br />
-              <span style={{ color: '#B29F86' }}>stories</span> together
+              <span style={{ color: '#BBB1A4' }}>stories</span> together
             </motion.h2>
 
             <motion.p 
               className="text-lg mb-8 max-w-md"
-              style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.7)' }}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -345,7 +345,7 @@ const KiBook = () => {
                 rel="noopener noreferrer"
                 className="group px-8 py-4 rounded-full flex items-center gap-3 text-base font-medium transition-all hover:scale-105"
                 style={{
-                  background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)',
+                  background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)',
                   color: 'white',
                   boxShadow: '0 8px 24px rgba(233, 207, 185, 0.4)',
                 }}
@@ -372,10 +372,10 @@ const KiBook = () => {
               style={{
                 transform: `perspective(1000px) rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg)`,
                 transition: 'transform 0.3s ease-out',
-                background: '#F5F3F0',
+                background: '#F7F3ED',
                 boxShadow: `
                   inset 4px 4px 8px rgba(255, 255, 255, 0.9),
-                  inset -4px -4px 8px rgba(82, 80, 72, 0.05),
+                  inset -4px -4px 8px rgba(82, 82, 64, 0.05),
                   24px 24px 48px rgba(233, 207, 185, 0.25),
                   -24px -24px 48px rgba(255, 255, 255, 0.9)
                 `,
@@ -384,9 +384,9 @@ const KiBook = () => {
               <div
                 className="p-3 rounded-[36px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
-                    inset 2px 2px 4px rgba(82, 80, 72, 0.04),
+                    inset 2px 2px 4px rgba(82, 82, 64, 0.04),
                     inset -2px -2px 4px rgba(255, 255, 255, 0.8)
                   `,
                 }}
@@ -403,7 +403,7 @@ const KiBook = () => {
       </section>
 
       {/* Features Section - more rounded and soft */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -414,13 +414,13 @@ const KiBook = () => {
           >
             <motion.span 
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               ✨ Magic Features ✨
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               How it works
             </h2>
@@ -437,11 +437,11 @@ const KiBook = () => {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="p-8 rounded-[40px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
                     inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                    inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-                    12px 12px 24px rgba(82, 80, 72, 0.06),
+                    inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+                    12px 12px 24px rgba(82, 82, 64, 0.06),
                     -12px -12px 24px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -454,15 +454,15 @@ const KiBook = () => {
                   whileHover={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <feature.icon className="w-8 h-8" style={{ color: '#B29F86' }} />
+                  <feature.icon className="w-8 h-8" style={{ color: '#BBB1A4' }} />
                 </motion.div>
                 <h3 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   {feature.title}
                 </h3>
-                <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                   {feature.description}
                 </p>
               </motion.div>
@@ -472,7 +472,7 @@ const KiBook = () => {
       </section>
 
       {/* PDF Preview Section - 3D Flip Book */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -483,17 +483,17 @@ const KiBook = () => {
           >
             <motion.span 
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               📖 Example Story 📖
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               See what kiBook creates
             </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(82, 80, 72, 0.7)' }}>
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(82, 82, 64, 0.7)' }}>
               Flip through the pages of &quot;Ava&apos;s Magical Beach Adventure&quot; — 
               a complete story generated by kiBook&apos;s AI
             </p>
@@ -532,7 +532,7 @@ const KiBook = () => {
                 <div 
                   className="absolute left-0 top-0 w-4 h-full rounded-l-lg"
                   style={{
-                    background: 'linear-gradient(90deg, #B29F86 0%, #E9CFB9 100%)',
+                    background: 'linear-gradient(90deg, #BBB1A4 0%, #E3DED5 100%)',
                     transform: 'translateX(-100%) rotateY(-90deg)',
                     transformOrigin: 'right center',
                   }}
@@ -542,7 +542,7 @@ const KiBook = () => {
                 <div 
                   className="absolute inset-0 rounded-r-2xl"
                   style={{
-                    background: 'linear-gradient(135deg, #B29F86 0%, #E9CFB9 100%)',
+                    background: 'linear-gradient(135deg, #BBB1A4 0%, #E3DED5 100%)',
                     transform: 'translateZ(-20px)',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                   }}
@@ -552,7 +552,7 @@ const KiBook = () => {
                 <motion.div 
                   className="absolute inset-0 rounded-r-2xl overflow-hidden"
                   style={{
-                    background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)',
+                    background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)',
                     transformOrigin: 'left center',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                   }}
@@ -605,7 +605,7 @@ const KiBook = () => {
                       key={i}
                       className="w-2 h-2 rounded-full"
                       style={{
-                        background: currentPage === i ? '#B29F86' : 'rgba(82, 80, 72, 0.2)',
+                        background: currentPage === i ? '#BBB1A4' : 'rgba(82, 82, 64, 0.2)',
                       }}
                       animate={{ scale: currentPage === i ? 1.3 : 1 }}
                     />
@@ -616,7 +616,7 @@ const KiBook = () => {
               {/* Click hint */}
               <motion.p 
                 className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-sm text-center"
-                style={{ color: 'rgba(82, 80, 72, 0.5)' }}
+                style={{ color: 'rgba(82, 82, 64, 0.5)' }}
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -635,11 +635,11 @@ const KiBook = () => {
               <div 
                 className="p-8 rounded-[32px]"
                 style={{
-                  background: '#F5F3F0',
+                  background: '#F7F3ED',
                   boxShadow: `
                     inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                    inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-                    12px 12px 24px rgba(82, 80, 72, 0.06),
+                    inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+                    12px 12px 24px rgba(82, 82, 64, 0.06),
                     -12px -12px 24px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -647,15 +647,15 @@ const KiBook = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div 
                     className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)' }}
+                    style={{ background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)' }}
                   >
                     <FileText className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl" style={{ color: '#525048' }}>
+                    <h3 className="font-serif text-xl" style={{ color: '#525240' }}>
                       Full PDF Version
                     </h3>
-                    <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+                    <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
                       12 pages • 1.7 MB
                     </p>
                   </div>
@@ -668,9 +668,9 @@ const KiBook = () => {
                         className="w-5 h-5 rounded-full flex items-center justify-center"
                         style={{ background: 'rgba(178, 159, 134, 0.15)' }}
                       >
-                        <Star className="w-3 h-3" style={{ color: '#B29F86' }} />
+                        <Star className="w-3 h-3" style={{ color: '#BBB1A4' }} />
                       </div>
-                      <span className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.7)' }}>{item}</span>
+                      <span className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.7)' }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -682,7 +682,7 @@ const KiBook = () => {
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-medium"
                     style={{
-                      background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)',
+                      background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)',
                       color: 'white',
                     }}
                     whileHover={{ scale: 1.02 }}
@@ -696,11 +696,11 @@ const KiBook = () => {
                     download
                     className="flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-medium"
                     style={{
-                      background: '#FAF9F7',
-                      color: '#B29F86',
+                      background: '#F1EDE6',
+                      color: '#BBB1A4',
                       border: '2px solid rgba(178, 159, 134, 0.3)',
                     }}
-                    whileHover={{ scale: 1.02, background: '#E9CFB9', color: 'white' }}
+                    whileHover={{ scale: 1.02, background: '#E3DED5', color: 'white' }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <Download className="w-4 h-4" />
@@ -713,7 +713,7 @@ const KiBook = () => {
       </section>
 
       {/* App Showcase - Screenshots */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -724,13 +724,13 @@ const KiBook = () => {
           >
             <motion.span 
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               📚 Your Books 📚
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Create & Collect
             </h2>
@@ -747,11 +747,11 @@ const KiBook = () => {
                 whileHover={{ y: -12, scale: 1.03, rotate: idx % 2 === 0 ? -2 : 2 }}
                 className="p-3 rounded-[28px] cursor-pointer"
                 style={{
-                  background: '#F5F3F0',
+                  background: '#F7F3ED',
                   boxShadow: `
                     inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                    inset -2px -2px 4px rgba(82, 80, 72, 0.04),
-                    8px 8px 16px rgba(82, 80, 72, 0.06),
+                    inset -2px -2px 4px rgba(82, 82, 64, 0.04),
+                    8px 8px 16px rgba(82, 82, 64, 0.06),
                     -8px -8px 16px rgba(255, 255, 255, 0.9)
                   `,
                 }}
@@ -768,7 +768,7 @@ const KiBook = () => {
       </section>
 
       {/* Benefits List - playful version */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -779,7 +779,7 @@ const KiBook = () => {
             >
               <h2 
                 className="font-serif text-4xl md:text-5xl mb-8"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Perfect for little storytellers
               </h2>
@@ -809,9 +809,9 @@ const KiBook = () => {
                       }}
                       whileHover={{ scale: 1.1, rotate: 10 }}
                     >
-                      <Sparkles className="w-5 h-5" style={{ color: '#B29F86' }} />
+                      <Sparkles className="w-5 h-5" style={{ color: '#BBB1A4' }} />
                     </motion.div>
-                    <span style={{ color: 'rgba(82, 80, 72, 0.8)' }}>{item}</span>
+                    <span style={{ color: 'rgba(82, 82, 64, 0.8)' }}>{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -829,10 +829,10 @@ const KiBook = () => {
                 animate="animate"
                 className="p-5 rounded-[48px]"
                 style={{
-                  background: '#FAF9F7',
+                  background: '#F1EDE6',
                   boxShadow: `
                     inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                    inset -3px -3px 6px rgba(82, 80, 72, 0.04),
+                    inset -3px -3px 6px rgba(82, 82, 64, 0.04),
                     20px 20px 40px rgba(233, 207, 185, 0.15),
                     -20px -20px 40px rgba(255, 255, 255, 0.9)
                   `,
@@ -850,7 +850,7 @@ const KiBook = () => {
       </section>
 
       {/* CTA Section - playful */}
-      <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+      <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -861,7 +861,7 @@ const KiBook = () => {
           <motion.div
             className="p-12 md:p-16 rounded-[48px] relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 50%, #E8E5E0 100%)',
+              background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 50%, #E8E5E0 100%)',
               boxShadow: '0 32px 64px rgba(233, 207, 185, 0.35)',
             }}
           >
@@ -904,7 +904,7 @@ const KiBook = () => {
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full text-base font-medium transition-all hover:scale-105"
               style={{
                 background: 'white',
-                color: '#B29F86',
+                color: '#BBB1A4',
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -922,19 +922,19 @@ const KiBook = () => {
           <div className="flex items-center gap-4">
             <div 
               className="w-10 h-10 rounded-xl flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)' }}
             >
               <BookOpen className="w-5 h-5 text-white" />
             </div>
-            <span className="font-serif text-2xl" style={{ color: '#525048' }}>kiBook</span>
+            <span className="font-serif text-2xl" style={{ color: '#525240' }}>kiBook</span>
           </div>
-          <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+          <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
             © 2024 kiBook. A product by Elior. Made with ✨ for little storytellers.
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
-            style={{ color: '#B29F86' }}
+            style={{ color: '#BBB1A4' }}
           >
             Visit Elior
             <ChevronRight className="w-4 h-4" />

@@ -6,7 +6,7 @@ import { SEO } from '../components/SEO';
 import { useEffect } from 'react';
 
 const TERRACOTTA = '#C49070';
-const CREAM = '#FAF9F7';
+const CREAM = '#F1EDE6';
 const CREAM_SOFT = '#F5F1EC';
 const CREAM_DEEP = '#EDE6DF';
 const INK = '#4A4038';

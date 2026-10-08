@@ -13,7 +13,7 @@ const OCHRE = '#C89B55';
 const TERRACOTTA = '#C49070';
 const INK = '#4A4038';
 const INK_SOFT = 'rgba(74, 64, 56, 0.65)';
-const IVORY = '#FAF9F7';
+const IVORY = '#F1EDE6';
 
 const steps = [
   {

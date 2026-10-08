@@ -102,7 +102,7 @@ const VisAI = () => {
         reviewCount="1800"
         language="de-AT"
       />
-      <div ref={containerRef} className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+      <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -112,8 +112,8 @@ const VisAI = () => {
               style={{ 
                 background: 'rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(10px)',
-                color: '#525048',
-                boxShadow: '0 4px 12px rgba(82, 80, 72, 0.08)',
+                color: '#525240',
+                boxShadow: '0 4px 12px rgba(82, 82, 64, 0.08)',
               }}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -160,35 +160,35 @@ const VisAI = () => {
                 <div 
                   className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
                   style={{
-                    background: 'linear-gradient(135deg, #B29F86 0%, #E9CFB9 100%)',
+                    background: 'linear-gradient(135deg, #BBB1A4 0%, #E3DED5 100%)',
                     boxShadow: '0 8px 24px rgba(178, 159, 134, 0.35)',
                   }}
                 >
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h1 className="font-serif text-3xl" style={{ color: '#B29F86' }}>VisAI</h1>
-                  <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>AI Vision Boards</p>
+                  <h1 className="font-serif text-3xl" style={{ color: '#BBB1A4' }}>VisAI</h1>
+                  <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>AI Vision Boards</p>
                 </div>
               </motion.div>
 
               <motion.h2 
                 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-6"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 Dream it.
                 <br />
-                <span style={{ color: '#B29F86' }}>See it.</span>
+                <span style={{ color: '#BBB1A4' }}>See it.</span>
                 <br />
                 Achieve it.
               </motion.h2>
 
               <motion.p 
                 className="text-lg mb-8 max-w-md"
-                style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -209,7 +209,7 @@ const VisAI = () => {
                   rel="noopener noreferrer"
                   className="group px-6 py-3 rounded-full flex items-center gap-2 text-sm font-medium transition-all hover:scale-105"
                   style={{
-                    background: '#B29F86',
+                    background: '#BBB1A4',
                     color: 'white',
                     boxShadow: '0 8px 24px rgba(178, 159, 134, 0.35)',
                   }}
@@ -234,10 +234,10 @@ const VisAI = () => {
                 style={{
                   transform: `perspective(1000px) rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg)`,
                   transition: 'transform 0.3s ease-out',
-                  background: '#F5F3F0',
+                  background: '#F7F3ED',
                   boxShadow: `
                     inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                    inset -3px -3px 6px rgba(82, 80, 72, 0.05),
+                    inset -3px -3px 6px rgba(82, 82, 64, 0.05),
                     20px 20px 40px rgba(178, 159, 134, 0.2),
                     -20px -20px 40px rgba(255, 255, 255, 0.9)
                   `,
@@ -246,9 +246,9 @@ const VisAI = () => {
                 <div
                   className="p-3 rounded-[28px]"
                   style={{
-                    background: '#FAF9F7',
+                    background: '#F1EDE6',
                     boxShadow: `
-                      inset 2px 2px 4px rgba(82, 80, 72, 0.04),
+                      inset 2px 2px 4px rgba(82, 82, 64, 0.04),
                       inset -2px -2px 4px rgba(255, 255, 255, 0.8)
                     `,
                   }}
@@ -265,7 +265,7 @@ const VisAI = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+        <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -276,13 +276,13 @@ const VisAI = () => {
             >
               <span 
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-                style={{ color: '#B29F86' }}
+                style={{ color: '#BBB1A4' }}
               >
                 Features
               </span>
               <h2 
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Manifest your dreams
               </h2>
@@ -298,11 +298,11 @@ const VisAI = () => {
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   className="p-8 rounded-[32px]"
                   style={{
-                    background: '#FAF9F7',
+                    background: '#F1EDE6',
                     boxShadow: `
                       inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                      inset -2px -2px 4px rgba(82, 80, 72, 0.04),
-                      8px 8px 16px rgba(82, 80, 72, 0.06),
+                      inset -2px -2px 4px rgba(82, 82, 64, 0.04),
+                      8px 8px 16px rgba(82, 82, 64, 0.06),
                       -8px -8px 16px rgba(255, 255, 255, 0.9)
                     `,
                   }}
@@ -313,15 +313,15 @@ const VisAI = () => {
                       background: 'rgba(178, 159, 134, 0.12)',
                     }}
                   >
-                    <feature.icon className="w-7 h-7" style={{ color: '#B29F86' }} />
+                    <feature.icon className="w-7 h-7" style={{ color: '#BBB1A4' }} />
                   </div>
                   <h3 
                     className="font-serif text-2xl mb-4"
-                    style={{ color: '#525048' }}
+                    style={{ color: '#525240' }}
                   >
                     {feature.title}
                   </h3>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                     {feature.description}
                   </p>
                 </motion.div>
@@ -331,7 +331,7 @@ const VisAI = () => {
         </section>
 
         {/* App Showcase - Screenshots */}
-        <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+        <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -342,13 +342,13 @@ const VisAI = () => {
             >
               <span 
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
-                style={{ color: '#B29F86' }}
+                style={{ color: '#BBB1A4' }}
               >
                 App Screenshots
               </span>
               <h2 
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Visualize. Create. Achieve.
               </h2>
@@ -365,11 +365,11 @@ const VisAI = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="p-3 rounded-[24px] cursor-pointer"
                   style={{
-                    background: '#F5F3F0',
+                    background: '#F7F3ED',
                     boxShadow: `
                       inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                      inset -2px -2px 4px rgba(82, 80, 72, 0.04),
-                      6px 6px 12px rgba(82, 80, 72, 0.06),
+                      inset -2px -2px 4px rgba(82, 82, 64, 0.04),
+                      6px 6px 12px rgba(82, 82, 64, 0.06),
                       -6px -6px 12px rgba(255, 255, 255, 0.9)
                     `,
                   }}
@@ -386,7 +386,7 @@ const VisAI = () => {
         </section>
 
         {/* Benefits List */}
-        <section className="py-32 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+        <section className="py-32 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -397,7 +397,7 @@ const VisAI = () => {
               >
                 <h2 
                   className="font-serif text-4xl md:text-5xl mb-8"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Why VisAI?
                 </h2>
@@ -425,9 +425,9 @@ const VisAI = () => {
                           background: 'rgba(178, 159, 134, 0.15)',
                         }}
                       >
-                        <Check className="w-4 h-4" style={{ color: '#B29F86' }} />
+                        <Check className="w-4 h-4" style={{ color: '#BBB1A4' }} />
                       </div>
-                      <span style={{ color: 'rgba(82, 80, 72, 0.8)' }}>{item}</span>
+                      <span style={{ color: 'rgba(82, 82, 64, 0.8)' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -443,10 +443,10 @@ const VisAI = () => {
                 <div
                   className="p-4 rounded-[40px]"
                   style={{
-                    background: '#FAF9F7',
+                    background: '#F1EDE6',
                     boxShadow: `
                       inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                      inset -3px -3px 6px rgba(82, 80, 72, 0.04),
+                      inset -3px -3px 6px rgba(82, 82, 64, 0.04),
                       16px 16px 32px rgba(178, 159, 134, 0.12),
                       -16px -16px 32px rgba(255, 255, 255, 0.9)
                     `,
@@ -464,7 +464,7 @@ const VisAI = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 px-6 md:px-8" style={{ background: '#FAF9F7' }}>
+        <section className="py-32 px-6 md:px-8" style={{ background: '#F1EDE6' }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -475,7 +475,7 @@ const VisAI = () => {
             <div
               className="p-12 md:p-16 rounded-[40px]"
               style={{
-                background: 'linear-gradient(135deg, #B29F86 0%, #E9CFB9 100%)',
+                background: 'linear-gradient(135deg, #BBB1A4 0%, #E3DED5 100%)',
                 boxShadow: '0 32px 64px rgba(178, 159, 134, 0.35)',
               }}
             >
@@ -495,7 +495,7 @@ const VisAI = () => {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all hover:scale-105"
                 style={{
                   background: 'white',
-                  color: '#B29F86',
+                  color: '#BBB1A4',
                 }}
               >
                 <Download className="w-5 h-5" />
@@ -511,19 +511,19 @@ const VisAI = () => {
             <div className="flex items-center gap-4">
               <div 
                 className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #B29F86 0%, #E9CFB9 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #BBB1A4 0%, #E3DED5 100%)' }}
               >
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="font-serif text-xl" style={{ color: '#525048' }}>VisAI</span>
+              <span className="font-serif text-xl" style={{ color: '#525240' }}>VisAI</span>
             </div>
-            <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+            <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
               © 2024 VisAI. A product by Elior.
             </p>
             <Link 
               to="/"
               className="flex items-center gap-2 text-sm"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               Visit Elior
               <ChevronRight className="w-4 h-4" />

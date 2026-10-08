@@ -28,7 +28,7 @@ const OrbitPrivacy = () => {
             Back to Orbit
           </Link>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}>
               <Circle className="w-6 h-6 text-white" />
             </div>
             <span className="font-serif text-2xl text-white">Orbit</span>
@@ -56,7 +56,7 @@ const OrbitPrivacy = () => {
             transition={{ duration: 3 + i * 0.2, delay: i * 0.1, repeat: Infinity }}
             className="absolute w-1.5 h-1.5 rounded-full pointer-events-none"
             style={{
-              background: '#B29F86',
+              background: '#BBB1A4',
               left: `${5 + (i * 6.5) % 90}%`,
               top: `${10 + (i % 5) * 15}%`,
               boxShadow: '0 0 8px rgba(178, 159, 134, 0.8)',
@@ -76,7 +76,7 @@ const OrbitPrivacy = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+              style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
             >
               <Shield className="w-8 h-8 text-white" />
             </motion.div>
@@ -189,7 +189,7 @@ const OrbitPrivacy = () => {
                       className="flex items-start gap-3 p-3 rounded-xl"
                       style={{ background: 'rgba(255,255,255,0.04)' }}
                     >
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#B29F86' }} />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: '#BBB1A4' }} />
                       <span className="text-sm text-white/60">{item}</span>
                     </div>
                   ))}
@@ -230,7 +230,7 @@ const OrbitPrivacy = () => {
                       style={{ background: 'rgba(255,255,255,0.04)' }}
                     >
                       <div className="flex items-center gap-3 mb-2">
-                        <party.icon className="w-5 h-5" style={{ color: '#B29F86' }} />
+                        <party.icon className="w-5 h-5" style={{ color: '#BBB1A4' }} />
                         <p className="font-medium text-white">
                           {party.name}
                         </p>
@@ -274,7 +274,7 @@ const OrbitPrivacy = () => {
                 </h2>
                 <div className="p-6 rounded-2xl" style={{ background: 'rgba(178, 159, 134, 0.1)', border: '1px solid rgba(178, 159, 134, 0.2)' }}>
                   <div className="flex items-center gap-3 mb-3">
-                    <Shield className="w-5 h-5" style={{ color: '#B29F86' }} />
+                    <Shield className="w-5 h-5" style={{ color: '#BBB1A4' }} />
                     <p className="font-medium text-white">
                       Your Data Protection Rights
                     </p>
@@ -322,7 +322,7 @@ const OrbitPrivacy = () => {
                   <a
                     href="mailto:info@awen28.com"
                     className="underline hover:no-underline"
-                    style={{ color: '#B29F86' }}
+                    style={{ color: '#BBB1A4' }}
                   >
                     info@awen28.com
                   </a>
@@ -360,7 +360,7 @@ const OrbitPrivacy = () => {
       <footer className="py-12 px-6 md:px-8" style={{ background: '#050508', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}>
               <Circle className="w-6 h-6 text-white" />
             </div>
             <span className="font-serif text-2xl text-white">Orbit</span>

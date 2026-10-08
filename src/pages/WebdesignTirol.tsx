@@ -4,10 +4,10 @@ import { ArrowLeft, Globe, Smartphone, Brain, Mail, Phone, MapPin, ChevronRight,
 import { Link } from 'react-router-dom';
 import { SEO, generateLocalBusinessData, generateWebSiteData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const CREAM = '#FAF9F7';
+const CREAM = '#F1EDE6';
 const CREAM_SOFT = '#F5F1EC';
 const INK = '#4A4038';
-const SAGE = '#B29F86';
+const SAGE = '#BBB1A4';
 
 const services = [
   {
@@ -133,7 +133,7 @@ const WebdesignTirol = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-24 px-8" style={{ background: '#F5F3F0' }}>
+      <section className="relative py-24 px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>Was ich für dich baue</span>
@@ -195,7 +195,7 @@ const WebdesignTirol = () => {
       </section>
 
       {/* FEATURES / WHY */}
-      <section className="relative py-24 px-8" style={{ background: '#F5F3F0' }}>
+      <section className="relative py-24 px-8" style={{ background: '#F7F3ED' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: SAGE }}>Deine Vorteile</span>

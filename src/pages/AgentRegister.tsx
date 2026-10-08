@@ -57,7 +57,7 @@ const AgentRegister = () => {
         keywords="Suremate Pro, insurance agent registration, agent portal, insurance software, professional insurance tools"
         canonical="https://www.awen28.com/agentregister"
       />
-      <div className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+      <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -67,8 +67,8 @@ const AgentRegister = () => {
               style={{ 
                 background: 'rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(10px)',
-                color: '#525048',
-                boxShadow: '0 4px 12px rgba(82, 80, 72, 0.08)',
+                color: '#525240',
+                boxShadow: '0 4px 12px rgba(82, 82, 64, 0.08)',
               }}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -87,8 +87,8 @@ const AgentRegister = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
               style={{ background: 'rgba(178, 159, 134, 0.15)' }}
             >
-              <Shield className="w-4 h-4" style={{ color: '#B29F86' }} />
-              <span className="text-sm" style={{ color: '#B29F86' }}>Agent Registration</span>
+              <Shield className="w-4 h-4" style={{ color: '#BBB1A4' }} />
+              <span className="text-sm" style={{ color: '#BBB1A4' }}>Agent Registration</span>
             </motion.div>
 
             <motion.h1
@@ -96,9 +96,9 @@ const AgentRegister = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
-              Become a <span style={{ color: '#B29F86' }}>Suremate Pro</span> Agent
+              Become a <span style={{ color: '#BBB1A4' }}>Suremate Pro</span> Agent
             </motion.h1>
 
             <motion.p
@@ -106,7 +106,7 @@ const AgentRegister = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg mb-12 max-w-2xl mx-auto"
-              style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.7)' }}
             >
               Join our network of professional insurance agents. Get access to advanced tools 
               designed to streamline your workflow and impress your clients.
@@ -125,8 +125,8 @@ const AgentRegister = () => {
                   className="flex items-center gap-2 px-4 py-2 rounded-full"
                   style={{ background: 'rgba(233, 207, 185, 0.3)' }}
                 >
-                  <Check className="w-4 h-4" style={{ color: '#B29F86' }} />
-                  <span className="text-sm" style={{ color: '#525048' }}>{feature}</span>
+                  <Check className="w-4 h-4" style={{ color: '#BBB1A4' }} />
+                  <span className="text-sm" style={{ color: '#525240' }}>{feature}</span>
                 </div>
               ))}
             </motion.div>
@@ -134,7 +134,7 @@ const AgentRegister = () => {
         </section>
 
         {/* Stripe Pricing Table Section */}
-        <section className="py-20 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+        <section className="py-20 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -143,10 +143,10 @@ const AgentRegister = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-serif text-3xl md:text-4xl mb-4" style={{ color: '#525048' }}>
+              <h2 className="font-serif text-3xl md:text-4xl mb-4" style={{ color: '#525240' }}>
                 Choose Your Plan
               </h2>
-              <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+              <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                 Select the plan that fits your needs. All plans include a 14-day free trial.
               </p>
             </motion.div>
@@ -159,11 +159,11 @@ const AgentRegister = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-3xl p-8"
               style={{
-                background: '#FAF9F7',
+                background: '#F1EDE6',
                 boxShadow: `
                   inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                  inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-                  12px 12px 24px rgba(82, 80, 72, 0.06),
+                  inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+                  12px 12px 24px rgba(82, 82, 64, 0.06),
                   -12px -12px 24px rgba(255, 255, 255, 0.9)
                 `,
               }}
@@ -182,7 +182,7 @@ const AgentRegister = () => {
                     className="w-8 h-8 border-3 rounded-full"
                     style={{ 
                       borderColor: 'rgba(178, 159, 134, 0.3)',
-                      borderTopColor: '#B29F86',
+                      borderTopColor: '#BBB1A4',
                       borderWidth: '3px'
                     }}
                   />
@@ -200,19 +200,19 @@ const AgentRegister = () => {
             >
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                <span className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                   4.9/5 Rating
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5" style={{ color: '#B29F86' }} />
-                <span className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                <Shield className="w-5 h-5" style={{ color: '#BBB1A4' }} />
+                <span className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                   Secure Payment
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                <span className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                   14-Day Free Trial
                 </span>
               </div>
@@ -228,7 +228,7 @@ const AgentRegister = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="font-serif text-3xl text-center mb-12"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Frequently Asked Questions
             </motion.h2>
@@ -260,17 +260,17 @@ const AgentRegister = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="p-6 rounded-2xl"
                   style={{
-                    background: '#F5F3F0',
+                    background: '#F7F3ED',
                     boxShadow: `
                       inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-                      inset -2px -2px 4px rgba(82, 80, 72, 0.04)
+                      inset -2px -2px 4px rgba(82, 82, 64, 0.04)
                     `,
                   }}
                 >
-                  <h3 className="font-medium mb-2" style={{ color: '#525048' }}>
+                  <h3 className="font-medium mb-2" style={{ color: '#525240' }}>
                     {faq.q}
                   </h3>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>{faq.a}</p>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>{faq.a}</p>
                 </motion.div>
               ))}
             </div>
@@ -287,15 +287,15 @@ const AgentRegister = () => {
               >
                 <span className="text-white font-serif text-sm font-bold">SP</span>
               </div>
-              <span className="font-serif text-xl" style={{ color: '#525048' }}>Suremate Pro</span>
+              <span className="font-serif text-xl" style={{ color: '#525240' }}>Suremate Pro</span>
             </div>
-            <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+            <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
               © 2024 Suremate Pro. A product by Elior.
             </p>
             <Link 
               to="/"
               className="flex items-center gap-2 text-sm"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               Visit Elior
               <ChevronRight className="w-4 h-4" />

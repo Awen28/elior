@@ -84,7 +84,7 @@ const FloatingStar = ({ delay, size = 'small' }: { delay: number; size?: 'small'
       className="absolute pointer-events-none z-20"
       style={{ left: `${Math.random() * 100}%`, top: '90%' }}
     >
-      <Star className={sizeClass} style={{ color: '#B29F86', fill: '#B29F86' }} />
+      <Star className={sizeClass} style={{ color: '#BBB1A4', fill: '#BBB1A4' }} />
     </motion.div>
   );
 };
@@ -226,7 +226,7 @@ const Orbit = () => {
             Back to Elior
           </Link>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}>
               <Circle className="w-6 h-6 text-white" />
             </div>
             <span className="font-serif text-2xl text-white">Orbit</span>
@@ -266,7 +266,7 @@ const Orbit = () => {
         
         <OrbitingPlanet size={80} color="rgba(178, 159, 134, 0.2)" duration={30} orbitRadius={300} offset={0} />
         <OrbitingPlanet size={50} color="rgba(233, 207, 185, 0.15)" duration={25} orbitRadius={200} offset={120} />
-        <OrbitingPlanet size={30} color="rgba(82, 80, 72, 0.2)" duration={20} orbitRadius={400} offset={240} />
+        <OrbitingPlanet size={30} color="rgba(82, 82, 64, 0.2)" duration={20} orbitRadius={400} offset={240} />
         
         <ShootingStar delay={0} />
         <ShootingStar delay={4} />
@@ -288,7 +288,7 @@ const Orbit = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 className="font-serif italic text-sm tracking-[0.3em] block mb-4" 
-                style={{ color: '#B29F86' }}
+                style={{ color: '#BBB1A4' }}
               >
                 iOS Game
               </motion.span>
@@ -302,7 +302,7 @@ const Orbit = () => {
                 <br />
                 <motion.span 
                   className="italic"
-                  style={{ color: '#B29F86' }}
+                  style={{ color: '#BBB1A4' }}
                   animate={{ opacity: [0.8, 1, 0.8] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -327,7 +327,7 @@ const Orbit = () => {
                 <a
                   href="https://apps.apple.com/us/app/orbit-the-game/id6763136527"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all hover:scale-105"
-                  style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)', color: '#0a0a12' }}
+                  style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)', color: '#0a0a12' }}
                 >
                   <Download className="w-5 h-5" />
                   Download on App Store
@@ -398,7 +398,7 @@ const Orbit = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               className="font-serif italic text-sm tracking-[0.3em] block mb-4"
-              style={{ color: '#B29F86' }}
+              style={{ color: '#BBB1A4' }}
             >
               Features
             </motion.span>
@@ -483,7 +483,7 @@ const Orbit = () => {
             transition={{ duration: 3 + i * 0.2, delay: i * 0.1, repeat: Infinity }}
             className="absolute w-2 h-2 rounded-full pointer-events-none"
             style={{ 
-              background: '#B29F86',
+              background: '#BBB1A4',
               left: `${5 + i * 10}%`,
               top: `${10 + (i % 5) * 15}%`,
               boxShadow: '0 0 10px rgba(178, 159, 134, 0.8)',
@@ -493,7 +493,7 @@ const Orbit = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <motion.span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: '#B29F86' }}>
+            <motion.span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: '#BBB1A4' }}>
               Gameplay
             </motion.span>
             <motion.h2 className="font-serif text-4xl md:text-5xl text-white">
@@ -588,7 +588,7 @@ const Orbit = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center"
                 style={{ 
-                  background: 'linear-gradient(135deg, #B29F86, #E9CFB9)',
+                  background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)',
                   boxShadow: '0 0 60px rgba(178, 159, 134, 0.5)',
                 }}
               >
@@ -606,7 +606,7 @@ const Orbit = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-10 py-5 rounded-full text-sm font-medium transition-all"
-                style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)', color: '#0a0a12' }}
+                style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)', color: '#0a0a12' }}
               >
                 <Download className="w-5 h-5" />
                 Get Orbit
@@ -620,7 +620,7 @@ const Orbit = () => {
       <footer className="py-12 px-6 md:px-8" style={{ background: '#050508', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}>
               <Circle className="w-6 h-6 text-white" />
             </div>
             <span className="font-serif text-2xl text-white">Orbit</span>

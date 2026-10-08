@@ -9,7 +9,7 @@ const Impressum = () => {
   const isInView = useInView(sectionRef, { once: true });
 
   return (
-    <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
+    <div className="min-h-screen" style={{ background: '#F1EDE6' }}>
       <SEO 
         title="Impressum | Elior"
         description="Impressum und rechtliche Informationen für Elior."
@@ -21,7 +21,7 @@ const Impressum = () => {
           <Link 
             to="/"
             className="inline-flex items-center gap-2 text-sm"
-            style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+            style={{ color: 'rgba(82, 82, 64, 0.6)' }}
           >
             <ArrowLeft className="w-4 h-4" />
             Zurück zur Startseite
@@ -39,13 +39,13 @@ const Impressum = () => {
             className="p-8 md:p-12 rounded-[30px]"
             style={{
               background: 'rgba(255, 255, 255, 0.8)',
-              border: '1px solid rgba(82, 80, 72, 0.08)',
-              boxShadow: '0 20px 40px rgba(82, 80, 72, 0.05)',
+              border: '1px solid rgba(82, 82, 64, 0.08)',
+              boxShadow: '0 20px 40px rgba(82, 82, 64, 0.05)',
             }}
           >
             <h1 
               className="font-serif text-4xl md:text-5xl mb-10"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Impressum
             </h1>
@@ -55,7 +55,7 @@ const Impressum = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Unternehmensdaten
                 </h2>
@@ -63,13 +63,13 @@ const Impressum = () => {
                   className="p-6 rounded-2xl space-y-3"
                   style={{ background: 'rgba(233, 207, 185, 0.2)' }}
                 >
-                  <p className="font-medium" style={{ color: '#525048' }}>
+                  <p className="font-medium" style={{ color: '#525240' }}>
                     Elior
                   </p>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.8)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
                     Inhaber: Thomas Mayrl
                   </p>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.8)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
                     Johannesfeldstrasse 44<br />
                     6111 Volders<br />
                     Österreich
@@ -81,7 +81,7 @@ const Impressum = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Kontakt
                 </h2>
@@ -90,22 +90,22 @@ const Impressum = () => {
                     href="mailto:info@awen28.com"
                     className="flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02]"
                     style={{ 
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      color: '#525048',
+                      background: 'rgba(82, 82, 64, 0.03)',
+                      color: '#525240',
                     }}
                   >
-                    <Mail className="w-5 h-5" style={{ color: '#B29F86' }} />
+                    <Mail className="w-5 h-5" style={{ color: '#BBB1A4' }} />
                     info@awen28.com
                   </a>
                   <a 
                     href="tel:+4367764059711"
                     className="flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02]"
                     style={{ 
-                      background: 'rgba(82, 80, 72, 0.03)',
-                      color: '#525048',
+                      background: 'rgba(82, 82, 64, 0.03)',
+                      color: '#525240',
                     }}
                   >
-                    <Phone className="w-5 h-5" style={{ color: '#B29F86' }} />
+                    <Phone className="w-5 h-5" style={{ color: '#BBB1A4' }} />
                     +43 677 / 640 59 711
                   </a>
                 </div>
@@ -115,15 +115,15 @@ const Impressum = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Rechtliche Hinweise
                 </h2>
                 <div 
                   className="p-6 rounded-2xl space-y-4 text-sm"
                   style={{ 
-                    background: 'rgba(82, 80, 72, 0.03)',
-                    color: 'rgba(82, 80, 72, 0.8)',
+                    background: 'rgba(82, 82, 64, 0.03)',
+                    color: 'rgba(82, 82, 64, 0.8)',
                   }}
                 >
                   <p>
@@ -145,13 +145,13 @@ const Impressum = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Haftungsausschluss
                 </h2>
                 <div 
                   className="space-y-4 text-sm"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   <p>
                     Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. 
@@ -168,13 +168,13 @@ const Impressum = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Urheberrecht
                 </h2>
                 <p 
                   className="text-sm"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem österreichischen Urheberrecht. 
                   Jede Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes 
@@ -190,7 +190,7 @@ const Impressum = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
             className="mt-8 flex justify-center gap-6 text-xs"
-            style={{ color: 'rgba(82, 80, 72, 0.4)' }}
+            style={{ color: 'rgba(82, 82, 64, 0.4)' }}
           >
             <Link to="/datenschutz" className="hover:underline">Datenschutz</Link>
             <Link to="/privacy-apps" className="hover:underline">App Privacy</Link>

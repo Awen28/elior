@@ -26,7 +26,7 @@ const Callback = () => {
   return (
     <div 
       className="min-h-screen flex items-center justify-center p-6"
-      style={{ background: 'linear-gradient(135deg, #FAF9F7 0%, #E9CFB9 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #F1EDE6 0%, #E3DED5 100%)' }}
     >
       <SEO 
         title="Erfolgreich verifiziert | kiBook"
@@ -42,11 +42,11 @@ const Callback = () => {
         <div 
           className="p-10 md:p-12 rounded-[30px] text-center"
           style={{ 
-            background: '#FAF9F7',
+            background: '#F1EDE6',
             boxShadow: `
-              inset 3px 3px 6px rgba(82, 80, 72, 0.04),
-              inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-              12px 12px 24px rgba(82, 80, 72, 0.06),
+              inset 3px 3px 6px rgba(82, 82, 64, 0.04),
+              inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+              12px 12px 24px rgba(82, 82, 64, 0.06),
               -12px -12px 24px rgba(255, 255, 255, 0.9)
             `
           }}
@@ -81,7 +81,7 @@ const Callback = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="text-base mb-10"
-            style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+            style={{ color: 'rgba(82, 82, 64, 0.7)' }}
           >
             Du wirst gleich automatisch zu kiBook zurückgeleitet...
           </motion.p>
@@ -92,7 +92,7 @@ const Callback = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             className="w-full h-2 rounded-full overflow-hidden mb-8"
-            style={{ background: 'rgba(82, 80, 72, 0.1)' }}
+            style={{ background: 'rgba(82, 82, 64, 0.1)' }}
           >
             <motion.div
               initial={{ width: '0%' }}
@@ -100,7 +100,7 @@ const Callback = () => {
               transition={{ duration: 2, ease: "easeInOut" }}
               className="h-full rounded-full"
               style={{ 
-                background: 'linear-gradient(90deg, #B29F86, #E9CFB9)'
+                background: 'linear-gradient(90deg, #BBB1A4, #E3DED5)'
               }}
             />
           </motion.div>
@@ -125,7 +125,7 @@ const Callback = () => {
                 }}
               />
             </div>
-            <span className="font-serif text-lg" style={{ color: '#525048' }}>kiBook</span>
+            <span className="font-serif text-lg" style={{ color: '#525240' }}>kiBook</span>
           </motion.div>
         </div>
 
@@ -135,13 +135,13 @@ const Callback = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           className="text-center mt-8 text-sm"
-          style={{ color: 'rgba(82, 80, 72, 0.5)' }}
+          style={{ color: 'rgba(82, 82, 64, 0.5)' }}
         >
           Wird nicht weitergeleitet?{' '}
           <button
             onClick={() => window.location.href = 'kibook://auth-callback'}
-            className="underline hover:text-[#B29F86] transition-colors"
-            style={{ color: '#B29F86' }}
+            className="underline hover:text-[#BBB1A4] transition-colors"
+            style={{ color: '#BBB1A4' }}
           >
             Hier klicken
           </button>

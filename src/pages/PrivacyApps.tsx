@@ -54,7 +54,7 @@ const PrivacyApps = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: '#FAF9F7' }}>
+    <div className="min-h-screen" style={{ background: '#F1EDE6' }}>
       <SEO 
         title="Privacy Policy | Elior Apps"
         description="Privacy Policy for Elior iOS Apps."
@@ -66,7 +66,7 @@ const PrivacyApps = () => {
           <Link 
             to="/"
             className="inline-flex items-center gap-2 text-sm"
-            style={{ color: 'rgba(82, 80, 72, 0.6)' }}
+            style={{ color: 'rgba(82, 82, 64, 0.6)' }}
           >
             <ArrowLeft className="w-4 h-4" />
             Zurück zur Startseite
@@ -84,25 +84,25 @@ const PrivacyApps = () => {
             className="p-8 md:p-12 rounded-[30px]"
             style={{
               background: 'rgba(255, 255, 255, 0.8)',
-              border: '1px solid rgba(82, 80, 72, 0.08)',
-              boxShadow: '0 20px 40px rgba(82, 80, 72, 0.05)',
+              border: '1px solid rgba(82, 82, 64, 0.08)',
+              boxShadow: '0 20px 40px rgba(82, 82, 64, 0.05)',
             }}
           >
             <div className="flex items-center gap-4 mb-8">
               <div 
                 className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
               >
                 <Smartphone className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h1 
                   className="font-serif text-4xl md:text-5xl"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Privacy Policy
                 </h1>
-                <p style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+                <p style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
                   Für alle Elior iOS Apps
                 </p>
               </div>
@@ -113,13 +113,13 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Geltungsbereich
                 </h2>
                 <p 
                   className="text-sm leading-relaxed"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   Diese Datenschutzerklärung gilt für alle iOS-Anwendungen von Elior, 
                   einschließlich aber nicht beschränkt auf: kiBook, Suremate, Suremate Pro, 
@@ -131,7 +131,7 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Verantwortlicher
                 </h2>
@@ -139,13 +139,13 @@ const PrivacyApps = () => {
                   className="p-6 rounded-2xl"
                   style={{ background: 'rgba(233, 207, 185, 0.2)' }}
                 >
-                  <p className="font-medium" style={{ color: '#525048' }}>
+                  <p className="font-medium" style={{ color: '#525240' }}>
                     Thomas Mayrl
                   </p>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.8)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
                     Johannesfeldstrasse 44, 6111 Volders, Österreich
                   </p>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.8)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
                     info@awen28.com
                   </p>
                 </div>
@@ -155,7 +155,7 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Erhobene Daten
                 </h2>
@@ -170,12 +170,12 @@ const PrivacyApps = () => {
                     <div 
                       key={idx}
                       className="flex justify-between items-center p-4 rounded-xl"
-                      style={{ background: 'rgba(82, 80, 72, 0.03)' }}
+                      style={{ background: 'rgba(82, 82, 64, 0.03)' }}
                     >
-                      <span className="font-medium text-sm" style={{ color: '#525048' }}>
+                      <span className="font-medium text-sm" style={{ color: '#525240' }}>
                         {item.label}
                       </span>
-                      <span className="text-sm text-right" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                      <span className="text-sm text-right" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                         {item.desc}
                       </span>
                     </div>
@@ -187,13 +187,13 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Drittanbieter und KI-Dienste
                 </h2>
                 <p 
                   className="text-sm mb-4"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   Unsere Apps nutzen folgende Drittanbieter-Dienste:
                 </p>
@@ -202,18 +202,18 @@ const PrivacyApps = () => {
                     <div 
                       key={idx}
                       className="p-4 rounded-xl"
-                      style={{ background: 'rgba(82, 80, 72, 0.03)' }}
+                      style={{ background: 'rgba(82, 82, 64, 0.03)' }}
                     >
                       <div className="flex items-center gap-3 mb-2">
-                        <party.icon className="w-5 h-5" style={{ color: '#B29F86' }} />
-                        <p className="font-medium" style={{ color: '#525048' }}>
+                        <party.icon className="w-5 h-5" style={{ color: '#BBB1A4' }} />
+                        <p className="font-medium" style={{ color: '#525240' }}>
                           {party.name}
                         </p>
                       </div>
-                      <p className="text-sm mb-1" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                      <p className="text-sm mb-1" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                         <strong>Zweck:</strong> {party.purpose}
                       </p>
-                      <p className="text-xs" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+                      <p className="text-xs" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
                         <strong>Daten:</strong> {party.data}
                       </p>
                     </div>
@@ -225,7 +225,7 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Hinweis zu KI-Funktionen
                 </h2>
@@ -234,14 +234,14 @@ const PrivacyApps = () => {
                   style={{ background: 'rgba(178, 159, 134, 0.1)', border: '1px solid rgba(178, 159, 134, 0.2)' }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <Brain className="w-5 h-5" style={{ color: '#B29F86' }} />
-                    <p className="font-medium" style={{ color: '#525048' }}>
+                    <Brain className="w-5 h-5" style={{ color: '#BBB1A4' }} />
+                    <p className="font-medium" style={{ color: '#525240' }}>
                       Verarbeitung durch KI-Anbieter
                     </p>
                   </div>
                   <p 
                     className="text-sm"
-                    style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                    style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                   >
                     Bei Nutzung von KI-Funktionen werden Ihre Eingaben an externe KI-Anbieter 
                     (OpenAI, xAI, Suno AI, Speechify) übermittelt. Diese Daten werden anonymisiert 
@@ -255,13 +255,13 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Datenspeicherung
                 </h2>
                 <p 
                   className="text-sm"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   Nutzerkonten und App-Daten werden in Firebase (Google Cloud) gespeichert. 
                   Daten werden so lange aufbewahrt, wie das Benutzerkonto aktiv ist oder gesetzliche 
@@ -274,7 +274,7 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Ihre Rechte
                 </h2>
@@ -283,14 +283,14 @@ const PrivacyApps = () => {
                   style={{ background: 'rgba(233, 207, 185, 0.2)' }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <Shield className="w-5 h-5" style={{ color: '#B29F86' }} />
-                    <p className="font-medium" style={{ color: '#525048' }}>
+                    <Shield className="w-5 h-5" style={{ color: '#BBB1A4' }} />
+                    <p className="font-medium" style={{ color: '#525240' }}>
                       DSGVO-Rechte
                     </p>
                   </div>
                   <ul 
                     className="space-y-1 text-sm list-disc list-inside"
-                    style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                    style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                   >
                     <li>Auskunft über gespeicherte Daten</li>
                     <li>Berichtigung falscher Daten</li>
@@ -305,19 +305,19 @@ const PrivacyApps = () => {
               <section>
                 <h2 
                   className="font-serif text-2xl mb-4"
-                  style={{ color: '#525048' }}
+                  style={{ color: '#525240' }}
                 >
                   Kontakt
                 </h2>
                 <p 
                   className="text-sm"
-                  style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
                 >
                   Bei Fragen zum Datenschutz in unseren Apps kontaktieren Sie uns unter:<br />
                   <a 
                     href="mailto:info@awen28.com" 
                     className="underline hover:no-underline"
-                    style={{ color: '#B29F86' }}
+                    style={{ color: '#BBB1A4' }}
                   >
                     info@awen28.com
                   </a>
@@ -329,8 +329,8 @@ const PrivacyApps = () => {
                 <p 
                   className="text-xs text-center pt-8 border-t"
                   style={{ 
-                    color: 'rgba(82, 80, 72, 0.4)',
-                    borderColor: 'rgba(82, 80, 72, 0.1)'
+                    color: 'rgba(82, 82, 64, 0.4)',
+                    borderColor: 'rgba(82, 82, 64, 0.1)'
                   }}
                 >
                   Stand: Februar 2025
@@ -345,7 +345,7 @@ const PrivacyApps = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
             className="mt-8 flex justify-center gap-6 text-xs"
-            style={{ color: 'rgba(82, 80, 72, 0.4)' }}
+            style={{ color: 'rgba(82, 82, 64, 0.4)' }}
           >
             <Link to="/impressum" className="hover:underline">Impressum</Link>
             <Link to="/datenschutz" className="hover:underline">Datenschutz</Link>

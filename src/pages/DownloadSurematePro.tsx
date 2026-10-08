@@ -47,7 +47,7 @@ const DownloadSurematePro = () => {
         keywords="Suremate Pro download, insurance agent app, iOS app download, insurance management"
         canonical="https://www.awen28.com/download-suremate-pro"
       />
-      <div className="relative min-h-screen" style={{ background: '#FAF9F7' }}>
+      <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -57,8 +57,8 @@ const DownloadSurematePro = () => {
               style={{ 
                 background: 'rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(10px)',
-                color: '#525048',
-                boxShadow: '0 4px 12px rgba(82, 80, 72, 0.08)',
+                color: '#525240',
+                boxShadow: '0 4px 12px rgba(82, 82, 64, 0.08)',
               }}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -86,7 +86,7 @@ const DownloadSurematePro = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Download <span style={{ color: '#6b6b6b' }}>Suremate Pro</span>
             </motion.h1>
@@ -96,7 +96,7 @@ const DownloadSurematePro = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg mb-8 max-w-2xl mx-auto"
-              style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.7)' }}
             >
               Your agent account has been created successfully. Download the app now and start managing your clients like a pro.
             </motion.p>
@@ -133,14 +133,14 @@ const DownloadSurematePro = () => {
                 whileHover={{ scale: 1.05 }}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full"
                 style={{
-                  background: '#F5F3F0',
-                  border: '1px solid rgba(82, 80, 72, 0.1)',
+                  background: '#F7F3ED',
+                  border: '1px solid rgba(82, 82, 64, 0.1)',
                 }}
               >
-                <QrCode className="w-6 h-6" style={{ color: '#525048' }} />
+                <QrCode className="w-6 h-6" style={{ color: '#525240' }} />
                 <div className="text-left">
-                  <div className="text-xs" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>Scan to download</div>
-                  <div className="text-sm font-medium" style={{ color: '#525048' }}>QR Code</div>
+                  <div className="text-xs" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>Scan to download</div>
+                  <div className="text-sm font-medium" style={{ color: '#525240' }}>QR Code</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -157,7 +157,7 @@ const DownloadSurematePro = () => {
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <span className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+              <span className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                 4.9 Rating • 500+ Downloads
               </span>
             </motion.div>
@@ -165,14 +165,14 @@ const DownloadSurematePro = () => {
         </section>
 
         {/* Steps Section */}
-        <section className="py-20 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+        <section className="py-20 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
           <div className="max-w-5xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="font-serif text-3xl md:text-4xl text-center mb-16"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Get Started in 3 Easy Steps
             </motion.h2>
@@ -202,10 +202,10 @@ const DownloadSurematePro = () => {
                   >
                     {idx + 1}
                   </div>
-                  <h3 className="font-serif text-xl mb-3" style={{ color: '#525048' }}>
+                  <h3 className="font-serif text-xl mb-3" style={{ color: '#525240' }}>
                     {step.title}
                   </h3>
-                  <p style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+                  <p style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                     {step.description}
                   </p>
                 </motion.div>
@@ -223,18 +223,18 @@ const DownloadSurematePro = () => {
               viewport={{ once: true }}
               className="p-8 md:p-12 rounded-3xl"
               style={{
-                background: '#F5F3F0',
+                background: '#F7F3ED',
                 boxShadow: `
                   inset 3px 3px 6px rgba(255, 255, 255, 0.9),
-                  inset -3px -3px 6px rgba(82, 80, 72, 0.04),
-                  12px 12px 24px rgba(82, 80, 72, 0.06),
+                  inset -3px -3px 6px rgba(82, 82, 64, 0.04),
+                  12px 12px 24px rgba(82, 82, 64, 0.06),
                   -12px -12px 24px rgba(255, 255, 255, 0.9)
                 `,
               }}
             >
               <h2 
                 className="font-serif text-3xl text-center mb-12"
-                style={{ color: '#525048' }}
+                style={{ color: '#525240' }}
               >
                 Everything You Need
               </h2>
@@ -255,7 +255,7 @@ const DownloadSurematePro = () => {
                     >
                       <Check className="w-5 h-5" style={{ color: '#6b6b6b' }} />
                     </div>
-                    <span style={{ color: 'rgba(82, 80, 72, 0.8)' }}>{feature}</span>
+                    <span style={{ color: 'rgba(82, 82, 64, 0.8)' }}>{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -264,17 +264,17 @@ const DownloadSurematePro = () => {
         </section>
 
         {/* Support Section */}
-        <section className="py-20 px-6 md:px-8" style={{ background: '#F5F3F0' }}>
+        <section className="py-20 px-6 md:px-8" style={{ background: '#F7F3ED' }}>
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-3xl mb-6" style={{ color: '#525048' }}>
+              <h2 className="font-serif text-3xl mb-6" style={{ color: '#525240' }}>
                 Need Help?
               </h2>
-              <p className="mb-8" style={{ color: 'rgba(82, 80, 72, 0.6)' }}>
+              <p className="mb-8" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>
                 Our support team is here to help you get started with Suremate Pro.
               </p>
               <motion.a
@@ -283,8 +283,8 @@ const DownloadSurematePro = () => {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full"
                 style={{
-                  background: '#525048',
-                  color: '#FAF9F7',
+                  background: '#525240',
+                  color: '#F1EDE6',
                 }}
               >
                 <span>Contact Support</span>
@@ -304,9 +304,9 @@ const DownloadSurematePro = () => {
               >
                 <span className="text-white font-serif text-sm font-bold">SP</span>
               </div>
-              <span className="font-serif text-xl" style={{ color: '#525048' }}>Suremate Pro</span>
+              <span className="font-serif text-xl" style={{ color: '#525240' }}>Suremate Pro</span>
             </div>
-            <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.5)' }}>
+            <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
               © 2024 Suremate Pro. A product by Elior.
             </p>
             <Link 

@@ -75,11 +75,11 @@ const ForgotCode = () => {
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-20"
-            style={{ background: 'radial-gradient(circle, #B29F86 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #BBB1A4 0%, transparent 70%)' }}
           />
           <div 
             className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full opacity-15"
-            style={{ background: 'radial-gradient(circle, #525048 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #525240 0%, transparent 70%)' }}
           />
         </div>
 
@@ -117,7 +117,7 @@ const ForgotCode = () => {
             <div className="text-center mb-8">
               <div 
                 className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #B29F86, #E9CFB9)' }}
+                style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}
               >
                 <Search className="w-8 h-8 text-white" />
               </div>
@@ -158,7 +158,7 @@ const ForgotCode = () => {
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 rounded-xl flex items-center justify-center gap-3 text-white font-medium transition-all disabled:opacity-70"
                 style={{
-                  background: 'linear-gradient(135deg, #B29F86, #E9CFB9)',
+                  background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)',
                 }}
               >
                 {isSearching ? (

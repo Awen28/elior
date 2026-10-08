@@ -9,7 +9,7 @@ const NotFound = () => {
   const isInView = useInView(sectionRef, { once: true });
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#FAF9F7' }}>
+    <div className="min-h-screen flex flex-col" style={{ background: '#F1EDE6' }}>
       <SEO 
         title="Page Not Found | Elior"
         description="The page you are looking for does not exist. Return to Elior homepage."
@@ -21,11 +21,11 @@ const NotFound = () => {
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm tracking-wider uppercase"
-            style={{ color: '#525048' }}
+            style={{ color: '#525240' }}
           >
             <div 
               className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: '#525048' }}
+              style={{ background: '#525240' }}
             >
               <span className="text-white font-serif text-lg">A</span>
             </div>
@@ -59,7 +59,7 @@ const NotFound = () => {
               }}
               className="absolute inset-0 w-48 h-48 mx-auto opacity-10"
               style={{
-                background: 'radial-gradient(circle, #B29F86 0%, transparent 70%)',
+                background: 'radial-gradient(circle, #BBB1A4 0%, transparent 70%)',
                 borderRadius: '50%',
               }}
             />
@@ -70,7 +70,7 @@ const NotFound = () => {
               transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
               className="relative w-32 h-32 mx-auto rounded-full flex items-center justify-center"
               style={{
-                background: 'linear-gradient(135deg, #E9CFB9 0%, #B29F86 100%)',
+                background: 'linear-gradient(135deg, #E3DED5 0%, #BBB1A4 100%)',
                 boxShadow: '0 20px 40px rgba(178, 159, 134, 0.3)',
               }}
             >
@@ -87,8 +87,8 @@ const NotFound = () => {
               <span 
                 className="font-serif text-9xl md:text-[12rem] font-bold opacity-10"
                 style={{ 
-                  color: '#B29F86',
-                  WebkitTextStroke: '2px #B29F86',
+                  color: '#BBB1A4',
+                  WebkitTextStroke: '2px #BBB1A4',
                   WebkitTextFillColor: 'transparent',
                 }}
               >
@@ -105,19 +105,19 @@ const NotFound = () => {
           >
             <h1 
               className="font-serif text-5xl md:text-6xl mb-6"
-              style={{ color: '#525048' }}
+              style={{ color: '#525240' }}
             >
               Page not found
             </h1>
             <p 
               className="text-xl md:text-2xl mb-4"
-              style={{ color: 'rgba(82, 80, 72, 0.7)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.7)' }}
             >
               Looks like you have wandered off the map.
             </p>
             <p 
               className="text-lg mb-12 max-w-md mx-auto"
-              style={{ color: 'rgba(82, 80, 72, 0.5)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.5)' }}
             >
               The page you are looking for does not exist or has been moved.
             </p>
@@ -134,8 +134,8 @@ const NotFound = () => {
               to="/"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105"
               style={{
-                background: '#525048',
-                color: '#FAF9F7',
+                background: '#525240',
+                color: '#F1EDE6',
               }}
             >
               <Home className="w-4 h-4" />
@@ -147,8 +147,8 @@ const NotFound = () => {
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105"
               style={{
                 background: 'transparent',
-                color: '#525048',
-                border: '1px solid rgba(82, 80, 72, 0.2)',
+                color: '#525240',
+                border: '1px solid rgba(82, 82, 64, 0.2)',
               }}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -162,11 +162,11 @@ const NotFound = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.6 }}
             className="mt-16 pt-12 border-t"
-            style={{ borderColor: 'rgba(82, 80, 72, 0.1)' }}
+            style={{ borderColor: 'rgba(82, 82, 64, 0.1)' }}
           >
             <p 
               className="text-sm mb-6 flex items-center justify-center gap-2"
-              style={{ color: 'rgba(82, 80, 72, 0.5)' }}
+              style={{ color: 'rgba(82, 82, 64, 0.5)' }}
             >
               <Search className="w-4 h-4" />
               Popular destinations
@@ -186,7 +186,7 @@ const NotFound = () => {
                   className="px-5 py-2 rounded-full text-sm transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(178, 159, 134, 0.1)',
-                    color: '#525048',
+                    color: '#525240',
                   }}
                 >
                   {link.label}
@@ -200,7 +200,7 @@ const NotFound = () => {
       {/* Footer */}
       <footer className="py-8 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm" style={{ color: 'rgba(82, 80, 72, 0.4)' }}>
+          <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.4)' }}>
             © {new Date().getFullYear()} Elior. All rights reserved.
           </p>
         </div>
