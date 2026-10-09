@@ -58,6 +58,7 @@ function Home() {
     <>
       <SEO 
         title="Elior | #1 iOS & Android App Entwicklung, Webdesign & Homepage Tirol Österreich 2026"
+        tabTitle="Studio Elior"
         description="Elior aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
         keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, Elior, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
         ogImage="https://elior.studio/og-image.jpg"

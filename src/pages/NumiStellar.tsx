@@ -175,7 +175,7 @@ const NumiStellar = () => {
   return (
     <>
       <SEO 
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="NumiStellar"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/numistellar_home.webp"

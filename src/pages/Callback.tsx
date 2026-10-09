@@ -29,7 +29,7 @@ const Callback = () => {
       style={{ background: 'linear-gradient(135deg, #F1EDE6 0%, #E3DED5 100%)' }}
     >
       <SEO 
-        title="Erfolgreich verifiziert | kiBook"
+        title="Erfolgreich verifiziert | kiBook" tabTitle="kiBook"
         description="Deine E-Mail wurde erfolgreich verifiziert. Du wirst gleich zu kiBook weitergeleitet."
       />
 

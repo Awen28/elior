@@ -237,7 +237,7 @@ const WebdesignTirol = () => {
               </a>
             </div>
             <div className="inline-flex items-center gap-2 text-sm" style={{ color: 'rgba(74,64,56,0.5)' }}>
-              <MapPin className="w-4 h-4" /> Tirol, Österreich · Info@elior.studio
+              <MapPin className="w-4 h-4" /> Tirol, Österreich · info@elior.studio
             </div>
           </motion.div>
         </div>

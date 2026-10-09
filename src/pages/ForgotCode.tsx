@@ -65,7 +65,7 @@ const ForgotCode = () => {
   return (
     <>
       <SEO
-        title="Agent Code Forgotten | Suremate Pro"
+        title="Agent Code Forgotten | Suremate Pro" tabTitle="Suremate Pro"
         description="Retrieve your Suremate Pro agent code by email."
         keywords="Suremate Pro agent code, forgot code, agent login help"
         canonical="https://elior.studio/forgotcode"

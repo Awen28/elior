@@ -64,24 +64,26 @@ function App() {
   // Update document title based on route
   useEffect(() => {
     const titles: { [key: string]: string } = {
-      '/': 'Elior | Premium iOS Apps & Web Development Tirol Österreich',
-      '/369': '369 Manifestation App - AI Vision Board & Meditation | Elior',
-      '/numistellar': 'NumiStellar - Astrology & Numerology App | Elior',
-      '/kibook': 'kiBook - AI Story Generator for Kids | Elior',
-      '/elow': 'Elow - AI Music Generator | Elior',
-      '/suremate': 'Suremate - Smart Insurance Management | Elior',
-      '/suremate-pro': 'Suremate Pro - Insurance Agent Tools | Elior',
-      '/agentregister': 'Suremate Pro - Agent Registration | Elior',
-      '/createAgent': 'Suremate Pro - Create Agent Profile | Elior',
-      '/forgotcode': 'Suremate Pro - Forgot Agent Code | Elior',
-      '/download-suremate-pro': 'Download Suremate Pro | iOS App',
-      '/stradahub': 'StradaHub - Community-Verkehrs-App für DACH | Elior',
-      '/abwun': 'ABWUN - Trust Him | Prayer App | Elior',
+      '/': 'Studio Elior',
+      '/369': '369',
+      '/numistellar': 'NumiStellar',
+      '/kibook': 'kiBook',
+      '/elow': 'Elow',
+      '/suremate': 'Suremate',
+      '/suremate-pro': 'Suremate Pro',
+      '/agentregister': 'Suremate Pro',
+      '/createAgent': 'Suremate Pro',
+      '/forgotcode': 'Suremate Pro',
+      '/download-suremate-pro': 'Suremate Pro',
+      '/agentportal': 'Suremate Pro',
+      '/callback': 'kiBook',
+      '/stradahub': 'StradaHub',
+      '/abwun': 'ABWUN',
       '/webdesign-tirol': 'Homepage programmieren Tirol & Österreich - Webdesign | Elior',
       '/app-entwicklung-tirol': 'App erstellen lassen Tirol & Österreich - iOS & Android | Elior',
     };
     
-    const defaultTitle = 'Elior | Premium iOS Apps & Web Development Tirol';
+    const defaultTitle = 'Studio Elior';
     document.title = titles[location.pathname] || defaultTitle;
     
     // Update meta description based on route

@@ -239,7 +239,7 @@ const ThreeSixNine = () => {
   return (
     <>
       <SEO 
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="369"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/369_Homescreen.webp"

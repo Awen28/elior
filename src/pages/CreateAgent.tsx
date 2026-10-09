@@ -115,7 +115,7 @@ const CreateAgent = () => {
   return (
     <>
       <SEO
-        title="Create Agent Profile | Suremate Pro"
+        title="Create Agent Profile | Suremate Pro" tabTitle="Suremate Pro"
         description="Create your Suremate Pro agent profile and receive your unique agent code."
         keywords="Suremate Pro agent, create agent, insurance agent registration"
         canonical="https://elior.studio/createAgent"

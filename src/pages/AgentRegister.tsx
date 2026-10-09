@@ -52,7 +52,7 @@ const AgentRegister = () => {
   return (
     <>
       <SEO
-        title="Suremate Pro - Agent Registration | Professional Insurance Tools"
+        title="Suremate Pro - Agent Registration | Professional Insurance Tools" tabTitle="Suremate Pro"
         description="Register as a Suremate Pro agent. Professional insurance tools for agents with client management, analytics, and advanced reporting."
         keywords="Suremate Pro, insurance agent registration, agent portal, insurance software, professional insurance tools"
         canonical="https://elior.studio/agentregister"

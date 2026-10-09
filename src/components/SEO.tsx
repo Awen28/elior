@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
+  tabTitle?: string;
   description: string;
   keywords?: string;
   ogImage?: string;
@@ -22,6 +23,7 @@ interface SEOProps {
 
 export const SEO = ({
   title,
+  tabTitle,
   description,
   keywords = '',
   ogImage = 'https://elior.studio/og-image.jpg',
@@ -44,7 +46,7 @@ export const SEO = ({
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
+      <title>{tabTitle ?? fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content={author} />

@@ -152,7 +152,7 @@ const Elow = () => {
   return (
     <>
       <SEO
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="Elow"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/elow_homescreen.webp"

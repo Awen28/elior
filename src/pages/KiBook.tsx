@@ -183,7 +183,7 @@ const KiBook = () => {
   return (
     <>
       <SEO
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="kiBook"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/kiBook_homescreen.webp"
