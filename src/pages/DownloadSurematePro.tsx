@@ -278,7 +278,7 @@ const DownloadSurematePro = () => {
                 Our support team is here to help you get started with Suremate Pro.
               </p>
               <motion.a
-                href="mailto:support@elior.studio"
+                href="mailto:info@elior.studio"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full"
