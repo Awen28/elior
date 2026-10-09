@@ -22,7 +22,7 @@ function Home() {
   }, []);
 
   const breadcrumbData = generateBreadcrumbData([
-    { name: "Home", url: "https://www.awen28.com/" }
+    { name: "Home", url: "https://elior.studio/" }
   ]);
 
   const faqData = generateFAQData([
@@ -42,16 +42,15 @@ function Home() {
     "@type": "ItemList",
     "name": "Elior Apps",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "url": "https://www.awen28.com/369", "name": "369 Manifestation" },
-      { "@type": "ListItem", "position": 2, "url": "https://www.awen28.com/numistellar", "name": "NumiStellar" },
-      { "@type": "ListItem", "position": 3, "url": "https://www.awen28.com/kibook", "name": "kiBook" },
-      { "@type": "ListItem", "position": 4, "url": "https://www.awen28.com/elow", "name": "Elow AI Music" },
-      { "@type": "ListItem", "position": 5, "url": "https://www.awen28.com/orbit", "name": "Orbit Game" },
-      { "@type": "ListItem", "position": 6, "url": "https://www.awen28.com/abwun", "name": "ABWUN" },
-      { "@type": "ListItem", "position": 7, "url": "https://www.awen28.com/stradahub", "name": "StradaHub" },
-      { "@type": "ListItem", "position": 8, "url": "https://www.awen28.com/suremate", "name": "Suremate" },
-      { "@type": "ListItem", "position": 9, "url": "https://www.awen28.com/suremate-pro", "name": "Suremate Pro" },
-      { "@type": "ListItem", "position": 10, "url": "https://www.awen28.com/visai", "name": "VisAI" },
+      { "@type": "ListItem", "position": 1, "url": "https://elior.studio/369", "name": "369 Manifestation" },
+      { "@type": "ListItem", "position": 2, "url": "https://elior.studio/numistellar", "name": "NumiStellar" },
+      { "@type": "ListItem", "position": 3, "url": "https://elior.studio/kibook", "name": "kiBook" },
+      { "@type": "ListItem", "position": 4, "url": "https://elior.studio/elow", "name": "Elow AI Music" },
+      { "@type": "ListItem", "position": 5, "url": "https://elior.studio/orbit", "name": "Orbit Game" },
+      { "@type": "ListItem", "position": 6, "url": "https://elior.studio/abwun", "name": "ABWUN" },
+      { "@type": "ListItem", "position": 7, "url": "https://elior.studio/stradahub", "name": "StradaHub" },
+      { "@type": "ListItem", "position": 8, "url": "https://elior.studio/suremate", "name": "Suremate" },
+      { "@type": "ListItem", "position": 9, "url": "https://elior.studio/suremate-pro", "name": "Suremate Pro" },
     ],
   };
 
@@ -61,12 +60,12 @@ function Home() {
         title="Elior | #1 iOS & Android App Entwicklung, Webdesign & Homepage Tirol Österreich 2026"
         description="Elior aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
         keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, Elior, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
-        ogImage="https://www.awen28.com/og-image.jpg"
-        canonical="https://www.awen28.com/"
+        ogImage="https://elior.studio/og-image.jpg"
+        canonical="https://elior.studio/"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData, appsListData]}
         language="de-AT"
       />
-      <main className="relative" style={{ background: '#F1EDE6' }}>
+      <main className="relative" style={{ background: 'var(--paper)' }}>
         <Hero />
         <Services />
         <AppShowcase />

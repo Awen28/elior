@@ -1,7 +1,8 @@
-import { useRef, useState, useEffect, Fragment } from 'react';
+import { useRef, useState, useEffect, useMemo, Fragment } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, MapPin, AlertTriangle, Construction, Ban, TrafficCone, ShieldAlert, CheckCircle2, Bell, Map, Users, Timer, Smartphone, ChevronRight, Download, Navigation } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
 // Terracotta brand palette
@@ -12,103 +13,17 @@ const CREAM_DEEP = '#EDE6DF';
 const INK = '#4A4038';
 const INK_SOFT = 'rgba(74, 64, 56, 0.65)';
 
-const categories = [
-  {
-    icon: AlertTriangle,
-    title: 'Unfälle',
-    description: 'Melde und sieh Unfälle in Echtzeit auf der Karte - so kannst du frühzeitig bremsen oder ausweichen.',
-    color: '#E2574C',
-  },
-  {
-    icon: Construction,
-    title: 'Baustellen',
-    description: 'Baustellen werden von der Community gemeldet und laufen automatisch ab, sobald sie fertig sind.',
-    color: '#D9A441',
-  },
-  {
-    icon: Ban,
-    title: 'Straßensperren',
-    description: 'Vollsperrungen und Umleitungen auf einen Blick - plane deine Route um blockierte Strecken herum.',
-    color: '#C49070',
-  },
-  {
-    icon: TrafficCone,
-    title: 'Stau',
-    description: 'Verkehrsstau früh erkennen und mit dem passenden Radius schon vor der Fahrt wissen, was dich erwartet.',
-    color: '#7BA7BC',
-  },
-  {
-    icon: ShieldAlert,
-    title: 'Gefahren',
-    description: 'Warnungen vor Gefahrenstellen: Tiere auf der Straße, Hindernisse, Aquaplaning oder schlechte Sicht.',
-    color: '#8B5E3C',
-  },
-  {
-    icon: CheckCircle2,
-    title: 'Kontrollen',
-    description: 'Auch mobile Verkehrskontrollen können gemeldet werden - transparente Informationen für alle.',
-    color: '#6B8F71',
-  },
-];
+const categoryIcons = [AlertTriangle, Construction, Ban, TrafficCone, ShieldAlert, CheckCircle2];
+const categoryColors = ['#E2574C', '#D9A441', '#C49070', '#7BA7BC', '#8B5E3C', '#6B8F71'];
 
-const features = [
-  {
-    icon: MapPin,
-    title: 'Tippe & Melde',
-    description: 'Ein Tipp auf die Karte genügt. Wähle die Kategorie, bestätige - und deine Meldung ist live für alle in der Nähe.',
-  },
-  {
-    icon: Map,
-    title: 'Echtzeit-Karte',
-    description: 'Alle aktiven Meldungen aus deiner Umgebung auf einer übersichtlichen Live-Karte. Standortbasiert und sofort aktuell.',
-  },
-  {
-    icon: Users,
-    title: 'Community-Power',
-    description: 'Meldungen werden von der Community bestätigt. Je mehr Bestätigungen, desto vertrauenswürdiger die Information.',
-  },
-  {
-    icon: Timer,
-    title: 'Läuft automatisch ab',
-    description: 'Keine veralteten Meldungen: Jede Meldung läuft nach einer festen Zeit automatisch ab, sobald sie nicht mehr relevant ist.',
-  },
-  {
-    icon: Bell,
-    title: 'Proximity-Notifications',
-    description: 'Erhalte Push-Benachrichtigungen für Meldungen in deinem Radius - individuell einstellbar, Standard 5 km.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Kostenlos & ohne Login',
-    description: 'Keine Registrierung, keine Werbung, keine versteckten Kosten. Einfach herunterladen, öffnen, mithelfen.',
-  },
-];
+const featureIcons = [MapPin, Map, Users, Timer, Bell, Smartphone];
 
-const screenshots = [
-  { src: '/apps/stradaHub_categories.png', alt: 'Kategorien', label: 'Melde-Kategorien' },
-  { src: '/apps/stradaHub_create_control.png', alt: 'Meldung erstellen', label: 'Meldung erstellen' },
-  { src: '/apps/stradaHub_create_closeStreet.png', alt: 'Straßensperre melden', label: 'Sperre eintragen' },
-  { src: '/apps/stradaHub_show_control.png', alt: 'Meldung anzeigen', label: 'Live auf der Karte' },
-  { src: '/apps/stradaHub_controlDetail.png', alt: 'Meldungs-Detail', label: 'Meldungs-Details' },
-];
-
-const roadmap = [
-  {
-    title: 'Auf der Karte melden',
-    description: 'Tippe an die Stelle auf der Karte, an der etwas passiert ist.',
-  },
-  {
-    title: 'Kategorie wählen',
-    description: 'Unfall, Baustelle, Sperre, Stau, Gefahr oder Kontrolle.',
-  },
-  {
-    title: 'Community bestätigt',
-    description: 'Andere bestätigen deine Meldung - so wird sie vertrauenswürdig.',
-  },
-  {
-    title: 'Automatisch verfallen',
-    description: 'Nach Ablauf der Zeit verschwindet die Meldung automatisch wieder.',
-  },
+const screenshotDefs = [
+  { src: '/apps/stradaHub_categories.webp', key: 'categories' },
+  { src: '/apps/stradaHub_create_control.webp', key: 'createControl' },
+  { src: '/apps/stradaHub_create_closeStreet.webp', key: 'createCloseStreet' },
+  { src: '/apps/stradaHub_show_control.webp', key: 'showControl' },
+  { src: '/apps/stradaHub_controlDetail.webp', key: 'controlDetail' },
 ];
 
 const pulseAnimation = {
@@ -126,41 +41,71 @@ const driveAnimation = {
   },
 };
 
-// SEO Structured Data
-const appStructuredData = generateAppStructuredData(
-  "StradaHub",
-  "Die Community-Verkehrs-App für den DACH-Raum. Meldungen in Echtzeit: Unfälle, Baustellen, Straßensperren, Stau, Gefahren und Kontrollen direkt auf der Karte. Kostenlos, ohne Registrierung, ohne Werbung. Keine Blitzer- oder Radarwarnung.",
-  "https://www.awen28.com/apps/stradaHub_show_control.png",
-  "https://apps.apple.com/us/app/stradahub/id6796659292",
-  "NavigationApplication",
-  "4.8",
-  "1500",
-  ["Verkehrsmeldungen", "Community", "Unfälle melden", "Baustellen", "Straßensperren", "Stau", "Gefahren", "Echtzeit Karte", "DACH", "Verkehr"],
-  ["/apps/stradaHub_categories.png", "/apps/stradaHub_show_control.png", "/apps/stradaHub_controlDetail.png"],
-  "2026-08-01",
-  "35MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "StradaHub", url: "https://www.awen28.com/stradahub" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Ist StradaHub eine Blitzer- oder Radarwarn-App?", answer: "Nein. StradaHub ist ausdrücklich KEINE Blitzer- oder Radarwarn-App. Es gibt keine Radarwarndaten, keine Blitzerdatenbank und keine automatische Geschwindigkeitswarnung. StradaHub ist eine Community-Verkehrs-App, in der Menschen Unfälle, Baustellen, Straßensperren, Staus, Gefahren und Verkehrskontrollen melden." },
-  { question: "Was kostet StradaHub?", answer: "StradaHub ist zu 100% kostenlos. Es gibt keine Werbung, keine In-App-Käufe und keine versteckten Kosten - und das bleibt auch so." },
-  { question: "Muss ich mich bei StradaHub registrieren?", answer: "Nein. StradaHub benötigt keine Registrierung und keinen Account. Du kannst die App einfach herunterladen und sofort Meldungen sehen und erstellen." },
-  { question: "In welchen Ländern funktioniert StradaHub?", answer: "StradaHub ist für den gesamten DACH-Raum ausgelegt: Deutschland, Österreich und die Schweiz. Alle Meldungen sind standortbasiert und funktionieren überall in diesen Regionen." },
-  { question: "Wie funktionieren die Proximity-Notifications?", answer: "Du erhältst Push-Benachrichtigungen, wenn neue Meldungen in deinem eingestellten Radius erscheinen. Der Radius ist individuell einstellbar - der Standardwert liegt bei 5 Kilometern." },
-]);
-
 const StradaHub = () => {
+  const { t, i18n } = useTranslation('stradaHub');
+  const { t: tc } = useTranslation();
   const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true });
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        'StradaHub',
+        t('structured.description'),
+        'https://elior.studio/apps/stradaHub_show_control.webp',
+        'https://apps.apple.com/us/app/stradahub/id6796659292',
+        'NavigationApplication',
+        '4.8',
+        '1500',
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ['/apps/stradaHub_categories.webp', '/apps/stradaHub_show_control.webp', '/apps/stradaHub_controlDetail.webp'],
+        '2026-08-01',
+        '35MB',
+        '4+',
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: 'Home', url: 'https://elior.studio/' },
+        { name: 'StradaHub', url: 'https://elior.studio/stradahub' },
+      ]),
+    [],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const categories = (
+    t('categories.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((c, i) => ({ ...c, icon: categoryIcons[i], color: categoryColors[i] }));
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = screenshotDefs.map((s) => ({
+    src: s.src,
+    alt: t(`screenshots.alts.${s.key}`),
+    label: t(`screenshots.labels.${s.key}`),
+  }));
+
+  const roadmap = t('roadmap', { returnObjects: true }) as { title: string; description: string }[];
+
+  const disclaimerBullets = t('disclaimerBullets', { returnObjects: true }) as string[];
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -187,18 +132,18 @@ const StradaHub = () => {
   return (
     <Fragment>
       <SEO
-        title="StradaHub | Community-Verkehrs-App DACH - Unfälle, Stau & Baustellen in Echtzeit"
-        description="StradaHub - Die Community-Verkehrs-App für den DACH-Raum. Unfälle, Baustellen, Straßensperren, Stau, Gefahren und Kontrollen in Echtzeit auf der Karte. 100% kostenlos, ohne Registrierung, ohne Werbung. KEINE Blitzer- oder Radarwarnung!"
-        keywords="Verkehrs-App DACH, Verkehrsmeldungen Österreich, Verkehrsmeldungen Deutschland, Verkehrsmeldungen Schweiz, Unfälle melden, Stau melden, Baustellen melden, Straßensperren, Community Verkehr, Echtzeit Karte, Stauwarnung App, Pendler App, kostenlose Verkehrsapp, StradaHub, Verkehrsinfo App deutsch"
-        ogImage="https://www.awen28.com/apps/stradaHub_show_control.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/stradaHub_show_control.webp"
         ogType="product"
-        canonical="https://www.awen28.com/stradahub"
+        canonical="https://elior.studio/stradahub"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="StradaHub"
         appCategory="NavigationApplication"
         rating="4.8"
         reviewCount="1500"
-        language="de-DE"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
       <div ref={containerRef} className="relative min-h-screen" style={{ background: CREAM }}>
         {/* Animated map-pin pulses background */}
@@ -247,7 +192,7 @@ const StradaHub = () => {
               }}
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Elior
+              {tc('appCommon.backToElior')}
             </Link>
           </div>
         </nav>
@@ -295,7 +240,7 @@ const StradaHub = () => {
                 </div>
                 <div>
                   <h1 className="font-serif text-3xl" style={{ color: INK }}>StradaHub</h1>
-                  <p className="text-sm" style={{ color: INK_SOFT }}>Deine Community auf der Straße</p>
+                  <p className="text-sm" style={{ color: INK_SOFT }}>{t('hero.tagline')}</p>
                 </div>
               </motion.div>
 
@@ -306,9 +251,9 @@ const StradaHub = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Wissen,
+                {t('hero.title1')}
                 <br />
-                <span style={{ color: TERRACOTTA }}>was vor dir liegt.</span>
+                <span style={{ color: TERRACOTTA }}>{t('hero.title2')}</span>
               </motion.h2>
 
               <motion.p
@@ -318,9 +263,7 @@ const StradaHub = () => {
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                StradaHub ist die Community-Verkehrs-App für den DACH-Raum. Tippe auf die
-                Karte und melde Unfälle, Baustellen, Straßensperren, Staus, Gefahren und
-                Kontrollen - in Echtzeit, für alle in deiner Nähe.
+                {t('hero.description')}
               </motion.p>
 
               {/* Not a radar warning app - clear badge */}
@@ -341,7 +284,7 @@ const StradaHub = () => {
                 transition={{ duration: 0.8, delay: 0.45 }}
               >
                 <ShieldAlert className="w-4 h-4" style={{ color: TERRACOTTA }} />
-                Keine Blitzer- oder Radarwarn-App
+                {t('hero.radarBadge')}
               </motion.div>
 
               <motion.div
@@ -362,7 +305,7 @@ const StradaHub = () => {
                   }}
                 >
                   <Download className="w-4 h-4" />
-                  Download StradaHub
+                  {t('hero.download')}
                 </a>
                 <button
                   className="px-6 py-3 rounded-full flex items-center gap-2 text-sm font-medium transition-all"
@@ -378,7 +321,7 @@ const StradaHub = () => {
                   }}
                 >
                   <Smartphone className="w-4 h-4" />
-                  Android bald verfügbar
+                  {t('hero.androidSoon')}
                 </button>
               </motion.div>
             </motion.div>
@@ -416,8 +359,8 @@ const StradaHub = () => {
                   }}
                 >
                   <img
-                    src="/apps/stradaHub_show_control.png"
-                    alt="StradaHub App"
+                    src="/apps/stradaHub_show_control.webp"
+                    alt={t('hero.imageAlt')}
                     className="w-[260px] md:w-[300px] h-auto rounded-[24px]"
                   />
                 </div>
@@ -433,7 +376,7 @@ const StradaHub = () => {
                   transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <MapPin className="w-3 h-3" />
-                  Live-Meldung
+                  {t('hero.liveBadge')}
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -454,17 +397,16 @@ const StradaHub = () => {
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
                 style={{ color: TERRACOTTA }}
               >
-                Melde-Kategorien
+                {t('categories.eyebrow')}
               </span>
               <h2
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ color: INK }}
               >
-                Was du melden kannst
+                {t('categories.title')}
               </h2>
               <p className="max-w-2xl mx-auto" style={{ color: INK_SOFT }}>
-                Sechs klare Kategorien für alles, was auf der Straße passiert. Jede Meldung
-                ist in Sekunden erstellt und hilft der gesamten Community.
+                {t('categories.description')}
               </p>
             </motion.div>
 
@@ -537,17 +479,17 @@ const StradaHub = () => {
                     className="font-serif italic text-sm tracking-[0.3em] block mb-3"
                     style={{ color: TERRACOTTA }}
                   >
-                    Wichtig zu wissen
+                    {t('radar.eyebrow')}
                   </span>
                   <h2
                     className="font-serif text-3xl md:text-4xl mb-4"
                     style={{ color: INK }}
                   >
-                    Keine Blitzer- & Radarwarnung
+                    {t('radar.title')}
                   </h2>
                   <p className="text-lg leading-relaxed mb-6" style={{ color: INK_SOFT }}>
-                    StradaHub ist ausdrücklich <strong style={{ color: INK }}>keine</strong> Blitzer-
-                    oder Radarwarn-App. Es gibt hier bewusst:
+                    {t('radar.introStart')} <strong style={{ color: INK }}>{t('radar.introEmphasis')}</strong>{' '}
+                    {t('radar.introEnd')}
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mb-8">
                     <div
@@ -561,7 +503,7 @@ const StradaHub = () => {
                       }}
                     >
                       <div className="w-2 h-2 rounded-full" style={{ background: TERRACOTTA }} />
-                      <span style={{ color: INK_SOFT }}>Keine Radarwarndaten</span>
+                      <span style={{ color: INK_SOFT }}>{disclaimerBullets[0]}</span>
                     </div>
                     <div
                       className="flex items-center gap-3 px-5 py-4 rounded-2xl"
@@ -574,7 +516,7 @@ const StradaHub = () => {
                       }}
                     >
                       <div className="w-2 h-2 rounded-full" style={{ background: TERRACOTTA }} />
-                      <span style={{ color: INK_SOFT }}>Keine Blitzerdatenbank</span>
+                      <span style={{ color: INK_SOFT }}>{disclaimerBullets[1]}</span>
                     </div>
                     <div
                       className="flex items-center gap-3 px-5 py-4 rounded-2xl"
@@ -587,7 +529,7 @@ const StradaHub = () => {
                       }}
                     >
                       <div className="w-2 h-2 rounded-full" style={{ background: TERRACOTTA }} />
-                      <span style={{ color: INK_SOFT }}>Keine automatische Warnung</span>
+                      <span style={{ color: INK_SOFT }}>{disclaimerBullets[2]}</span>
                     </div>
                     <div
                       className="flex items-center gap-3 px-5 py-4 rounded-2xl"
@@ -600,12 +542,11 @@ const StradaHub = () => {
                       }}
                     >
                       <div className="w-2 h-2 rounded-full" style={{ background: TERRACOTTA }} />
-                      <span style={{ color: INK_SOFT }}>Nur von Menschen gemeldet</span>
+                      <span style={{ color: INK_SOFT }}>{disclaimerBullets[3]}</span>
                     </div>
                   </div>
                   <p style={{ color: INK_SOFT }}>
-                    StradaHub schafft Transparenz über die Verkehrslage - mit den Augen
-                    der Community, nicht mit Radar-Technologie.
+                    {t('radar.outro')}
                   </p>
                 </div>
               </div>
@@ -627,13 +568,13 @@ const StradaHub = () => {
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
                 style={{ color: TERRACOTTA }}
               >
-                So funktioniert's
+                {t('howItWorks.eyebrow')}
               </span>
               <h2
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ color: INK }}
               >
-                In 4 Schritten informiert
+                {t('howItWorks.title')}
               </h2>
             </motion.div>
 
@@ -692,13 +633,13 @@ const StradaHub = () => {
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
                 style={{ color: TERRACOTTA }}
               >
-                Features
+                {t('features.eyebrow')}
               </span>
               <h2
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ color: INK }}
               >
-                Alles, was die Straße sagt
+                {t('features.title')}
               </h2>
             </motion.div>
 
@@ -752,13 +693,13 @@ const StradaHub = () => {
                 className="font-serif italic text-sm tracking-[0.3em] block mb-6"
                 style={{ color: TERRACOTTA }}
               >
-                App Screenshots
+                {t('screenshots.eyebrow')}
               </span>
               <h2
                 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ color: INK }}
               >
-                Ein Blick in die App
+                {t('screenshots.title')}
               </h2>
             </motion.div>
 
@@ -813,11 +754,10 @@ const StradaHub = () => {
               }}
             >
               <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
-                Deine Straße. Deine Community.
+                {t('cta.title')}
               </h2>
               <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
-                Lade StradaHub herunter und hilf mit, den Verkehr für alle sicherer und
-                transparenter zu machen. Kostenlos. Ohne Registrierung. Ohne Werbung.
+                {t('cta.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
@@ -831,7 +771,7 @@ const StradaHub = () => {
                   }}
                 >
                   <Download className="w-5 h-5" />
-                  Get StradaHub on the App Store
+                  {t('cta.button')}
                 </a>
                 <button
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all"
@@ -842,7 +782,7 @@ const StradaHub = () => {
                   }}
                 >
                   <Smartphone className="w-5 h-5" />
-                  Android bald verfügbar
+                  {t('cta.androidSoon')}
                 </button>
               </div>
             </div>
@@ -864,7 +804,7 @@ const StradaHub = () => {
               </span>
             </div>
             <p className="text-sm" style={{ color: INK_SOFT }}>
-              © 2026 StradaHub. A product by Elior.
+              © 2026 StradaHub. {t('footer.productBy')}
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -872,14 +812,14 @@ const StradaHub = () => {
                 className="text-xs transition-opacity hover:opacity-70"
                 style={{ color: INK_SOFT }}
               >
-                Datenschutz
+                {t('footer.privacy')}
               </Link>
               <Link
                 to="/"
                 className="flex items-center gap-2 text-sm"
                 style={{ color: TERRACOTTA }}
               >
-                Visit Elior
+                {tc('appCommon.visitElior')}
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

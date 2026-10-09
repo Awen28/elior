@@ -1,90 +1,14 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Music, Zap, Layers, ChevronRight, Download, Volume2, Radio, Headphones, Mic2, Play, Pause } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const features = [
-  {
-    icon: Zap,
-    title: 'AI Song Creation',
-    description: 'Create original songs with AI. Choose from normal creation, mood-based generation, or genre mashup modes.',
-  },
-  {
-    icon: Headphones,
-    title: 'Mood-Based Songs',
-    description: 'Songs created based on your current mood and life situation. Your personal companion for challenging or wonderful phases.',
-  },
-  {
-    icon: Layers,
-    title: 'Genre Mashup',
-    description: 'Combine different genres to create unique soundscapes. Mix ambient with electronic, lo-fi with cinematic, and more.',
-  },
-  {
-    icon: Volume2,
-    title: 'Your Personal Soundtrack',
-    description: 'Whether you need focus music, workout beats, or chill vibes - Elow generates the perfect soundtrack for every moment.',
-  },
-  {
-    icon: Radio,
-    title: 'Smart Library',
-    description: 'Organize your AI-generated songs in playlists. Access your personal soundtrack collection anytime, anywhere.',
-  },
-  {
-    icon: Mic2,
-    title: 'Multiple Languages',
-    description: 'Create songs in different languages. Elow supports various languages to match your preferences and mood.',
-  },
-];
-
-const appStructuredData = generateAppStructuredData(
-  "Elow",
-  "AI-powered music generator that transforms emotions and ideas into original soundscapes. Create unique songs for any mood with AI composition, genre mashup, and smart library management.",
-  "https://www.awen28.com/apps/elow_homescreen.png",
-  "https://apps.apple.com/at/app/elow/id6742148929",
-  "MusicApplication",
-  "4.8",
-  "5200",
-  ["AI Music Generation", "Mood-Based Songs", "Genre Mashup", "Personal Soundtrack", "Smart Library", "Multiple Languages", "Export & Share"],
-  ["/apps/elow_homescreen.png", "/apps/elow_create.PNG", "/apps/elow_moodSong.PNG", "/apps/elow_genre.PNG", "/apps/elow_player.PNG"],
-  "2026-01-01",
-  "90MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "Elow", url: "https://www.awen28.com/elow" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Was ist Elow?", answer: "Elow ist ein AI Music Generator der Emotionen in einzigartige Musik verwandelt. Erstelle personalisierte Soundscapes für jede Stimmung und jeden Anlass." },
-  { question: "Wie funktioniert die AI Musik Generierung?", answer: "Beschreibe einfach deine Stimmung oder deinen Anlass. Elows AI komponiert automatisch passende Musik mit verschiedenen Genres und Stilen." },
-  { question: "Ist Elow kostenlos?", answer: "Elow ist kostenlos im App Store und Google Play Store erhältlich mit optionalen Premium-Funktionen für unbegrenzte Song-Erstellung." },
-  { question: "Kann ich die Musik teilen?", answer: "Ja! Elow erlaubt das Exportieren und Teilen deiner AI-generierten Songs mit Freunden und auf Social Media." },
-  { question: "Gibt es Elow auch für Android?", answer: "Ja, Elow ist sowohl für iOS als auch Android verfügbar. Android Download: https://play.google.com/store/apps/details?id=com.elow.sonova" },
-]);
-
-const genres = [
-  { name: 'Ambient', color: '#BBB1A4' },
-  { name: 'Electronic', color: '#E3DED5' },
-  { name: 'Lo-Fi', color: '#D4C4A8' },
-  { name: 'Cinematic', color: '#C9B896' },
-  { name: 'Meditative', color: '#A89F91' },
-  { name: 'Energetic', color: '#8B7355' },
-];
-
-// All screenshots with exact filenames
-const screenshots = [
-  { src: '/apps/elow_homescreen.png', alt: 'Home' },
-  { src: '/apps/elow_create.PNG', alt: 'Create Modes' },
-  { src: '/apps/elow_moodSong.PNG', alt: 'Mood Songs' },
-  { src: '/apps/elow_genre.PNG', alt: 'Genre Selection' },
-  { src: '/apps/elow_occasion.PNG', alt: 'Occasion' },
-  { src: '/apps/elow_details.PNG', alt: 'Song Details' },
-  { src: '/apps/elow_player.PNG', alt: 'Music Player' },
-  { src: '/apps/elow_library.PNG', alt: 'Library' },
-];
+const featureIcons = [Zap, Headphones, Layers, Volume2, Radio, Mic2];
+const useCaseIcons = [Headphones, Mic2, Zap, Radio, Music];
+const genreColors = ['#BBB1A4', '#E3DED5', '#D4C4A8', '#C9B896', '#A89F91', '#8B7355'];
+const screenshotKeys = ['homescreen', 'create', 'moodSong', 'genre', 'occasion', 'details', 'player', 'library'];
 
 // Audio visualizer bars animation
 const VisualizerBar = ({ delay, height }: { delay: number; height: number }) => (
@@ -104,6 +28,8 @@ const VisualizerBar = ({ delay, height }: { delay: number; height: number }) => 
 );
 
 const Elow = () => {
+  const { t, i18n } = useTranslation('elow');
+  const { t: tc } = useTranslation();
   const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -112,7 +38,65 @@ const Elow = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        'Elow',
+        t('structured.description'),
+        'https://elior.studio/apps/elow_homescreen.webp',
+        'https://apps.apple.com/at/app/elow/id6742148929',
+        'MusicApplication',
+        '4.8',
+        '5200',
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ['/apps/elow_homescreen.webp', '/apps/elow_create.webp', '/apps/elow_moodSong.webp', '/apps/elow_genre.webp', '/apps/elow_player.webp'],
+        '2026-01-01',
+        '90MB',
+        '4+',
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: t('breadcrumb.home'), url: 'https://elior.studio/' },
+        { name: 'Elow', url: 'https://elior.studio/elow' },
+      ]),
+    [t],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const genres = (t('genres.items', { returnObjects: true }) as string[]).map((name, i) => ({
+    name,
+    color: genreColors[i],
+  }));
+
+  const screenshots = screenshotKeys.map((key) => ({
+    src: `/apps/elow_${key}.webp`,
+    alt: t(`screenshots.alts.${key}`),
+  }));
+
+  const useCases = (t('useCases.items', { returnObjects: true }) as string[]).map((text, i) => ({
+    text,
+    icon: useCaseIcons[i],
+  }));
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
@@ -168,18 +152,18 @@ const Elow = () => {
   return (
     <>
       <SEO
-        title="Elow | #1 Best AI Music Generator - Kostenlos iOS & Android 2026"
-        description="Elow - AI Music Generator verwandelt Emotionen in einzigartige Musik. Erstelle personalisierte Soundscapes, Genre Mashups und AI-Kompositionen. Kostenlos für iOS und Android!"
-        keywords="AI Music Generator, Musik mit AI erstellen, AI Komponist App, Mood Based Music, Stimmungsmusik App, Musik Generator iOS, Soundscape Creator, AI Song Maker, Musik App Österreich, Elow App, best AI music app 2026, create music with AI, ambient music generator, AI composer mobile, Musik komponieren App"
-        ogImage="https://www.awen28.com/apps/elow_homescreen.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/elow_homescreen.webp"
         ogType="product"
-        canonical="https://www.awen28.com/elow"
+        canonical="https://elior.studio/elow"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="Elow"
         appCategory="MusicApplication"
         rating="4.8"
         reviewCount="5200"
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
     <div ref={containerRef} className="relative min-h-screen" style={{ background: '#0a0a0f' }}>
       {/* Animated background waves */}
@@ -264,7 +248,7 @@ const Elow = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
         </div>
       </nav>
@@ -312,7 +296,7 @@ const Elow = () => {
               </div>
               <div>
                 <h1 className="font-serif text-3xl text-white">Elow</h1>
-                <p className="text-sm text-white/50">AI Music Generator</p>
+                <p className="text-sm text-white/50">{t('hero.tagline')}</p>
               </div>
             </motion.div>
 
@@ -322,10 +306,10 @@ const Elow = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Sound is
+              {t('hero.title1')}
               <br />
               <span className="bg-gradient-to-r from-[#BBB1A4] to-[#E3DED5] bg-clip-text text-transparent">
-                emotion
+                {t('hero.title2')}
               </span>
             </motion.h2>
 
@@ -335,9 +319,7 @@ const Elow = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Turn your feelings into original music. Elow uses AI to compose unique 
-              soundscapes tailored to your mood, energy, and style. No musical skills required — 
-              just imagination.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -358,7 +340,7 @@ const Elow = () => {
                 }}
               >
                 <Download className="w-4 h-4" />
-                Download Elow
+                {t('hero.download')}
               </a>
             </motion.div>
           </motion.div>
@@ -388,8 +370,8 @@ const Elow = () => {
                 }}
               >
                 <img
-                  src="/apps/elow_homescreen.png"
-                  alt="Elow App"
+                  src="/apps/elow_homescreen.webp"
+                  alt={t('hero.imageAlt')}
                   className="w-[260px] md:w-[300px] h-auto rounded-[24px]"
                 />
               </div>
@@ -409,14 +391,13 @@ const Elow = () => {
             className="text-center mb-12"
           >
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4 text-[#BBB1A4]">
-              AI Generated Demo
+              {t('demo.eyebrow')}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">
-              Hear what Elow can create
+              {t('demo.title')}
             </h2>
             <p className="text-white/50 max-w-lg mx-auto">
-              This track was entirely generated by Elow's AI. No human composers, no samples — 
-              just pure artificial creativity.
+              {t('demo.description')}
             </p>
           </motion.div>
 
@@ -495,11 +476,11 @@ const Elow = () => {
               <div className="flex-1 w-full">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-medium text-white">Summer's Embrace</h3>
-                    <p className="text-sm text-white/50">Generated by Elow AI • Ambient Electronic</p>
+                    <h3 className="text-xl font-medium text-white">{t('demo.songTitle')}</h3>
+                    <p className="text-sm text-white/50">{t('demo.generatedBy')}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-[#BBB1A4] px-2 py-1 rounded-full bg-[#BBB1A4]/10">AI</span>
+                    <span className="text-xs text-[#BBB1A4] px-2 py-1 rounded-full bg-[#BBB1A4]/10">{t('demo.aiBadge')}</span>
                   </div>
                 </div>
 
@@ -546,10 +527,10 @@ const Elow = () => {
             className="text-center mb-12"
           >
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-4 text-[#BBB1A4]">
-              Endless Possibilities
+              {t('genres.eyebrow')}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-white">
-              Generate music in any style
+              {t('genres.title')}
             </h2>
           </motion.div>
 
@@ -587,10 +568,10 @@ const Elow = () => {
             className="text-center mb-20"
           >
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-6 text-[#E3DED5]">
-              Features
+              {t('features.eyebrow')}
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-white">
-              How Elow works
+              {t('features.title')}
             </h2>
           </motion.div>
 
@@ -639,10 +620,10 @@ const Elow = () => {
             className="text-center mb-20"
           >
             <span className="font-serif italic text-sm tracking-[0.3em] block mb-6 text-[#E3DED5]">
-              App Screenshots
+              {t('screenshots.eyebrow')}
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-white">
-              Your music studio
+              {t('screenshots.title')}
             </h2>
           </motion.div>
 
@@ -683,16 +664,10 @@ const Elow = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-serif text-4xl md:text-5xl mb-8 text-white">
-                Music for every moment
+                {t('useCases.title')}
               </h2>
               <div className="space-y-6">
-                {[
-                  { icon: Headphones, text: 'Deep focus & productivity sessions' },
-                  { icon: Mic2, text: 'Creative inspiration while working' },
-                  { icon: Zap, text: 'Workout & high-energy activities' },
-                  { icon: Radio, text: 'Relaxation & meditation' },
-                  { icon: Music, text: 'Sleep & ambient soundscapes' },
-                ].map((item, idx) => (
+                {useCases.map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -731,8 +706,8 @@ const Elow = () => {
                 }}
               >
                 <img
-                  src="/apps/elow_player.PNG"
-                  alt="Elow Music Player"
+                  src="/apps/elow_player.webp"
+                  alt={t('useCases.imageAlt')}
                   className="w-[280px] h-auto rounded-[24px]"
                 />
               </div>
@@ -770,11 +745,10 @@ const Elow = () => {
             />
             
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 relative z-10">
-              Start creating your sound
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto relative z-10">
-              Download Elow today and experience music that moves with you. 
-              Your personal AI composer awaits.
+              {t('cta.description')}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
@@ -788,7 +762,7 @@ const Elow = () => {
                 }}
               >
                 <Download className="w-5 h-5" />
-                Download for iOS
+                {t('cta.buttonIos')}
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.elow.sonova&pcampaignid=web_share"
@@ -797,7 +771,7 @@ const Elow = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all hover:scale-105 relative z-10 border border-white/20 text-white hover:bg-white/5"
               >
                 <Download className="w-5 h-5" />
-                Download for Android
+                {t('cta.buttonAndroid')}
               </a>
             </div>
           </div>
@@ -817,13 +791,13 @@ const Elow = () => {
             <span className="font-serif text-2xl text-white">Elow</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2025 Elow. A product by Elior.
+            © 2025 Elow. {t('footer.productBy')}
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm text-[#BBB1A4]"
           >
-            Visit Elior
+            {tc('appCommon.visitElior')}
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

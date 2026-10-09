@@ -1,69 +1,69 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Check, Users, FileText, BarChart3, ChevronRight, Download, UserPlus } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const features = [
-  {
-    icon: Users,
-    title: 'Client Management',
-    description: 'Manage all your clients in one place. Quick access to customer data, policies, and damage history.',
-  },
-  {
-    icon: FileText,
-    title: 'Professional Reports',
-    description: 'Generate comprehensive damage reports with digital signatures and instant PDF export.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Analytics Dashboard',
-    description: 'Track your performance with detailed analytics. Overview of claims, clients, and statistics.',
-  },
-];
-
-const screenshots = [
-  { src: '/apps/surematepro_home.png', alt: 'Agent Dashboard' },
-  { src: '/apps/surematepro_kunden.png', alt: 'Client List' },
-  { src: '/apps/surematepro_profil.png', alt: 'Agent Profile' },
-  { src: '/apps/surematepro_schaden.png', alt: 'Damage Categories' },
-  { src: '/apps/surematepro_pdf.png', alt: 'PDF Report Dark' },
-  { src: '/apps/surematepro_share.png', alt: 'Share Options' },
-];
-
-const appStructuredData = generateAppStructuredData(
-  "Suremate Pro",
-  "Professional B2B insurance CRM for agents in Austria. Complete customer overview, real-time claim notifications, damage report access, customer database, and mobile CRM functionality. Best insurance agent software Austria.",
-  "https://www.awen28.com/apps/Suremate_pro_home.png",
-  "https://apps.apple.com/at/app/suremate-pro/id6502916525",
-  "BusinessApplication",
-  "4.9",
-  "200",
-  ["Customer CRM", "Real-time Notifications", "Damage Report Access", "Customer Database", "Mobile CRM", "Claim Management", "Agent Dashboard", "B2B Insurance Tools"],
-  ["/apps/Suremate_pro_home.png", "/apps/surematepro_dashboard.png", "/apps/surematepro_customers.png"],
-  "2024-06-01",
-  "55MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "Suremate Pro", url: "https://www.awen28.com/suremate-pro" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Was ist Suremate Pro?", answer: "Suremate Pro ist die professionelle B2B Versicherungs-Software für Agenten in Österreich. Kundenverwaltung, Schadensübersicht und mobiles CRM in einer App." },
-  { question: "Für wen ist Suremate Pro gedacht?", answer: "Suremate Pro ist für Versicherungsagenten, Makler und Versicherungsvertreter in Österreich die ihre Kunden und Schadensfälle digital verwalten möchten." },
-  { question: "Wie erhalte ich Kundenschadensmeldungen?", answer: "Wenn Kunden sich in der Suremate App mit deinem AgentCode registrieren, siehst du alle ihre Schadensmeldungen in Echtzeit in Suremate Pro." },
-  { question: "Ist Suremate Pro kostenlos?", answer: "Suremate Pro ist für registrierte Versicherungsagenten verfügbar. Kontaktiere uns für Preise und Lizenzierung." },
-]);
+const featureIcons = [Users, FileText, BarChart3];
+const screenshotKeys = ['home', 'kunden', 'profil', 'schaden', 'pdf', 'share'];
 
 const SurematePro = () => {
+  const { t, i18n } = useTranslation('surematePro');
+  const { t: tc } = useTranslation();
   const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true });
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        'Suremate Pro',
+        t('structured.description'),
+        'https://elior.studio/apps/Suremate_pro_home.webp',
+        'https://apps.apple.com/at/app/suremate-pro/id6502916525',
+        'BusinessApplication',
+        '4.9',
+        '200',
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ['/apps/Suremate_pro_home.webp', '/apps/surematepro_home.webp', '/apps/surematepro_kunden.webp'],
+        '2024-06-01',
+        '55MB',
+        '4+',
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: 'Home', url: 'https://elior.studio/' },
+        { name: 'Suremate Pro', url: 'https://elior.studio/suremate-pro' },
+      ]),
+    [],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = screenshotKeys.map((key) => ({
+    src: `/apps/surematepro_${key}.webp`,
+    alt: t(`screenshots.alts.${key}`),
+  }));
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -91,18 +91,18 @@ const SurematePro = () => {
   return (
     <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
       <SEO 
-        title="Suremate Pro | #1 Beste Versicherungsvertreter Software Österreich 2026 - CRM"
-        description="Suremate Pro - Die professionelle Versicherungsvertreter Software für Österreich. Kundenmanagement, Schadensübersicht, mobiles CRM und Echtzeit-Benachrichtigungen. Jetzt registrieren!"
-        keywords="Versicherungsvertreter Software, Versicherungsagentur CRM, Schadenmanagement Software, Versicherungsmakler App, Kundenverwaltung Versicherung, mobile CRM Versicherung, B2B Versicherung Software, Schadensfall Management, Versicherungs Software Österreich, Agenten Tools, InsurTech B2B, Versicherungsvertreter Digitalisierung, best insurance CRM Austria"
-        ogImage="https://www.awen28.com/apps/Suremate_pro_home.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/Suremate_pro_home.webp"
         ogType="product"
-        canonical="https://www.awen28.com/suremate-pro"
+        canonical="https://elior.studio/suremate-pro"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="Suremate Pro"
         appCategory="BusinessApplication"
         rating="4.9"
         reviewCount="200"
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-4">
@@ -118,7 +118,7 @@ const SurematePro = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
         </div>
       </nav>
@@ -165,11 +165,11 @@ const SurematePro = () => {
                   boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
                 }}
               >
-                <img src="/apps/surematepro_logo.png" alt="Suremate Pro" className="w-16 h-16 object-cover" />
+                <img src="/apps/surematepro_logo.webp" alt="Suremate Pro" className="w-16 h-16 object-cover" />
               </div>
               <div>
                 <h1 className="font-serif text-3xl" style={{ color: '#2a2a2a' }}>Suremate Pro</h1>
-                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>For Insurance Agents</p>
+                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>{t('hero.tagline')}</p>
               </div>
             </motion.div>
 
@@ -180,9 +180,9 @@ const SurematePro = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Professional tools
+              {t('hero.title1')}
               <br />
-              <span style={{ color: '#1e3a5f' }}>for agents</span>
+              <span style={{ color: '#1e3a5f' }}>{t('hero.title2')}</span>
             </motion.h2>
 
             <motion.p 
@@ -192,8 +192,7 @@ const SurematePro = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              The professional companion for insurance agents. Manage clients, 
-              create reports, and track your performance—all in one powerful app.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -214,7 +213,7 @@ const SurematePro = () => {
                 }}
               >
                 <Download className="w-4 h-4" />
-                Download Pro
+                {t('hero.download')}
               </a>
             </motion.div>
           </motion.div>
@@ -253,7 +252,7 @@ const SurematePro = () => {
                 }}
               >
                 <img
-                  src="/apps/surematepro_home.png"
+                  src="/apps/surematepro_home.webp"
                   alt="Suremate Pro App"
                   className="w-[260px] md:w-[300px] h-auto rounded-[24px]"
                 />
@@ -277,13 +276,13 @@ const SurematePro = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#1e3a5f' }}
             >
-              Features
+              {t('features.eyebrow')}
             </span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Built for professionals
+              {t('features.title')}
             </h2>
           </motion.div>
 
@@ -343,13 +342,13 @@ const SurematePro = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#1e3a5f' }}
             >
-              App Screenshots
+              {t('screenshots.eyebrow')}
             </span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Powerful & Intuitive
+              {t('screenshots.title')}
             </h2>
           </motion.div>
 
@@ -398,18 +397,10 @@ const SurematePro = () => {
                 className="font-serif text-4xl md:text-5xl mb-8"
                 style={{ color: '#525240' }}
               >
-                Why Suremate Pro?
+                {t('benefits.title')}
               </h2>
               <div className="space-y-6">
-                {[
-                  'Manage unlimited clients',
-                  'Advanced search & filtering',
-                  'Detailed damage categorization',
-                  'Professional PDF exports',
-                  'Performance analytics & insights',
-                  'Secure data synchronization',
-                  'Built for Austrian insurance market',
-                ].map((item, idx) => (
+                {(t('benefits.items', { returnObjects: true }) as string[]).map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -452,7 +443,7 @@ const SurematePro = () => {
                 }}
               >
                 <img
-                  src="/apps/surematepro_pdf.png"
+                  src="/apps/surematepro_pdf.webp"
                   alt="PDF Report Dark"
                   className="w-[280px] h-auto rounded-[24px]"
                 />
@@ -481,10 +472,10 @@ const SurematePro = () => {
             <h2 
               className="font-serif text-4xl md:text-5xl text-white mb-6"
             >
-              Elevate your insurance workflow
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/70 mb-10 max-w-xl mx-auto">
-              Join professional agents using Suremate Pro to streamline their client management and damage reporting.
+              {t('cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -496,7 +487,7 @@ const SurematePro = () => {
                 }}
               >
                 <UserPlus className="w-5 h-5" />
-                Register as Agent
+                {t('cta.registerButton')}
               </Link>
               <a
                 href="https://apps.apple.com/at/app/suremate-pro/id6502916525"
@@ -509,7 +500,7 @@ const SurematePro = () => {
                 }}
               >
                 <Download className="w-5 h-5" />
-                Download Pro
+                {t('cta.downloadButton')}
               </a>
             </div>
           </div>
@@ -524,12 +515,12 @@ const SurematePro = () => {
               className="w-8 h-8 rounded-lg overflow-hidden"
               style={{ background: '#6b6b6b' }}
             >
-              <img src="/apps/surematepro_logo.png" alt="Suremate Pro" className="w-8 h-8 object-cover" />
+              <img src="/apps/surematepro_logo.webp" alt="Suremate Pro" className="w-8 h-8 object-cover" />
             </div>
             <span className="font-serif text-xl" style={{ color: '#525240' }}>Suremate Pro</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
-            © 2024 Suremate Pro. A product by Elior.
+            © 2024 Suremate Pro. {t('footer.productBy')}
           </p>
           <div className="flex items-center gap-6">
             <Link 
@@ -537,7 +528,7 @@ const SurematePro = () => {
               className="flex items-center gap-2 text-sm"
               style={{ color: '#2a2a2a' }}
             >
-              Agent Portal
+              {t('footer.agentPortal')}
               <ChevronRight className="w-4 h-4" />
             </Link>
             <Link 
@@ -545,7 +536,7 @@ const SurematePro = () => {
               className="flex items-center gap-2 text-sm"
               style={{ color: '#2a2a2a' }}
             >
-              Visit Elior
+              {tc('appCommon.visitElior')}
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

@@ -68,7 +68,7 @@ const ForgotCode = () => {
         title="Agent Code Forgotten | Suremate Pro"
         description="Retrieve your Suremate Pro agent code by email."
         keywords="Suremate Pro agent code, forgot code, agent login help"
-        canonical="https://www.awen28.com/forgotcode"
+        canonical="https://elior.studio/forgotcode"
       />
       <div className="relative min-h-screen flex items-center justify-center" style={{ background: '#000000' }}>
         {/* Background gradient */}

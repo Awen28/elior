@@ -1,26 +1,11 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Download, Sparkles, Brain, Moon, ChevronRight, Sun, Star, Flower2, Sparkle } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const features = [
-  {
-    icon: Sparkles,
-    title: '369 Manifestation Method',
-    description: 'Practice the ancient 369 manifestation technique with guided affirmations morning, noon, and night.',
-  },
-  {
-    icon: Brain,
-    title: 'AI-Powered Vision Boards',
-    description: 'Create stunning AI-generated vision boards. Describe your dreams and watch them visualize instantly.',
-  },
-  {
-    icon: Moon,
-    title: 'Guided Meditations',
-    description: 'Personalized AI meditations, Solfeggio frequencies, breathing exercises, and singing bowl timers.',
-  },
-];
+const featureIcons = [Sparkles, Brain, Moon];
 
 // 369 Magic Numbers Animation
 const MagicNumber = ({ number, delay, x, y }: { number: string; delay: number; x: string; y: string }) => (
@@ -161,46 +146,20 @@ const BreathingCircle = () => (
   />
 );
 
-const screenshots = [
-  { src: '/apps/369_Homescreen.png', alt: '369 Home' },
-  { src: '/apps/369_Inspire.png', alt: 'Inspire Tab' },
-  { src: '/apps/369_VisionBoard_generated.png', alt: 'AI Vision Board' },
-  { src: '/apps/369_createVision.png', alt: 'Create Vision' },
-  { src: '/apps/369_meditation.png', alt: 'AI Meditation' },
-  { src: '/apps/369_more.png', alt: 'More Options' },
-  { src: '/apps/369_meditationCategories.png', alt: 'Meditation Categories' },
-  { src: '/apps/369_timer.png', alt: 'Meditation Timer' },
+const screenshotSrcs = [
+  { src: '/apps/369_Homescreen.webp', key: 'home' },
+  { src: '/apps/369_Inspire.webp', key: 'inspire' },
+  { src: '/apps/369_VisionBoard_generated.webp', key: 'visionBoard' },
+  { src: '/apps/369_createVision.webp', key: 'createVision' },
+  { src: '/apps/369_meditation.webp', key: 'meditation' },
+  { src: '/apps/369_more.webp', key: 'more' },
+  { src: '/apps/369_meditationCategories.webp', key: 'meditationCategories' },
+  { src: '/apps/369_timer.webp', key: 'timer' },
 ];
 
-const appStructuredData = generateAppStructuredData(
-  "369 Manifestation",
-  "The #1 manifestation app worldwide based on Nikola Tesla's 369 method. 12,000+ downloads, 4.8 star rating. Features AI Vision Boards, daily affirmations, guided meditation, goal tracking, and abundance mindset tools. Manifest your dreams into reality.",
-  "https://www.awen28.com/apps/369_Homescreen.png",
-  "https://apps.apple.com/at/app/369-manifest/id6738690566",
-  "LifestyleApplication",
-  "4.8",
-  "12000",
-  ["369 Method", "AI Vision Board", "Daily Affirmations", "Guided Meditation", "Goal Tracking", "Abundance Mindset", "Manifestation Journal", "Law of Attraction"],
-  ["/apps/369_Homescreen.png", "/apps/369_visionboard.png", "/apps/369_meditation.png"],
-  "2024-06-01",
-  "55MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "369 Manifestation", url: "https://www.awen28.com/369" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Was ist die 369 Manifestations Methode?", answer: "Die 369 Methode basiert auf Nikola Tesla und besagt: Schreibe deine Wünsche 3x morgens, 6x mittags und 9x abends auf. Die 369 App macht das digital mit Erinnerungen und Tracking." },
-  { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von Elior ist die beste Manifestation App mit AI Vision Boards, täglichen Affirmationen und der authentischen 369 Methode." },
-  { question: "Wie funktioniert das Gesetz der Anziehung?", answer: "Das Gesetz der Anziehung besagt, dass gleichartige Energien sich anziehen. Die 369 App hilft dir, deine Gedanken auf positive Ziele zu fokussieren und diese zu manifestieren." },
-  { question: "Ist die 369 App kostenlos?", answer: "Die 369 Manifestation App ist kostenlos im App Store mit optionalen Premium-Funktionen für erweiterte Vision Boards und Meditationen." },
-  { question: "Was ist ein Vision Board?", answer: "Ein Vision Board ist eine visuelle Sammlung deiner Ziele und Träume. Die 369 App erstellt automatisch AI-generierte Vision Boards basierend auf deinen Wünschen." },
-]);
-
 const ThreeSixNine = () => {
+  const { t, i18n } = useTranslation('threeSixNine');
+  const { t: tc } = useTranslation();
   const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -213,6 +172,54 @@ const ThreeSixNine = () => {
   });
   
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        "369 Manifestation",
+        t('structured.description'),
+        "https://elior.studio/apps/369_Homescreen.webp",
+        "https://apps.apple.com/at/app/369-manifest/id6738690566",
+        "LifestyleApplication",
+        "4.8",
+        "12000",
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ["/apps/369_Homescreen.webp", "/apps/369_VisionBoard_generated.webp", "/apps/369_meditation.webp"],
+        "2024-06-01",
+        "55MB",
+        "4+"
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: t('breadcrumb.home'), url: "https://elior.studio/" },
+        { name: "369 Manifestation", url: "https://elior.studio/369" },
+      ]),
+    [t],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = screenshotSrcs.map((s) => ({
+    src: s.src,
+    alt: t(`screenshots.alts.${s.key}`),
+  }));
 
   useEffect(() => {
     if (location.pathname === '/369') {
@@ -232,18 +239,18 @@ const ThreeSixNine = () => {
   return (
     <>
       <SEO 
-        title="369 Manifestation | #1 Beste Manifestations App 2026 - Tesla 369 Methode"
-        description="369 Manifestation - Die WELTBESTE Manifestations App mit Nikola Tesla's 369 Methode. 12.000+ Downloads, 4.8★ Rating. AI Vision Boards, tägliche Affirmationen, Meditationen. Manifestiere Träume, Reichtum & Liebe. KOSTENLOS auf iOS!"
-        keywords="#1 Manifestations App, beste Manifestation App 2026, 369 Methode App, Gesetz der Anziehung App, Vision Board App, tägliche Affirmationen, Nikola Tesla 369, Manifestation lernen, Abundanz Mindset, Ziele manifestieren, Reichtum manifestieren, Liebe manifestieren, Erfolg manifestieren, Traumjob manifestieren, positive Affirmationen Deutsch, Manifestation App Österreich, best manifestation app world, law of attraction app 2026, manifest wealth, manifest love"
-        ogImage="https://www.awen28.com/apps/369_Homescreen.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/369_Homescreen.webp"
         ogType="product"
-        canonical="https://www.awen28.com/369"
+        canonical="https://elior.studio/369"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="369 Manifestation"
         appCategory="LifestyleApplication"
         rating="4.8"
         reviewCount="12000"
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
       <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
       {/* Magical Background Effects */}
@@ -338,7 +345,7 @@ const ThreeSixNine = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
         </div>
       </nav>
@@ -398,7 +405,7 @@ const ThreeSixNine = () => {
               </motion.div>
               <div>
                 <h1 className="font-serif text-3xl" style={{ color: '#20B2AA' }}>369</h1>
-                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>Manifestation App</p>
+                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>{t('hero.tagline')}</p>
               </div>
             </motion.div>
 
@@ -409,9 +416,9 @@ const ThreeSixNine = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Manifest your
+              {t('hero.title1')}
               <br />
-              <span style={{ color: '#20B2AA' }}>dreams daily</span>
+              <span style={{ color: '#20B2AA' }}>{t('hero.title2')}</span>
             </motion.h2>
 
             <motion.p 
@@ -421,8 +428,7 @@ const ThreeSixNine = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              The 369 Manifestation App combines ancient numerology with modern AI. 
-              Practice daily affirmations, create AI vision boards, and meditate your way to your desired reality.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -445,7 +451,7 @@ const ThreeSixNine = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-4 h-4" />
-                Download App
+                {t('hero.download')}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -500,8 +506,8 @@ const ThreeSixNine = () => {
                 }}
               >
                 <img
-                  src="/apps/369_Homescreen.png"
-                  alt="369 App Home"
+                  src="/apps/369_Homescreen.webp"
+                  alt={t('hero.imageAlt')}
                   className="w-[260px] md:w-[300px] h-auto rounded-[24px]"
                 />
               </div>
@@ -524,13 +530,13 @@ const ThreeSixNine = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#20B2AA' }}
             >
-              ✨ Features ✨
+              {t('features.eyebrow')}
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Your manifestation toolkit
+              {t('features.title')}
             </h2>
           </motion.div>
 
@@ -601,13 +607,13 @@ const ThreeSixNine = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#20B2AA' }}
             >
-              📱 App Screenshots 📱
+              {t('screenshots.eyebrow')}
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Ancient wisdom meets AI
+              {t('screenshots.title')}
             </h2>
           </motion.div>
 
@@ -656,18 +662,10 @@ const ThreeSixNine = () => {
                 className="font-serif text-4xl md:text-5xl mb-8"
                 style={{ color: '#525240' }}
               >
-                Why 369?
+                {t('benefits.title')}
               </h2>
               <div className="space-y-6">
-                {[
-                  'Ancient 369 numerology method',
-                  'Daily affirmations 3x a day',
-                  'AI-generated vision boards',
-                  'Personalized AI meditations',
-                  'Solfeggio healing frequencies',
-                  'Gratitude & journaling tools',
-                  'Track your 21-day journey',
-                ].map((item, idx) => (
+                {(t('benefits.items', { returnObjects: true }) as string[]).map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -724,8 +722,8 @@ const ThreeSixNine = () => {
                 }}
               >
                 <img
-                  src="/apps/369_VisionBoard_generated.png"
-                  alt="AI Generated Vision Board"
+                  src="/apps/369_VisionBoard_generated.webp"
+                  alt={t('benefits.imageAlt')}
                   className="w-[280px] h-auto rounded-[24px]"
                 />
               </div>
@@ -787,11 +785,10 @@ const ThreeSixNine = () => {
             <h2 
               className="font-serif text-4xl md:text-5xl text-white mb-6 relative z-10"
             >
-              Start your manifestation journey
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto relative z-10">
-              Join thousands who have transformed their lives with the 369 Manifestation App. 
-              Your desired reality is just 21 days away.
+              {t('cta.description')}
             </p>
             <motion.a
               href="https://apps.apple.com/at/app/369-manifestation-meditation/id1663677921"
@@ -806,7 +803,7 @@ const ThreeSixNine = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Download className="w-5 h-5" />
-              Get 369 on the App Store
+              {t('cta.button')}
             </motion.a>
           </div>
         </motion.div>
@@ -827,14 +824,14 @@ const ThreeSixNine = () => {
             <span className="font-serif text-xl" style={{ color: '#525240' }}>369</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
-            © 2024 369 Manifestation App. A product by Elior.
+            © 2024 369 Manifestation App. {t('footer.productBy')}
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
             style={{ color: '#20B2AA' }}
           >
-            Visit Elior
+            {tc('appCommon.visitElior')}
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

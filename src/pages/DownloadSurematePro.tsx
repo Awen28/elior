@@ -45,7 +45,7 @@ const DownloadSurematePro = () => {
         title="Download Suremate Pro | Professional Insurance Agent App"
         description="Download Suremate Pro for iOS. The professional insurance management app for agents with client management, analytics, and reporting tools."
         keywords="Suremate Pro download, insurance agent app, iOS app download, insurance management"
-        canonical="https://www.awen28.com/download-suremate-pro"
+        canonical="https://elior.studio/download-suremate-pro"
       />
       <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}
@@ -278,7 +278,7 @@ const DownloadSurematePro = () => {
                 Our support team is here to help you get started with Suremate Pro.
               </p>
               <motion.a
-                href="mailto:support@awen28.com"
+                href="mailto:support@elior.studio"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full"

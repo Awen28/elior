@@ -1,0 +1,228 @@
+════════════════════════════════════════════════════════════════════════
+  ELIOR — BRAND IDENTITY
+  Built with meaning.
+  Übersicht über Konzept, Design-System und Marken-Identität
+  Stand: 2026-10-09
+════════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────
+1. NAME & BEDEUTUNG
+──────────────────────────────────────────────────────────────────────
+Name:      Elior
+Herkunft:  Hebräisch — "Elior" (אֱלִיאוֹר) = "Gott ist mein Licht"
+           (Gott = El, Licht = Or)
+Schreibweise: IMMER in Großbuchstaben-Marke: ELIOR / Elior
+              (niemals "elior", "ELIor" o. Ä.)
+Aussprache:  Eh-li-OR
+Tagline:     "Built with meaning."
+Claim-Idee:  Jede App und jede Website trägt Bedeutung — Gestaltung,
+             Technik und Zweck greifen ineinander.
+
+Die Marke wurde 2026 aus dem früheren Arbeitsnamen "AWEN28 / Awenya"
+herausgelöst. "Elior" ist der neue, eigenständige Markenname und die
+alleinige Dachmarke (Studio + Portfolio + Domain).
+
+──────────────────────────────────────────────────────────────────────
+2. POSITIONIERUNG & MISSION
+──────────────────────────────────────────────────────────────────────
+Positionierung:
+  Premium-Studie für digitale Produkte aus Tirol, Österreich.
+  Ein Einzelentwickler-Studio mit Studio-Qualität — schnell, direkt,
+  handgefertigt statt Agentur-Overhead.
+
+Mission:
+  "Digitale Produkte mit Bedeutung bauen — leise, elegant, funktional."
+  Wir bauen Apps und Websites, die sich hochwertig, ruhig und ehrlich
+  anfühlen und einen echten Zweck erfüllen.
+
+Kernkompetenzen:
+  1. iOS- & Android-App-Entwicklung (nativ, Swift/SwiftUI)
+  2. Webdesign & Homepage-Programmierung (React/TypeScript)
+  3. KI-Integration & Automatisierung
+
+Zielgruppen:
+  - Internationale App-Nutzer (Consumer-Apps im App Store)
+  - KMU & Unternehmen in Tirol / AT / DE / CH, die eine App, Website
+    oder Automatisierung brauchen.
+
+──────────────────────────────────────────────────────────────────────
+3. CANONICAL FACTS (immer identisch verwenden — NAP-Konsistenz)
+──────────────────────────────────────────────────────────────────────
+Marke:        Elior
+Rechtsträger: Thomas Mayrl
+Website:      https://elior.studio   (einzige Hauptdomain — alle Links)
+E-Mail:       info@elior.studio
+Telefon:      +43 677 64059711
+Adresse:      Johannesfeldstrasse 44
+              6111 Volders
+              Tirol, Österreich
+Region:       Tirol (AT-7)
+Koordinaten:  47.259659, 11.404102
+Sprachen:     Deutsch (de-AT) — Standard / UI derzeit Englisch
+Gründung:     2020 (Marke "Elior" ab 2026)
+Apps:         9+ veröffentlichte iOS-Apps
+App-Store-Entwicklerseite:
+              https://apps.apple.com/at/developer/thomas-mayrl/id1728579612
+LinkedIn:     https://www.linkedin.com/in/thomas-mayrl-719267bb
+
+WICHTIG: Diese Angaben müssen auf Website, Google Business Profile,
+Social Media und Impressum identisch sein. Keine parallelen
+Marken-Domains (kein weiteres awen28.com) mehr verwenden.
+
+──────────────────────────────────────────────────────────────────────
+4. LOGO-SYSTEM
+──────────────────────────────────────────────────────────────────────
+Primärsymbol:  Elior-Stern (achtzackiger Stern / Kompass-Rosette)
+               = Licht, Orientierung, Handwerk.
+Dateien (public/logos/):
+  - elior-star.webp        1080×1080  RGB    (Haupt-Icon)
+  - elior-star-metal.webp  1254×1254  RGBA   (Metallic-Variante, Hero)
+  - elior-symbol.svg       Vektor   (Favicon, Skalierung, mono)
+  - elior-olive.webp       Variante in Olive
+  - elior-stone.webp       Variante in Stein
+
+Anwendung:
+  - Stern immer mit ausreichend Freiraum (mind. 0,5× Sternbreite).
+  - Auf hellem Papier: dunkle/olive Variante.
+  - Auf dunklem Grund: helle/metallic Variante.
+  - Not-Ausnahmen: NICHT verzerren, NICHT drehen, NICHT mit Schatten
+    oder Effekten versehen, NICHT die Farbe frei ändern.
+
+Wortmarke: "Elior" in Playfair Display, optional mit "Built with
+meaning." in Montserrat (Versalien, gesperrt) darunter.
+
+──────────────────────────────────────────────────────────────────────
+5. FARBSYSTEM  ("Minimal Luxury Clay")
+──────────────────────────────────────────────────────────────────────
+Eine einzige warme Leinwand. Elemente werden wie aus Ton "herausge-
+stanzt" — ruhig, taktil, zurückhaltend. Kein reines Schwarz, kein
+Neon, keine harten Schlagschatten.
+
+Kern:
+  --paper        #F5F1EA   Warmes Galerie-Ivory (Haupt-Hintergrund)
+  --paper-deep   #EDE8DD   Sektionswechsel (hell)
+  --paper-dark   #E3DDCF   Sektionstrenner / Vertiefung
+  --ink          #26241F   Weicher, warmer Fast-Schwarz-Text
+  --ink-soft     rgba(38,36,31,0.60)  Sekundärtext
+  --ink-faint    rgba(38,36,31,0.34)  Tertiärtext / Labels
+
+Marken-Akzente:
+  --stone        #A9A093   Neutraler Stein (Flächen, Icons)
+  --god          #BA986A   Gold-Akzent (Licht, Highlights)
+  --god-deep     #9A7A50   Gold dunkel (Hover, Linien)
+  --olive        #525240   Olive (dunkle Sektionen, Kontrast)
+  --olive-deep   #3D3C32   Olive tief (Footer, Flächen)
+
+Schatten (Clay):
+  Clay-Tönung:   rgba(118,102,79, …)  — warmes Sepia, nie #000
+  --clay-soft:   0 20px 44px -16px rgba(118,102,79,0.22)   (Container)
+  --clay-float:   0 2px 3px rgba(255,255,255,0.55),
+                  0 28px 60px -24px rgba(118,102,79,0.32) (schwebend)
+
+  REGEL: Der volle dreistufige Clay-Schatten ist NUR für interaktive
+  Elemente (Buttons, Showcase-Gerät) reserviert. Container bekommen
+  nur einen sanften Float. Licht kommt immer von oben links.
+
+  Stanz-Technik: Text/Form in Hintergrundfarbe füllen + textShadow,
+  damit er wie aus der Fläche geschnitten wirkt.
+
+──────────────────────────────────────────────────────────────────────
+6. TYPOGRAFIE
+──────────────────────────────────────────────────────────────────────
+Display / Headlines:  Playfair Display (Serif)
+                      Gewichte 400/500/600, kursiv für Betonung
+                      letter-spacing: -0.01em
+                      → elegant, editorial, "Luxus"
+
+Fließtext / UI:       Montserrat (Sans-Serif)
+                      Gewichte 300/400/500/600
+                      → klar, modern, warm
+
+Labels / Nav / Meta:  Montserrat, Versalien, gesperrt (tracking),
+                      klein (11–13px), oft in --ink-faint oder Gold.
+
+Fallbacks:            Georgia (Serif), system-ui (Sans)
+
+Hierarchie: Ruhig und großzügig. Wenige Größen, viel Weißraum,
+klare Kontraste. Keine fetten System-Fonts, kein Mix vieler Schriften.
+
+──────────────────────────────────────────────────────────────────────
+7. DESIGN-PRINZIPIEN
+──────────────────────────────────────────────────────────────────────
+1. Eine Leinwand.      Warmes Ivory als Basis; Sektionen wechseln
+                       zwischen Papier (hell) und Olive (dunkel).
+2. Wenig, aber präzise. Reduktion statt Dekoration.
+3. Taktil & leise.     Clay-Textur, weiche Schatten, keine grellen
+                       Effekte, keine harten Kanten-Schatten.
+4. Bedeutung zeigen.   Jede App/jedes Projekt hat eine Story
+                       ("Built with meaning").
+5. Licht von links oben.
+6. Konsistenz.         Gleiche Tokens über alle Seiten & Apps;
+                       pro App eigene Palette, aber gleiches System
+                       (Typo, Rhythmus, Schattenlogik).
+
+──────────────────────────────────────────────────────────────────────
+8. TONE OF VOICE
+──────────────────────────────────────────────────────────────────────
+Charakter:  Ruhig, ehrlich, präzise, hochwertig, nahbar.
+            Handwerker-Mentalität — kein Marketing-Lärm.
+
+DE:         "Wir bauen Apps und Websites mit Bedeutung."
+            Direkt, warm, ohne Superlativ-Floskeln auf Kleingedrucktem.
+EN:         "Built with meaning." / "Apps and websites, crafted with
+            intention."
+Vermeiden:  Übertreibungen ("Nr. 1 der Welt") in strukturierten Daten
+            und Metadaten; keine erfundenen Bewertungen.
+Erlaubt:    Ehrliche, belegbare Aussagen und echte Kundenstimmen.
+
+──────────────────────────────────────────────────────────────────────
+9. PORTFOLIO (Apps der Marke)
+──────────────────────────────────────────────────────────────────────
+369             Manifestation / Vision Boards      (Lifestyle)
+NumiStellar     Astrologie & Numerologie            (Lifestyle)
+kiBook          AI-Kinderbuch-Erstellung            (Education)
+Elow            AI-Musikgenerator                   (Music)
+Orbit           Space-Arcade-Game                   (Game)
+ABWUN           Gebet & Glauben (KI-Begleiter)      (Lifestyle)
+StradaHub       Community-Verkehrs-App DACH         (Navigation)
+Suremate        Digitale Schadensmeldung           (Finance)
+Suremate Pro    Versicherungs-CRM (B2B)            (Business)
+
+Jede App hat ein eigenes Farbschema und eigene Typo-Akzente, folgt
+aber demselben Layout-Rhythmus und derselben Schatten-/Stanzlogik.
+ABWUN-Signatur: "Trust Him."
+
+──────────────────────────────────────────────────────────────────────
+10. LEISTUNGEN DER MARKE
+──────────────────────────────────────────────────────────────────────
+  - App Entwicklung (iOS & Android) / App erstellen lassen
+  - Webdesign & Homepage-Programmierung
+  - KI-Integration (OpenAI, Vision, ML)
+  - Automatisierung von Workflows & Geschäftsprozessen
+
+──────────────────────────────────────────────────────────────────────
+11. DO & DON'T
+──────────────────────────────────────────────────────────────────────
+DO:
+  + Marke immer "Elior" schreiben, Domain immer elior.studio.
+  + Tokens aus dem Farbsystem verwenden.
+  + Playfair für Display, Montserrat für Text.
+  + Weißraum großzügig, Kontraste ruhig.
+  + Ehrliche, prüfbare Angaben (NAP konsistent).
+
+DON'T:
+  - "AWEN28"/"Awenya" als aktive Marke nennen (nur als Historie).
+  - Parallele Domains verlinken.
+  - Reines Schwarz, kalte Schatten, Neon-Farben.
+  - Logo verzerren/einfärben/Effekte geben.
+  - Erfundene Ratings/Superlative in strukturierten Daten.
+
+──────────────────────────────────────────────────────────────────────
+12. REFERENZ-IMPLEMENTIERUNG
+──────────────────────────────────────────────────────────────────────
+Design-Tokens:  src/index.css  (:root)
+Marken-Symbole: public/logos/
+Website:        https://elior.studio
+Dieses Dokument ist die verbindliche Quelle für Marken-Konsistenz.
+
+════════════════════════════════════════════════════════════════════════

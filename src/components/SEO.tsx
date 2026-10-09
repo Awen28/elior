@@ -24,7 +24,7 @@ export const SEO = ({
   title,
   description,
   keywords = '',
-  ogImage = 'https://www.awen28.com/og-image.jpg',
+  ogImage = 'https://elior.studio/og-image.jpg',
   ogType = 'website',
   canonical,
   structuredData,
@@ -50,15 +50,15 @@ export const SEO = ({
       <meta name="author" content={author} />
       <meta name="geo.region" content="AT-7" />
       <meta name="geo.placename" content={region} />
-      <meta name="geo.position" content="47.2692;11.4041" />
-      <meta name="ICBM" content="47.2692, 11.4041" />
+      <meta name="geo.position" content="47.259659;11.404102" />
+      <meta name="ICBM" content="47.259659, 11.404102" />
       <meta name="language" content={language} />
       <meta httpEquiv="content-language" content={language} />
       
       {/* Viewport & Mobile */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-      <meta name="theme-color" content="#1a1a1a" />
-      <meta name="msapplication-TileColor" content="#1a1a1a" />
+      <meta name="theme-color" content="#F5F1EA" />
+      <meta name="msapplication-TileColor" content="#F5F1EA" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="format-detection" content="telephone=no" />
@@ -70,7 +70,7 @@ export const SEO = ({
       {alternateLanguages.map((alt) => (
         <link key={alt.hrefLang} rel="alternate" hrefLang={alt.hrefLang} href={alt.href} />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={canonical || 'https://www.awen28.com/'} />
+      <link rel="alternate" hrefLang="x-default" href={canonical || 'https://elior.studio/'} />
       
       {/* Open Graph - Maximum Coverage */}
       <meta property="og:title" content={fullTitle} />
@@ -86,17 +86,17 @@ export const SEO = ({
       {articlePublished && <meta property="article:published_time" content={articlePublished} />}
       {articleModified && <meta property="article:modified_time" content={articleModified} />}
       <meta property="article:author" content={author} />
-      <meta property="article:publisher" content="https://www.awen28.com" />
+      <meta property="article:publisher" content="https://elior.studio" />
       
       {/* Twitter Card - Maximum */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@awen28" />
+      <meta name="twitter:site" content="@eliorstudio" />
       <meta name="twitter:creator" content="@thomasmayrl" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={fullTitle} />
-      <meta name="twitter:domain" content="awen28.com" />
+      <meta name="twitter:domain" content="elior.studio" />
       
       {/* Pinterest */}
       <meta name="pinterest-rich-pin" content="true" />
@@ -118,10 +118,6 @@ export const SEO = ({
       
       {/* Apple App Store Meta */}
       <meta name="apple-itunes-app" content="app-id=1728579612" />
-      
-      {/* Search Engine Verification */}
-      <meta name="google-site-verification" content="verify-later" />
-      <meta name="msvalidate.01" content="verify-later" />
       
       {/* Dublin Core */}
       <meta name="DC.title" content={fullTitle} />
@@ -164,14 +160,14 @@ export const generateAppStructuredData = (
   size?: string,
   ageRating?: string
 ) => {
-  const baseUrl = `https://www.awen28.com/${name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
+  const baseUrl = `https://elior.studio/${name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
   
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": name,
     "description": description,
-    "image": image.startsWith('http') ? image : `https://www.awen28.com${image}`,
+    "image": image.startsWith('http') ? image : `https://elior.studio${image}`,
     "url": baseUrl,
     "applicationCategory": category,
     "applicationSubCategory": "MobileApplication",
@@ -190,22 +186,22 @@ export const generateAppStructuredData = (
     "author": {
       "@type": "Person",
       "name": "Thomas Mayrl",
-      "url": "https://www.awen28.com"
+      "url": "https://elior.studio"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Elior",
-      "url": "https://www.awen28.com",
+      "url": "https://elior.studio",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.awen28.com/og-image.jpg"
+        "url": "https://elior.studio/og-image.jpg"
       }
     },
-    ...(rating && {
+    ...(rating && reviewCount && {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": rating,
-        "reviewCount": reviewCount || "100",
+        "reviewCount": reviewCount,
         "bestRating": "5",
         "worstRating": "1"
       }
@@ -216,7 +212,7 @@ export const generateAppStructuredData = (
     ...(screenshots && screenshots.length > 0 && {
       "screenshot": screenshots.map(src => ({
         "@type": "ImageObject",
-        "url": src.startsWith('http') ? src : `https://www.awen28.com${src}`,
+        "url": src.startsWith('http') ? src : `https://elior.studio${src}`,
         "caption": `${name} Screenshot`
       }))
     }),
@@ -224,7 +220,7 @@ export const generateAppStructuredData = (
     "isPartOf": {
       "@type": "WebSite",
       "name": "Elior",
-      "url": "https://www.awen28.com"
+      "url": "https://elior.studio"
     }
   };
 };
@@ -232,20 +228,22 @@ export const generateAppStructuredData = (
 export const generateLocalBusinessData = () => ({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Organization", "ProfessionalService"],
-  "@id": "https://www.awen28.com/#business",
+  "@id": "https://elior.studio/#business",
   "name": "Elior Digital Studio",
   "alternateName": ["Elior App Development", "Elior Austria"],
   "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich. Award-winning mobile apps by Thomas Mayrl. Elior bedeutet „Gott ist mein Licht\" – Built with meaning.",
-  "url": "https://www.awen28.com",
+  "url": "https://elior.studio",
+  "email": "info@elior.studio",
+  "telephone": "+43-677-64059711",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://www.awen28.com/og-image.jpg",
+    "url": "https://elior.studio/og-image.jpg",
     "width": 1200,
     "height": 630
   },
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.awen28.com/og-image.jpg",
+    "url": "https://elior.studio/og-image.jpg",
     "width": 1200,
     "height": 630
   },
@@ -253,7 +251,7 @@ export const generateLocalBusinessData = () => ({
     "@type": "Person",
     "name": "Thomas Mayrl",
     "jobTitle": "Founder & Lead Developer",
-    "url": "https://www.awen28.com",
+    "url": "https://elior.studio",
     "sameAs": [
       "https://apps.apple.com/at/developer/thomas-mayrl/id1728579612"
     ]
@@ -261,14 +259,16 @@ export const generateLocalBusinessData = () => ({
   "foundingDate": "2020",
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "AT",
+    "streetAddress": "Johannesfeldstrasse 44",
+    "addressLocality": "Volders",
     "addressRegion": "Tirol",
-    "addressLocality": "Tirol"
+    "postalCode": "6111",
+    "addressCountry": "AT"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 47.2692,
-    "longitude": 11.4041
+    "latitude": 47.259659,
+    "longitude": 11.404102
   },
   "areaServed": [
     {
@@ -308,6 +308,9 @@ export const generateLocalBusinessData = () => ({
     "UI/UX Design",
     "AI Integration",
     "KI-Integration",
+    "KI-Agentur",
+    "Automatisierung",
+    "Automatisierung Tirol",
     "App Store Optimization",
     "B2B2C Plattform Entwicklung"
   ],
@@ -351,8 +354,16 @@ export const generateLocalBusinessData = () => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
+          "name": "KI-Integration & Automatisierung",
+          "description": "KI-Integration und Workflow-/Prozess-Automatisierung für Unternehmen"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
           "name": "App Store Optimization",
-          "description": "Proven ASO strategies for #1 App Store rankings"
+          "description": "Proven ASO strategies for top App Store rankings"
         }
       }
     ]
@@ -383,26 +394,18 @@ export const generateLocalBusinessData = () => ({
 export const generateWebSiteData = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://www.awen28.com/#website",
+  "@id": "https://elior.studio/#website",
   "name": "Elior",
   "alternateName": "Elior Digital Studio",
-  "url": "https://www.awen28.com",
+  "url": "https://elior.studio",
   "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich",
   "publisher": {
     "@type": "Organization",
     "name": "Elior",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.awen28.com/og-image.jpg"
+      "url": "https://elior.studio/og-image.jpg"
     }
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://www.awen28.com/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
   },
   "inLanguage": ["de", "en"]
 });

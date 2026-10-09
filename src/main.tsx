@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { SmoothScroll } from './components/SmoothScroll'
 import { CustomCursor } from './components/CustomCursor'
+import { ScrollRestoration } from './components/ScrollRestoration'
+import './i18n'
 import './index.css'
 import App from './App.tsx'
 
@@ -13,6 +15,7 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <SmoothScroll>
           <CustomCursor />
+          <ScrollRestoration />
           <App />
         </SmoothScroll>
       </BrowserRouter>

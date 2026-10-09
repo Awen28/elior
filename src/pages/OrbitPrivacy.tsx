@@ -17,7 +17,7 @@ const OrbitPrivacy = () => {
       <SEO
         title="Privacy Policy | Orbit - The Game | Elior"
         description="Privacy Policy for Orbit - The Game iOS app by Elior."
-        canonical="https://www.awen28.com/orbit/privacy"
+        canonical="https://elior.studio/orbit/privacy"
       />
 
       {/* Header */}
@@ -136,7 +136,7 @@ const OrbitPrivacy = () => {
                     Johannesfeldstrasse 44, 6111 Volders, Austria
                   </p>
                   <p className="text-white/60">
-                    info@awen28.com
+                    info@elior.studio
                   </p>
                 </div>
               </section>
@@ -320,11 +320,11 @@ const OrbitPrivacy = () => {
                 <p className="text-sm text-white/60">
                   If you have any questions about this Privacy Policy, please contact us at:<br />
                   <a
-                    href="mailto:info@awen28.com"
+                    href="mailto:info@elior.studio"
                     className="underline hover:no-underline"
                     style={{ color: '#BBB1A4' }}
                   >
-                    info@awen28.com
+                    info@elior.studio
                   </a>
                 </p>
               </section>

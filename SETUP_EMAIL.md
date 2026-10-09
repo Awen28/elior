@@ -6,7 +6,7 @@
 
 1. Gehe zu [web3forms.com](https://web3forms.com)
 2. Klicke auf "Get Started" oder "Create Access Key"
-3. Gib deine E-Mail ein: **info@awen28.com**
+3. Gib deine E-Mail ein: **info@elior.studio**
 4. Du erhältst sofort einen **Access Key** (z.B. `abc123-def456-ghi789`)
 
 ### Schritt 2: Access Key konfigurieren
@@ -30,7 +30,7 @@
 
 ### Schritt 3: Testen
 - Fülle das Formular aus und sende eine Test-Nachricht
-- Du erhältst die E-Mail an **info@awen28.com**
+- Du erhältst die E-Mail an **info@elior.studio**
 
 ---
 
@@ -64,7 +64,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'info@awen28.com',
+        to_email: 'info@elior.studio',
       },
       'YOUR_PUBLIC_KEY'
     );
@@ -85,7 +85,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
 1. Gehe zu [formspree.io](https://formspree.io)
 2. Registriere dich (kostenlos bis 50 Submissions/Monat)
-3. Erstelle ein neues Formular für **info@awen28.com**
+3. Erstelle ein neues Formular für **info@elior.studio**
 4. Kopiere die Form Endpoint URL
 
 ### Code in Contact.tsx:
@@ -134,4 +134,4 @@ const handleSubmit = async (e: React.FormEvent) => {
 - ✅ E-Mail-Bestätigung
 
 ## Support
-Bei Fragen: info@awen28.com
+Bei Fragen: info@elior.studio

@@ -1,7 +1,8 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Sparkles, MapPin, MessageCircle, Sun, Star, ChevronRight, Download, Calendar, Eye, Compass } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
 // New warm color palette matching the app redesign
@@ -18,63 +19,8 @@ const colors = {
   cream: '#FAF7F2',
 };
 
-const features = [
-  {
-    icon: MessageCircle,
-    title: 'Energy Chat',
-    description: 'Ask your higher self anything. AI combines astrology, numerology, and cosmic energy for personalized guidance with best-case, worst-case, and DOs/DONTs.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Angel Numbers',
-    description: 'Interpret angel numbers and their spiritual meanings. Discover what the universe is trying to tell you through recurring number patterns.',
-  },
-  {
-    icon: Sun,
-    title: 'Daily Energy',
-    description: 'Personalized daily cosmic insights based on your birth chart. Know how to align yourself today with planetary transits and energy readings.',
-  },
-  {
-    icon: Calendar,
-    title: 'Weekly & Monthly Outlook',
-    description: 'Plan ahead with weekly themes and monthly cosmic forecasts. Understand what to pay attention to in the coming days and weeks.',
-  },
-  {
-    icon: Eye,
-    title: '90 Day Preview',
-    description: 'Look into your cosmic future with a 90-day preview. Discover what awaits you and prepare for upcoming astrological events.',
-  },
-  {
-    icon: Compass,
-    title: 'Daily Transits & Calendar',
-    description: 'All cosmic influences at a glance. Track planetary movements, retrogrades, and important transits with your personal transit calendar.',
-  },
-  {
-    icon: Star,
-    title: 'Birth Chart Analysis',
-    description: 'Complete natal chart with Big Three (Sun, Ascendant, Moon), personal planets, houses, and detailed interpretations of your cosmic blueprint.',
-  },
-  {
-    icon: MapPin,
-    title: 'Astrocartography',
-    description: 'Discover where your energies work best on Earth. Find your power spots for love, career, and personal growth with interactive world maps.',
-  },
-];
-
-const screenshots = [
-  { src: '/apps/numistellar_home1.png', alt: 'Home Screen' },
-  { src: '/apps/numistellar_chat.png', alt: 'Energy Chat' },
-  { src: '/apps/numistellar_dailyenergy.png', alt: 'Daily Energy' },
-  { src: '/apps/numistellar_birthchart1.png', alt: 'Birth Chart' },
-  { src: '/apps/numistellar_astrocartography.png', alt: 'Astrocartography' },
-  { src: '/apps/numistellar_schumann.png', alt: 'Cosmic Weather' },
-  { src: '/apps/numistellar_birthchart2.png', alt: 'Houses & Aspects' },
-  { src: '/apps/numistellar_currenttransit.png', alt: 'Current Transits' },
-  { src: '/apps/numistellar_chakraanalysis.png', alt: 'Chakra Analysis' },
-  { src: '/apps/numistellar_realtime1.png', alt: 'Real-time Planets' },
-  { src: '/apps/numistellar_realtime2.png', alt: 'Numerology' },
-  { src: '/apps/numistellar_widgets.png', alt: 'Home Screen Widgets' },
-];
+const featureIcons = [MessageCircle, Sparkles, Sun, Calendar, Eye, Compass, Star, MapPin];
+const screenshotKeys = ['home', 'chat', 'dailyenergy', 'birthchart1', 'astrocartography', 'schumann', 'birthchart2', 'currenttransit', 'chakraanalysis', 'realtime1', 'realtime2', 'widgets'];
 
 // Warm floating particles (replacing cosmic stars)
 const WarmParticle = ({ delay: _delay }: { delay: number }) => (
@@ -147,36 +93,9 @@ const WarmOrb = ({ size, delay, x, y }: { size: number; delay: number; x: string
   />
 );
 
-const appStructuredData = generateAppStructuredData(
-  "NumiStellar",
-  "Best astrology and numerology app in Austria. Energy Chat with AI, Angel Numbers, Daily Energy insights, Birth Chart analysis, Astrocartography maps, Schumann Resonance, and Cosmic Weather. Discover your cosmic energy with personalized spiritual guidance.",
-  "https://www.awen28.com/apps/numistellar_home1.png",
-  "https://apps.apple.com/at/app/numistellar/id6478859654",
-  "LifestyleApplication",
-  "4.9",
-  "5200",
-  ["Energy Chat AI", "Angel Numbers", "Daily Energy", "Weekly Outlook", "Monthly Outlook", "90 Day Preview", "Daily Transits", "Transit Calendar", "Birth Chart Analysis", "Astrocartography", "Schumann Resonance", "Cosmic Weather", "Solar Activity", "Home Screen Widgets"],
-  ["/apps/numistellar_home1.png", "/apps/numistellar_chat.png", "/apps/numistellar_dailyenergy.png", "/apps/numistellar_birthchart1.png", "/apps/numistellar_astrocartography.png", "/apps/numistellar_schumann.png"],
-  "2025-01-15",
-  "65MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "NumiStellar", url: "https://www.awen28.com/numistellar" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Was ist die beste Astrologie App in Österreich?", answer: "NumiStellar von Elior ist die beste Astrologie und Numerologie App in Österreich mit Energy Chat AI, Angel Numbers, Daily Energy, Birth Charts und Astrocartography." },
-  { question: "Was ist der Energy Chat in NumiStellar?", answer: "Der Energy Chat ist eine AI-gestützte spirituelle Beratung. Du kannst dein höheres Selbst fragen und bekommst personalisierte Antworten mit Best-Case, Worst-Case und DOs/DONTs basierend auf Astrologie und Numerologie." },
-  { question: "Was ist Numerologie und wie funktioniert sie?", answer: "Numerologie ist die Lehre von der Bedeutung von Zahlen in deinem Leben. NumiStellar berechnet deine Lebenszahl, Schicksalszahl und Tageszahl für persönliche Einblicke." },
-  { question: "Was ist Schumann Resonanz?", answer: "Die Schumann Resonanz ist die natürliche Frequenz der Erde (7.83 Hz). NumiStellar zeigt aktuelle Resonanzwerte und deren Einfluss auf dein Wohlbefinden." },
-  { question: "Was ist Astrocartography?", answer: "Astrocartography zeigt auf einer Weltkarte wo deine Planeten-Energien am stärksten wirken. Finde deine Power-Spots für Liebe, Karriere und persönliches Wachstum." },
-  { question: "Ist NumiStellar kostenlos?", answer: "NumiStellar ist kostenlos im App Store erhältlich mit optionalen Premium-Funktionen für erweiterte Astrologie und Numerologie-Analysen." },
-]);
-
 const NumiStellar = () => {
+  const { t, i18n } = useTranslation('numiStellar');
+  const { t: tc } = useTranslation();
   const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -189,6 +108,54 @@ const NumiStellar = () => {
   });
   
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        "NumiStellar",
+        t('structured.description'),
+        "https://elior.studio/apps/numistellar_home.webp",
+        "https://apps.apple.com/at/app/numistellar/id6478859654",
+        "LifestyleApplication",
+        "4.9",
+        "5200",
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ["/apps/numistellar_home.webp", "/apps/numistellar_chat.webp", "/apps/numistellar_dailyenergy.webp", "/apps/numistellar_birthchart1.webp", "/apps/numistellar_astrocartography.webp", "/apps/numistellar_schumann.webp"],
+        "2025-01-15",
+        "65MB",
+        "4+"
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: "Home", url: "https://elior.studio/" },
+        { name: "NumiStellar", url: "https://elior.studio/numistellar" }
+      ]),
+    [],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = screenshotKeys.map((key) => ({
+    src: `/apps/numistellar_${key}.webp`,
+    alt: t(`screenshots.alts.${key}`),
+  }));
 
   useEffect(() => {
     if (location.pathname === '/numistellar') {
@@ -208,18 +175,18 @@ const NumiStellar = () => {
   return (
     <>
       <SEO 
-        title="NumiStellar | Beste Astrologie & Numerologie App Österreich 2026"
-        description="NumiStellar - Die beste Astrologie und Numerologie App in Österreich. Energy Chat AI, Angel Numbers, Daily Energy, Geburtshoroskop, Astrocartography und Cosmic Weather. Kostenlos im App Store!"
-        keywords="beste Astrologie App Österreich, Numerologie App, Geburtshoroskop iOS, Schumann Resonanz App, Energy Chat AI, Angel Numbers, Planetenpositionen Echtzeit, Zodiac Kompatibilität, Lebenszahl berechnen, Astrologie Deutschland, Horoskop App Österreich, Numerologie Rechner, Sternzeichen App, Astrocartography, kosmische Energie, tägliches Horoskop, Spiritualität App, best astrology app Austria, birth chart app, life path calculator"
-        ogImage="https://www.awen28.com/apps/numistellar_home1.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/numistellar_home.webp"
         ogType="product"
-        canonical="https://www.awen28.com/numistellar"
+        canonical="https://elior.studio/numistellar"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="NumiStellar"
         appCategory="LifestyleApplication"
         rating="4.9"
         reviewCount="5200"
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
     <div ref={containerRef} className="relative min-h-screen" style={{ background: colors.bg }}>
       {/* Warm Background Effects */}
@@ -262,7 +229,7 @@ const NumiStellar = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
         </div>
       </nav>
@@ -314,7 +281,7 @@ const NumiStellar = () => {
               </motion.div>
               <div>
                 <h1 className="font-serif text-3xl" style={{ color: colors.text }}>NumiStellar</h1>
-                <p className="text-sm" style={{ color: colors.textMuted }}>Cosmic Energy Guide</p>
+                <p className="text-sm" style={{ color: colors.textMuted }}>{t('hero.tagline')}</p>
               </div>
             </motion.div>
 
@@ -325,10 +292,10 @@ const NumiStellar = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Discover your
+              {t('hero.title1')}
               <br />
               <span style={{ color: colors.accent }}>
-                cosmic energy
+                {t('hero.title2')}
               </span>
             </motion.h2>
 
@@ -339,9 +306,7 @@ const NumiStellar = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              NumiStellar unites astrology, numerology, and cosmic energy data to help you 
-              understand your unique energetic imprint. With AI-powered Energy Chat, Angel Numbers, 
-              and personalized daily insights.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -364,7 +329,7 @@ const NumiStellar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-4 h-4" />
-                Download App
+                {t('hero.download')}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -412,8 +377,8 @@ const NumiStellar = () => {
                 }}
               >
                 <img
-                  src="/apps/numistellar_home1.png"
-                  alt="NumiStellar App Home"
+                  src="/apps/numistellar_home.webp"
+                  alt={t('hero.imageAlt')}
                   className="w-[260px] md:w-[300px] h-auto rounded-[24px]"
                 />
               </div>
@@ -436,10 +401,10 @@ const NumiStellar = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: colors.accent }}
             >
-              ✨ Cosmic Features ✨
+              {t('features.eyebrow')}
             </motion.span>
             <h2 className="font-serif text-4xl md:text-5xl" style={{ color: colors.text }}>
-              Your manifestation toolkit
+              {t('features.title')}
             </h2>
           </motion.div>
 
@@ -500,10 +465,10 @@ const NumiStellar = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: colors.accent }}
             >
-              🌌 Explore the Cosmos 🌌
+              {t('screenshots.eyebrow')}
             </motion.span>
             <h2 className="font-serif text-4xl md:text-5xl" style={{ color: colors.text }}>
-              Ancient wisdom meets AI
+              {t('screenshots.title')}
             </h2>
           </motion.div>
 
@@ -546,21 +511,10 @@ const NumiStellar = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-serif text-4xl md:text-5xl mb-8" style={{ color: colors.text }}>
-                Why NumiStellar?
+                {t('benefits.title')}
               </h2>
               <div className="space-y-5">
-                {[
-                  'AI-powered Energy Chat with personalized guidance',
-                  'Complete birth chart with Big Three analysis',
-                  'Real-time planetary positions and transits',
-                  'Schumann resonance & solar activity monitoring',
-                  'Astrocartography world maps',
-                  'Angel numbers interpretation',
-                  'Daily, weekly & monthly cosmic outlook',
-                  '90-day future preview',
-                  'Home screen widgets',
-                  'Chakra energy analysis',
-                ].map((item, idx) => (
+                {(t('benefits.items', { returnObjects: true }) as string[]).map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -614,8 +568,8 @@ const NumiStellar = () => {
                 }}
               >
                 <img
-                  src="/apps/numistellar_chat.png"
-                  alt="Energy Chat Feature"
+                  src="/apps/numistellar_chat.webp"
+                  alt={t('benefits.imageAlt')}
                   className="w-[280px] h-auto rounded-[24px]"
                 />
               </div>
@@ -667,11 +621,10 @@ const NumiStellar = () => {
             </motion.div>
 
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 relative z-10">
-              Start your cosmic journey
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto relative z-10">
-              Join thousands who have transformed their lives with cosmic wisdom. 
-              Your stars are waiting to guide you.
+              {t('cta.description')}
             </p>
             <motion.a
               href="https://apps.apple.com/at/app/numistellar/id6478859654"
@@ -686,7 +639,7 @@ const NumiStellar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Download className="w-5 h-5" />
-              Get NumiStellar on the App Store
+              {t('cta.button')}
             </motion.a>
           </div>
         </motion.div>
@@ -707,14 +660,14 @@ const NumiStellar = () => {
             <span className="font-serif text-xl text-white">NumiStellar</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2026 NumiStellar. A product by Elior.
+            © 2026 NumiStellar. {t('footer.productBy')}
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm transition-colors hover:text-white"
             style={{ color: colors.accentLight }}
           >
-            Visit Elior
+            {tc('appCommon.visitElior')}
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

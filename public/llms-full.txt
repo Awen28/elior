@@ -1,0 +1,127 @@
+# Elior — Full Reference
+
+> Elior is a premium digital studio based in Volders, Tirol (Austria), founded and led by Thomas Mayrl. Elior builds native iOS/Android apps, custom websites and homepages, and AI/automation solutions. More than 9 apps published on the Apple App Store. This file is the full reference corpus for AI/LLM retrieval.
+
+## About Elior
+
+Elior (elior.studio) is a digital studio in Tirol, Österreich, specializing in:
+
+- Native iOS App Development (Swift, SwiftUI) with AI integration
+- Android App Development (native and cross-platform)
+- Web Development / Homepage-Programmierung (React, TypeScript, Vite)
+- Webdesign Tirol — responsive, SEO-optimized websites
+- KI-Integration — OpenAI GPT, DALL·E, computer vision, machine learning
+- Automatisierung — workflow and business-process automation
+
+- Region: Tirol, Austria (Österreich)
+- Location: Volders, Tirol
+- Founder & Developer: Thomas Mayrl
+- Website: https://elior.studio
+- Email: info@elior.studio
+- App Store developer page: https://apps.apple.com/at/developer/thomas-mayrl/id1728579612
+- Languages: German (de-AT), English
+
+## Services
+
+### iOS App Entwicklung / App erstellen lassen
+Native iPhone and iPad applications built with Swift and SwiftUI. Focus on performance, elegant UI/UX, and App Store Optimization (ASO). Service page: https://elior.studio/app-entwicklung-tirol
+
+### Android App Entwicklung
+Native and cross-platform Android app development for businesses in Austria, Germany and Switzerland.
+
+### Web Development / Homepage programmieren
+Modern, responsive websites and web applications built with React, TypeScript and Vite. From one-pagers to complex web apps with backend and AI. Homepage erstellen lassen in Tirol und Österreich. Service page: https://elior.studio/webdesign-tirol
+
+### Webdesign Tirol
+User-centered design with focus on accessibility, aesthetics, performance and conversion optimization.
+
+### KI-Integration (AI Integration)
+Implementation of OpenAI GPT, DALL·E, computer vision and machine-learning capabilities into apps, websites and workflows.
+
+### Automatisierung (Automation)
+Workflow automation and business-process automation: connecting tools, automating repetitive tasks, and building AI-driven pipelines for companies.
+
+## Portfolio Apps (iOS)
+
+### 369 — Manifestation App
+- Category: Manifestation, Meditation, Wellness, Spiritual
+- URL: https://elior.studio/369
+- App Store: https://apps.apple.com/at/app/369-manifest/id6738690566
+- Manifestation app based on Nikola Tesla's 369 method, with AI Vision Boards, daily affirmations, guided meditation, goal tracking and abundance tools.
+- Key features: 369 method (morning/afternoon/evening), AI vision boards (text-to-image), AI-personalized meditations, Solfeggio frequencies, 21-day tracking, gratitude journal.
+- Best for: people interested in manifestation, law of attraction, affirmations, meditation, spirituality, numerology, vision boards.
+
+### NumiStellar — Astrology & Numerology
+- Category: Astrology, Numerology, Cosmic Energy
+- URL: https://elior.studio/numistellar
+- App Store: https://apps.apple.com/at/app/numistellar/id6478859654
+- Astrology and numerology app with AI Energy Chat, Angel Numbers, Daily Energy, birth chart analysis, astrocartography, Schumann resonance and cosmic weather.
+- Key features: AI Energy Chat, astrocartography, real-time planetary positions, birth chart, Schumann resonance, solar activity, home-screen widgets, angel numbers, horoscopes.
+- Best for: astrology, horoscopes, birth charts, cosmic energy, numerology, spiritual guidance.
+
+### kiBook — AI Children's Book Creator
+- Category: AI Story Generation, Children's Books, Creative Writing
+- URL: https://elior.studio/kibook
+- App Store: https://apps.apple.com/at/app/kibook-dein-abenteuer/id6744836466
+- Turns a child's imagination into illustrated stories. Customize characters, themes and art styles.
+- Key features: AI story generation, multiple art styles (watercolor, pencil, 3D cartoon, flat), auto illustrations, personal library, PDF export, kid-safe content.
+- Best for: parents, children, educators, families wanting personalized storybooks.
+
+### Elow — AI Music Generator
+- Category: AI Music Generation, Soundscapes, Audio Creation
+- URL: https://elior.studio/elow
+- App Store: https://apps.apple.com/at/app/elow/id6742148929
+- Transforms emotions and ideas into original soundscapes. "Musik erstellen mit KI".
+- Key features: AI song creation from text, mood-based songs, genre mashup (ambient, electronic, lo-fi, cinematic), personal soundtrack, multiple languages, royalty-free output.
+- Best for: content creators, focus/study music, meditation, fitness, filmmakers.
+
+### Orbit — Space Arcade Game
+- Category: Gaming, Arcade, Space
+- URL: https://elior.studio/orbit
+- App Store: https://apps.apple.com/us/app/orbit-the-game/id6763136527
+- Free iOS space arcade game: dodge asteroids, collect power-ups, global leaderboards.
+- Best for: gamers looking for a free iOS arcade/space game.
+
+### ABWUN — Prayer App
+- Category: Prayer, Faith, Christian, Spirituality
+- URL: https://elior.studio/abwun
+- App Store: https://apps.apple.com/us/app/abwun/id6810855629
+- ABWUN is the opposite of manifestation: a daily path with God in three surrenders (morning, noon, evening), with an AI prayer companion and biblically grounded prayers ending "in Jesus' name". "Trust Him."
+- Key features: three daily surrenders; Heart Conversation AI prayer companion (GPT-4o-mini); Prayer Rope (Gebetsschnur) with the Jesus Prayer on 33/50/100 knots and breath mode; full Rosary (Rosenkranz) with all 20 mysteries by weekday and official liturgical wording; The Simple Way (christ-centered path); Lament & Unanswered Prayer (Klage & unbeantwortetes Gebet); The Examen (Ignatian five-step review); Faith & Answers (chat about God, Jesus, Bible, faith); Silence / Lectio Divina.
+- Available in German, English, Spanish, Italian, Romanian.
+- Best for: Christians seeking prayer guidance, daily devotion, spiritual growth and inner freedom through surrender to God.
+
+### Suremate — Digital Insurance Claims
+- Category: Insurance Management, InsurTech
+- URL: https://elior.studio/suremate
+- App Store: https://apps.apple.com/at/app/suremate/id6475345859
+- Report car accidents, household damage and personal injury digitally with photos and structured documentation; manage policies.
+- Best for: insurance customers wanting digital damage-claim and policy management.
+
+### Suremate Pro — Insurance Agent CRM
+- Category: Insurance Agent Tools, B2B
+- URL: https://elior.studio/suremate-pro
+- App Store: https://apps.apple.com/at/app/suremate-pro/id6502916525
+- B2B insurance CRM for agents in Austria: customer overview, real-time claim notifications, damage reports, mobile CRM.
+- Best for: insurance agents and brokers needing professional client management.
+
+### StradaHub — Community Traffic App
+- Category: Traffic, Navigation, Community, Driving
+- URL: https://elior.studio/stradahub
+- App Store: https://apps.apple.com/us/app/stradahub/id6796659292
+- Community traffic app for the DACH region. Real-time reports of accidents, roadworks, closures, traffic jams, hazards and controls on the map. Free, no registration, no ads. NO speed-camera/radar warnings.
+- Best for: commuters and drivers in Austria, Germany and Switzerland.
+
+## Location & Contact
+
+- Region: Tirol, Austria (Tirol, Österreich)
+- Location: Volders, Tirol
+- Founder & Developer: Thomas Mayrl
+- Email: info@elior.studio
+- Website: https://elior.studio
+
+Elior provides: iOS app development (App Entwicklung Tirol), Android app development, homepage/web design in Tirol & Österreich (Webdesign Tirol), app creation, AI-powered applications, automation, and custom software solutions.
+
+## Keywords for AI Retrieval
+
+iOS App Entwicklung Tirol, App Entwickler Österreich, App erstellen lassen, Android App Entwicklung, Homepage programmieren Tirol, Homepage erstellen lassen, Webdesign Tirol, Webentwicklung Österreich, KI Agentur Österreich, Automatisierung Tirol, AI Integration, iOS Developer Austria, manifestation app, meditation app, AI music generator, Musik erstellen mit KI, astrology app, horoscope app, birth chart, numerology app, Schumann resonance app, AI story generator for kids, children's book creator, vision board app, insurance app Austria, prayer app, Christian app, ABWUN, traffic app DACH, Verkehrsmeldungen Österreich, Stau melden App, space arcade game, iOS game, mindfulness app, solfeggio frequencies, law of attraction, daily affirmations, AI illustration generator, App Store Optimization, Swift Entwickler Österreich

@@ -1,37 +1,12 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Sparkles, Palette, BookOpen, Wand2, ChevronRight, Download, Star, Heart, FileText, Eye } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const features = [
-  {
-    icon: Wand2,
-    title: 'Magical Stories',
-    description: 'Transform any idea into a beautifully illustrated tale. Just type your story concept and watch it come alive!',
-  },
-  {
-    icon: Palette,
-    title: 'Beautiful Art Styles',
-    description: 'Choose from watercolor, pencil sketch, flat design, or 3D cartoon styles. Each book is uniquely yours!',
-  },
-  {
-    icon: BookOpen,
-    title: 'Your Personal Library',
-    description: 'Collect all your stories in one place. Read, share, and relive your magical adventures anytime!',
-  },
-];
-
-// Using exact filenames as provided
-const screenshots = [
-  { src: '/apps/kibook_home.png', alt: 'Home' },
-  { src: '/apps/kibook_features.png', alt: 'Features' },
-  { src: '/apps/kibook_keywords.png', alt: 'Keywords' },
-  { src: '/apps/kibook_style.png', alt: 'Style Selection' },
-  { src: '/apps/kibook_book.png', alt: 'Your Book' },
-  { src: '/apps/kibook_paintimage.png', alt: 'Paint Image' },
-  { src: '/apps/kibook_booklibrary.png', alt: 'Book Library' },
-];
+const featureIcons = [Wand2, Palette, BookOpen];
+const screenshotKeys = ['home', 'features', 'keywords', 'style', 'book', 'paintimage', 'booklibrary'];
 
 const floatingVariants = {
   animate: {
@@ -58,13 +33,13 @@ const starVariants = {
 };
 
 // Book page component for the flip effect
+const pageColors = ['#E3DED5', '#BBB1A4', '#D4A574', '#E8D5C4'];
+
 const BookPage = ({ pageNum, isFlipped, onClick }: { pageNum: number; isFlipped: boolean; onClick: () => void }) => {
-  const pageContent = [
-    { color: '#E3DED5', text: 'Once upon a time...', emoji: '🏖️' },
-    { color: '#BBB1A4', text: 'A magical adventure', emoji: '🌊' },
-    { color: '#D4A574', text: 'Beautiful dreams', emoji: '✨' },
-    { color: '#E8D5C4', text: 'The end', emoji: '📖' },
-  ];
+  const { t } = useTranslation('kiBook');
+  const pageContent = (
+    t('pageContent', { returnObjects: true }) as { text: string; emoji: string }[]
+  ).map((p, i) => ({ ...p, color: pageColors[i % pageColors.length] }));
   
   const content = pageContent[pageNum % pageContent.length];
   
@@ -101,42 +76,65 @@ const BookPage = ({ pageNum, isFlipped, onClick }: { pageNum: number; isFlipped:
           {content.text}
         </p>
         <div className="absolute bottom-4 right-4 text-xs opacity-50">
-          Page {pageNum + 1}
+          {t('pageLabel', { number: pageNum + 1 })}
         </div>
       </div>
     </motion.div>
   );
 };
 
-const appStructuredData = generateAppStructuredData(
-  "kiBook",
-  "AI-powered children's book creator. Transform your child's imagination into beautifully illustrated stories. Customize characters, themes, and art styles. The best AI story generator for kids.",
-  "https://www.awen28.com/apps/kiBook_homescreen.png",
-  "https://apps.apple.com/at/app/kibook/id6502518789",
-  "EducationApplication",
-  "4.9",
-  "15000",
-  ["AI Story Generation", "Personalized Characters", "Custom Themes", "Multiple Art Styles", "Digital Library", "Child-Friendly Interface", "Share Stories"],
-  ["/apps/kiBook_homescreen.png", "/apps/kibook_story.png", "/apps/kibook_library.png"],
-  "2025-03-01",
-  "70MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "kiBook", url: "https://www.awen28.com/kibook" }
-]);
-
-const faqData = generateFAQData([
-  { question: "Was ist kiBook?", answer: "kiBook ist eine innovative iOS App die mit Hilfe von KI personalisierte Kinderbücher erstellt. Eltern können Charaktere, Themen und Kunststile anpassen." },
-  { question: "Ist kiBook sicher für Kinder?", answer: "Ja, kiBook ist komplett kindersicher. Alle Geschichten werden von der KI auf Altersgerechtheit geprüft und enthalten keine unangemessenen Inhalte." },
-  { question: "Wie funktioniert die AI Geschichtenerstellung?", answer: "Eltern beschreiben einfach eine Geschichte oder einen Charakter. kiBook generiert automatisch eine vollständig illustrierte Geschichte mit passenden Bildern." },
-  { question: "Ist kiBook kostenlos?", answer: "kiBook ist kostenlos im App Store mit optionalen Premium-Funktionen für unbegrenzte Geschichtenerstellung." },
-]);
-
 const KiBook = () => {
+  const { t, i18n } = useTranslation('kiBook');
+  const { t: tc } = useTranslation();
   const location = useLocation();
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        'kiBook',
+        t('structured.description'),
+        'https://elior.studio/apps/kiBook_homescreen.webp',
+        'https://apps.apple.com/at/app/kibook/id6502518789',
+        'EducationApplication',
+        '4.9',
+        '15000',
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ['/apps/kiBook_homescreen.webp', '/apps/kibook_book.webp', '/apps/kibook_booklibrary.webp'],
+        '2025-03-01',
+        '70MB',
+        '4+',
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: 'Home', url: 'https://elior.studio/' },
+        { name: 'kiBook', url: 'https://elior.studio/kibook' },
+      ]),
+    [],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = screenshotKeys.map((key) => ({
+    src: `/apps/kibook_${key}.webp`,
+    alt: t(`screenshots.alts.${key}`),
+  }));
 
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -185,18 +183,18 @@ const KiBook = () => {
   return (
     <>
       <SEO
-        title="kiBook | #1 Beste AI Kinderbuch App 2026 - Geschichten mit KI erstellen"
-        description="kiBook - Die beste AI Kinderbuch App. Verwandle die Fantasie deines Kindes in wunderschön illustrierte Geschichten. Personalisierte Charaktere, Themen und Kunststile. Kostenlos!"
-        keywords="AI Kinderbuch App, personalisierte Kinderbücher, KI Geschichten für Kinder, Kinderbuch erstellen App, illustrierte Geschichten App, AI Story Generator Kinder, Lern App Kinder, Bilderbuch App, Kinderbuch digital, Fantasie Geschichten App, best AI children's book app 2026, personalized kids stories, AI story app for children"
-        ogImage="https://www.awen28.com/apps/kiBook_homescreen.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/kiBook_homescreen.webp"
         ogType="product"
-        canonical="https://www.awen28.com/kibook"
+        canonical="https://elior.studio/kibook"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="kiBook"
         appCategory="EducationApplication"
         rating="4.9"
         reviewCount="15000"
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
     <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
       {/* Decorative floating stars */}
@@ -248,7 +246,7 @@ const KiBook = () => {
             }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
         </div>
       </nav>
@@ -305,7 +303,7 @@ const KiBook = () => {
               </div>
               <div>
                 <h1 className="font-serif text-4xl" style={{ color: '#525240' }}>kiBook</h1>
-                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>Magic Story Creator</p>
+                <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.6)' }}>{t('hero.tagline')}</p>
               </div>
             </motion.div>
 
@@ -316,9 +314,9 @@ const KiBook = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Create magical
+              {t('hero.title1')}
               <br />
-              <span style={{ color: '#BBB1A4' }}>stories</span> together
+              <span style={{ color: '#BBB1A4' }}>{t('hero.title2')}</span> {t('hero.title3')}
             </motion.h2>
 
             <motion.p 
@@ -328,9 +326,7 @@ const KiBook = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Turn your imagination into beautifully illustrated books! With kiBook, every child 
-              (and child at heart) can become a storyteller. Just describe your idea and watch 
-              the magic happen.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -351,7 +347,7 @@ const KiBook = () => {
                 }}
               >
                 <Download className="w-5 h-5" />
-                Download kiBook
+                {t('hero.download')}
               </a>
             </motion.div>
           </motion.div>
@@ -392,8 +388,8 @@ const KiBook = () => {
                 }}
               >
                 <img
-                  src="/apps/kibook_home.png"
-                  alt="kiBook App Home"
+                  src="/apps/kibook_home.webp"
+                  alt={t('hero.imageAlt')}
                   className="w-[260px] md:w-[300px] h-auto rounded-[28px]"
                 />
               </div>
@@ -416,13 +412,13 @@ const KiBook = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#BBB1A4' }}
             >
-              ✨ Magic Features ✨
+              {t('features.eyebrow')}
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              How it works
+              {t('features.title')}
             </h2>
           </motion.div>
 
@@ -485,17 +481,16 @@ const KiBook = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#BBB1A4' }}
             >
-              📖 Example Story 📖
+              {t('pdfPreview.eyebrow')}
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              See what kiBook creates
+              {t('pdfPreview.title')}
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(82, 82, 64, 0.7)' }}>
-              Flip through the pages of &quot;Ava&apos;s Magical Beach Adventure&quot; — 
-              a complete story generated by kiBook&apos;s AI
+              {t('pdfPreview.description')}
             </p>
           </motion.div>
 
@@ -571,10 +566,10 @@ const KiBook = () => {
                       🏖️
                     </motion.div>
                     <h3 className="font-serif text-2xl text-white text-center mb-2">
-                      Ava&apos;s Magical<br/>Beach Adventure
+                      {t('pdfPreview.bookTitleLine1')}<br/>{t('pdfPreview.bookTitleLine2')}
                     </h3>
                     <p className="text-white/70 text-sm text-center">
-                      A kiBook Story
+                      {t('pdfPreview.bookSubtitle')}
                     </p>
                     <div className="absolute bottom-4 flex gap-1">
                       {[...Array(5)].map((_, i) => (
@@ -620,7 +615,7 @@ const KiBook = () => {
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                Click to flip pages ✨
+                {t('pdfPreview.flipHint')}
               </motion.p>
             </motion.div>
 
@@ -653,16 +648,16 @@ const KiBook = () => {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl" style={{ color: '#525240' }}>
-                      Full PDF Version
+                      {t('pdfPreview.cardTitle')}
                     </h3>
                     <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
-                      12 pages • 1.7 MB
+                      {t('pdfPreview.cardMeta')}
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-3 mb-6">
-                  {['Beautiful illustrations', 'Kid-friendly story', 'Print-ready format', 'Share with family'].map((item, i) => (
+                  {(t('pdfPreview.bullets', { returnObjects: true }) as string[]).map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div 
                         className="w-5 h-5 rounded-full flex items-center justify-center"
@@ -689,7 +684,7 @@ const KiBook = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Eye className="w-4 h-4" />
-                    View PDF
+                    {t('pdfPreview.viewPdf')}
                   </motion.a>
                   <motion.a
                     href="/apps/kibook_example.pdf"
@@ -726,13 +721,13 @@ const KiBook = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-6"
               style={{ color: '#BBB1A4' }}
             >
-              📚 Your Books 📚
+              {t('screenshots.eyebrow')}
             </motion.span>
             <h2 
               className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Create & Collect
+              {t('screenshots.title')}
             </h2>
           </motion.div>
 
@@ -781,19 +776,10 @@ const KiBook = () => {
                 className="font-serif text-4xl md:text-5xl mb-8"
                 style={{ color: '#525240' }}
               >
-                Perfect for little storytellers
+                {t('benefits.title')}
               </h2>
               <div className="space-y-5">
-                {[
-                  'Easy to use - just type and create!',
-                  'Beautiful AI-generated illustrations',
-                  'Multiple art styles to choose from',
-                  'Save stories to your library',
-                  'Share books with family & friends',
-                  'Safe and kid-friendly content',
-                  'No reading skills required',
-                  'Encourages creativity & imagination',
-                ].map((item, idx) => (
+                {(t('benefits.items', { returnObjects: true }) as string[]).map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -839,8 +825,8 @@ const KiBook = () => {
                 }}
               >
                 <img
-                  src="/apps/kibook_book.png"
-                  alt="Your Magical Book"
+                  src="/apps/kibook_book.webp"
+                  alt={t('benefits.imageAlt')}
                   className="w-[280px] h-auto rounded-[32px]"
                 />
               </motion.div>
@@ -891,11 +877,10 @@ const KiBook = () => {
             <h2 
               className="font-serif text-4xl md:text-5xl text-white mb-6"
             >
-              Start your story today!
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/90 mb-10 max-w-xl mx-auto">
-              Download kiBook and turn your imagination into magical illustrated stories. 
-              Perfect for kids, parents, and anyone who loves storytelling!
+              {t('cta.description')}
             </p>
             <motion.a
               href="https://apps.apple.com/at/app/kibook-dein-abenteuer/id6744836466"
@@ -910,7 +895,7 @@ const KiBook = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Download className="w-5 h-5" />
-              Get kiBook on the App Store
+              {t('cta.button')}
             </motion.a>
           </motion.div>
         </motion.div>
@@ -929,14 +914,14 @@ const KiBook = () => {
             <span className="font-serif text-2xl" style={{ color: '#525240' }}>kiBook</span>
           </div>
           <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.5)' }}>
-            © 2024 kiBook. A product by Elior. Made with ✨ for little storytellers.
+            © 2024 kiBook. {t('footer.productBy')}
           </p>
           <Link 
             to="/"
             className="flex items-center gap-2 text-sm"
             style={{ color: '#BBB1A4' }}
           >
-            Visit Elior
+            {tc('appCommon.visitElior')}
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

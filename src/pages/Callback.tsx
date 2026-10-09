@@ -117,7 +117,7 @@ const Callback = () => {
               style={{ background: '#1a1a2e' }}
             >
               <img 
-                src="/apps/kibook_logo.png" 
+                src="/apps/kiBook_Logo_gelb.webp" 
                 alt="kiBook" 
                 className="w-10 h-10 object-cover"
                 onError={(e) => {

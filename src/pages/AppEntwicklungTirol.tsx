@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, Smartphone, Brain, Mail, Phone, MapPin, ChevronRight, Sparkles, Apple, Play, Rocket, Zap, Shield, Wallet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO, generateLocalBusinessData, generateWebSiteData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
+import { scrollToSection } from '../lib/scroll';
 
 const CREAM = '#F1EDE6';
 const CREAM_SOFT = '#F5F1EC';
@@ -58,8 +59,8 @@ const AppEntwicklungTirol = () => {
   const bgY = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   const breadcrumbData = generateBreadcrumbData([
-    { name: "Home", url: "https://www.awen28.com/" },
-    { name: "App Entwicklung Tirol", url: "https://www.awen28.com/app-entwicklung-tirol" },
+    { name: "Home", url: "https://elior.studio/" },
+    { name: "App Entwicklung Tirol", url: "https://elior.studio/app-entwicklung-tirol" },
   ]);
 
   useEffect(() => {
@@ -69,8 +70,7 @@ const AppEntwicklungTirol = () => {
   }, []);
 
   const scrollToContact = () => {
-    const el = document.querySelector('#contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('#contact');
   };
 
   return (
@@ -79,9 +79,9 @@ const AppEntwicklungTirol = () => {
         title="App erstellen lassen Tirol & Österreich – iOS & Android Entwicklung | Elior"
         description="App erstellen lassen in Tirol & Österreich: Elior entwickelt iOS & Android Apps mit KI-Integration, modernem Design und App Store Optimization. 50.000+ Downloads, 11+ Apps. Jetzt kostenlose Beratung!"
         keywords="App erstellen lassen Tirol, App Entwicklung Österreich, iOS App erstellen lassen, Android App erstellen lassen, App Agentur Tirol, App Entwickler Österreich, App programmieren lassen, App Entwicklung Innsbruck, iPhone App erstellen lassen, App Agentur Österreich, KI App Entwicklung, App Store Optimization Tirol, Thomas Mayrl App Entwicklung, mobile App Entwicklung, App Studio Österreich, App Kosten, App Entwickler in der Nähe"
-        ogImage="https://www.awen28.com/og-image.jpg"
+        ogImage="https://elior.studio/og-image.jpg"
         ogType="website"
-        canonical="https://www.awen28.com/app-entwicklung-tirol"
+        canonical="https://elior.studio/app-entwicklung-tirol"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData]}
         language="de-AT"
         region="Tirol, Österreich"
@@ -259,8 +259,8 @@ const AppEntwicklungTirol = () => {
               Erzähl mir von deiner App-Idee – ich melde mich innerhalb von 24 Stunden mit einer kostenlosen Ersteinschätzung und Festpreis.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4 mb-8">
-              <a href="mailto:info@awen28.com" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white" style={{ background: INK }}>
-                <Mail className="w-5 h-5" /> info@awen28.com
+              <a href="mailto:info@elior.studio" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white" style={{ background: INK }}>
+                <Mail className="w-5 h-5" /> info@elior.studio
               </a>
               <a href="tel:+4367764059711" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full" style={{ background: CREAM, color: INK, boxShadow: 'inset 0 0 0 1px rgba(74,64,56,0.15)' }}>
                 <Phone className="w-5 h-5" /> +43 677 64059711

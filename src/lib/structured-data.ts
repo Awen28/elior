@@ -5,10 +5,10 @@ export const organizationSchema = {
   alternateName: 'Elior',
   description:
     'Professionelle iOS App-Entwicklung, Website-Erstellung, KI-Integrationen und Logo-Design in Tirol. Komplette Medienagentur für digitale Lösungen.',
-  url: 'https://awen28.com',
-  logo: 'https://awen28.com/logo.png',
-  image: 'https://awen28.com/og-image.jpg',
-  email: 'info@awen28.com',
+  url: 'https://elior.studio',
+  logo: 'https://elior.studio/logos/elior-star.webp',
+  image: 'https://elior.studio/og-image.jpg',
+  email: 'info@elior.studio',
   telephone: '+43-677-64059711',
   address: {
     '@type': 'PostalAddress',
@@ -37,7 +37,7 @@ export const organizationSchema = {
     '@type': 'Person',
     name: 'Thomas Mayrl',
     jobTitle: 'App Developer & Web Developer',
-    email: 'info@awen28.com',
+    email: 'info@elior.studio',
     telephone: '+43-677-64059711',
     sameAs: ['https://www.linkedin.com/in/thomas-mayrl-719267bb'],
   },
@@ -46,6 +46,7 @@ export const organizationSchema = {
     'iOS App Development',
     'Web Development',
     'Artificial Intelligence Integration',
+    'Automation',
     'Logo Design',
     'Mobile Applications',
     'SwiftUI',
@@ -87,6 +88,15 @@ export const organizationSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
+          name: 'Automatisierung',
+          description:
+            'Automatisierung von Workflows und Geschäftsprozessen mit KI und modernen Tools',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
           name: 'Logo Design',
           description: 'Professionelles Logo-Design und Corporate Identity',
         },
@@ -103,8 +113,8 @@ export const personSchema = {
   jobTitle: 'iOS App Developer & Web Developer',
   description:
     'Independent app developer specializing in iOS applications, web development, and AI integrations.',
-  url: 'https://awen28.com',
-  email: 'info@awen28.com',
+  url: 'https://elior.studio',
+  email: 'info@elior.studio',
   telephone: '+43-677-64059711',
   address: {
     '@type': 'PostalAddress',
@@ -136,18 +146,13 @@ export const websiteSchema = {
   '@type': 'WebSite',
   name: 'Elior Portfolio',
   alternateName: 'Elior',
-  url: 'https://awen28.com',
+  url: 'https://elior.studio',
   description:
     'Portfolio of iOS apps and web development projects by Thomas Mayrl',
-  inLanguage: 'de-AT',
+  inLanguage: ['de', 'en'],
   author: {
     '@type': 'Person',
     name: 'Thomas Mayrl',
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://awen28.com/?s={search_term_string}',
-    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -178,7 +183,7 @@ export const softwareAppSchema = (app: {
   author: {
     '@type': 'Person',
     name: 'Thomas Mayrl',
-    email: 'info@awen28.com',
+    email: 'info@elior.studio',
   },
   creator: {
     '@type': 'Organization',

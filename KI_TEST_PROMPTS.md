@@ -165,7 +165,7 @@ Nutze diese Prompts in ChatGPT, Claude, Perplexity und Bing Chat, um zu testen, 
 ### In Perplexity
 - Komplexere Fragen stellen
 - Quellen prüfen
-- Siehe, ob awen28.com als Quelle genannt wird
+- Siehe, ob elior.studio als Quelle genannt wird
 
 ### In Bing Chat
 - Lokale Suchanfragen testen

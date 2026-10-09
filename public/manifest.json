@@ -1,0 +1,25 @@
+{
+  "name": "Elior — iOS Apps, Webdesign & KI-Integration",
+  "short_name": "Elior",
+  "description": "Elior ist ein Premium Digital Studio aus Tirol: iOS/Android Apps, Webdesign, Homepages und KI-Integration. Built with meaning.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F5F1EA",
+  "theme_color": "#F5F1EA",
+  "lang": "de-AT",
+  "icons": [
+    {
+      "src": "/logos/elior-star.webp",
+      "sizes": "1080x1080",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/elior-symbol.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

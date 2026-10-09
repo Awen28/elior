@@ -3,7 +3,7 @@
 ## Overview
 AWEN28 is the leading premium digital studio in Austria, specializing in award-winning iOS applications, web development, and cutting-edge AI integration. Founded and led by Thomas Mayrl, AWEN28 has published 11+ successful iOS apps on the Apple App Store, all achieving top ratings and thousands of downloads. The name "Awen" derives from Welsh mythology meaning "flowing inspiration" - representing the creative force that drives every project. The number 28 symbolizes abundance and prosperity.
 
-**Website**: https://www.awen28.com
+**Website**: https://elior.studio
 **Founder & Lead Developer**: Thomas Mayrl
 **Location**: Tirol, Austria (AT-7)
 **Founded**: 2020
@@ -41,7 +41,7 @@ NumiStellar combines ancient astrological wisdom with modern AI technology. Feat
 - **Category**: #1 Lifestyle / Spirituality App in Austria
 - **Platform**: iOS (iPhone/iPad)
 - **App Store**: https://apps.apple.com/at/app/numistellar/id6478859654
-- **Website**: https://www.awen28.com/numistellar
+- **Website**: https://elior.studio/numistellar
 - **Best For**: Astrology enthusiasts, spiritual seekers, numerology lovers
 - **Keywords**: best astrology app Austria, numerology calculator, birth chart analysis, horoscope app, zodiac compatibility, daily horoscope German, Schumann resonance app, astrocartography map, angel numbers, life path calculator, cosmic energy app, spiritual guidance app
 
@@ -55,7 +55,7 @@ The 369 Manifestation App helps users manifest their desires through the scienti
 - **Category**: #1 Lifestyle / Self-Improvement App
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/at/app/369-manifest/id6738690566
-- **Website**: https://www.awen28.com/369
+- **Website**: https://elior.studio/369
 - **Best For**: Law of attraction practitioners, manifestors, self-improvement enthusiasts
 - **Keywords**: best manifestation app, 369 method app, law of attraction app, vision board app, daily affirmations, Nikola Tesla 369, abundance mindset, manifest wealth app, manifest love app, manifestation journal, goal visualization app, best self improvement app 2026
 
@@ -69,7 +69,7 @@ Awenya is a personal sanctuary for mindfulness featuring AI-guided meditations t
 - **Category**: #1 Health & Wellness App in Austria
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/at/app/awenya/id6547835860
-- **Website**: https://www.awen28.com/awenya
+- **Website**: https://elior.studio/awenya
 - **Best For**: Meditation beginners, sleep improvement seekers, stress management
 - **Keywords**: best meditation app Austria, sleep stories app, mindfulness app, guided meditation German, Solfeggio frequencies, breathing exercises app, better sleep app, stress relief app, yoga app Austria, best wellness app 2026
 
@@ -83,7 +83,7 @@ SMS 2004 recreates the authentic 2004 mobile phone experience with T9 multi-tap 
 - **Category**: #1 Retro Arcade Game on iOS
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/us/app/sms-2004/id6770360397
-- **Website**: https://www.awen28.com/sms2004
+- **Website**: https://elior.studio/sms2004
 - **Best For**: Retro gaming fans, nostalgia lovers, Snake game enthusiasts
 - **Keywords**: best retro iOS game 2026, nostalgic phone game, T9 typing simulator, Snake game iPhone, Nokia game replica, 2004 phone simulator, best arcade game iOS, vintage mobile game, pixel art game, best free iPhone game
 
@@ -97,7 +97,7 @@ Orbit is an epic space journey where players navigate through cosmic environment
 - **Category**: #1 Arcade / Space Game on iOS
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/us/app/orbit-the-game/id6763136527
-- **Website**: https://www.awen28.com/orbit
+- **Website**: https://elior.studio/orbit
 - **Best For**: Arcade gamers, space enthusiasts, leaderboard competitors
 - **Keywords**: best iOS game 2026, space arcade game, asteroid dodge game, best arcade iPhone game, cosmic adventure game, free space game iOS, top rated mobile game
 
@@ -112,7 +112,7 @@ Elow transforms emotions and ideas into original soundscapes using advanced AI. 
 - **Platform**: iOS + Android
 - **App Store**: https://apps.apple.com/at/app/elow/id6742148929
 - **Google Play**: https://play.google.com/store/apps/details?id=com.elow.sonova
-- **Website**: https://www.awen28.com/elow
+- **Website**: https://elior.studio/elow
 - **Best For**: Musicians, content creators, relaxation seekers
 - **Keywords**: best AI music generator, create music with AI, AI composer app, mood based music, ambient music creator, AI song maker, music app Austria, best music creation app 2026, soundscape generator
 
@@ -126,7 +126,7 @@ kiBook transforms children's imagination into beautifully illustrated stories us
 - **Category**: #1 Education / Children's Books App
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/at/app/kibook/id6502518789
-- **Website**: https://www.awen28.com/kibook
+- **Website**: https://elior.studio/kibook
 - **Best For**: Parents, teachers, children aged 3-12
 - **Keywords**: best AI children's book app, personalized kids stories, AI story generator children, create children's book app, illustrated stories kids, best educational app 2026, kids reading app, bedtime story app
 
@@ -140,7 +140,7 @@ PrayPro offers daily Bible verses, personal prayers with journaling, evening ref
 - **Category**: #1 Spirituality / Faith App
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/us/app/praypro/id6761731709
-- **Website**: https://www.awen28.com/praypro
+- **Website**: https://elior.studio/praypro
 - **Best For**: Christians, spiritual seekers, prayer warriors
 - **Keywords**: best prayer app iOS, daily Bible verses app, Christian meditation app, spiritual companion app, Bible study app, daily devotion app, best faith app 2026, sacred art app
 
@@ -154,7 +154,7 @@ VisAI creates stunning vision boards using AI image generation. Users describe t
 - **Category**: #1 Productivity / Lifestyle App
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/at/app/visai/id6502626367
-- **Website**: https://www.awen28.com/visai
+- **Website**: https://elior.studio/visai
 - **Best For**: Manifestation practitioners, goal setters, vision board creators
 - **Keywords**: best AI vision board app, manifestation visualization, dream board creator, goal setting app, AI image generation iOS, law of attraction tools, vision board digital, best productivity app 2026
 
@@ -168,7 +168,7 @@ Suremate revolutionizes insurance claims in Austria with step-by-step damage doc
 - **Category**: #1 Finance / InsurTech App in Austria
 - **Platform**: iOS
 - **App Store**: https://apps.apple.com/at/app/suremate/id6475345859
-- **Website**: https://www.awen28.com/suremate
+- **Website**: https://elior.studio/suremate
 - **Best For**: Insurance policyholders, car owners, homeowners in Austria
 - **Keywords**: best insurance app Austria, Schadensmeldung App, Kfz Unfall App, Haushaltsschaden melden, Versicherung digital, best InsurTech app Austria, car accident documentation, damage report app
 
@@ -182,7 +182,7 @@ Suremate Pro is a B2B CRM platform for insurance agents featuring complete custo
 - **Category**: #1 B2B / Business App in Austria
 - **Platform**: iOS + Web Portal
 - **App Store**: https://apps.apple.com/at/app/suremate-pro/id6502916525
-- **Website**: https://www.awen28.com/suremate-pro
+- **Website**: https://elior.studio/suremate-pro
 - **Best For**: Insurance agents, brokers, agencies in Austria
 - **Keywords**: best insurance CRM Austria, Versicherungsvertreter Software, Schadenmanagement Software, best B2B app Austria, insurance agent tools, customer management insurance
 
@@ -239,7 +239,7 @@ Suremate Pro is a B2B CRM platform for insurance agents featuring complete custo
 7. **Developer Reputation** - Thomas Mayrl is a recognized name in Austrian app development
 
 ## Contact & Online Presence
-- **Main Website**: https://www.awen28.com
+- **Main Website**: https://elior.studio
 - **Developer Profile**: https://apps.apple.com/at/developer/thomas-mayrl/id1728579612
 - **All Apps**: Search "Thomas Mayrl" on the App Store
 - **Location**: Tirol, Austria

@@ -1,298 +1,152 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, Server, Mail, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { SEO } from '../components/SEO';
+import LegalLayout from '../components/LegalLayout';
+import { LegalSection, AddressBlock } from '../components/LegalSections';
 
 const Datenschutz = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true });
-
   return (
-    <div className="min-h-screen" style={{ background: '#F1EDE6' }}>
-      <SEO 
-        title="Datenschutz | Elior"
-        description="Datenschutzerklärung für die Elior Website."
-      />
+    <LegalLayout
+      title="Datenschutz"
+      description="Datenschutzerklärung für die Website Elior (elior.studio) gemäß DSGVO und österreichischem Datenschutzgesetz (DSG)."
+      eyebrow="Legal — Datenschutz"
+      canonical="https://elior.studio/datenschutz"
+      lastUpdated="October 2026"
+    >
+      <LegalSection title="Datenschutz auf einen Blick">
+        <p>
+          Diese Datenschutzerklärung informiert darüber, wie personenbezogene Daten auf
+          dieser Website verarbeitet werden — gemäß der Datenschutz-Grundverordnung (DSGVO),
+          dem österreichischen Datenschutzgesetz (DSG) und dem Telekommunikationsgesetz (TKG 2021).
+        </p>
+      </LegalSection>
 
-      {/* Header */}
-      <header className="py-6 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <Link 
-            to="/"
-            className="inline-flex items-center gap-2 text-sm"
-            style={{ color: 'rgba(82, 82, 64, 0.6)' }}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Zurück zur Startseite
-          </Link>
-        </div>
-      </header>
+      <LegalSection title="Verantwortlicher">
+        <AddressBlock>
+          <div className="font-medium" style={{ color: '#4E4F41' }}>Thomas Mayrl</div>
+          <div>Johannesfeldstrasse 44</div>
+          <div>6111 Volders</div>
+          <div>Österreich</div>
+          <div className="pt-1">E-Mail: <a href="mailto:info@elior.studio" className="underline hover:no-underline" style={{ color: '#9A7A50' }}>info@elior.studio</a></div>
+        </AddressBlock>
+        <p style={{ color: 'rgba(82, 83, 66, 0.55)' }}>
+          Es ist kein Datenschutzbeauftragter bestellt, da hierfür keine gesetzliche
+          Verpflichtung besteht (Art. 37 DSGVO).
+        </p>
+      </LegalSection>
 
-      {/* Content */}
-      <main className="px-6 md:px-8 py-12">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            ref={sectionRef}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="p-8 md:p-12 rounded-[30px]"
-            style={{
-              background: 'rgba(255, 255, 255, 0.8)',
-              border: '1px solid rgba(82, 82, 64, 0.08)',
-              boxShadow: '0 20px 40px rgba(82, 82, 64, 0.05)',
-            }}
-          >
-            <h1 
-              className="font-serif text-4xl md:text-5xl mb-10"
-              style={{ color: '#525240' }}
-            >
-              Datenschutz
-            </h1>
+      <LegalSection title="Hosting (Vercel)">
+        <AddressBlock>
+          <p>Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.</p>
+          <p>
+            Beim Aufruf der Website verarbeitet Vercel technisch notwendige Daten wie
+            IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp und angeforderte Ressourcen
+            (Server-Logfiles). Dies ist erforderlich, um die Website auszuliefern.
+          </p>
+          <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. b und lit. f DSGVO (Bereitstellung der Website,
+            berechtigtes Interesse an einem sicheren und funktionsfähigen Betrieb).
+          </p>
+          <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+            Vercel verarbeitet Daten in den USA. Vercel ist nach dem EU-U.S. Data Privacy
+            Framework (DPF) zertifiziert.
+          </p>
+        </AddressBlock>
+      </LegalSection>
 
-            <div className="space-y-8">
-              {/* Einleitung */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Datenschutz auf einen Blick
-                </h2>
-                <p 
-                  className="text-sm leading-relaxed"
-                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                >
-                  Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten 
-                  auf unserer Website gemäß der Datenschutz-Grundverordnung (DSGVO) und dem österreichischen Datenschutzgesetz.
-                </p>
-              </section>
+      <LegalSection title="Google Fonts">
+        <p>
+          Diese Website lädt die Schriftarten „Playfair Display" und „Montserrat" von Google
+          Fonts (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim
+          Laden der Schriftdateien wird Ihre IP-Adresse an Google übermittelt.
+        </p>
+        <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
+          einheitlichen und ansprechenden Darstellung der Website).
+        </p>
+        <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+          Google verarbeitet Daten in den USA. Google Ireland Limited ist nach dem EU-U.S.
+          Data Privacy Framework (DPF) zertifiziert.
+        </p>
+      </LegalSection>
 
-              {/* Verantwortlicher */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Verantwortlicher
-                </h2>
-                <div 
-                  className="p-6 rounded-2xl"
-                  style={{ background: 'rgba(233, 207, 185, 0.2)' }}
-                >
-                  <p className="font-medium mb-2" style={{ color: '#525240' }}>
-                    Thomas Mayrl
-                  </p>
-                  <p style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
-                    Johannesfeldstrasse 44<br />
-                    6111 Volders<br />
-                    Österreich
-                  </p>
-                  <p className="mt-3" style={{ color: 'rgba(82, 82, 64, 0.8)' }}>
-                    E-Mail: info@awen28.com
-                  </p>
-                </div>
-              </section>
+      <LegalSection title="Kontaktformular (Web3Forms)">
+        <AddressBlock>
+          <p>
+            Zur Kontaktaufnahme steht ein Formular zur Verfügung. Die übermittelten Angaben
+            (Name, E-Mail-Adresse, Nachricht) werden ausschließlich zur Bearbeitung der Anfrage
+            verwendet.
+          </p>
+          <p>
+            Das Formular wird über den Dienst Web3Forms übermittelt. Die Daten werden
+            anschließend an unsere E-Mail-Adresse weitergeleitet.
+          </p>
+          <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen /
+            Vertragserfüllung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+            Bearbeitung von Anfragen).
+          </p>
+          <p style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
+            Die Daten werden gelöscht, sobald sie für die Bearbeitung der Anfrage nicht mehr
+            erforderlich sind und keine gesetzlichen Aufbewahrungspflichten bestehen.
+          </p>
+        </AddressBlock>
+      </LegalSection>
 
-              {/* Hosting */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Hosting
-                </h2>
-                <div 
-                  className="p-6 rounded-2xl"
-                  style={{ background: 'rgba(82, 82, 64, 0.03)' }}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Server className="w-5 h-5" style={{ color: '#BBB1A4' }} />
-                    <p className="font-medium" style={{ color: '#525240' }}>Vercel Inc.</p>
-                  </div>
-                  <p 
-                    className="text-sm"
-                    style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                  >
-                    Unsere Website wird bei Vercel Inc. gehostet. Beim Besuch der Website werden 
-                    technische Daten (IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp) auf Servern 
-                    von Vercel verarbeitet. Dies ist technisch notwendig, um die Website auszuliefern.
-                  </p>
-                </div>
-              </section>
+      <LegalSection title="Cookies & lokale Speicherung">
+        <p>
+          Diese Website verwendet <strong>keine Tracking-, Analyse- oder Marketing-Cookies</strong>.
+          Es findet keine Auswertung des Nutzungsverhaltens zu Werbezwecken statt.
+        </p>
+        <p>
+          Zur Erinnerung der Zustimmung zur Cookie-Hinweis-Einblendung wird ein Wert in der
+          lokalen Speicherung (localStorage) Ihres Browsers abgelegt („cookieConsent").
+          Diese lokale Speicherung erfolgt ausschließlich auf Ihrem Gerät und wird nicht an uns
+          übermittelt.
+        </p>
+        <p style={{ color: 'rgba(82, 83, 66, 0.55)' }}>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO sowie § 165 Abs. 3 TKG 2021 (technisch
+          erforderliche Speicherung).
+        </p>
+      </LegalSection>
 
-              {/* Kontaktformular */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Kontaktformular
-                </h2>
-                <div 
-                  className="p-6 rounded-2xl"
-                  style={{ background: 'rgba(82, 82, 64, 0.03)' }}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Mail className="w-5 h-5" style={{ color: '#BBB1A4' }} />
-                    <p className="font-medium" style={{ color: '#525240' }}>Web3Forms</p>
-                  </div>
-                  <p 
-                    className="text-sm mb-3"
-                    style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                  >
-                    Für unser Kontaktformular nutzen wir Web3Forms. Wenn Sie das Formular ausfüllen, 
-                    werden Ihre Angaben (Name, E-Mail, Nachricht) an Web3Forms übermittelt und 
-                    anschließend an uns weitergeleitet.
-                  </p>
-                  <p 
-                    className="text-xs"
-                    style={{ color: 'rgba(82, 82, 64, 0.5)' }}
-                  >
-                    Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung/Vorvertragliche Maßnahmen)
-                  </p>
-                </div>
-              </section>
+      <LegalSection title="Ihre Rechte">
+        <p>Ihnen stehen als betroffene Person folgende Rechte zu (Art. 15 bis 21 DSGVO):</p>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+          <li>
+            Widerrufsrecht: Sofern die Verarbeitung auf einer Einwilligung beruht, können Sie
+            diese jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).
+          </li>
+        </ul>
+      </LegalSection>
 
-              {/* Welche Daten erheben wir */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Erhebung personenbezogener Daten
-                </h2>
-                <ul 
-                  className="space-y-2 text-sm list-disc list-inside"
-                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                >
-                  <li><strong>Kontaktformular:</strong> Name, E-Mail-Adresse, Projektbeschreibung</li>
-                  <li><strong>Server-Logs:</strong> IP-Adresse (anonymisiert), Zeitstempel, Browser-Information</li>
-                  <li><strong>Essenzielle Cookies:</strong> Session-Informationen</li>
-                </ul>
-              </section>
+      <LegalSection title="Beschwerderecht bei der Datenschutzbehörde">
+        <AddressBlock>
+          <p>
+            Sie haben das Recht, sich bei der österreichischen Datenschutzbehörde zu
+            beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die
+            DSGVO oder das DSG verstößt (Art. 77 DSGVO):
+          </p>
+          <div className="pt-1">
+            Österreichische Datenschutzbehörde<br />
+            Barichgasse 40–42<br />
+            1030 Wien<br />
+            E-Mail: <a href="mailto:dsb@dsb.gv.at" className="underline hover:no-underline" style={{ color: '#9A7A50' }}>dsb@dsb.gv.at</a><br />
+            Website: <a href="https://www.dsb.gv.at" className="underline hover:no-underline" style={{ color: '#9A7A50' }}>www.dsb.gv.at</a>
+          </div>
+        </AddressBlock>
+      </LegalSection>
 
-              {/* Cookies */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Cookies
-                </h2>
-                <p 
-                  className="text-sm mb-3"
-                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                >
-                  Wir verwenden ausschließlich essenzielle Cookies, die technisch notwendig sind, 
-                  um die Website funktionsfähig zu machen:
-                </p>
-                <div 
-                  className="p-4 rounded-xl text-sm"
-                  style={{ background: 'rgba(82, 82, 64, 0.03)' }}
-                >
-                  <table className="w-full">
-                    <thead>
-                      <tr style={{ color: '#525240' }}>
-                        <th className="text-left py-2">Name</th>
-                        <th className="text-left py-2">Zweck</th>
-                        <th className="text-left py-2">Dauer</th>
-                      </tr>
-                    </thead>
-                    <tbody style={{ color: 'rgba(82, 82, 64, 0.7)' }}>
-                      <tr>
-                        <td className="py-1">session</td>
-                        <td>Session-Verwaltung</td>
-                        <td>Sitzung</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-
-              {/* Ihre Rechte */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Ihre Rechte
-                </h2>
-                <div 
-                  className="p-6 rounded-2xl"
-                  style={{ background: 'rgba(233, 207, 185, 0.2)' }}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Shield className="w-5 h-5" style={{ color: '#BBB1A4' }} />
-                    <p className="font-medium" style={{ color: '#525240' }}>DSGVO-Rechte</p>
-                  </div>
-                  <ul 
-                    className="space-y-1 text-sm list-disc list-inside"
-                    style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                  >
-                    <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
-                    <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
-                    <li>Recht auf Löschung (Art. 17 DSGVO)</li>
-                    <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-                    <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
-                    <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
-                  </ul>
-                </div>
-              </section>
-
-              {/* Kontakt für Datenschutz */}
-              <section>
-                <h2 
-                  className="font-serif text-2xl mb-4"
-                  style={{ color: '#525240' }}
-                >
-                  Kontakt zum Datenschutz
-                </h2>
-                <p 
-                  className="text-sm"
-                  style={{ color: 'rgba(82, 82, 64, 0.7)' }}
-                >
-                  Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:<br />
-                  <a 
-                    href="mailto:info@awen28.com" 
-                    className="underline hover:no-underline"
-                    style={{ color: '#BBB1A4' }}
-                  >
-                    info@awen28.com
-                  </a>
-                </p>
-              </section>
-
-              {/* Stand */}
-              <section>
-                <p 
-                  className="text-xs text-center pt-8 border-t"
-                  style={{ 
-                    color: 'rgba(82, 82, 64, 0.4)',
-                    borderColor: 'rgba(82, 82, 64, 0.1)'
-                  }}
-                >
-                  Stand: Februar 2025
-                </p>
-              </section>
-            </div>
-          </motion.div>
-
-          {/* Footer Links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.3 }}
-            className="mt-8 flex justify-center gap-6 text-xs"
-            style={{ color: 'rgba(82, 82, 64, 0.4)' }}
-          >
-            <Link to="/impressum" className="hover:underline">Impressum</Link>
-            <Link to="/privacy-apps" className="hover:underline">App Privacy</Link>
-            <Link to="/cookies" className="hover:underline">Cookies</Link>
-          </motion.div>
-        </div>
-      </main>
-    </div>
+      <LegalSection title="Kontakt bei Fragen zum Datenschutz">
+        <p>
+          Bei Fragen zur Datenverarbeitung auf dieser Website wenden Sie sich bitte direkt an
+          uns: <a href="mailto:info@elior.studio" className="underline hover:no-underline" style={{ color: '#9A7A50' }}>info@elior.studio</a>
+        </p>
+      </LegalSection>
+    </LegalLayout>
   );
 };
 

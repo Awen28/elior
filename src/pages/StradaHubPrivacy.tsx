@@ -30,7 +30,7 @@ const StradaHubPrivacy = () => {
       <SEO
         title="Datenschutzerklärung | StradaHub - Community-Verkehrs-App"
         description="Datenschutzerklärung für StradaHub iOS App von Elior. Transparente Informationen über Datenverarbeitung, Standortnutzung und Ihre Rechte nach DSGVO."
-        canonical="https://www.awen28.com/stradahub/privacy"
+        canonical="https://elior.studio/stradahub/privacy"
       />
       <div className="min-h-screen" style={{ background: CREAM }}>
         {/* Header */}
@@ -162,7 +162,7 @@ const StradaHubPrivacy = () => {
                   >
                     <p className="font-medium" style={{ color: INK }}>Thomas Mayrl</p>
                     <p style={{ color: INK_SOFT }}>Johannesfeldstrasse 44, 6111 Volders, Austria</p>
-                    <p style={{ color: INK_SOFT }}>info@awen28.com</p>
+                    <p style={{ color: INK_SOFT }}>info@elior.studio</p>
                   </div>
                 </section>
 
@@ -461,11 +461,11 @@ const StradaHubPrivacy = () => {
                   <p className="text-sm" style={{ color: INK_SOFT }}>
                     Bei Fragen zum Datenschutz wenden Sie sich bitte an:<br />
                     <a
-                      href="mailto:info@awen28.com"
+                      href="mailto:info@elior.studio"
                       className="underline hover:no-underline font-medium"
                       style={{ color: TERRACOTTA }}
                     >
-                      info@awen28.com
+                      info@elior.studio
                     </a>
                   </p>
                 </section>

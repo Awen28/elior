@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from './pages/Home';
 import Suremate from './pages/Suremate';
 import SurematePro from './pages/SurematePro';
-import VisAI from './pages/VisAI';
 import ThreeSixNine from './pages/ThreeSixNine';
 import NumiStellar from './pages/NumiStellar';
 import KiBook from './pages/KiBook';
@@ -36,7 +35,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const location = useLocation();
-  const isAppPage = ['/suremate', '/suremate-pro', '/visai', '/369', '/numistellar', '/kibook', '/elow', '/agentregister', '/createAgent', '/forgotcode', '/download-suremate-pro', '/agentportal', '/callback', '/orbit', '/orbit/privacy', '/stradahub', '/stradahub/privacy', '/abwun'].includes(location.pathname);
+  const isAppPage = ['/suremate', '/suremate-pro', '/369', '/numistellar', '/kibook', '/elow', '/agentregister', '/createAgent', '/forgotcode', '/download-suremate-pro', '/agentportal', '/callback', '/orbit', '/orbit/privacy', '/stradahub', '/stradahub/privacy', '/abwun'].includes(location.pathname);
+
+  // Any page that is not the home page always starts at the very top.
+  // Leaf page position is restored separately by ScrollRestoration.
+  useEffect(() => {
+    if (location.pathname === '/') return;
+    const scrollTop = () => {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+    const timers = [setTimeout(scrollTop, 0), setTimeout(scrollTop, 60), setTimeout(scrollTop, 250)];
+    return () => timers.forEach(clearTimeout);
+  }, [location.pathname]);
 
   useEffect(() => {
     // Faster refresh for better performance
@@ -61,7 +75,6 @@ function App() {
       '/createAgent': 'Suremate Pro - Create Agent Profile | Elior',
       '/forgotcode': 'Suremate Pro - Forgot Agent Code | Elior',
       '/download-suremate-pro': 'Download Suremate Pro | iOS App',
-      '/visai': 'VisAI - AI Vision Board App | Elior',
       '/stradahub': 'StradaHub - Community-Verkehrs-App für DACH | Elior',
       '/abwun': 'ABWUN - Trust Him | Prayer App | Elior',
       '/webdesign-tirol': 'Homepage programmieren Tirol & Österreich - Webdesign | Elior',
@@ -84,7 +97,6 @@ function App() {
       '/createAgent': 'Erstelle dein Suremate Pro Agenten-Profil und erhalte deinen einzigartigen Agent-Code.',
       '/forgotcode': 'Finde deinen Suremate Pro Agent-Code per E-Mail. Einfach E-Mail eingeben und Code anzeigen lassen.',
       '/download-suremate-pro': 'Lade Suremate Pro für iOS herunter. Die professionelle Versicherungs-App für Agenten.',
-      '/visai': 'VisAI - Erstelle Vision Boards mit KI-Unterstützung. Visualisiere deine Ziele und Träume.',
       '/stradahub': 'StradaHub - Die Community-Verkehrs-App für den DACH-Raum. Unfälle, Baustellen, Straßensperren, Stau und Gefahren in Echtzeit auf der Karte. Kostenlos, ohne Registrierung, ohne Werbung. Keine Blitzer- oder Radarwarnung.',
       '/abwun': 'ABWUN ist das Gegenteil von Manifestation. Ein täglicher Weg mit Gott in drei Übergaben: Morgen, Mittag und Abend. KI-Gebetsbegleiter, biblisch fundierte Gebete, die mit "im Namen Jesu" enden. "Trust Him."',
       '/webdesign-tirol': 'Homepage programmieren lassen in Tirol & Österreich: Elior erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features.',
@@ -99,13 +111,12 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
+      <div className="relative min-h-screen" style={{ background: '#F5F1EA' }}>
         {!isAppPage && <Navigation />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/suremate" element={<Suremate />} />
           <Route path="/suremate-pro" element={<SurematePro />} />
-          <Route path="/visai" element={<VisAI />} />
           <Route path="/369" element={<ThreeSixNine />} />
           <Route path="/numistellar" element={<NumiStellar />} />
           <Route path="/kibook" element={<KiBook />} />

@@ -1,67 +1,18 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, Rocket, Star, Zap, Target, ChevronRight, Download, Sparkles, Circle, Trophy, Infinity as InfinityIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 
-const features = [
-  {
-    icon: Rocket,
-    title: 'Epic Space Journey',
-    description: 'Navigate through stunning cosmic environments. Dodge asteroids and collect power-ups.',
-  },
-  {
-    icon: Target,
-    title: 'Precision Controls',
-    description: 'Intuitive one-touch controls. Easy to learn, challenging to master.',
-  },
-  {
-    icon: Zap,
-    title: 'Power-Ups',
-    description: 'Collect shields, speed boosts, and special abilities to survive longer.',
-  },
-  {
-    icon: Trophy,
-    title: 'High Scores',
-    description: 'Compete with friends and climb the global leaderboard.',
-  },
-  {
-    icon: InfinityIcon,
-    title: 'Infinite Levels',
-    description: 'Procedurally generated levels. Every run is a new adventure.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Stunning Visuals',
-    description: 'Beautiful space graphics with particle effects and smooth animations.',
-  },
+const featureIcons = [Rocket, Target, Zap, Trophy, InfinityIcon, Sparkles];
+
+const galleryItems = [
+  { key: 'home', src: '/apps/orbit_home.webp' },
+  { key: 'gameplay1', src: '/apps/orbit_gameplay1.webp' },
+  { key: 'gameplay2', src: '/apps/orbit_gameplay2.pn.webp' },
+  { key: 'gameplay3', src: '/apps/orbit_gameplay3.pn.webp' },
 ];
-
-const appStructuredData = generateAppStructuredData(
-  "Orbit",
-  "Epic space adventure arcade game for iOS. Navigate through cosmic environments, dodge asteroids, collect power-ups, and compete on global leaderboards. Best iOS space game 2026.",
-  "https://www.awen28.com/apps/orbit_gameplay1.png",
-  "https://apps.apple.com/us/app/orbit-the-game/id6763136527",
-  "GameApplication",
-  "5.0",
-  "100",
-  ["Space Adventure", "Asteroid Dodging", "Power-ups", "Global Leaderboard", "Cosmic Environments", "Claymorphism Design"],
-  ["/apps/orbit_home.png", "/apps/orbit_gameplay1.png", "/apps/orbit_gameplay2.png", "/apps/orbit_gameplay3.png"],
-  "2026-01-15",
-  "80MB",
-  "4+"
-);
-
-const breadcrumbData = generateBreadcrumbData([
-  { name: "Home", url: "https://www.awen28.com/" },
-  { name: "Orbit", url: "https://www.awen28.com/orbit" }
-]);
-
-const faqData = generateFAQData([
-  { question: "What is Orbit game?", answer: "Orbit is an epic space adventure arcade game for iOS where players navigate through cosmic environments, dodge asteroids, and collect power-ups." },
-  { question: "Is Orbit free?", answer: "Yes, Orbit is free to download on the App Store with optional in-app purchases for premium features." },
-  { question: "What are the best iOS games 2026?", answer: "Orbit by Elior is among the best iOS games of 2026, offering unique arcade gameplay with stunning visuals and an epic space journey." },
-]);
 
 // Easter egg components
 const FloatingStar = ({ delay, size = 'small' }: { delay: number; size?: 'small' | 'medium' | 'large' }) => {
@@ -171,10 +122,57 @@ const Asteroid = ({ delay, size }: { delay: number; size: number }) => (
 );
 
 const Orbit = () => {
+  const { t, i18n } = useTranslation('orbit');
+  const { t: tc } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const appStructuredData = useMemo(
+    () =>
+      generateAppStructuredData(
+        'Orbit',
+        t('structured.description'),
+        'https://elior.studio/apps/orbit_gameplay1.webp',
+        'https://apps.apple.com/us/app/orbit-the-game/id6763136527',
+        'GameApplication',
+        '5.0',
+        '100',
+        t('structured.featureList', { returnObjects: true }) as string[],
+        ['/apps/orbit_home.webp', '/apps/orbit_gameplay1.webp', '/apps/orbit_gameplay2.pn.webp', '/apps/orbit_gameplay3.pn.webp'],
+        '2026-01-15',
+        '80MB',
+        '4+',
+      ),
+    [t],
+  );
+
+  const breadcrumbData = useMemo(
+    () =>
+      generateBreadcrumbData([
+        { name: 'Home', url: 'https://elior.studio/' },
+        { name: 'Orbit', url: 'https://elior.studio/orbit' },
+      ]),
+    [],
+  );
+
+  const faqData = useMemo(
+    () =>
+      generateFAQData(
+        (t('faq', { returnObjects: true }) as { q: string; a: string }[]).map((f) => ({
+          question: f.q,
+          answer: f.a,
+        })),
+      ),
+    [t],
+  );
+
+  const features = (
+    t('features.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((f, i) => ({ ...f, icon: featureIcons[i] }));
+
+  const screenshots = galleryItems.map(({ key, src }) => ({ src, alt: t(`gallery.alts.${key}`) }));
   
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -204,18 +202,18 @@ const Orbit = () => {
   return (
     <div className="min-h-screen" style={{ background: '#0a0a12' }}>
       <SEO 
-        title="Orbit | #1 Best iOS Space Arcade Game 2026 - Free Download"
-        description="Orbit - Epic space adventure arcade game for iOS. Dodge asteroids, collect power-ups, compete on global leaderboards. Best space game 2026. Download free on App Store!"
-        keywords="Orbit game, best iOS game 2026, space arcade game, asteroid dodge game, space adventure mobile, best iPhone game, free arcade game iOS, cosmic game, space shooter iOS, top rated iOS game 2026, Elior games"
-        ogImage="https://www.awen28.com/apps/orbit_gameplay1.png"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
+        ogImage="https://elior.studio/apps/orbit_gameplay1.webp"
         ogType="product"
-        canonical="https://www.awen28.com/orbit"
+        canonical="https://elior.studio/orbit"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
         appName="Orbit"
         appCategory="GameApplication"
         rating="5.0"
         reviewCount="100"
-        language="en-US"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
 
       {/* Header */}
@@ -223,7 +221,7 @@ const Orbit = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" onClick={handleBackClick} className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Back to Elior
+            {tc('appCommon.backToElior')}
           </Link>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)' }}>
@@ -290,7 +288,7 @@ const Orbit = () => {
                 className="font-serif italic text-sm tracking-[0.3em] block mb-4" 
                 style={{ color: '#BBB1A4' }}
               >
-                iOS Game
+                {t('hero.eyebrow')}
               </motion.span>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
@@ -298,7 +296,7 @@ const Orbit = () => {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="font-serif text-5xl md:text-7xl leading-tight mb-6 text-white"
               >
-                Your Epic
+                {t('hero.title1')}
                 <br />
                 <motion.span 
                   className="italic"
@@ -306,7 +304,7 @@ const Orbit = () => {
                   animate={{ opacity: [0.8, 1, 0.8] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  Space Journey
+                  {t('hero.title2')}
                 </motion.span>
               </motion.h1>
               <motion.p 
@@ -315,8 +313,7 @@ const Orbit = () => {
                 transition={{ delay: 0.4 }}
                 className="text-xl mb-8 max-w-lg text-white/70"
               >
-                Navigate through stunning cosmic environments. Dodge asteroids, collect power-ups, 
-                and survive as long as you can in this addictive space adventure.
+                {t('hero.description')}
               </motion.p>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -330,14 +327,14 @@ const Orbit = () => {
                   style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)', color: '#0a0a12' }}
                 >
                   <Download className="w-5 h-5" />
-                  Download on App Store
+                  {t('hero.download')}
                 </a>
                 <Link
                   to="/#work"
                   onClick={handleBackClick}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all hover:scale-105 border border-white/20 text-white hover:bg-white/5"
                 >
-                  View More Apps
+                  {t('hero.viewMore')}
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               </motion.div>
@@ -376,8 +373,8 @@ const Orbit = () => {
                 
                 <div className="relative rounded-[40px] overflow-hidden" style={{ aspectRatio: '9/19.5', maxWidth: '280px' }}>
                   <img 
-                    src="/apps/orbit_home.png" 
-                    alt="Orbit Home Screen"
+                    src="/apps/orbit_home.webp" 
+                    alt={t('hero.imageAlt')}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -400,14 +397,14 @@ const Orbit = () => {
               className="font-serif italic text-sm tracking-[0.3em] block mb-4"
               style={{ color: '#BBB1A4' }}
             >
-              Features
+              {t('features.eyebrow')}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               className="font-serif text-4xl md:text-5xl text-white"
             >
-              Explore the Cosmos
+              {t('features.title')}
             </motion.h2>
           </div>
 
@@ -494,20 +491,15 @@ const Orbit = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <motion.span className="font-serif italic text-sm tracking-[0.3em] block mb-4" style={{ color: '#BBB1A4' }}>
-              Gameplay
+              {t('gallery.eyebrow')}
             </motion.span>
             <motion.h2 className="font-serif text-4xl md:text-5xl text-white">
-              Action-Packed Adventure
+              {t('gallery.title')}
             </motion.h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              { src: '/apps/orbit_home.png', alt: 'Home Screen' },
-              { src: '/apps/orbit_gameplay1.png', alt: 'Epic Space Journey' },
-              { src: '/apps/orbit_gameplay2.png', alt: 'Dodge Asteroids' },
-              { src: '/apps/orbit_gameplay3.png', alt: 'Collect Power-ups' },
-            ].map((screenshot, idx) => (
+            {screenshots.map((screenshot, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -595,11 +587,10 @@ const Orbit = () => {
                 <Rocket className="w-10 h-10 text-white" />
               </motion.div>
               <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
-                Start Your Journey
+                {t('cta.title')}
               </h2>
               <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
-                Download Orbit now and begin your epic space adventure. 
-                How long can you survive?
+                {t('cta.description')}
               </p>
               <motion.a
                 href="https://apps.apple.com/us/app/orbit-the-game/id6763136527"
@@ -609,7 +600,7 @@ const Orbit = () => {
                 style={{ background: 'linear-gradient(135deg, #BBB1A4, #E3DED5)', color: '#0a0a12' }}
               >
                 <Download className="w-5 h-5" />
-                Get Orbit
+                {t('cta.button')}
               </motion.a>
             </div>
           </motion.div>
@@ -626,14 +617,14 @@ const Orbit = () => {
             <span className="font-serif text-2xl text-white">Orbit</span>
           </div>
           <p className="text-sm text-white/40">
-            © 2026 Orbit. A product by Elior.
+            © 2026 Orbit. {t('footer.productBy')}
           </p>
           <div className="flex items-center gap-4">
             <Link to="/orbit/privacy" className="text-sm text-white/40 hover:text-white/60 transition-colors">
-              Privacy Policy
+              {t('footer.privacyPolicy')}
             </Link>
             <Link to="/" onClick={handleBackClick} className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
-              Visit Elior
+              {tc('appCommon.visitElior')}
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
