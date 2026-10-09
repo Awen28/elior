@@ -1,16 +1,55 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useMotionTemplate,
+} from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(max, Math.max(min, value));
 
 const Hero = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // Pointer position (-1..1) drives the carved light direction
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const lightX = useSpring(pointerX, { stiffness: 55, damping: 22, mass: 0.7 });
+  const lightY = useSpring(pointerY, { stiffness: 55, damping: 22, mass: 0.7 });
+
+  // Highlight leans toward the cursor, shadow away from it -> engraved depth
+  const whiteX = useTransform(lightX, (v) => -1.5 + v * 3);
+  const whiteY = useTransform(lightY, (v) => -1.5 + v * 3);
+  const darkX = useTransform(lightX, (v) => 1.5 - v * 3);
+  const darkY = useTransform(lightY, (v) => 2 - v * 3);
+
+  const titleShadow = useMotionTemplate`
+    ${whiteX}px ${whiteY}px 2px rgba(255, 255, 255, 0.42),
+    ${darkX}px ${darkY}px 2px rgba(84, 76, 66, 0.38),
+    0 12px 36px rgba(84, 76, 66, 0.18)
+  `;
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const handleMove = (e: MouseEvent) => {
+      pointerX.set(clamp((e.clientX - window.innerWidth / 2) / (window.innerWidth / 2), -1, 1));
+      pointerY.set(clamp((e.clientY - window.innerHeight / 2) / (window.innerHeight / 2), -1, 1));
+    };
+
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, [pointerX, pointerY]);
 
   return (
     <section
@@ -46,7 +85,7 @@ const Hero = () => {
           }}
         />
 
-        {/* ELIOR — the same canvas, shaped only by shadow */}
+        {/* ELIOR — the same canvas, shaped only by shadow, reacts to the cursor */}
         <motion.h1
           initial={{ opacity: 0 }}
           animate={isLoaded ? { opacity: 1 } : {}}
@@ -56,17 +95,13 @@ const Hero = () => {
             fontSize: 'clamp(3.5rem, 14vw, 12rem)',
             color: '#BBB1A4',
             letterSpacing: '0.01em',
-            textShadow: `
-              -1px -1px 2px rgba(255, 255, 255, 0.4),
-              1px 2px 2px rgba(84, 76, 66, 0.35),
-              0 12px 36px rgba(84, 76, 66, 0.18)
-            `,
+            textShadow: titleShadow,
           }}
         >
           ELIOR
         </motion.h1>
 
-        {/* אליאור — small, subtle, same stamp */}
+        {/* אליאור — small, subtle, static stamp */}
         <motion.span
           initial={{ opacity: 0 }}
           animate={isLoaded ? { opacity: 1 } : {}}
@@ -92,7 +127,7 @@ const Hero = () => {
           </motion.span>
         </motion.span>
 
-        {/* Built with meaning. — same stamp, deeper tone */}
+        {/* Built with meaning. — static stamp, deeper tone */}
         <motion.span
           initial={{ opacity: 0 }}
           animate={isLoaded ? { opacity: 1 } : {}}

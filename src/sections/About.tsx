@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { scrollToSection } from '../lib/scroll';
+import { ScrollSpotlight } from '../components/ScrollSpotlight';
 
 const About = () => {
   const { t } = useTranslation();
@@ -66,15 +67,19 @@ const About = () => {
             {t('about.titleA')}
             <span className="italic">{t('about.titleB')}</span>
           </motion.h2>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-            className="font-sans font-light text-lg max-w-2xl mx-auto"
-            style={{ color: '#D8D0C0' }}
+            className="max-w-2xl mx-auto"
           >
-            {t('about.intro')}
-          </motion.p>
+            <ScrollSpotlight
+              text={t('about.intro')}
+              className="font-sans font-light text-lg"
+              dimColor="#6E6C58"
+              litColor="#E8E0D1"
+            />
+          </motion.div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -100,33 +105,24 @@ const About = () => {
             </div>
 
             <div className="space-y-6">
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+              <ScrollSpotlight
+                text={t('about.storyP1')}
                 className="font-sans font-light text-lg leading-relaxed"
-                style={{ color: '#E4DCCE' }}
-              >
-                {t('about.storyP1')}
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                dimColor="#6E6C58"
+                litColor="#F0E9DA"
+              />
+              <ScrollSpotlight
+                text={t('about.storyP2')}
                 className="font-sans font-light text-lg leading-relaxed"
-                style={{ color: '#BDB4A4' }}
-              >
-                {t('about.storyP2')}
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                dimColor="#64624E"
+                litColor="#CFC7B6"
+              />
+              <ScrollSpotlight
+                text={t('about.storyP3')}
                 className="font-serif italic text-xl md:text-2xl leading-relaxed"
-                style={{ color: 'rgba(201,169,123,0.85)' }}
-              >
-                {t('about.storyP3')}
-              </motion.p>
+                dimColor="rgba(201, 169, 123, 0.22)"
+                litColor="rgba(201, 169, 123, 0.95)"
+              />
             </div>
           </div>
 
