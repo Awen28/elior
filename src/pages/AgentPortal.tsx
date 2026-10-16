@@ -482,7 +482,7 @@ const AgentPortal = () => {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)' }}>
       <SEO 
-        title="Agent Portal | Suremate Pro"
+        title="Agent Portal | Suremate Pro" tabTitle="Suremate Pro"
         description="Suremate Pro Agent Portal - Verwalten Sie Ihre Kunden und Schadensfälle"
 
 

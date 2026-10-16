@@ -132,7 +132,7 @@ const StradaHub = () => {
   return (
     <Fragment>
       <SEO
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="StradaHub"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/stradaHub_show_control.webp"

@@ -91,7 +91,7 @@ const SurematePro = () => {
   return (
     <div ref={containerRef} className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
       <SEO 
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="Suremate Pro"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/Suremate_pro_home.webp"

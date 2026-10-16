@@ -42,7 +42,7 @@ const DownloadSurematePro = () => {
   return (
     <>
       <SEO
-        title="Download Suremate Pro | Professional Insurance Agent App"
+        title="Download Suremate Pro | Professional Insurance Agent App" tabTitle="Suremate Pro"
         description="Download Suremate Pro for iOS. The professional insurance management app for agents with client management, analytics, and reporting tools."
         keywords="Suremate Pro download, insurance agent app, iOS app download, insurance management"
         canonical="https://elior.studio/download-suremate-pro"

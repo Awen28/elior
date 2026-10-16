@@ -202,7 +202,7 @@ const Orbit = () => {
   return (
     <div className="min-h-screen" style={{ background: '#0a0a12' }}>
       <SEO 
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="Orbit"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/orbit_gameplay1.webp"

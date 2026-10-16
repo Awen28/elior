@@ -151,7 +151,7 @@ const Abwun = () => {
   return (
     <Fragment>
       <SEO
-        title={t('seo.title')}
+        title={t('seo.title')} tabTitle="ABWUN"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
         ogImage="https://elior.studio/apps/Abwun_home.webp"
