@@ -28,7 +28,7 @@ const de = {
     titleLine2b: 'Sorgfalt',
     titleLine2c: ' gebaut.',
     intro:
-      'Aus unserem Atelier in Tirol begleiten wir deine Idee durch Design, Code und Strategie — bis sie für sich selbst steht und etwas bedeutet.',
+      'Aus unserem Studio begleiten wir deine Idee durch Design, Code und Strategie — bis sie für sich selbst steht und etwas bedeutet.',
     items: [
       {
         title: 'App-Entwicklung',
@@ -66,6 +66,7 @@ const de = {
     eyebrow: 'Die Kollektion',
     titleA: 'Objekte aus ',
     titleB: 'Licht',
+    scrollHint: 'Der Himmel bleibt. Die Apps ziehen vorbei.',
     category: {
       app: 'App',
       game: 'Spiel',
@@ -91,6 +92,16 @@ const de = {
         'Magische Geschichten in Sekunden. Verwandle Fantasie in wunderschön illustrierte Erzählungen.',
       suremate:
         'Clevere Versicherungsverwaltung für alle. Schäden verfolgen, Policen verwalten und sofortigen Support erhalten.',
+    },
+    essence: {
+      abwun: 'Ein Gebet für die Hosentasche.',
+      stradahub: 'Gemeinsam sicher ans Ziel.',
+      '369': 'Wünsche im Rhythmus Teslas.',
+      numistellar: 'Der Himmel als Kompass.',
+      elow: 'Gefühle werden Klang.',
+      orbit: 'Ein Ritt durch Sternenstaub.',
+      kibook: 'Geschichten, die leuchten.',
+      suremate: 'Sicherheit ohne Kleingedrucktes.',
     },
   },
   about: {
@@ -127,13 +138,13 @@ const de = {
       { value: '50k+', label: 'Downloads & wachsend' },
       { value: 'Tirol', label: 'In Österreich' },
     ],
-    cta: 'Bereit, etwas zu bauen, das etwas bedeutet?',
+    cta: 'Bereit, wenn du es bist.',
     ctaButton: 'Projekt starten',
   },
   contact: {
     eyebrow: 'Kontakt',
-    titleA: 'Lass uns ',
-    titleB: 'etwas mit Bedeutung erschaffen',
+    titleA: 'Erzähl ',
+    titleB: 'uns davon.',
     intro:
       'Ob du ein Projekt im Kopf hast oder einfach Hallo sagen willst — wir freuen uns, von dir zu hören.',
     name: 'Name',

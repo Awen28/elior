@@ -55,7 +55,8 @@ body {
   font-family: 'Montserrat', system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);
-  overflow-x: hidden;
+  overflow-x: hidden; /* fallback */
+  overflow-x: clip; /* keeps position: sticky working */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

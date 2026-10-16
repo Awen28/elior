@@ -28,7 +28,7 @@ const en = {
     titleLine2b: 'care',
     titleLine2c: '.',
     intro:
-      'From our atelier in Tirol, we carry your idea through design, code, and strategy — until it stands on its own, and means something.',
+      'From our studio, we carry your idea through design, code, and strategy — until it stands on its own, and means something.',
     items: [
       {
         title: 'App Development',
@@ -66,6 +66,7 @@ const en = {
     eyebrow: 'The Collection',
     titleA: 'Objects of ',
     titleB: 'light',
+    scrollHint: 'The sky stays. The apps drift by.',
     category: {
       app: 'App',
       game: 'Game',
@@ -91,6 +92,16 @@ const en = {
         'Magic stories in seconds. Transform imagination into beautifully illustrated tales.',
       suremate:
         'Smart insurance management for everyone. Track claims, manage policies, and get instant support.',
+    },
+    essence: {
+      abwun: 'A prayer for your pocket.',
+      stradahub: 'Arriving safe, together.',
+      '369': 'Wishes in Tesla’s rhythm.',
+      numistellar: 'The sky as compass.',
+      elow: 'Feelings become sound.',
+      orbit: 'A ride through stardust.',
+      kibook: 'Stories that glow.',
+      suremate: 'Safety without fine print.',
     },
   },
   about: {
@@ -127,13 +138,13 @@ const en = {
       { value: '50k+', label: 'Downloads & Growing' },
       { value: 'Tirol', label: 'Austria Based' },
     ],
-    cta: 'Ready to build something that means something?',
+    cta: 'Ready when you are.',
     ctaButton: 'Start Your Project',
   },
   contact: {
     eyebrow: 'Get In Touch',
-    titleA: 'Let us create ',
-    titleB: 'something with meaning',
+    titleA: 'Tell ',
+    titleB: 'us about it.',
     intro:
       'Whether you have a project in mind or simply want to say hello — we would be glad to hear from you.',
     name: 'Name',
