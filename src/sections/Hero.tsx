@@ -1,20 +1,61 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useEffect, useRef } from 'react';
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionTemplate,
+} from 'framer-motion';
+import MeshWaves from '../components/MeshWaves';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(max, Math.max(min, value));
+
 const Hero = () => {
-  const { t } = useTranslation();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  // Licht folgt dem Cursor: Highlight zur Lichtquelle, Schatten davon weg
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const lightX = useSpring(pointerX, { stiffness: 55, damping: 22, mass: 0.7 });
+  const lightY = useSpring(pointerY, { stiffness: 55, damping: 22, mass: 0.7 });
+  const whiteX = useTransform(lightX, (v) => -1.5 + v * 3);
+  const whiteY = useTransform(lightY, (v) => -1.5 + v * 3);
+  const darkX = useTransform(lightX, (v) => 1.5 - v * 3);
+  const darkY = useTransform(lightY, (v) => 2 - v * 3);
+  const titleShadow = useMotionTemplate`
+    ${whiteX}px ${whiteY}px 2px rgba(255, 255, 255, 0.42),
+    ${darkX}px ${darkY}px 2px rgba(84, 76, 66, 0.38),
+    0 12px 36px rgba(84, 76, 66, 0.18)
+  `;
+
+  // Mesh versinkt beim Wegscrollen
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  const meshScrollY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const meshScrollOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+    if (reduceMotion) return;
+    const handleMove = (e: MouseEvent) => {
+      pointerX.set(clamp((e.clientX - window.innerWidth / 2) / (window.innerWidth / 2), -1, 1));
+      pointerY.set(clamp((e.clientY - window.innerHeight / 2) / (window.innerHeight / 2), -1, 1));
+    };
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, [pointerX, pointerY, reduceMotion]);
 
   return (
     <section
       id="hero"
+      ref={sectionRef}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24"
       style={{ background: '#BBB1A4' }}
     >
@@ -26,6 +67,35 @@ const Hero = () => {
         }}
       />
 
+      {/* Mesh als Wasser — vollflächig hinter ELIOR, Wellen am Cursor */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      >
+        <motion.div className="h-full w-full" style={{ y: meshScrollY, opacity: meshScrollOpacity }}>
+          <motion.div
+            className="h-full w-full"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1.06 }}
+            transition={{ duration: 2.2, delay: 0.5, ease }}
+          >
+            <div
+              className="h-full w-full"
+              style={{
+                opacity: 0.45,
+                mixBlendMode: 'multiply',
+                WebkitMaskImage:
+                  'linear-gradient(to bottom, transparent 0, black 12%, black 88%, transparent 100%)',
+                maskImage:
+                  'linear-gradient(to bottom, transparent 0, black 12%, black 88%, transparent 100%)',
+              }}
+            >
+              <MeshWaves />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
       {/* Zentrierter Block in einem Rutsch, konsistente Abstände */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 select-none">
 
@@ -34,7 +104,7 @@ const Hero = () => {
           src="/logos/elior-symbol.svg"
           alt="ELIOR symbol"
           initial={{ opacity: 0 }}
-          animate={isLoaded ? { opacity: 1 } : {}}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 0.4, ease }}
           className="w-14 md:w-20 mb-10 md:mb-14"
           style={{
@@ -46,30 +116,26 @@ const Hero = () => {
           }}
         />
 
-        {/* ELIOR — the same canvas, shaped only by shadow */}
+        {/* ELIOR — Licht folgt dem Cursor */}
         <motion.h1
           initial={{ opacity: 0 }}
-          animate={isLoaded ? { opacity: 1 } : {}}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 0.2, ease }}
           className="font-serif font-semibold leading-none mb-10 md:mb-14"
           style={{
             fontSize: 'clamp(3.5rem, 14vw, 12rem)',
             color: '#BBB1A4',
             letterSpacing: '0.01em',
-            textShadow: `
-              -1px -1px 2px rgba(255, 255, 255, 0.4),
-              1px 2px 2px rgba(84, 76, 66, 0.35),
-              0 12px 36px rgba(84, 76, 66, 0.18)
-            `,
+            textShadow: titleShadow,
           }}
         >
           ELIOR
         </motion.h1>
 
-        {/* אליאור — small, subtle, same stamp */}
+        {/* אליאור — small, subtle, static stamp */}
         <motion.span
           initial={{ opacity: 0 }}
-          animate={isLoaded ? { opacity: 1 } : {}}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 1.1, ease }}
           className="font-serif leading-none mb-10 md:mb-14"
           style={{
@@ -92,25 +158,6 @@ const Hero = () => {
           </motion.span>
         </motion.span>
 
-        {/* Built with meaning. — same stamp, deeper tone */}
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={isLoaded ? { opacity: 1 } : {}}
-          transition={{ duration: 1.6, delay: 1.5, ease }}
-          className="font-serif italic"
-          style={{
-            fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
-            color: '#525342',
-            letterSpacing: '0.02em',
-            textShadow: `
-              -1px -1px 1px rgba(255, 255, 255, 0.3),
-              1px 1px 1px rgba(38, 36, 26, 0.35),
-              0 4px 14px rgba(38, 36, 26, 0.18)
-            `,
-          }}
-        >
-          {t('hero.tagline')}
-        </motion.span>
       </div>
     </section>
   );
