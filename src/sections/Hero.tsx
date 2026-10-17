@@ -1,14 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import {
   motion,
   useMotionValue,
   useReducedMotion,
-  useScroll,
   useSpring,
   useTransform,
   useMotionTemplate,
 } from 'framer-motion';
-import MeshWaves from '../components/MeshWaves';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -16,7 +14,6 @@ const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
 
 const Hero = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
 
   // Licht folgt dem Cursor: Highlight zur Lichtquelle, Schatten davon weg
@@ -34,14 +31,6 @@ const Hero = () => {
     0 12px 36px rgba(84, 76, 66, 0.18)
   `;
 
-  // Mesh versinkt beim Wegscrollen
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  const meshScrollY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const meshScrollOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
-
   useEffect(() => {
     if (reduceMotion) return;
     const handleMove = (e: MouseEvent) => {
@@ -55,7 +44,6 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      ref={sectionRef}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24"
       style={{ background: '#BBB1A4' }}
     >
@@ -66,35 +54,6 @@ const Hero = () => {
           background: 'radial-gradient(ellipse 60% 70% at 50% 0%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 70%)',
         }}
       />
-
-      {/* Mesh als Wasser — vollflächig hinter ELIOR, Wellen am Cursor */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
-      >
-        <motion.div className="h-full w-full" style={{ y: meshScrollY, opacity: meshScrollOpacity }}>
-          <motion.div
-            className="h-full w-full"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1.06 }}
-            transition={{ duration: 2.2, delay: 0.5, ease }}
-          >
-            <div
-              className="h-full w-full"
-              style={{
-                opacity: 0.45,
-                mixBlendMode: 'multiply',
-                WebkitMaskImage:
-                  'linear-gradient(to bottom, transparent 0, black 12%, black 88%, transparent 100%)',
-                maskImage:
-                  'linear-gradient(to bottom, transparent 0, black 12%, black 88%, transparent 100%)',
-              }}
-            >
-              <MeshWaves />
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
 
       {/* Zentrierter Block in einem Rutsch, konsistente Abstände */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 select-none">
