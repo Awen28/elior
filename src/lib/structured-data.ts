@@ -7,7 +7,7 @@ export const organizationSchema = {
     'Professionelle iOS App-Entwicklung, Website-Erstellung, KI-Integrationen und Logo-Design in Tirol. Komplette Medienagentur für digitale Lösungen.',
   url: 'https://elior.studio',
   logo: 'https://elior.studio/logos/elior-star.webp',
-  image: 'https://elior.studio/og-image.jpg',
+  image: 'https://elior.studio/apps/Elior_logo.webp',
   email: 'info@elior.studio',
   telephone: '+43-677-64059711',
   address: {

@@ -242,7 +242,10 @@ const ThreeSixNine = () => {
         title={t('seo.title')} tabTitle="369"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/369_Homescreen.webp"
+        ogImage="https://elior.studio/apps/369_logo.webp"
+        ogImageWidth={1024}
+        ogImageHeight={1024}
+        ogImageAlt="369 — App-Logo"
         ogType="product"
         canonical="https://elior.studio/369"
         structuredData={[appStructuredData, breadcrumbData, faqData]}

@@ -7,6 +7,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from 'framer-motion';
+import LiquidChrome from '../components/LiquidChrome';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -47,6 +48,25 @@ const Hero = () => {
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24"
       style={{ background: '#BBB1A4' }}
     >
+      {/* Flüssiges Chrom hinter dem Schriftzug */}
+      <div className="absolute inset-0 z-0" aria-hidden>
+        <LiquidChrome
+          color="#bbb1a4"
+          speed={0.05}
+          amplitude={0.42}
+          detail={1}
+          thickness={0.5}
+          interactive={true}
+          frequencyX={4}
+          frequencyY={5}
+          depth={0.4}
+          roughness={0.7}
+          exposure={2}
+          rippleSize={1.15}
+          tilt={0.85}
+        />
+      </div>
+
       {/* soft light from above */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[140vw] h-[70vh] pointer-events-none"

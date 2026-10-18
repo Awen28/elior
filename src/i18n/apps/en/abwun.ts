@@ -1,10 +1,10 @@
 const abwun = {
   seo: {
-    title: 'ABWUN | Trust Him - Prayer App with Prayer Rope, Rosary & AI Companion',
+    title: 'ABWUN | Trust Him - Prayer App with Saints, Prayer Rope, Rosary & AI Companion',
     description:
-      'ABWUN - the opposite of manifestation. Daily surrenders with AI prayer companion, Prayer Rope (Jesus Prayer), full Rosary, Lament for unanswered prayer, Examen and Faith & Answers. "Trust Him." Free on iOS.',
+      'ABWUN - the opposite of manifestation. Daily surrender with an AI prayer companion, Prayer Rope (Jesus Prayer), full Rosary, 49 saints as intercessors, Lament for unanswered prayer, Examen and Faith & Answers. "Trust Him." Free on iOS.',
     keywords:
-      'ABWUN, prayer app, AI prayer companion, Prayer Rope, Gebetsschnur, Jesus Prayer, Rosary, Rosenkranz, Lament, unanswered prayer, unbeantwortetes Gebet, Klage, Examen, Lectio Divina, Trust Him, surrender to God, not my will but your will, Lord\'s Prayer Aramaic, Abwun Our Father, christian app 2026, daily devotion app, ego death, spiritual freedom, bible based prayer, prayer journal app, Gospel app, faith app iOS',
+      'ABWUN, prayer app, AI prayer companion, Prayer Rope, Gebetsschnur, Jesus Prayer, Rosary, Rosenkranz, saints, intercessors, novena, saint of the day, Lament, unanswered prayer, unbeantwortetes Gebet, Klage, Examen, Lectio Divina, Trust Him, surrender to God, not my will but your will, Lord\'s Prayer Aramaic, Abwun Our Father, christian app 2026, daily devotion app, ego death, spiritual freedom, bible based prayer, prayer journal app, Gospel app, faith app iOS',
   },
   structured: {
     description:
@@ -22,6 +22,9 @@ const abwun = {
       'Daily Devotion',
       'Prayer Rope',
       'Rosary',
+      'Saints',
+      'Intercessors',
+      'Novena',
       'Lament',
       'Examen',
       'Lectio Divina',
@@ -52,8 +55,12 @@ const abwun = {
       a: 'It is the place for "God has not answered" - without placating. You can speak honestly, find your words in the lament psalms (Psalm 13, 22, 42, 88, 130, Lamentations 3), and then choose between two equal answers: "I trust Him anyway" or "I can\'t yet." Both may stand before God.',
     },
     {
+      q: 'Does ABWUN include saints?',
+      a: 'Yes. ABWUN contains 49 saints, each with a short life, patronage, feast day and a brief intercessory prayer. Saints are not worshipped - they are asked for intercession, and Christ remains the center (1 Timothy 2,5). Alongside them: seasons-of-life chips, a saint of the day, a novena as a nine-day prayer path, and prayer cards to share.',
+    },
+    {
       q: 'How does the AI prayer companion work?',
-      a: 'At each time of day you can write your current heart\'s concern. An AI prayer companion (GPT-4o-mini) then crafts a personal, biblically founded prayer for you that always ends "in Jesus\' name" - never manifestation, always surrender.',
+      a: 'At each time of day you can write your current heart\'s concern. An AI prayer companion then crafts a personal, biblically founded prayer for you that always ends "in Jesus\' name" - never manifestation, always surrender.',
     },
     {
       q: 'Is ABWUN free?',
@@ -69,7 +76,7 @@ const abwun = {
     title1: 'Trust Him.',
     title2: 'Let go.',
     description:
-      "ABWUN is the opposite of manifestation. Instead of forcing your own will upon the world, you lay your dreams humbly in God's hands. A daily path in three surrenders - morning, noon and evening.",
+      "ABWUN turns manifestation upside down. Instead of forcing your own will, you hand your concerns to God - in trust, not control. A daily path in three surrenders: morning, noon and evening.",
     verse: '"Not my will, but your will be done." — Luke 22,42',
     download: 'Download ABWUN',
     imageAlt: 'ABWUN app',
@@ -97,7 +104,7 @@ const abwun = {
     eyebrow: 'The Idea',
     title: 'The opposite of manifestation',
     description:
-      'Manifestation pushes your will onto the world. ABWUN turns it around: you let your own will go, because God alone carries. Your dreams are not thrown away - they are humbly placed in His hands.',
+      'Manifestation forces your own will through. ABWUN turns it around: you step back so that God can work. Your concern is not lost in the process - it becomes prayer.',
     manifestation: {
       title: 'Manifestation',
       items: [
@@ -113,7 +120,7 @@ const abwun = {
         'I let my own will go - "ego death"',
         'Not I decide, but God alone',
         '"Not my will, but your will be done." (Luke 22,42)',
-        "I lay my dreams humbly in God's hands",
+        'I lay my concern in His hand - without forcing it',
         'Trust, not control',
       ],
     },
@@ -122,7 +129,7 @@ const abwun = {
   steps: {
     eyebrow: 'A Daily Path',
     title: 'Three surrenders a day',
-    description: 'Three times of day, three surrenders. A day lived with God - from the first thought to the last.',
+    description: 'Three times of day, three surrenders. A day lived with God - from the first thought to the last thought.',
     items: [
       {
         title: 'Morning',
@@ -196,11 +203,11 @@ const abwun = {
     items: [
       {
         title: 'Heart Conversation',
-        description: 'Write to God - and receive a response. An AI prayer companion (GPT-4o-mini) crafts personal, biblically grounded prayers that always end "in Jesus\' name".',
+        description: 'Write to God - and receive a response. An AI prayer companion crafts a personal, biblically grounded prayer that always ends "in Jesus\' name".',
       },
       {
         title: 'Today',
-        description: 'Your daily path in three surrenders: morning, noon and evening - each with your own concern, a Bible verse and a personal AI-crafted prayer.',
+        description: 'Your daily path in three surrenders: morning, noon and evening - each with your own concern, a Bible verse and a personal prayer.',
       },
       {
         title: 'The Garden',
@@ -224,7 +231,7 @@ const abwun = {
       },
       {
         title: 'Lament & Unanswered Prayer',
-        description: 'The place for "God has not answered" - without placating. Honest lament in the language of the lament psalms. "I trust Him anyway" or "I can\'t yet" - both may stand before God.',
+        description: 'The place for "God has not answered": honest lament in the language of the lament psalms - without placating.',
       },
       {
         title: 'Faith & Answers',
@@ -243,6 +250,41 @@ const abwun = {
         description: 'Gentle reminders for morning, noon and evening. Your name, your reminders, your full control - including deleting your account and all data.',
       },
     ],
+  },
+  saints: {
+    eyebrow: 'New · Saints',
+    title: 'Intercessors who pray with you',
+    description:
+      'Saints are not worshipped - they are asked for intercession, and Christ remains the center. 49 saints with a short life, patronage, feast day and a brief intercessory prayer accompany your concern.',
+    items: [
+      {
+        title: '49 Saints',
+        description: 'An example for every season of life - each with a short life, patronage, feast day and a classic intercessory prayer. Every prayer ends "through Jesus Christ, our Lord."',
+      },
+      {
+        title: 'This I lay before you',
+        description: 'Every prayer holds a gap: "This I lay before you: ___." As you pray, you speak your own concrete concern aloud into it - no input field needed.',
+      },
+      {
+        title: 'Intercessor suggestion',
+        description: 'After a Heart Conversation, ABWUN quietly suggests up to two fitting saints for your concern - on device only, no network.',
+      },
+      {
+        title: 'Seasons of life & favourites',
+        description: 'Chips such as Travel, Love & Family, Fear & Comfort, Illness, Work & Study point you to the fitting intercessor. "My Saints" stays saved locally.',
+      },
+      {
+        title: 'Novena',
+        description: 'A nine-day prayer path with a saint - from arrival to surrender. No pressure of time: no day is lost, and the close falls into stillness.',
+      },
+      {
+        title: 'Saint of the day',
+        description: 'On feast days a quiet line appears beneath the Today header - and as a home- and lock-screen widget. Otherwise it stays invisible.',
+      },
+    ],
+    footnote: 'Prayer cards to share - designed like a classic prayer picture: wordmark, name, prayer and feast day, straight through the system share sheet.',
+    verse: '"For there is one God and one mediator between God and mankind: the man Christ Jesus." — 1 Timothy 2,5',
+    imageAlt: 'ABWUN saints',
   },
   lament: {
     eyebrow: 'Lament & Unanswered Prayer',
@@ -273,7 +315,7 @@ const abwun = {
     eyebrow: 'What it creates',
     title: 'Real inner freedom',
     description:
-      'The goal is not control of the universe - it is emotional freedom through complete surrender:',
+      'The goal is not power over your circumstances - it is inner freedom through complete surrender:',
     imageAlt: 'ABWUN prayer',
     items: [
       'You no longer need to force, panic or control',

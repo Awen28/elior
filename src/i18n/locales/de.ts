@@ -163,6 +163,30 @@ const de = {
     errorBefore: 'Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an ',
     errorAfter: '.',
   },
+  notFound: {
+    eyebrow: 'Fehler 404',
+    title: 'Seite nicht gefunden',
+    subtitle: 'Da hat sich wohl jemand verlaufen.',
+    description: 'Diese Seite existiert nicht oder wurde verschoben.',
+    backHome: 'Zur Startseite',
+    back: 'Zurück',
+    popular: 'Beliebte Ziele',
+    rights: 'Alle Rechte vorbehalten.',
+    links: {
+      home: 'Startseite',
+      webdesign: 'Webdesign Tirol',
+      appDev: 'App-Entwicklung Tirol',
+      abwun: 'ABWUN',
+      stradahub: 'StradaHub',
+      suremate: 'Suremate',
+      kibook: 'kiBook',
+    },
+    seo: {
+      title: 'Seite nicht gefunden (404) | Elior',
+      description:
+        'Diese Seite existiert nicht oder wurde verschoben. Zurück zur Elior Startseite — Apps, Webdesign und KI-Software aus Tirol.',
+    },
+  },
   footer: {
     tagline:
       'Elior — Hebräisch für „Gott ist mein Licht". Wir gestalten digitale Erlebnisse, die Bedeutung tragen. Von preisgekrönten iOS-Apps bis zu conversion-orientierten Websites.',

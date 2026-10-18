@@ -49,6 +49,7 @@ html {
   background: var(--paper);
   color: var(--ink);
   scroll-behavior: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -307,8 +308,34 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   MOTION SURFACES
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Native Karussells: Scrollbar versteckt, Snap bleibt */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Feines Korn — gibt der Fläche Materialität (statisch, kein Per-Frame-Cost) */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    GRADIENTS — restrained, single-direction
-════════════════════════════════════════════════════════════════════════ */
+   ════════════════════════════════════════════════════════════════════════ */
 .gradient-text {
   background: linear-gradient(135deg, var(--god) 0%, var(--god-deep) 100%);
   -webkit-background-clip: text;
@@ -327,6 +354,171 @@ body {
 @keyframes breathe-gold {
   0%, 100% { opacity: 0.55; }
   50% { opacity: 1; }
+}
+
+/* Apps im Wolkenraum: ein ruhiges Schweben, unabhängig vom Scrollen */
+@keyframes cloud-float {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  22% { transform: translate3d(6px, -6px, 20px) rotate(0.5deg); }
+  47% { transform: translate3d(-4px, -11px, -8px) rotate(-0.4deg); }
+  71% { transform: translate3d(-8px, -5px, 12px) rotate(0.3deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+.cloud-float {
+  animation: cloud-float 10s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Die ganze Welt atmet, auch ohne Scrollen */
+@keyframes world-breathe {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(0.8deg) rotateY(-1.2deg); }
+  50% { transform: translate3d(0, -14px, 0) rotateX(-0.8deg) rotateY(1.2deg); }
+}
+
+.world-breathe {
+  animation: world-breathe 21s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Warmes Licht atmet am Zeiger */
+@keyframes light-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.12); opacity: 0.8; }
+}
+
+.cursor-light-glow {
+  animation: light-breathe 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Offscreen pausieren, damit nichts im Hintergrund weiterrechnet */
+.scene-paused .cloud-float,
+.scene-paused .cloud-drift,
+.scene-paused .mote-twinkle,
+.scene-paused .sun-breathe,
+.scene-paused .sun-rays,
+.scene-paused .world-breathe,
+.scene-paused .portal-sheen,
+.scene-paused .portal-spin,
+.scene-paused .portal-breathe,
+.scene-paused .cursor-light-glow {
+  animation-play-state: paused;
+}
+
+/* Das Portal atmet und dreht sich */
+@keyframes portal-spin {
+  to { transform: rotate(360deg); }
+}
+
+.portal-spin {
+  animation: portal-spin 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes portal-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.82; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+.portal-breathe {
+  animation: portal-breathe 11s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Wolkenbänke treiben langsam seitwärts */
+@keyframes cloud-drift {
+  0% { transform: translate3d(-4.5%, 0, 0); }
+  50% { transform: translate3d(4.5%, -2%, 0); }
+  100% { transform: translate3d(-4.5%, 0, 0); }
+}
+
+.cloud-drift {
+  animation: cloud-drift 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Sonne atmet, Strahlen wandern */
+@keyframes sun-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(1) translate3d(0, 0, 0); }
+  50% { opacity: 0.88; transform: scale(1.035) translate3d(0, -0.8%, 0); }
+}
+
+.sun-breathe {
+  animation: sun-breathe 15s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+.sun-rays {
+  animation: sun-breathe 23s ease-in-out infinite;
+  animation-delay: -7s;
+  will-change: opacity, transform;
+}
+
+/* Portal: das Vorschaubild liegt hinter einer wabernden Membran */
+@keyframes portal-wobble-idle {
+  0%, 100% { transform: rotate3d(0, 1, 0, 0deg) scale(1); }
+  33% { transform: rotate3d(0.1, 1, 0.05, 0.5deg) scale(1.004); }
+  66% { transform: rotate3d(-0.09, 1, -0.04, -0.45deg) scale(1.003); }
+}
+
+@keyframes portal-wobble {
+  0%, 100% { transform: rotate3d(0, 1, 0, 0deg) scale(1) skewX(0deg); }
+  20% { transform: rotate3d(0.15, 1, 0.08, 1.6deg) scale(1.014) skewX(0.5deg); }
+  45% { transform: rotate3d(-0.12, 1, -0.06, -1.4deg) scale(1.01) skewX(-0.5deg); }
+  70% { transform: rotate3d(0.08, 1, 0.12, 1.7deg) scale(1.016) skewX(0.4deg); }
+  100% { transform: rotate3d(0, 1, 0, 0deg) scale(1) skewX(0deg); }
+}
+
+@keyframes portal-sheen {
+  to { transform: rotate(360deg); }
+}
+
+.portal-wobble {
+  transition: filter 0.5s ease;
+}
+
+.portal-sheen {
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+  animation: portal-sheen 16s linear infinite;
+  will-change: transform;
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .portal-wobble {
+    animation: portal-wobble-idle 7.5s ease-in-out infinite;
+  }
+
+  .group:hover .portal-wobble,
+  .portal-preview:hover .portal-wobble {
+    animation: portal-wobble 1.9s ease-in-out infinite;
+    filter: blur(0.7px) saturate(1.07) brightness(1.02);
+  }
+
+  .group:hover .portal-sheen,
+  .portal-preview:hover .portal-sheen {
+    opacity: 0.55;
+    animation-duration: 5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-wobble,
+  .portal-sheen {
+    animation: none !important;
+  }
+}
+
+/* Staub im Licht funkelt */
+@keyframes mote-twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.78); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.mote-twinkle {
+  animation: mote-twinkle 5s ease-in-out infinite;
+  will-change: opacity, transform;
 }
 
 .animate-rise {

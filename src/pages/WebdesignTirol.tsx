@@ -79,7 +79,10 @@ const WebdesignTirol = () => {
         title="Homepage programmieren Tirol & Österreich – Professionelles Webdesign | Elior"
         description="Homepage programmieren in Tirol & Österreich: Elior erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features. Jetzt kostenlose Beratung!"
         keywords="Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Website erstellen lassen, Homepage Agentur Innsbruck, Webentwicklung Tirol, Webdesigner Österreich, Homepage erstellen lassen Wien, Webagentur Tirol, Website programmieren lassen, Firmenwebsite erstellen, Business Homepage, Online Shop erstellen lassen, Web-App Entwicklung, SEO Webdesign, professionelle Homepage, Webdesign Österreich, Thomas Mayrl Webdesign"
-        ogImage="https://elior.studio/og-image.jpg"
+        ogImage="https://elior.studio/apps/Elior_logo.webp"
+        ogImageWidth={1080}
+        ogImageHeight={1080}
+        ogImageAlt="Webdesign Tirol — Elior"
         ogType="website"
         canonical="https://elior.studio/webdesign-tirol"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData]}

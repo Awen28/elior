@@ -94,7 +94,10 @@ const Suremate = () => {
   title={t('seo.title')} tabTitle="Suremate"
   description={t('seo.description')}
   keywords={t('seo.keywords')}
-  ogImage="https://elior.studio/apps/Suremate_home.webp"
+  ogImage="https://elior.studio/apps/suremate_logo.webp"
+  ogImageWidth={960}
+  ogImageHeight={960}
+  ogImageAlt="Suremate — App-Logo"
   ogType="product"
   canonical="https://elior.studio/suremate"
   structuredData={[appStructuredData, breadcrumbData, faqData]}

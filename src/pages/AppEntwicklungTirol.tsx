@@ -79,7 +79,10 @@ const AppEntwicklungTirol = () => {
         title="App erstellen lassen Tirol & Österreich – iOS & Android Entwicklung | Elior"
         description="App erstellen lassen in Tirol & Österreich: Elior entwickelt iOS & Android Apps mit KI-Integration, modernem Design und App Store Optimization. 50.000+ Downloads, 11+ Apps. Jetzt kostenlose Beratung!"
         keywords="App erstellen lassen Tirol, App Entwicklung Österreich, iOS App erstellen lassen, Android App erstellen lassen, App Agentur Tirol, App Entwickler Österreich, App programmieren lassen, App Entwicklung Innsbruck, iPhone App erstellen lassen, App Agentur Österreich, KI App Entwicklung, App Store Optimization Tirol, Thomas Mayrl App Entwicklung, mobile App Entwicklung, App Studio Österreich, App Kosten, App Entwickler in der Nähe"
-        ogImage="https://elior.studio/og-image.jpg"
+        ogImage="https://elior.studio/apps/Elior_logo.webp"
+        ogImageWidth={1080}
+        ogImageHeight={1080}
+        ogImageAlt="App-Entwicklung Tirol — Elior"
         ogType="website"
         canonical="https://elior.studio/app-entwicklung-tirol"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData]}

@@ -119,6 +119,7 @@ const CreateAgent = () => {
         description="Create your Suremate Pro agent profile and receive your unique agent code."
         keywords="Suremate Pro agent, create agent, insurance agent registration"
         canonical="https://elior.studio/createAgent"
+        noindex
       />
       <div className="relative min-h-screen flex items-center justify-center" style={{ background: '#000000' }}>
         {/* Background gradient */}

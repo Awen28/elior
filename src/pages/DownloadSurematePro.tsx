@@ -46,6 +46,7 @@ const DownloadSurematePro = () => {
         description="Download Suremate Pro for iOS. The professional insurance management app for agents with client management, analytics, and reporting tools."
         keywords="Suremate Pro download, insurance agent app, iOS app download, insurance management"
         canonical="https://elior.studio/download-suremate-pro"
+        noindex
       />
       <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}

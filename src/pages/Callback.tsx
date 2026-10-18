@@ -31,6 +31,7 @@ const Callback = () => {
       <SEO 
         title="Erfolgreich verifiziert | kiBook" tabTitle="kiBook"
         description="Deine E-Mail wurde erfolgreich verifiziert. Du wirst gleich zu kiBook weitergeleitet."
+        noindex
       />
 
       <motion.div

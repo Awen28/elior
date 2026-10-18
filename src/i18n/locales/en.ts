@@ -163,6 +163,30 @@ const en = {
     errorBefore: 'Something went wrong. Please try again, or write us directly at ',
     errorAfter: '.',
   },
+  notFound: {
+    eyebrow: 'Error 404',
+    title: 'Page not found',
+    subtitle: 'Looks like you have wandered off the map.',
+    description: 'The page you are looking for does not exist or has been moved.',
+    backHome: 'Back to Home',
+    back: 'Go Back',
+    popular: 'Popular destinations',
+    rights: 'All rights reserved.',
+    links: {
+      home: 'Home',
+      webdesign: 'Web Design Tirol',
+      appDev: 'App Development Tirol',
+      abwun: 'ABWUN',
+      stradahub: 'StradaHub',
+      suremate: 'Suremate',
+      kibook: 'kiBook',
+    },
+    seo: {
+      title: 'Page Not Found (404) | Elior',
+      description:
+        'The page you are looking for does not exist or has been moved. Return to the Elior homepage — apps, web design and AI software from Tirol.',
+    },
+  },
   footer: {
     tagline:
       'Elior — Hebrew for "God is my light". Crafting digital experiences that carry meaning. From award-winning iOS apps to conversion-focused websites.',

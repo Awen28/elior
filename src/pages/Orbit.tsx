@@ -205,7 +205,10 @@ const Orbit = () => {
         title={t('seo.title')} tabTitle="Orbit"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/orbit_gameplay1.webp"
+        ogImage="https://elior.studio/apps/Elior_logo.webp"
+        ogImageWidth={1080}
+        ogImageHeight={1080}
+        ogImageAlt="Orbit — Weltraum-Arcade-Spiel von Elior"
         ogType="product"
         canonical="https://elior.studio/orbit"
         structuredData={[appStructuredData, breadcrumbData, faqData]}

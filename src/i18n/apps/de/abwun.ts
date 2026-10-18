@@ -1,10 +1,10 @@
 const abwun = {
   seo: {
-    title: 'ABWUN | Überlass es Gott - Gebets-App mit Gebetsschnur, Rosenkranz & KI-Begleiter',
+    title: 'ABWUN | Überlass es Gott - Gebets-App mit Heiligen, Gebetsschnur, Rosenkranz & KI-Begleiter',
     description:
-      'ABWUN - das Gegenteil von Manifestation. Tägliches Loslassen mit KI-Gebetsbegleiter, Gebetsschnur (Jesusgebet), vollständiger Rosenkranz, Klage für unbeantwortete Gebete, Examen und Glaube & Antworten. "Überlass es Gott." Kostenlos für iOS.',
+      'ABWUN - das Gegenteil von Manifestation. Tägliches Loslassen mit KI-Gebetsbegleiter, Gebetsschnur (Jesusgebet), vollständigem Rosenkranz, 49 Heiligen als Fürsprecher, Klage für unbeantwortete Gebete, Examen und Glaube & Antworten. "Überlass es Gott." Kostenlos für iOS.',
     keywords:
-      'ABWUN, Gebets-App, KI Gebetsbegleiter, Gebetsschnur, Jesusgebet, Rosenkranz, Klage, unbeantwortetes Gebet, Examen, Lectio Divina, Überlass es Gott, loslassen Gott, nicht mein Wille sondern dein Wille, Vaterunser Aramäisch, Abwun Unser Vater, christliche App 2026, tägliche Andacht, Ego Tod, spirituelle Freiheit, bibelbasiertes Gebet, Gebets-Tagebuch, Evangelium App, Glaubens-App iOS',
+      'ABWUN, Gebets-App, KI Gebetsbegleiter, Gebetsschnur, Jesusgebet, Rosenkranz, Heilige, Fürsprecher, Novene, Heiliger des Tages, Klage, unbeantwortetes Gebet, Examen, Lectio Divina, Überlass es Gott, loslassen Gott, nicht mein Wille sondern dein Wille, Vaterunser Aramäisch, Abwun Unser Vater, christliche App 2026, tägliche Andacht, Ego Tod, spirituelle Freiheit, bibelbasiertes Gebet, Gebets-Tagebuch, Evangelium App, Glaubens-App iOS',
   },
   structured: {
     description:
@@ -22,6 +22,9 @@ const abwun = {
       'Tägliche Andacht',
       'Gebetsschnur',
       'Rosenkranz',
+      'Heilige',
+      'Fürsprecher',
+      'Novene',
       'Klage',
       'Examen',
       'Lectio Divina',
@@ -52,8 +55,12 @@ const abwun = {
       a: 'Es ist der Raum für „Gott hat nicht geantwortet“ – ohne Beschwichtigung. Du kannst ehrlich sprechen, deine Worte in den Klageliedern finden (Psalm 13, 22, 42, 88, 130, Klagelieder 3) und dann zwischen zwei gleichwertigen Antworten wählen: „Ich vertraue ihm trotzdem“ oder „Ich kann es noch nicht.“ Beide dürfen vor Gott stehen.',
     },
     {
+      q: 'Gibt es in ABWUN auch Heilige?',
+      a: 'Ja. ABWUN enthält 49 Heilige mit kurzem Leben, Patronat, Gedenktag und einem kurzen Fürbittgebet. Heilige werden nicht angebetet, sondern um Fürsprache gebeten – Christus bleibt die Mitte (1. Timotheus 2,5). Dazu kommen Lebenslagen-Chips, ein Heiliger des Tages, eine Novene als neuntägiger Gebetsweg und Gebetskarten zum Teilen.',
+    },
+    {
       q: 'Wie funktioniert der KI-Gebetsbegleiter?',
-      a: 'Zu jeder Tageszeit kannst du deine aktuelle Herzenssorge schreiben. Der KI-Gebetsbegleiter (GPT-4o-mini) erstellt dir dann ein persönliches, bibelgebundenes Gebet, das immer mit „im Namen Jesu“ endet – nie Manifestation, immer Hingabe.',
+      a: 'Zu jeder Tageszeit kannst du deine aktuelle Herzenssorge schreiben. Der KI-Gebetsbegleiter erstellt dir dann ein persönliches, bibelgebundenes Gebet, das immer mit „im Namen Jesu“ endet – nie Manifestation, immer Hingabe.',
     },
     {
       q: 'Ist ABWUN kostenlos?',
@@ -69,7 +76,7 @@ const abwun = {
     title1: 'Überlass es Gott.',
     title2: 'Lass los.',
     description:
-      'ABWUN ist das Gegenteil von Manifestation. Anstatt deinen eigenen Willen durchzusetzen, legst du deine Träume demütig in Gottes Hände. Ein täglicher Weg in drei Loslassungen – morgens, mittags und abends.',
+      'ABWUN stellt Manifestation auf den Kopf. Anstatt den eigenen Willen durchzusetzen, übergibst du deine Anliegen Gott – im Vertrauen, nicht in Kontrolle. Ein täglicher Weg in drei Übergaben: morgens, mittags und abends.',
     verse: '„Nicht mein Wille, sondern dein Wille geschehe.“ — Lukas 22,42',
     download: 'ABWUN herunterladen',
     imageAlt: 'ABWUN App',
@@ -97,7 +104,7 @@ const abwun = {
     eyebrow: 'Die Idee',
     title: 'Das Gegenteil von Manifestation',
     description:
-      'Manifestation drückt deinen Willen auf die Welt. ABWUN dreht es um: Du lässt deinen eigenen Willen los, denn Gott allein trägt. Deine Träume werden nicht weggeworfen – sie werden demütig in seine Hände gelegt.',
+      'Manifestation setzt den eigenen Willen durch. ABWUN dreht es um: Du trittst zurück, damit Gott wirken kann. Dein Anliegen geht dabei nicht verloren – es wird zu Gebet.',
     manifestation: {
       title: 'Manifestation',
       items: [
@@ -113,7 +120,7 @@ const abwun = {
         'Ich lasse meinen eigenen Willen los – „Ego-Tod“',
         'Nicht ich entscheide, sondern Gott allein',
         '„Nicht mein Wille, sondern dein Wille geschehe.“ (Lukas 22,42)',
-        'Ich lege meine Träume demütig in Gottes Hände',
+        'Ich lege mein Anliegen in seine Hand – ohne es zu erzwingen',
         'Vertrauen, nicht Kontrolle',
       ],
     },
@@ -121,8 +128,8 @@ const abwun = {
   },
   steps: {
     eyebrow: 'Ein täglicher Weg',
-    title: 'Drei Loslassungen am Tag',
-    description: 'Drei Tageszeiten, drei Loslassungen. Ein Tag, der mit Gott gelebt wird – vom ersten Gedanken bis zum letzten.',
+    title: 'Drei Übergaben am Tag',
+    description: 'Drei Tageszeiten, drei Übergaben. Ein Tag, der mit Gott gelebt wird – vom ersten Gedanken bis zum letzten.',
     items: [
       {
         title: 'Morgen',
@@ -195,12 +202,12 @@ const abwun = {
     title: 'Ein sanfter Begleiter',
     items: [
       {
-        title: 'Herzensgespräch',
-        description: 'Schreibe zu Gott – und empfange eine Antwort. Der KI-Gebetsbegleiter (GPT-4o-mini) verfasst persönliche, bibelgebundene Gebete, die immer mit „im Namen Jesu“ enden.',
+        title: 'Herz-Gespräch',
+        description: 'Schreibe zu Gott – und empfange eine Antwort. Der KI-Gebetsbegleiter verfasst ein persönliches, bibelgebundenes Gebet, das immer mit „im Namen Jesu“ endet.',
       },
       {
         title: 'Heute',
-        description: 'Dein täglicher Weg in drei Loslassungen: Morgen, Mittag und Abend – mit deiner Herzenssorge, einem Bibelvers und einem persönlichen KI-Gebet.',
+        description: 'Dein täglicher Weg in drei Übergaben: Morgen, Mittag und Abend – mit deiner Herzenssorge, einem Bibelvers und einem persönlichen Gebet.',
       },
       {
         title: 'Der Garten',
@@ -224,7 +231,7 @@ const abwun = {
       },
       {
         title: 'Klage & unbeantwortetes Gebet',
-        description: 'Der Raum für „Gott hat nicht geantwortet“ – ohne Beschwichtigung. Ehrliche Klage in der Sprache der Klagelieder. „Ich vertraue ihm trotzdem“ oder „Ich kann es noch nicht“ – beides darf vor Gott stehen.',
+        description: 'Der Raum für „Gott hat nicht geantwortet“: ehrliche Klage in der Sprache der Klagepsalmen – ohne Vertröstung.',
       },
       {
         title: 'Glaube & Antworten',
@@ -243,6 +250,41 @@ const abwun = {
         description: 'Sanfte Erinnerungen für Morgen, Mittag und Abend. Dein Name, deine Erinnerungen, volle Kontrolle – inklusive Konto- und Datenlöschung.',
       },
     ],
+  },
+  saints: {
+    eyebrow: 'Neu · Heilige',
+    title: 'Fürsprecher, die mitbeten',
+    description:
+      'Heilige werden nicht angebetet – sie werden um Fürsprache gebeten. Christus bleibt die Mitte. 49 Heilige mit kurzem Leben, Patronat, Gedenktag und einem kurzen Fürbittgebet begleiten dein Anliegen.',
+    items: [
+      {
+        title: '49 Heilige',
+        description: 'Für jede Lebenslage ein Vorbild – je mit kurzem Leben, Patronat, Gedenktag und klassischem Fürbittgebet. Jedes Gebet endet „durch Jesus Christus, unseren Herrn.“',
+      },
+      {
+        title: 'Das lege ich dir hin',
+        description: 'Jedes Gebet hat eine Lücke: „Das lege ich dir hin: ___.“ Beim Beten sprichst du dort dein eigenes, konkretes Anliegen laut hinein – ohne Eingabefeld.',
+      },
+      {
+        title: 'Fürsprecher-Vorschlag',
+        description: 'Nach einem Herz-Gespräch schlägt ABWUN leise bis zu zwei passende Heilige für dein Anliegen vor – nur auf dem Gerät, ohne Netz.',
+      },
+      {
+        title: 'Lebenslagen & Favoriten',
+        description: 'Chips wie Reise, Liebe & Familie, Angst & Trost, Krankheit oder Arbeit & Studium führen dich zum passenden Fürsprecher. „Meine Heiligen“ bleibt lokal gespeichert.',
+      },
+      {
+        title: 'Novene',
+        description: 'Ein neuntägiger Gebetsweg mit einem Heiligen – von Ankommen bis Hingabe. Ohne Zeitdruck: Kein Tag geht verloren, der Abschluss fällt in die Stille.',
+      },
+      {
+        title: 'Heiliger des Tages',
+        description: 'An Gedenktagen steht dezent eine Zeile unter dem Heute-Header – und als Home- und Sperrbildschirm-Widget. Sonst bleibt sie unsichtbar.',
+      },
+    ],
+    footnote: 'Gebetskarten zum Teilen – gestaltet wie ein klassisches Gebetsbildchen: Wortmarke, Name, Gebet und Gedenktag, direkt über das System-Teilen-Menü.',
+    verse: '„Denn es ist ein Gott und ein Mittler zwischen Gott und den Menschen: der Mensch Christus Jesus.“ — 1. Timotheus 2,5',
+    imageAlt: 'ABWUN Heilige',
   },
   lament: {
     eyebrow: 'Klage & unbeantwortetes Gebet',
@@ -273,7 +315,7 @@ const abwun = {
     eyebrow: 'Was es bewirkt',
     title: 'Wahre innere Freiheit',
     description:
-      'Das Ziel ist nicht Kontrolle über das Universum – sondern emotionale Freiheit durch vollständige Hingabe:',
+      'Das Ziel ist keine Macht über die Umstände – sondern innere Freiheit durch vollständige Hingabe:',
     imageAlt: 'ABWUN Gebet',
     items: [
       'Du musst nicht mehr erzwingen, in Panik geraten oder kontrollieren',

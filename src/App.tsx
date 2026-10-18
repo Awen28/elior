@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from './pages/Home';
@@ -61,59 +60,8 @@ function App() {
     return () => clearTimeout(timer);
   }, [location]);
 
-  // Update document title based on route
-  useEffect(() => {
-    const titles: { [key: string]: string } = {
-      '/': 'Studio Elior',
-      '/369': '369',
-      '/numistellar': 'NumiStellar',
-      '/kibook': 'kiBook',
-      '/elow': 'Elow',
-      '/suremate': 'Suremate',
-      '/suremate-pro': 'Suremate Pro',
-      '/agentregister': 'Suremate Pro',
-      '/createAgent': 'Suremate Pro',
-      '/forgotcode': 'Suremate Pro',
-      '/download-suremate-pro': 'Suremate Pro',
-      '/agentportal': 'Suremate Pro',
-      '/callback': 'kiBook',
-      '/stradahub': 'StradaHub',
-      '/abwun': 'ABWUN',
-      '/webdesign-tirol': 'Homepage programmieren Tirol & Österreich - Webdesign | Elior',
-      '/app-entwicklung-tirol': 'App erstellen lassen Tirol & Österreich - iOS & Android | Elior',
-    };
-    
-    const defaultTitle = 'Studio Elior';
-    document.title = titles[location.pathname] || defaultTitle;
-    
-    // Update meta description based on route
-    const descriptions: { [key: string]: string } = {
-      '/': 'Elior ist ein Premium Digital Studio aus Tirol, Österreich, das Produkte mit Bedeutung baut. Entwickler Thomas Mayrl. Spezialisiert auf AI-gestützte iOS Apps und Webentwicklung.',
-      '/369': '369 Manifestation App mit AI Vision Board, täglichen Affirmationen und Meditationen. Die 369 Methode für Manifestation - Morgens 3x, Mittags 6x, Abends 9x.',
-      '/numistellar': 'NumiStellar vereint Astrologie, Numerologie und kosmische Energie. Echtzeit Planetenpositionen, Schumann Resonanz und Astrocartographie.',
-      '/kibook': 'kiBook verwandelt Ideen in wunderschön illustrierte Geschichten. AI Story Generator für Kinder mit verschiedenen Kunststilen.',
-      '/elow': 'Elow ist ein AI Music Generator der Emotionen in Musik verwandelt. Erstelle einzigartige Soundscapes für jede Stimmung und jeden Anlass.',
-      '/suremate': 'Suremate - Smartes Versicherungsmanagement für Verbraucher. Schadensfälle verfolgen, Policen verwalten.',
-      '/suremate-pro': 'Suremate Pro - Professionelle Versicherungstools für Agenten. Kundenmanagement und Analytik.',
-      '/agentregister': 'Registriere dich als Suremate Pro Agent. Professionelle Versicherungs-Tools mit Kundenmanagement, Analytik und PDF-Reports.',
-      '/createAgent': 'Erstelle dein Suremate Pro Agenten-Profil und erhalte deinen einzigartigen Agent-Code.',
-      '/forgotcode': 'Finde deinen Suremate Pro Agent-Code per E-Mail. Einfach E-Mail eingeben und Code anzeigen lassen.',
-      '/download-suremate-pro': 'Lade Suremate Pro für iOS herunter. Die professionelle Versicherungs-App für Agenten.',
-      '/stradahub': 'StradaHub - Die Community-Verkehrs-App für den DACH-Raum. Unfälle, Baustellen, Straßensperren, Stau und Gefahren in Echtzeit auf der Karte. Kostenlos, ohne Registrierung, ohne Werbung. Keine Blitzer- oder Radarwarnung.',
-      '/abwun': 'ABWUN ist das Gegenteil von Manifestation. Ein täglicher Weg mit Gott in drei Übergaben: Morgen, Mittag und Abend. KI-Gebetsbegleiter, biblisch fundierte Gebete, die mit "im Namen Jesu" enden. "Trust Him."',
-      '/webdesign-tirol': 'Homepage programmieren lassen in Tirol & Österreich: Elior erstellt schnelle, moderne, Google-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Shops & KI-Features.',
-      '/app-entwicklung-tirol': 'App erstellen lassen in Tirol & Österreich: Elior entwickelt iOS & Android Apps mit KI-Integration, modernem Design und ASO. 50.000+ Downloads, 11+ Apps im App Store.',
-    };
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', descriptions[location.pathname] || descriptions['/']);
-    }
-  }, [location]);
-
   return (
-    <HelmetProvider>
-      <div className="relative min-h-screen" style={{ background: '#F5F1EA' }}>
+    <div className="relative min-h-screen" style={{ background: '#F5F1EA' }}>
         {!isAppPage && <Navigation />}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -143,8 +91,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
-      </div>
-    </HelmetProvider>
+    </div>
   );
 }
 

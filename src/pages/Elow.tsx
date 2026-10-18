@@ -155,7 +155,10 @@ const Elow = () => {
         title={t('seo.title')} tabTitle="Elow"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/elow_homescreen.webp"
+        ogImage="https://elior.studio/apps/Elow%20Logo.webp"
+        ogImageWidth={1024}
+        ogImageHeight={1024}
+        ogImageAlt="Elow — App-Logo"
         ogType="product"
         canonical="https://elior.studio/elow"
         structuredData={[appStructuredData, breadcrumbData, faqData]}

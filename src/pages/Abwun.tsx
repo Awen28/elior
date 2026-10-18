@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, Fragment, useMemo } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowLeft, Sun, CloudSun, Moon, BookOpen, Sprout, MessageCircleHeart, Settings, Download, ChevronRight, Heart, Feather, HandHeart, Sparkles, FlameKindling, Cross, Church, CircleDot, HeartCrack, Eye, MessageSquareText, VolumeX } from 'lucide-react';
+import { ArrowLeft, Sun, CloudSun, Moon, BookOpen, Sprout, MessageCircleHeart, Settings, Download, ChevronRight, Heart, Feather, HandHeart, Sparkles, FlameKindling, Cross, Church, CircleDot, HeartCrack, Eye, MessageSquareText, VolumeX, UsersRound, HeartHandshake, Crown, Flame, Share2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SEO, generateAppStructuredData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
@@ -34,6 +34,7 @@ const featureIcons = [
 ];
 
 const prayerPathIcons = [CircleDot, Church, Cross];
+const saintIcons = [UsersRound, HandHeart, HeartHandshake, Sparkles, Flame, Crown];
 const screenshotKeys = ['home', 'prayer', 'wishes', 'meditation', 'progress', 'heartTalk'];
 
 const prayerPathColors = [OCHRE, TERRACOTTA, SAGE];
@@ -122,6 +123,12 @@ const Abwun = () => {
     ...f,
     icon: featureIcons[i],
   }));
+  const saints = (
+    t('saints.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((s, i) => ({
+    ...s,
+    icon: saintIcons[i],
+  }));
   const prayerPaths = (t('prayerPaths.items', { returnObjects: true }) as {
     label: string;
     title: string;
@@ -154,7 +161,10 @@ const Abwun = () => {
         title={t('seo.title')} tabTitle="ABWUN"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/Abwun_home.webp"
+        ogImage="https://elior.studio/apps/Abwun_logo.webp"
+        ogImageWidth={930}
+        ogImageHeight={924}
+        ogImageAlt="ABWUN — App-Logo"
         ogType="product"
         canonical="https://elior.studio/abwun"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
@@ -790,6 +800,124 @@ const Abwun = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Saints / Intercessors Section */}
+        <section className="py-32 px-6 md:px-8" style={{ background: SAND_SOFT }}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-20"
+            >
+              <span className="font-serif italic text-sm tracking-[0.3em] block mb-6" style={{ color: OCHRE }}>
+                {t('saints.eyebrow')}
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6" style={{ color: INK }}>
+                {t('saints.title')}
+              </h2>
+              <p className="max-w-2xl mx-auto" style={{ color: INK_SOFT }}>
+                {t('saints.description')}
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="grid sm:grid-cols-2 gap-6">
+                {saints.map((saint, idx) => {
+                  const accent = [OCHRE, SAGE, TERRACOTTA][idx % 3];
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.08 }}
+                      whileHover={{ y: -8 }}
+                      className="p-6 rounded-[28px]"
+                      style={{
+                        background: IVORY,
+                        boxShadow: `
+                          inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+                          inset -2px -2px 4px rgba(38, 36, 31, 0.04),
+                          8px 8px 16px rgba(38, 36, 31, 0.06),
+                          -8px -8px 16px rgba(255, 255, 255, 0.9)
+                        `,
+                      }}
+                    >
+                      <div
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
+                        style={{ background: `${accent}22` }}
+                      >
+                        <saint.icon className="w-6 h-6" style={{ color: accent }} />
+                      </div>
+                      <h3 className="font-serif text-xl mb-2" style={{ color: INK }}>
+                        {saint.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: INK_SOFT }}>
+                        {saint.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="flex justify-center"
+              >
+                <div
+                  className="p-4 md:p-6 rounded-[40px]"
+                  style={{
+                    background: SAND,
+                    boxShadow: `
+                      inset 3px 3px 6px rgba(255, 255, 255, 0.9),
+                      inset -3px -3px 6px rgba(38, 36, 31, 0.05),
+                      16px 16px 32px rgba(201, 169, 123, 0.1),
+                      -16px -16px 32px rgba(255, 255, 255, 0.9)
+                    `,
+                  }}
+                >
+                  <div
+                    className="p-3 rounded-[28px]"
+                    style={{
+                      background: IVORY,
+                      boxShadow: `
+                        inset 2px 2px 4px rgba(38, 36, 31, 0.04),
+                        inset -2px -2px 4px rgba(255, 255, 255, 0.8)
+                      `,
+                    }}
+                  >
+                    <img
+                      src="/apps/Abwun_saints.webp"
+                      alt={t('saints.imageAlt')}
+                      className="w-[280px] h-auto rounded-[24px]"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center mt-16"
+            >
+              <p className="inline-flex items-center gap-2 font-serif italic text-sm mb-4" style={{ color: OCHRE }}>
+                <Share2 className="w-4 h-4" />
+                {t('saints.footnote')}
+              </p>
+              <p className="font-serif italic text-lg" style={{ color: TERRACOTTA }}>
+                {t('saints.verse')}
+              </p>
+            </motion.div>
           </div>
         </section>
 

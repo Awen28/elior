@@ -61,7 +61,10 @@ function Home() {
         tabTitle="Studio Elior"
         description="Elior aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
         keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, Elior, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
-        ogImage="https://elior.studio/og-image.jpg"
+        ogImage="https://elior.studio/apps/Elior_logo.webp"
+        ogImageWidth={1080}
+        ogImageHeight={1080}
+        ogImageAlt="Elior — Premium App- & Webentwicklung aus Tirol"
         canonical="https://elior.studio/"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData, appsListData]}
         language="de-AT"

@@ -56,6 +56,7 @@ const AgentRegister = () => {
         description="Register as a Suremate Pro agent. Professional insurance tools for agents with client management, analytics, and advanced reporting."
         keywords="Suremate Pro, insurance agent registration, agent portal, insurance software, professional insurance tools"
         canonical="https://elior.studio/agentregister"
+        noindex
       />
       <div className="relative min-h-screen" style={{ background: '#F1EDE6' }}>
         {/* Navigation */}

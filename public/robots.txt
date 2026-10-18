@@ -1,9 +1,22 @@
-# Elior — https://elior.studio
-# Policy: MAXIMUM VISIBILITY. Traditional search + AI retrieval + AI training all allowed.
-# Only genuinely private paths are blocked. Crawl-delay is intentionally omitted (ignored by Google/Bing).
+# ============================================================================
+#  Elior — https://elior.studio
+#  Premium App- & Webentwicklung aus Tirol (Innsbruck · Schwaz · Volders) für
+#  Österreich, den DACH-Raum und internationale Projekte.
+#
+#  Policy: MAXIMUM VISIBILITY.
+#  Traditional search, AI retrieval (search grounding) and AI model training
+#  are all welcome. Only genuinely private, transactional and parameterised
+#  paths are blocked. Crawl-delay is intentionally omitted (ignored by
+#  Google/Bing, and this site is fast, static and edge-served).
+# ============================================================================
 
+# ---------------------------------------------------------------------------
+#  All crawlers — broad allow, minimal blocklist
+# ---------------------------------------------------------------------------
 User-agent: *
 Allow: /
+
+# Private / transactional / auth flows (also marked noindex in-page)
 Disallow: /admin
 Disallow: /api/
 Disallow: /agentportal
@@ -12,9 +25,13 @@ Disallow: /createAgent
 Disallow: /forgotcode
 Disallow: /callback
 Disallow: /download-suremate-pro
+
+# Never index parameterised variants (avoid duplicate/UTM crawl waste)
 Disallow: /*?*
 
-# ---- Traditional search ----
+# ---------------------------------------------------------------------------
+#  Traditional search engines
+# ---------------------------------------------------------------------------
 User-agent: Googlebot
 Allow: /
 User-agent: Googlebot-Image
@@ -23,7 +40,11 @@ User-agent: Googlebot-Video
 Allow: /
 User-agent: Googlebot-News
 Allow: /
+User-agent: Storebot-Google
+Allow: /
 User-agent: Bingbot
+Allow: /
+User-agent: msnbot
 Allow: /
 User-agent: DuckDuckBot
 Allow: /
@@ -33,8 +54,19 @@ User-agent: Baiduspider
 Allow: /
 User-agent: YandexBot
 Allow: /
+User-agent: Sogou
+Allow: /
+User-agent: Exabot
+Allow: /
+User-agent: PetalBot
+Allow: /
+User-agent: Qwantify
+Allow: /
 
-# ---- OpenAI ----
+# ---------------------------------------------------------------------------
+#  AI assistants & search grounding (retrieval — most valuable for citations)
+# ---------------------------------------------------------------------------
+# OpenAI
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -42,7 +74,7 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# ---- Anthropic ----
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 User-agent: Claude-SearchBot
@@ -52,13 +84,13 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# ---- Perplexity ----
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# ---- Google AI (Gemini training + grounding) ----
+# Google AI (Gemini grounding + training)
 User-agent: Google-Extended
 Allow: /
 User-agent: GoogleOther
@@ -66,13 +98,27 @@ Allow: /
 User-agent: Google-CloudVertexBot
 Allow: /
 
-# ---- Apple ----
+# Microsoft / Copilot
+User-agent: MicrosoftPreview
+Allow: /
+
+# Apple
 User-agent: Applebot
 Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# ---- Meta ----
+# xAI / Grok
+User-agent: GrokBot
+Allow: /
+User-agent: xAI-Bot
+Allow: /
+
+# DeepSeek
+User-agent: DeepSeek-Bot
+Allow: /
+
+# Meta AI
 User-agent: Meta-ExternalAgent
 Allow: /
 User-agent: Meta-ExternalFetcher
@@ -82,43 +128,61 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-# ---- Microsoft / Copilot ----
-User-agent: Bingbot
+# Mistral
+User-agent: MistralAI-User
 Allow: /
-User-agent: MicrosoftPreview
+User-agent: MistralAI-Index
 Allow: /
 
-# ---- Others (AI + aggregators) ----
+# Cohere
+User-agent: cohere-ai
+Allow: /
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# Amazon
 User-agent: Amazonbot
+Allow: /
+
+# Others — AI, research & aggregators
+User-agent: AI2Bot
+Allow: /
+User-agent: Ai2Bot-Dolma
 Allow: /
 User-agent: Bytespider
 Allow: /
 User-agent: CCBot
 Allow: /
-User-agent: cohere-ai
-Allow: /
-User-agent: cohere-training-data-crawler
-Allow: /
 User-agent: Diffbot
 Allow: /
+User-agent: DuckAssistBot
+Allow: /
 User-agent: ImagesiftBot
+Allow: /
+User-agent: KangarooBot
+Allow: /
+User-agent: PanguBot
 Allow: /
 User-agent: Timpibot
 Allow: /
 User-agent: YouBot
 Allow: /
-User-agent: DuckAssistBot
-Allow: /
-User-agent: MistralAI-User
-Allow: /
 User-agent: ia_archiver
 Allow: /
+User-agent: Scrapy
+Allow: /
 
-# Explicitly expose AI reference files
+# ---------------------------------------------------------------------------
+#  Explicitly expose structured reference files for AI/LLM retrieval
+# ---------------------------------------------------------------------------
 User-agent: *
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /sitemap.xml
 Allow: /app-ads.txt
+Allow: /manifest.json
 
+# ---------------------------------------------------------------------------
+#  Sitemaps
+# ---------------------------------------------------------------------------
 Sitemap: https://elior.studio/sitemap.xml

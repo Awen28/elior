@@ -1,18 +1,39 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Home, ArrowLeft, Search, Compass } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
 const NotFound = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true });
+  const { t, i18n } = useTranslation();
+  const isGerman = i18n.resolvedLanguage?.startsWith('de') ?? true;
+
+  const links = [
+    { label: t('notFound.links.home'), href: '/' },
+    { label: t('notFound.links.webdesign'), href: '/webdesign-tirol' },
+    { label: t('notFound.links.appDev'), href: '/app-entwicklung-tirol' },
+    { label: t('notFound.links.abwun'), href: '/abwun' },
+    { label: t('notFound.links.stradahub'), href: '/stradahub' },
+    { label: t('notFound.links.suremate'), href: '/suremate' },
+    { label: t('notFound.links.kibook'), href: '/kibook' },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#F1EDE6' }}>
-      <SEO 
-        title="Page Not Found | Elior"
-        description="The page you are looking for does not exist. Return to Elior homepage."
+      <SEO
+        title={t('notFound.seo.title')}
+        description={t('notFound.seo.description')}
+        canonical="https://elior.studio/404"
+        language={isGerman ? 'de-AT' : 'en'}
+        ogImage="https://elior.studio/apps/Elior_logo.webp"
+        ogImageWidth={1080}
+        ogImageHeight={1080}
+        ogImageAlt={t('notFound.seo.title')}
+        structuredData={{ '@context': 'https://schema.org', '@type': 'WebPage', name: t('notFound.title'), url: 'https://elior.studio/404', inLanguage: isGerman ? 'de-AT' : 'en', isPartOf: { '@type': 'WebSite', name: 'Elior', url: 'https://elior.studio' } }}
+        noindex
       />
 
       {/* Header */}
@@ -103,23 +124,29 @@ const NotFound = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
+            <p
+              className="text-xs tracking-[0.3em] uppercase mb-4"
+              style={{ color: 'rgba(82, 82, 64, 0.45)' }}
+            >
+              {t('notFound.eyebrow')}
+            </p>
             <h1 
               className="font-serif text-5xl md:text-6xl mb-6"
               style={{ color: '#525240' }}
             >
-              Page not found
+              {t('notFound.title')}
             </h1>
             <p 
               className="text-xl md:text-2xl mb-4"
               style={{ color: 'rgba(82, 82, 64, 0.7)' }}
             >
-              Looks like you have wandered off the map.
+              {t('notFound.subtitle')}
             </p>
             <p 
               className="text-lg mb-12 max-w-md mx-auto"
               style={{ color: 'rgba(82, 82, 64, 0.5)' }}
             >
-              The page you are looking for does not exist or has been moved.
+              {t('notFound.description')}
             </p>
           </motion.div>
 
@@ -139,7 +166,7 @@ const NotFound = () => {
               }}
             >
               <Home className="w-4 h-4" />
-              Back to Home
+              {t('notFound.backHome')}
             </Link>
             
             <button
@@ -152,7 +179,7 @@ const NotFound = () => {
               }}
             >
               <ArrowLeft className="w-4 h-4" />
-              Go Back
+              {t('notFound.back')}
             </button>
           </motion.div>
 
@@ -169,17 +196,10 @@ const NotFound = () => {
               style={{ color: 'rgba(82, 82, 64, 0.5)' }}
             >
               <Search className="w-4 h-4" />
-              Popular destinations
+              {t('notFound.popular')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { label: 'Our Work', href: '/#work' },
-                { label: 'Services', href: '/#services' },
-                { label: 'About', href: '/#about' },
-                { label: 'Contact', href: '/#contact' },
-                { label: 'Suremate', href: '/suremate' },
-                { label: 'kiBook', href: '/kibook' },
-              ].map((link) => (
+              {links.map((link) => (
                 <Link
                   key={link.label}
                   to={link.href}
@@ -201,7 +221,7 @@ const NotFound = () => {
       <footer className="py-8 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: 'rgba(82, 82, 64, 0.4)' }}>
-            © {new Date().getFullYear()} Elior. All rights reserved.
+            © {new Date().getFullYear()} Elior. {t('notFound.rights')}
           </p>
         </div>
       </footer>

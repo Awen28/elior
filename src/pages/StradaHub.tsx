@@ -135,7 +135,10 @@ const StradaHub = () => {
         title={t('seo.title')} tabTitle="StradaHub"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/stradaHub_show_control.webp"
+        ogImage="https://elior.studio/apps/StradaHub_logo.webp"
+        ogImageWidth={1024}
+        ogImageHeight={1024}
+        ogImageAlt="StradaHub — App-Logo"
         ogType="product"
         canonical="https://elior.studio/stradahub"
         structuredData={[appStructuredData, breadcrumbData, faqData]}

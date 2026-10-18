@@ -1,4 +1,7 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect, useMemo } from 'react';
+
+const SITE_URL = 'https://elior.studio';
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/apps/Elior_logo.webp`;
 
 interface SEOProps {
   title: string;
@@ -6,6 +9,9 @@ interface SEOProps {
   description: string;
   keywords?: string;
   ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageAlt?: string;
   ogType?: string;
   canonical?: string;
   structuredData?: object | object[];
@@ -19,14 +25,56 @@ interface SEOProps {
   alternateLanguages?: { hrefLang: string; href: string }[];
   articlePublished?: string;
   articleModified?: string;
+  noindex?: boolean;
 }
 
+const MANAGED = 'data-elior-seo';
+const EMPTY_ALTS: { hrefLang: string; href: string }[] = [];
+
+const imageType = (url: string) =>
+  url.endsWith('.webp') ? 'image/webp'
+    : url.endsWith('.png') ? 'image/png'
+      : url.endsWith('.svg') ? 'image/svg+xml'
+        : 'image/jpeg';
+
+function removeStatic(tag: 'meta' | 'link', attr: string, value: string) {
+  document.head.querySelectorAll(tag).forEach((node) => {
+    if (node.getAttribute(attr) === value && !node.hasAttribute(MANAGED)) node.remove();
+  });
+}
+
+function addMeta(attrs: Record<string, string | undefined>, identify: 'name' | 'property') {
+  const value = attrs[identify];
+  if (value) removeStatic('meta', identify, value);
+  const el = document.createElement('meta');
+  for (const [k, v] of Object.entries(attrs)) if (v != null) el.setAttribute(k, v);
+  el.setAttribute(MANAGED, '');
+  document.head.appendChild(el);
+}
+
+function addLink(attrs: Record<string, string | undefined>, identify: string) {
+  const value = attrs[identify];
+  if (value) removeStatic('link', identify, value);
+  const el = document.createElement('link');
+  for (const [k, v] of Object.entries(attrs)) if (v != null) el.setAttribute(k, v);
+  el.setAttribute(MANAGED, '');
+  document.head.appendChild(el);
+}
+
+/**
+ * Selbst-verwaltetes <head> (kein react-helmet-async): setzt Titel, Meta,
+ * Canonical, hreflang, Open Graph, Twitter und strukturierte Daten pro Seite
+ * deterministisch und räumt doppelte statische Tags aus index.html auf.
+ */
 export const SEO = ({
   title,
   tabTitle,
   description,
   keywords = '',
-  ogImage = 'https://elior.studio/og-image.jpg',
+  ogImage,
+  ogImageWidth = 1080,
+  ogImageHeight = 1080,
+  ogImageAlt,
   ogType = 'website',
   canonical,
   structuredData,
@@ -37,113 +85,155 @@ export const SEO = ({
   rating,
   reviewCount,
   language = 'de-AT',
-  alternateLanguages = [],
+  alternateLanguages = EMPTY_ALTS,
   articlePublished,
   articleModified,
+  noindex = false,
 }: SEOProps) => {
   const fullTitle = title.includes('Elior') ? title : `${title} | Elior`;
-  
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{tabTitle ?? fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="author" content={author} />
-      <meta name="geo.region" content="AT-7" />
-      <meta name="geo.placename" content={region} />
-      <meta name="geo.position" content="47.259659;11.404102" />
-      <meta name="ICBM" content="47.259659, 11.404102" />
-      <meta name="language" content={language} />
-      <meta httpEquiv="content-language" content={language} />
-      
-      {/* Viewport & Mobile */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-      <meta name="theme-color" content="#F5F1EA" />
-      <meta name="msapplication-TileColor" content="#F5F1EA" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="format-detection" content="telephone=no" />
-      
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
-      
-      {/* Alternate Languages */}
-      {alternateLanguages.map((alt) => (
-        <link key={alt.hrefLang} rel="alternate" hrefLang={alt.hrefLang} href={alt.href} />
-      ))}
-      <link rel="alternate" hrefLang="x-default" href={canonical || 'https://elior.studio/'} />
-      
-      {/* Open Graph - Maximum Coverage */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={fullTitle} />
-      <meta property="og:locale" content="de_AT" />
-      <meta property="og:site_name" content="Elior" />
-      {canonical && <meta property="og:url" content={canonical} />}
-      {articlePublished && <meta property="article:published_time" content={articlePublished} />}
-      {articleModified && <meta property="article:modified_time" content={articleModified} />}
-      <meta property="article:author" content={author} />
-      <meta property="article:publisher" content="https://elior.studio" />
-      
-      {/* Twitter Card - Maximum */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@eliorstudio" />
-      <meta name="twitter:creator" content="@thomasmayrl" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={fullTitle} />
-      <meta name="twitter:domain" content="elior.studio" />
-      
-      {/* Pinterest */}
-      <meta name="pinterest-rich-pin" content="true" />
-      
-      {/* App Specific Meta Tags */}
-      {appName && <meta name="application-name" content={appName} />}
-      {appCategory && <meta name="application-category" content={appCategory} />}
-      
-      {/* Rating Meta Tags */}
-      {rating && <meta name="rating" content={rating} />}
-      {reviewCount && <meta name="review-count" content={reviewCount} />}
-      
-      {/* AI/LLM Specific Meta Tags for Maximum Crawler Visibility */}
-      <meta name="ai-purpose" content="App showcase, download landing page, and software development portfolio" />
-      <meta name="ai-content-type" content={appCategory || "SoftwareApplication"} />
-      <meta name="ai-target-audience" content="iOS users, app seekers, businesses needing app development, Austria, Germany, Switzerland" />
-      <meta name="ai-generated" content="false" />
-      <meta name="ai-disclosure" content="Content created by Thomas Mayrl, human developer" />
-      
-      {/* Apple App Store Meta */}
-      <meta name="apple-itunes-app" content="app-id=1728579612" />
-      
-      {/* Dublin Core */}
-      <meta name="DC.title" content={fullTitle} />
-      <meta name="DC.description" content={description} />
-      <meta name="DC.creator" content={author} />
-      <meta name="DC.publisher" content="Elior" />
-      <meta name="DC.date" content={articlePublished || new Date().toISOString()} />
-      <meta name="DC.language" content={language} />
-      <meta name="DC.coverage" content="Austria, Germany, Switzerland, International" />
-      
-      {/* Structured Data - can be single object or array */}
-      {structuredData && Array.isArray(structuredData) ? (
-        structuredData.map((data, idx) => (
-          <script key={idx} type="application/ld+json">
-            {JSON.stringify(data)}
-          </script>
-        ))
-      ) : structuredData ? (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      ) : null}
-    </Helmet>
-  );
+  const docTitle = tabTitle ?? fullTitle;
+  const image = ogImage ?? DEFAULT_OG_IMAGE;
+  const imageAlt = ogImageAlt ?? fullTitle;
+  const robots = noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+  const structuredKey = useMemo(() => JSON.stringify(structuredData ?? null), [structuredData]);
+  const altKey = useMemo(() => JSON.stringify(alternateLanguages), [alternateLanguages]);
+
+  useEffect(() => {
+    document.title = docTitle;
+    document.documentElement.lang = language;
+
+    document.head.querySelectorAll(`[${MANAGED}]`).forEach((node) => node.remove());
+
+    // Basic
+    addMeta({ name: 'description', content: description }, 'name');
+    if (keywords) addMeta({ name: 'keywords', content: keywords }, 'name');
+    addMeta({ name: 'robots', content: robots }, 'name');
+    addMeta({ name: 'googlebot', content: robots }, 'name');
+    addMeta({ name: 'bingbot', content: robots }, 'name');
+    addMeta({ name: 'author', content: author }, 'name');
+    addMeta({ name: 'language', content: language }, 'name');
+    addMeta({ name: 'geo.region', content: 'AT-7' }, 'name');
+    addMeta({ name: 'geo.placename', content: region }, 'name');
+    addMeta({ name: 'geo.position', content: '47.259659;11.404102' }, 'name');
+    addMeta({ name: 'ICBM', content: '47.259659, 11.404102' }, 'name');
+
+    // Open Graph
+    addMeta({ property: 'og:title', content: fullTitle }, 'property');
+    addMeta({ property: 'og:description', content: description }, 'property');
+    addMeta({ property: 'og:type', content: ogType }, 'property');
+    addMeta({ property: 'og:image', content: image }, 'property');
+    addMeta({ property: 'og:image:secure_url', content: image }, 'property');
+    addMeta({ property: 'og:image:type', content: imageType(image) }, 'property');
+    addMeta({ property: 'og:image:width', content: String(ogImageWidth) }, 'property');
+    addMeta({ property: 'og:image:height', content: String(ogImageHeight) }, 'property');
+    addMeta({ property: 'og:image:alt', content: imageAlt }, 'property');
+    addMeta({ property: 'og:locale', content: language.toLowerCase().startsWith('de') ? 'de_AT' : 'en_US' }, 'property');
+    addMeta({ property: 'og:site_name', content: 'Elior' }, 'property');
+    if (canonical) addMeta({ property: 'og:url', content: canonical }, 'property');
+    addMeta({ property: 'article:author', content: author }, 'property');
+    addMeta({ property: 'article:publisher', content: SITE_URL }, 'property');
+    if (articlePublished) addMeta({ property: 'article:published_time', content: articlePublished }, 'property');
+    if (articleModified) addMeta({ property: 'article:modified_time', content: articleModified }, 'property');
+
+    // Twitter
+    addMeta({ name: 'twitter:card', content: 'summary_large_image' }, 'name');
+    addMeta({ name: 'twitter:site', content: '@eliorstudio' }, 'name');
+    addMeta({ name: 'twitter:creator', content: '@thomasmayrl' }, 'name');
+    addMeta({ name: 'twitter:title', content: fullTitle }, 'name');
+    addMeta({ name: 'twitter:description', content: description }, 'name');
+    addMeta({ name: 'twitter:image', content: image }, 'name');
+    addMeta({ name: 'twitter:image:alt', content: imageAlt }, 'name');
+    addMeta({ name: 'twitter:domain', content: 'elior.studio' }, 'name');
+
+    // App / rating / Pinterest
+    if (appName) addMeta({ name: 'application-name', content: appName }, 'name');
+    if (appCategory) addMeta({ name: 'application-category', content: appCategory }, 'name');
+    if (rating) addMeta({ name: 'rating', content: rating }, 'name');
+    if (reviewCount) addMeta({ name: 'review-count', content: reviewCount }, 'name');
+    addMeta({ name: 'pinterest-rich-pin', content: 'true' }, 'name');
+
+    // AI / LLM
+    addMeta({ name: 'ai-purpose', content: 'App showcase, download landing page, and software development portfolio' }, 'name');
+    addMeta({ name: 'ai-content-type', content: appCategory || 'SoftwareApplication' }, 'name');
+    addMeta({ name: 'ai-target-audience', content: 'iOS users, app seekers, businesses needing app development, Austria, Germany, Switzerland' }, 'name');
+    addMeta({ name: 'ai-generated', content: 'false' }, 'name');
+    addMeta({ name: 'ai-disclosure', content: 'Content created by Thomas Mayrl, human developer' }, 'name');
+
+    // Apple
+    addMeta({ name: 'apple-itunes-app', content: 'app-id=1728579612' }, 'name');
+
+    // Dublin Core
+    addMeta({ name: 'DC.title', content: fullTitle }, 'name');
+    addMeta({ name: 'DC.description', content: description }, 'name');
+    addMeta({ name: 'DC.creator', content: author }, 'name');
+    addMeta({ name: 'DC.publisher', content: 'Elior' }, 'name');
+    addMeta({ name: 'DC.date', content: articlePublished || new Date().toISOString().split('T')[0] }, 'name');
+    addMeta({ name: 'DC.language', content: language }, 'name');
+    addMeta({ name: 'DC.coverage', content: 'Austria, Germany, Switzerland, International' }, 'name');
+
+    // Canonical
+    if (canonical) addLink({ rel: 'canonical', href: canonical }, 'rel');
+
+    // hreflang alternates (+ x-default)
+    document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove());
+    const alternates = [
+      ...(JSON.parse(altKey) as { hrefLang: string; href: string }[]),
+      ...(canonical ? [{ hrefLang: 'x-default', href: canonical }] : []),
+    ];
+    alternates.forEach((alt) => {
+      const el = document.createElement('link');
+      el.setAttribute('rel', 'alternate');
+      el.setAttribute('hreflang', alt.hrefLang);
+      el.setAttribute('href', alt.href);
+      el.setAttribute(MANAGED, '');
+      document.head.appendChild(el);
+    });
+
+    // Structured data
+    if (structuredKey !== 'null') {
+      const parsed = JSON.parse(structuredKey) as object | object[];
+      const items = Array.isArray(parsed) ? parsed : [parsed];
+      items.forEach((data) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.setAttribute(MANAGED, '');
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      });
+    }
+
+    return () => {
+      document.head.querySelectorAll(`[${MANAGED}]`).forEach((node) => node.remove());
+    };
+  }, [
+    docTitle,
+    fullTitle,
+    description,
+    keywords,
+    image,
+    imageAlt,
+    ogImageWidth,
+    ogImageHeight,
+    ogType,
+    canonical,
+    author,
+    region,
+    appName,
+    appCategory,
+    rating,
+    reviewCount,
+    language,
+    articlePublished,
+    articleModified,
+    robots,
+    structuredKey,
+    altKey,
+  ]);
+
+  return null;
 };
 
 // Enhanced Structured Data Generators
@@ -196,7 +286,7 @@ export const generateAppStructuredData = (
       "url": "https://elior.studio",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://elior.studio/og-image.jpg"
+        "url": "https://elior.studio/apps/Elior_logo.webp"
       }
     },
     ...(rating && reviewCount && {
@@ -239,15 +329,15 @@ export const generateLocalBusinessData = () => ({
   "telephone": "+43-677-64059711",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://elior.studio/og-image.jpg",
-    "width": 1200,
-    "height": 630
+    "url": "https://elior.studio/apps/Elior_logo.webp",
+    "width": 1080,
+    "height": 1080
   },
   "image": {
     "@type": "ImageObject",
-    "url": "https://elior.studio/og-image.jpg",
-    "width": 1200,
-    "height": 630
+    "url": "https://elior.studio/apps/Elior_logo.webp",
+    "width": 1080,
+    "height": 1080
   },
   "founder": {
     "@type": "Person",
@@ -406,7 +496,7 @@ export const generateWebSiteData = () => ({
     "name": "Elior",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://elior.studio/og-image.jpg"
+      "url": "https://elior.studio/apps/Elior_logo.webp"
     }
   },
   "inLanguage": ["de", "en"]

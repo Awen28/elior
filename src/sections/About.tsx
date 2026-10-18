@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { scrollToSection } from '../lib/scroll';
 import { ScrollSpotlight } from '../components/ScrollSpotlight';
+import CountUp from '../components/CountUp';
 
 const About = () => {
   const { t } = useTranslation();
@@ -187,7 +188,7 @@ const About = () => {
                       '-1px -1px 1px rgba(123, 119, 105, 0.5), 1px 1px 1px rgba(20, 18, 14, 0.5)',
                   }}
                 >
-                  {stat.value}
+                  <CountUp value={stat.value} />
                 </div>
                 <div
                   className="eyebrow mt-2"

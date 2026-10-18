@@ -484,8 +484,7 @@ const AgentPortal = () => {
       <SEO 
         title="Agent Portal | Suremate Pro" tabTitle="Suremate Pro"
         description="Suremate Pro Agent Portal - Verwalten Sie Ihre Kunden und Schadensfälle"
-
-
+        noindex
       />
 
       {/* Header */}

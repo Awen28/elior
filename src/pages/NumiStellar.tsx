@@ -178,7 +178,10 @@ const NumiStellar = () => {
         title={t('seo.title')} tabTitle="NumiStellar"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/numistellar_home.webp"
+        ogImage="https://elior.studio/apps/lumiStellar_Logo.webp"
+        ogImageWidth={1024}
+        ogImageHeight={1024}
+        ogImageAlt="NumiStellar — App-Logo"
         ogType="product"
         canonical="https://elior.studio/numistellar"
         structuredData={[appStructuredData, breadcrumbData, faqData]}

@@ -186,7 +186,10 @@ const KiBook = () => {
         title={t('seo.title')} tabTitle="kiBook"
         description={t('seo.description')}
         keywords={t('seo.keywords')}
-        ogImage="https://elior.studio/apps/kiBook_homescreen.webp"
+        ogImage="https://elior.studio/apps/kiBook_Logo_gelb.webp"
+        ogImageWidth={1024}
+        ogImageHeight={1024}
+        ogImageAlt="KiBook — App-Logo"
         ogType="product"
         canonical="https://elior.studio/kibook"
         structuredData={[appStructuredData, breadcrumbData, faqData]}
