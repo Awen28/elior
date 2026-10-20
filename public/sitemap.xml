@@ -125,6 +125,13 @@
     </image:image>
   </url>
 
+  <!-- SureMate account deletion (public, required for Google Play Data Safety) -->
+  <url>
+    <loc>https://elior.studio/suremate/delete</loc>
+    <lastmod>2026-10-20</lastmod>
+    <priority>0.4</priority>
+  </url>
+
   <!-- Webdesign Tirol -->
   <url>
     <loc>https://elior.studio/webdesign-tirol</loc>

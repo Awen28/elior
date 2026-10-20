@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/suremate/delete",
+      "destination": "/suremate/delete/index.html"
+    },
+    {
+      "source": "/suremate/delete/",
+      "destination": "/suremate/delete/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

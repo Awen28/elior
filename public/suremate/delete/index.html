@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konto löschen – SureMate | Elior</title>
+  <meta name="description" content="So löschen Sie Ihr SureMate-Konto: direkt in der Android-App oder per E-Mail an support@elior.studio. Informationen zu gelöschten Daten und Ablauf. / How to delete your SureMate account.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#F5F1EA">
+  <link rel="canonical" href="https://elior.studio/suremate/delete">
+  <link rel="alternate" hreflang="de" href="https://elior.studio/suremate/delete">
+  <link rel="alternate" hreflang="en" href="https://elior.studio/suremate/delete">
+  <link rel="alternate" hreflang="x-default" href="https://elior.studio/suremate/delete">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elior">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://elior.studio/suremate/delete">
+  <meta property="og:title" content="Konto löschen – SureMate">
+  <meta property="og:description" content="SureMate-Konto direkt in der App oder per E-Mail löschen. Alle Informationen zum Ablauf und zu gelöschten Daten.">
+  <meta property="og:image" content="https://elior.studio/apps/suremate_logo.webp">
+  <meta property="og:image:width" content="960">
+  <meta property="og:image:height" content="960">
+  <meta property="og:image:alt" content="SureMate – App-Logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Konto löschen – SureMate">
+  <meta name="twitter:description" content="SureMate-Konto direkt in der App oder per E-Mail löschen.">
+  <meta name="twitter:image" content="https://elior.studio/apps/suremate_logo.webp">
+
+  <link rel="icon" type="image/webp" href="/logos/elior-star.webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="/logos/elior-star.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+  <style>
+    :root {
+      --paper: #F5F1EA;
+      --paper-deep: #EDE8DD;
+      --card: #FBF8F2;
+      --ink: #4E4F41;
+      --sage: #525342;
+      --ochre: #9A7A50;
+      --muted: rgba(82, 83, 66, 0.58);
+      --line: rgba(82, 83, 66, 0.12);
+      --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 500px at 50% -180px, rgba(201, 169, 123, 0.16), transparent 70%),
+        var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--ochre); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: #7d6040; }
+
+    .lang-radio {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--sage);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand img {
+      width: 23px;
+      height: 23px;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .lang-switch label {
+      cursor: pointer;
+      color: rgba(82, 83, 66, 0.42);
+      padding: 4px 1px;
+      transition: color 0.2s ease;
+      user-select: none;
+    }
+
+    .lang-switch .sep { color: rgba(82, 83, 66, 0.25); }
+
+    #lang-de:checked ~ .page label[for="lang-de"],
+    #lang-en:checked ~ .page label[for="lang-en"] { color: var(--ochre); }
+
+    .lang-radio:focus-visible ~ .page .lang-switch {
+      outline: 2px solid var(--ochre);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .eyebrow {
+      display: block;
+      margin: 40px 0 14px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #918A7C;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2rem, 7vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .date {
+      margin: 0 0 34px;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ochre);
+    }
+
+    .lede {
+      margin: 0 0 30px;
+      font-size: 1.06rem;
+      color: rgba(78, 79, 65, 0.82);
+    }
+
+    .card {
+      margin: 0 0 18px;
+      padding: 24px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 14px 34px -26px rgba(84, 76, 66, 0.4);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      line-height: 1.25;
+      color: var(--sage);
+    }
+
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 13px;
+      align-items: start;
+      font-size: 0.97rem;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--sage);
+      color: var(--paper);
+      font-size: 0.76rem;
+      font-weight: 500;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .note {
+      margin: 20px 0 0;
+      padding: 14px 16px;
+      background: rgba(201, 169, 123, 0.14);
+      border-left: 3px solid var(--ochre);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+      color: rgba(78, 79, 65, 0.9);
+    }
+
+    .note strong { font-weight: 600; }
+
+    .email {
+      display: inline-block;
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .data-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+    }
+
+    .data-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.97rem;
+    }
+
+    .data-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.66em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ochre);
+    }
+
+    .foot {
+      margin-top: 44px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .foot nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    .foot nav a { color: var(--muted); text-decoration: none; }
+    .foot nav a:hover { color: var(--ochre); }
+
+    .lang-en { display: none; }
+    #lang-en:checked ~ .page .lang-de { display: none; }
+    #lang-en:checked ~ .page .lang-en { display: block; }
+
+    @media (max-width: 480px) {
+      .page { padding: 22px 18px 56px; }
+      .card { padding: 20px 18px; border-radius: 16px; }
+      .eyebrow { margin-top: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <input class="lang-radio" type="radio" name="lang" id="lang-de" checked>
+  <input class="lang-radio" type="radio" name="lang" id="lang-en">
+
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="https://elior.studio/">
+        <img src="/logos/elior-symbol.svg" alt="" width="23" height="23">
+        <span>Elior</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <label for="lang-de">DE</label>
+        <span class="sep" aria-hidden="true">/</span>
+        <label for="lang-en">EN</label>
+      </div>
+    </header>
+
+    <!-- ══════════════════ DEUTSCH ══════════════════ -->
+    <div class="lang-de" lang="de">
+      <span class="eyebrow">SureMate · Konto &amp; Daten</span>
+      <h1>Konto löschen – SureMate</h1>
+      <p class="date">Stand: 20. Oktober 2026</p>
+
+      <p class="lede">
+        Sie können Ihr SureMate-Konto direkt in der App löschen. Dabei wird Ihr Konto
+        dauerhaft entfernt und Sie werden automatisch abgemeldet.
+      </p>
+
+      <section class="card">
+        <h2>Konto in der Android-App löschen</h2>
+        <ol class="steps">
+          <li>Öffnen Sie die App „SureMate“ und melden Sie sich an.</li>
+          <li>Tippen Sie auf dem Startbildschirm oben rechts auf das Einstellungen-Symbol (Zahnrad).</li>
+          <li>Scrollen Sie zum Abschnitt „KONTO“.</li>
+          <li>Tippen Sie auf „Konto löschen“.</li>
+          <li>Bestätigen Sie die Sicherheitsabfrage mit „Löschen“.</li>
+          <li>Ihr Konto wird gelöscht und die App meldet Sie automatisch ab.</li>
+        </ol>
+        <p class="note"><strong>Hinweis:</strong> Die Löschung erfolgt sofort und kann nicht rückgängig gemacht werden.</p>
+      </section>
+
+      <section class="card">
+        <h2>Falls die App nicht mehr genutzt werden kann</h2>
+        <p>
+          Wenn Sie keinen Zugriff mehr auf die App haben, senden Sie eine E-Mail von der
+          bei uns registrierten E-Mail-Adresse an
+          <a class="email" href="mailto:support@elior.studio?subject=Konto%20l%C3%B6schen">support@elior.studio</a>
+          mit dem Betreff „Konto löschen“. Wir löschen Ihr Konto innerhalb von
+          7 Werktagen und bestätigen die Löschung per E-Mail.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Welche Daten gelöscht werden</h2>
+        <ul class="data-list">
+          <li>Konto- und Anmeldedaten (E-Mail-Adresse, Firebase-Auth-Konto)</li>
+          <li>Profildaten (Name, Telefonnummer, E-Mail-Adresse)</li>
+          <li>Hochgeladene Schadensfotos/PDFs und Schadensmeldungen, soweit vorhanden</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ══════════════════ ENGLISH ══════════════════ -->
+    <div class="lang-en" lang="en">
+      <span class="eyebrow">SureMate · Account &amp; Data</span>
+      <h1>Delete account – SureMate</h1>
+      <p class="date">Last updated: October 20, 2026</p>
+
+      <p class="lede">
+        You can delete your SureMate account directly in the app. Your account will be
+        permanently removed and you will be signed out automatically.
+      </p>
+
+      <section class="card">
+        <h2>Delete your account in the Android app</h2>
+        <ol class="steps">
+          <li>Open the “SureMate” app and sign in.</li>
+          <li>On the home screen, tap the settings icon (gear) in the top right.</li>
+          <li>Scroll to the “ACCOUNT” section.</li>
+          <li>Tap “Delete account”.</li>
+          <li>Confirm the security prompt with “Delete”.</li>
+          <li>Your account will be deleted and the app will sign you out automatically.</li>
+        </ol>
+        <p class="note"><strong>Note:</strong> Deletion takes effect immediately and cannot be undone.</p>
+      </section>
+
+      <section class="card">
+        <h2>If you can no longer use the app</h2>
+        <p>
+          If you no longer have access to the app, send an email from the address
+          registered with us to
+          <a class="email" href="mailto:support@elior.studio?subject=Delete%20account">support@elior.studio</a>
+          with the subject “Delete account”. We will delete your account within
+          7 business days and confirm the deletion by email.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Which data is deleted</h2>
+        <ul class="data-list">
+          <li>Account and login data (email address, Firebase Auth account)</li>
+          <li>Profile data (name, phone number, email address)</li>
+          <li>Uploaded damage photos/PDFs and damage reports, where applicable</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <span>© 2026 Elior. SureMate is a product of Elior.</span>
+      <nav aria-label="Rechtliches / Legal">
+        <a href="https://elior.studio/impressum">Impressum</a>
+        <a href="https://elior.studio/datenschutz">Datenschutz</a>
+        <a href="mailto:support@elior.studio">support@elior.studio</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Konto löschen – SureMate",
+    "alternateName": "Delete account – SureMate",
+    "url": "https://elior.studio/suremate/delete",
+    "inLanguage": ["de", "en"],
+    "description": "Anleitung zur Löschung des SureMate-Kontos in der Android-App oder per E-Mail an support@elior.studio.",
+    "isPartOf": { "@type": "WebSite", "name": "Elior", "url": "https://elior.studio" },
+    "publisher": { "@type": "Organization", "name": "Elior", "url": "https://elior.studio" }
+  }
+  </script>
+</body>
+</html>
