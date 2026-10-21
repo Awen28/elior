@@ -144,20 +144,20 @@ const AppEntwicklungTirol = () => {
                 <img
                   src="/apps/Abwun_home-hero.webp"
                   alt="ABWUN App von Elior"
-                  className="absolute w-[42%] max-w-[210px] rounded-[1.8rem] object-cover aspect-[9/19]"
-                  style={{ transform: 'translateX(-58%) rotate(-9deg)', boxShadow: '0 35px 60px -35px rgba(60,50,38,0.65)' }}
+                  className="absolute w-[30%] max-w-[180px] rounded-[1.6rem] object-contain aspect-[9/16]"
+                  style={{ transform: 'translateX(-118%) translateY(26px) rotate(-4deg)', filter: 'drop-shadow(0 22px 24px rgba(60,50,38,0.22))' }}
                 />
                 <img
                   src="/apps/369_Homescreen-hero.webp"
                   alt="369 App von Elior"
-                  className="absolute w-[46%] max-w-[230px] rounded-[1.9rem] object-cover aspect-[9/19] z-10"
-                  style={{ boxShadow: '0 45px 80px -38px rgba(60,50,38,0.7)' }}
+                  className="absolute w-[36%] max-w-[215px] rounded-[1.8rem] object-contain aspect-[9/16] z-10"
+                  style={{ filter: 'drop-shadow(0 28px 30px rgba(60,50,38,0.26))' }}
                 />
                 <img
                   src="/apps/stradaHub_show_control-hero.webp"
                   alt="StradaHub App von Elior"
-                  className="absolute w-[42%] max-w-[210px] rounded-[1.8rem] object-cover aspect-[9/19]"
-                  style={{ transform: 'translateX(58%) rotate(9deg)', boxShadow: '0 35px 60px -35px rgba(60,50,38,0.65)' }}
+                  className="absolute w-[30%] max-w-[180px] rounded-[1.6rem] object-contain aspect-[9/16]"
+                  style={{ transform: 'translateX(118%) translateY(26px) rotate(4deg)', filter: 'drop-shadow(0 22px 24px rgba(60,50,38,0.22))' }}
                 />
               </div>
             </motion.div>
