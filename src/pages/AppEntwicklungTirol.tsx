@@ -142,19 +142,19 @@ const AppEntwicklungTirol = () => {
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="/apps/Abwun_home-hero.webp"
+                  src="/apps/Abwun_home-hero-v2.webp"
                   alt="ABWUN App von Elior"
                   className="absolute w-[30%] max-w-[180px] rounded-[1.6rem] object-contain aspect-[9/16]"
                   style={{ transform: 'translateX(-118%) translateY(26px) rotate(-4deg)', filter: 'drop-shadow(0 22px 24px rgba(60,50,38,0.22))' }}
                 />
                 <img
-                  src="/apps/369_Homescreen-hero.webp"
+                  src="/apps/369_Homescreen-hero-v2.webp"
                   alt="369 App von Elior"
                   className="absolute w-[36%] max-w-[215px] rounded-[1.8rem] object-contain aspect-[9/16] z-10"
                   style={{ filter: 'drop-shadow(0 28px 30px rgba(60,50,38,0.26))' }}
                 />
                 <img
-                  src="/apps/stradaHub_show_control-hero.webp"
+                  src="/apps/stradaHub_show_control-hero-v2.webp"
                   alt="StradaHub App von Elior"
                   className="absolute w-[30%] max-w-[180px] rounded-[1.6rem] object-contain aspect-[9/16]"
                   style={{ transform: 'translateX(118%) translateY(26px) rotate(4deg)', filter: 'drop-shadow(0 22px 24px rgba(60,50,38,0.22))' }}
