@@ -13,8 +13,8 @@ const NotFound = () => {
 
   const links = [
     { label: t('notFound.links.home'), href: '/' },
-    { label: t('notFound.links.webdesign'), href: '/webdesign-tirol' },
-    { label: t('notFound.links.appDev'), href: '/app-entwicklung-tirol' },
+    { label: t('notFound.links.webdesign'), href: '/webdesign' },
+    { label: t('notFound.links.appDev'), href: '/app-entwicklung' },
     { label: t('notFound.links.abwun'), href: '/abwun' },
     { label: t('notFound.links.stradahub'), href: '/stradahub' },
     { label: t('notFound.links.suremate'), href: '/suremate' },

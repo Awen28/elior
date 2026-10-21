@@ -82,7 +82,9 @@ const Hero = () => {
         <motion.img
           src="/logos/elior-symbol.svg"
           alt="ELIOR symbol"
-          initial={{ opacity: 0 }}
+          width={56}
+          height={56}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 0.4, ease }}
           className="w-14 md:w-20 mb-10 md:mb-14"
@@ -97,7 +99,7 @@ const Hero = () => {
 
         {/* ELIOR — Licht folgt dem Cursor */}
         <motion.h1
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 0.2, ease }}
           className="font-serif font-semibold leading-none mb-10 md:mb-14"

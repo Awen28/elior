@@ -1,7 +1,7 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Elior - Thomas Mayrl',
+  name: 'Elior',
   alternateName: 'Elior',
   description:
     'Professionelle iOS App-Entwicklung, Website-Erstellung, KI-Integrationen und Logo-Design in Tirol. Komplette Medienagentur für digitale Lösungen.',
@@ -36,7 +36,7 @@ export const organizationSchema = {
   founder: {
     '@type': 'Person',
     name: 'Thomas Mayrl',
-    jobTitle: 'App Developer & Web Developer',
+    jobTitle: 'Founder & Owner',
     email: 'info@elior.studio',
     telephone: '+43-677-64059711',
     sameAs: ['https://www.linkedin.com/in/thomas-mayrl-719267bb'],
@@ -112,7 +112,7 @@ export const personSchema = {
   alternateName: 'Elior',
   jobTitle: 'iOS App Developer & Web Developer',
   description:
-    'Independent app developer specializing in iOS applications, web development, and AI integrations.',
+    'Owner of Elior, a digital studio for apps, websites and AI integration.',
   url: 'https://elior.studio',
   email: 'info@elior.studio',
   telephone: '+43-677-64059711',
@@ -148,11 +148,11 @@ export const websiteSchema = {
   alternateName: 'Elior',
   url: 'https://elior.studio',
   description:
-    'Portfolio of iOS apps and web development projects by Thomas Mayrl',
+    'Portfolio of iOS apps and web development projects by Elior',
   inLanguage: ['de', 'en'],
   author: {
-    '@type': 'Person',
-    name: 'Thomas Mayrl',
+    '@type': 'Organization',
+    name: 'Elior',
   },
 };
 
@@ -181,8 +181,8 @@ export const softwareAppSchema = (app: {
   applicationCategory: app.category,
   operatingSystem: 'iOS',
   author: {
-    '@type': 'Person',
-    name: 'Thomas Mayrl',
+    '@type': 'Organization',
+    name: 'Elior',
     email: 'info@elior.studio',
   },
   creator: {

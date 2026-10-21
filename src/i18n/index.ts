@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locales/en';
 import de from './locales/de';
@@ -25,7 +24,6 @@ const deApps = toNamespaceMap(
 );
 
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -34,15 +32,11 @@ i18n
     },
     ns: ['translation', ...Object.keys(enApps)],
     defaultNS: 'translation',
+    lng: 'de',
     fallbackLng: 'en',
     supportedLngs: ['en', 'de'],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
-    detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
-      lookupLocalStorage: LOCALE_STORAGE_KEY,
-      caches: ['localStorage'],
-    },
     interpolation: {
       escapeValue: false,
     },

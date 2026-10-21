@@ -18,17 +18,12 @@ const thirdParties = [
     data: 'Nutzerdaten, App-Daten, Cloud-Speicher',
   },
   {
-    name: 'OpenAI',
+    name: 'Externe KI-Schnittstelle (Text)',
     purpose: 'KI-Funktionen in ausgewählten Apps',
     data: 'Eingegebene Prompts',
   },
   {
-    name: 'xAI (Grok)',
-    purpose: 'KI-Funktionen in ausgewählten Apps',
-    data: 'Eingegebene Prompts',
-  },
-  {
-    name: 'Suno AI',
+    name: 'Musik-KI',
     purpose: 'Musikgenerierung in Elow',
     data: 'Prompts für Musikerstellung',
   },
@@ -99,7 +94,7 @@ const PrivacyApps = () => {
           ))}
         </div>
         <p className="mt-4" style={{ color: 'rgba(82, 83, 66, 0.6)' }}>
-          Anbieter wie Google, OpenAI und xAI können Daten in die USA übermitteln. Soweit
+          Anbieter wie Google sowie externe KI-Dienstleister können Daten in die USA übermitteln. Soweit
           verfügbar, sind diese Anbieter nach dem EU-U.S. Data Privacy Framework (DPF)
           zertifiziert oder stützen die Übermittlung auf Standardvertragsklauseln.
         </p>
@@ -107,8 +102,8 @@ const PrivacyApps = () => {
 
       <LegalSection title="Hinweis zu KI-Funktionen">
         <p>
-          Bei Nutzung von KI-Funktionen werden Ihre Eingaben an externe KI-Anbieter (OpenAI,
-          xAI, Suno AI) übermittelt. Bitte geben Sie keine sensiblen persönlichen Daten in
+          Bei Nutzung von KI-Funktionen werden Ihre Eingaben an externe KI-Dienstleister
+          übermittelt. Bitte geben Sie keine sensiblen persönlichen Daten in
           KI-Prompts ein.
         </p>
       </LegalSection>

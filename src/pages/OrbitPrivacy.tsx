@@ -18,6 +18,7 @@ const OrbitPrivacy = () => {
         title="Privacy Policy | Orbit - The Game | Elior"
         description="Privacy Policy for Orbit - The Game iOS app by Elior."
         canonical="https://elior.studio/orbit/privacy"
+        language="en"
       />
 
       {/* Header */}

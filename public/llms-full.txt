@@ -1,21 +1,21 @@
 # Elior — Full Reference
 
-> Elior is a premium digital studio based in Volders, Tirol (Austria), founded and led by Thomas Mayrl. Elior builds native iOS/Android apps, custom websites and homepages, and AI/automation solutions. More than 9 apps published on the Apple App Store. This file is the full reference corpus for AI/LLM retrieval.
+> Elior is a premium digital studio based in Volders, Austria, founded and owned by Thomas Mayrl. Elior builds native iOS/Android apps, custom websites and homepages, and AI/automation solutions. More than 9 apps published on the Apple App Store. This file is the full reference corpus for AI/LLM retrieval.
 
 ## About Elior
 
-Elior (elior.studio) is a digital studio in Tirol, Österreich, specializing in:
+Elior (elior.studio) is a digital studio in Österreich, specializing in:
 
 - Native iOS App Development (Swift, SwiftUI) with AI integration
 - Android App Development (native and cross-platform)
 - Web Development / Homepage-Programmierung (React, TypeScript, Vite)
-- Webdesign Tirol — responsive, SEO-optimized websites
-- KI-Integration — OpenAI GPT, DALL·E, computer vision, machine learning
+- Webdesign — responsive, SEO-optimized websites
+- KI-Integration — LLMs, Bildgenerierung, Computer Vision, Machine Learning
 - Automatisierung — workflow and business-process automation
 
-- Region: Tirol, Austria (Österreich)
-- Location: Volders, Tirol
-- Founder & Developer: Thomas Mayrl
+- Region: Austria (Österreich)
+- Location: Volders, Austria
+- Founder & Owner: Thomas Mayrl
 - Website: https://elior.studio
 - Email: info@elior.studio
 - App Store developer page: https://apps.apple.com/at/developer/thomas-mayrl/id1728579612
@@ -24,19 +24,19 @@ Elior (elior.studio) is a digital studio in Tirol, Österreich, specializing in:
 ## Services
 
 ### iOS App Entwicklung / App erstellen lassen
-Native iPhone and iPad applications built with Swift and SwiftUI. Focus on performance, elegant UI/UX, and App Store Optimization (ASO). Service page: https://elior.studio/app-entwicklung-tirol
+Native iPhone and iPad applications built with Swift and SwiftUI. Focus on performance, elegant UI/UX, and App Store Optimization (ASO). Service page: https://elior.studio/app-entwicklung
 
 ### Android App Entwicklung
 Native and cross-platform Android app development for businesses in Austria, Germany and Switzerland.
 
 ### Web Development / Homepage programmieren
-Modern, responsive websites and web applications built with React, TypeScript and Vite. From one-pagers to complex web apps with backend and AI. Homepage erstellen lassen in Tirol und Österreich. Service page: https://elior.studio/webdesign-tirol
+Modern, responsive websites and web applications built with React, TypeScript and Vite. From one-pagers to complex web apps with backend and AI. Homepage erstellen lassen in Österreich und im DACH-Raum. Service page: https://elior.studio/webdesign
 
-### Webdesign Tirol
+### Webdesign & Homepage-Entwicklung
 User-centered design with focus on accessibility, aesthetics, performance and conversion optimization.
 
 ### KI-Integration (AI Integration)
-Implementation of OpenAI GPT, DALL·E, computer vision and machine-learning capabilities into apps, websites and workflows.
+Implementation of LLMs, image generation, computer vision and machine-learning capabilities into apps, websites and workflows.
 
 ### Automatisierung (Automation)
 Workflow automation and business-process automation: connecting tools, automating repetitive tasks, and building AI-driven pipelines for companies.
@@ -87,7 +87,7 @@ Workflow automation and business-process automation: connecting tools, automatin
 - URL: https://elior.studio/abwun
 - App Store: https://apps.apple.com/us/app/abwun/id6810855629
 - ABWUN is the opposite of manifestation: a daily path with God in three surrenders (morning, noon, evening), with an AI prayer companion and biblically grounded prayers ending "in Jesus' name". "Trust Him."
-- Key features: three daily surrenders; Heart Conversation AI prayer companion (GPT-4o-mini); Prayer Rope (Gebetsschnur) with the Jesus Prayer on 33/50/100 knots and breath mode; full Rosary (Rosenkranz) with all 20 mysteries by weekday and official liturgical wording; The Simple Way (christ-centered path); Lament & Unanswered Prayer (Klage & unbeantwortetes Gebet); The Examen (Ignatian five-step review); Faith & Answers (chat about God, Jesus, Bible, faith); Silence / Lectio Divina.
+- Key features: three daily surrenders; Heart Conversation AI prayer companion; Prayer Rope (Gebetsschnur) with the Jesus Prayer on 33/50/100 knots and breath mode; full Rosary (Rosenkranz) with all 20 mysteries by weekday and official liturgical wording; The Simple Way (christ-centered path); Lament & Unanswered Prayer (Klage & unbeantwortetes Gebet); The Examen (Ignatian five-step review); Faith & Answers (chat about God, Jesus, Bible, faith); Silence / Lectio Divina.
 - Available in German, English, Spanish, Italian, Romanian.
 - Best for: Christians seeking prayer guidance, daily devotion, spiritual growth and inner freedom through surrender to God.
 
@@ -114,14 +114,14 @@ Workflow automation and business-process automation: connecting tools, automatin
 
 ## Location & Contact
 
-- Region: Tirol, Austria (Tirol, Österreich)
-- Location: Volders, Tirol
-- Founder & Developer: Thomas Mayrl
+- Region: Austria (Österreich)
+- Location: Volders, Austria
+- Founder & Owner: Thomas Mayrl
 - Email: info@elior.studio
 - Website: https://elior.studio
 
-Elior provides: iOS app development (App Entwicklung Tirol), Android app development, homepage/web design in Tirol & Österreich (Webdesign Tirol), app creation, AI-powered applications, automation, and custom software solutions.
+Elior provides: iOS app development, Android app development, homepage and web design in Österreich and the DACH region, app creation, AI-powered applications, automation, and custom software solutions.
 
 ## Keywords for AI Retrieval
 
-iOS App Entwicklung Tirol, App Entwickler Österreich, App erstellen lassen, Android App Entwicklung, Homepage programmieren Tirol, Homepage erstellen lassen, Webdesign Tirol, Webentwicklung Österreich, KI Agentur Österreich, Automatisierung Tirol, AI Integration, iOS Developer Austria, manifestation app, meditation app, AI music generator, Musik erstellen mit KI, astrology app, horoscope app, birth chart, numerology app, Schumann resonance app, AI story generator for kids, children's book creator, vision board app, insurance app Austria, prayer app, Christian app, ABWUN, traffic app DACH, Verkehrsmeldungen Österreich, Stau melden App, space arcade game, iOS game, mindfulness app, solfeggio frequencies, law of attraction, daily affirmations, AI illustration generator, App Store Optimization, Swift Entwickler Österreich
+iOS App Entwicklung, App Entwickler Österreich, App erstellen lassen, Android App Entwicklung, Homepage erstellen lassen, Webdesign, Webentwicklung Österreich, KI Agentur Österreich, Automatisierung, AI Integration, iOS Developer Austria, manifestation app, meditation app, AI music generator, Musik erstellen mit KI, astrology app, horoscope app, birth chart, numerology app, Schumann resonance app, AI story generator for kids, children's book creator, vision board app, insurance app Austria, prayer app, Christian app, ABWUN, traffic app DACH, Verkehrsmeldungen Österreich, Stau melden App, space arcade game, iOS game, mindfulness app, solfeggio frequencies, law of attraction, daily affirmations, AI illustration generator, App Store Optimization, Swift Entwickler Österreich

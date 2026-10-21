@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { LOCALE_STORAGE_KEY } from '../i18n';
 
 const olive = '#525342';
 
@@ -14,6 +15,11 @@ const LanguageToggle = ({ variant = 'desktop' }: Props) => {
   const setLang = (lng: 'en' | 'de') => {
     if (lng === current) return;
     i18n.changeLanguage(lng);
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, lng);
+    } catch {
+      /* ignore unavailable storage */
+    }
   };
 
   const mobile = variant === 'mobile';

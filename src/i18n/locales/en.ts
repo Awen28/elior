@@ -113,7 +113,7 @@ const en = {
     storyP1:
       'Elior — אליאור — is the name we work under and the standard we hold ourselves to. Behind it stands a simple conviction: the things we build should carry meaning, hold a truth, and make people feel something.',
     storyP2:
-      'From our studio in Tirol, every app, website and brand is built with intention — line by line, light by light. Nothing is random. Nothing is empty.',
+      'From our studio, every app, website and brand is built with intention — line by line, light by light. Nothing is random. Nothing is empty.',
     storyP3: 'Built with meaning.',
     values: [
       {
@@ -136,7 +136,7 @@ const en = {
       { value: '11+', label: 'Apps Created' },
       { value: '10+', label: 'Years Experience' },
       { value: '50k+', label: 'Downloads & Growing' },
-      { value: 'Tirol', label: 'Austria Based' },
+      { value: 'AT', label: 'Based in Austria' },
     ],
     cta: 'Ready when you are.',
     ctaButton: 'Start Your Project',
@@ -174,8 +174,8 @@ const en = {
     rights: 'All rights reserved.',
     links: {
       home: 'Home',
-      webdesign: 'Web Design Tirol',
-      appDev: 'App Development Tirol',
+      webdesign: 'Web Design',
+      appDev: 'App Development',
       abwun: 'ABWUN',
       stradahub: 'StradaHub',
       suremate: 'Suremate',
@@ -184,7 +184,7 @@ const en = {
     seo: {
       title: 'Page Not Found (404) | Elior',
       description:
-        'The page you are looking for does not exist or has been moved. Return to the Elior homepage — apps, web design and AI software from Tirol.',
+        'The page you are looking for does not exist or has been moved. Return to the Elior homepage — apps, web design and AI software.',
     },
   },
   footer: {

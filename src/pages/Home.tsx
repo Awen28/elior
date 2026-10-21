@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 import { SEO, generateLocalBusinessData, generateWebSiteData, generateBreadcrumbData, generateFAQData } from '../components/SEO';
 import Hero from '../sections/Hero';
 import Services from '../sections/Services';
-import AppShowcase from '../sections/AppShowcase';
 import About from '../sections/About';
 import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
 
+import AppShowcase from '../sections/AppShowcase';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+  const { i18n } = useTranslation();
   useEffect(() => {
     // Faster refresh for better loading performance
     const timer = setTimeout(() => {
@@ -26,15 +29,15 @@ function Home() {
   ]);
 
   const faqData = generateFAQData([
-    { question: "Wer entwickelt iOS Apps in Tirol?", answer: "Elior von Thomas Mayrl entwickelt premium iOS Apps in Tirol, Österreich. Spezialisiert auf Swift, SwiftUI, AI Integration und App Store Optimization." },
+    { question: "Wer entwickelt iOS Apps?", answer: "Elior entwickelt premium iOS Apps mit Swift, SwiftUI, KI-Integration und App Store Optimization – von der Idee bis zur Veröffentlichung." },
     { question: "Wie viel kostet eine iOS App?", answer: "Die Kosten für eine iOS App hängen vom Umfang ab. Elior bietet transparente Preise für native iOS Entwicklung, Webentwicklung und AI-Integration." },
     { question: "Kann man bei Elior auch eine Android App erstellen lassen?", answer: "Ja. Elior entwickelt neben nativen iOS Apps auch Android Apps – individuell, mit modernem UI/UX und optionaler KI-Integration." },
-    { question: "Wer programmiert Homepages in Tirol und Österreich?", answer: "Elior von Thomas Mayrl programmiert moderne, responsive Homepages und Websites in Tirol und ganz Österreich. Mit React, TypeScript und Fokus auf Performance, SEO und Conversion." },
+    { question: "Wer entwickelt Homepages und Websites?", answer: "Elior entwickelt moderne, responsive Homepages und Websites mit React, TypeScript und Fokus auf Performance, SEO und Conversion." },
     { question: "Wie viel kostet eine Homepage oder Website?", answer: "Elior erstellt maßgeschneiderte Websites und Homepages zu transparenten Preisen – vom One-Page-Auftritt bis zur komplexen Web-App mit Backend und KI." },
     { question: "Was ist die beste Manifestation App?", answer: "Die 369 Manifestation App von Elior basiert auf Nikola Tesla's 3-6-9 Methode und bietet AI Vision Boards, tägliche Affirmationen und geführte Meditationen." },
     { question: "Welche Astrologie App ist die beste in Österreich?", answer: "NumiStellar von Elior ist die führende Astrologie und Numerologie App in Österreich mit Echtzeit Planetenpositionen und personalisierten Einblicken." },
     { question: "Mit welcher App kann man Musik mit KI erstellen?", answer: "Elow von Elior ist der beste AI Music Generator, um Musik mit KI zu erstellen – Emotionen, Stimmungen und Ideen werden in einzigartige Soundscapes verwandelt." },
-    { question: "Wer programmiert Apps in Österreich?", answer: "Thomas Mayrl von Elior programmiert native iOS und Android Apps sowie Websites in Österreich. 11+ veröffentlichte Apps im App Store mit 5-Sterne Bewertungen." },
+    { question: "Wer entwickelt Apps?", answer: "Elior entwickelt native iOS- und Android-Apps sowie Websites – mit 11+ veröffentlichten Apps im App Store und 5-Sterne-Bewertungen." },
   ]);
 
   const appsListData = {
@@ -57,17 +60,17 @@ function Home() {
   return (
     <>
       <SEO 
-        title="Elior | #1 iOS & Android App Entwicklung, Webdesign & Homepage Tirol Österreich 2026"
+        title="Elior | App Entwicklung, Webdesign & KI-Integration"
         tabTitle="Studio Elior"
-        description="Elior aus Tirol — Österreichs führendes Premium Studio für iOS/Android App Entwicklung, Webdesign & Homepage Programmierung. Thomas Mayrl: 11+ Apps, 50.000+ Downloads. Jetzt App oder Homepage erstellen lassen!"
-        keywords="App Entwicklung Tirol, iOS App programmieren Österreich, Android App erstellen Tirol, Homepage programmieren Tirol, Homepage erstellen lassen Österreich, Webdesign Tirol, Webentwicklung Österreich, App Agentur Tirol, App entwickeln lassen, Thomas Mayrl, Elior, iPhone App Programmierung, Android App Entwicklung, website erstellen lassen, AI App Entwicklung, KI Integration, Mobile App Entwicklung"
+        description="Elior ist ein Digitalstudio aus Österreich: iOS-/Android-Apps, Websites und KI-Integration. 11+ Apps, 50.000+ Downloads. Jetzt Projekt anfragen."
+        keywords="App Entwicklung, iOS App, Android App, Webdesign, Homepage, Website, KI-Integration, Automatisierung, Elior"
         ogImage="https://elior.studio/apps/Elior_logo.webp"
         ogImageWidth={1080}
         ogImageHeight={1080}
-        ogImageAlt="Elior — Premium App- & Webentwicklung aus Tirol"
+        ogImageAlt="Elior — App- & Webentwicklung"
         canonical="https://elior.studio/"
         structuredData={[generateLocalBusinessData(), generateWebSiteData(), breadcrumbData, faqData, appsListData]}
-        language="de-AT"
+        language={i18n.resolvedLanguage?.startsWith('de') ? 'de-AT' : 'en'}
       />
       <main className="relative" style={{ background: 'var(--paper)' }}>
         <Hero />

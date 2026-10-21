@@ -113,7 +113,7 @@ const de = {
     storyP1:
       'Elior — אליאור — ist der Name, unter dem wir arbeiten, und der Anspruch, an dem wir uns messen. Dahinter steht eine einfache Überzeugung: Was wir bauen, soll Bedeutung tragen, eine Wahrheit halten und Menschen etwas fühlen lassen.',
     storyP2:
-      'Aus unserem Studio in Tirol wird jede App, jede Website und jede Marke mit Absicht gebaut — Zeile für Zeile, Licht für Licht. Nichts ist zufällig. Nichts ist leer.',
+      'Aus unserem Studio wird jede App, jede Website und jede Marke mit Absicht gebaut — Zeile für Zeile, Licht für Licht. Nichts ist zufällig. Nichts ist leer.',
     storyP3: 'Mit Bedeutung gebaut.',
     values: [
       {
@@ -136,7 +136,7 @@ const de = {
       { value: '11+', label: 'Erstellte Apps' },
       { value: '10+', label: 'Jahre Erfahrung' },
       { value: '50k+', label: 'Downloads & wachsend' },
-      { value: 'Tirol', label: 'In Österreich' },
+      { value: 'AT', label: 'In Österreich' },
     ],
     cta: 'Bereit, wenn du es bist.',
     ctaButton: 'Projekt starten',
@@ -174,8 +174,8 @@ const de = {
     rights: 'Alle Rechte vorbehalten.',
     links: {
       home: 'Startseite',
-      webdesign: 'Webdesign Tirol',
-      appDev: 'App-Entwicklung Tirol',
+      webdesign: 'Webdesign',
+      appDev: 'App-Entwicklung',
       abwun: 'ABWUN',
       stradahub: 'StradaHub',
       suremate: 'Suremate',
@@ -184,7 +184,7 @@ const de = {
     seo: {
       title: 'Seite nicht gefunden (404) | Elior',
       description:
-        'Diese Seite existiert nicht oder wurde verschoben. Zurück zur Elior Startseite — Apps, Webdesign und KI-Software aus Tirol.',
+        'Diese Seite existiert nicht oder wurde verschoben. Zurück zur Elior Startseite — Apps, Webdesign und KI-Software.',
     },
   },
   footer: {

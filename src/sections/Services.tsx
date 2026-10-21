@@ -45,6 +45,7 @@ const ServiceCard = ({ service, index }: { service: { title: string; description
         <div className="mt-auto flex items-center justify-end">
           <a
             href="#contact"
+            aria-label={service.title}
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('#contact');

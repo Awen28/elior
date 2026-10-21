@@ -91,6 +91,8 @@ const Navigation = () => {
             <img
               src="/logos/elior-olive.webp"
               alt="Elior"
+              width={36}
+              height={36}
               className="h-9 w-auto object-contain"
               style={{ filter: 'drop-shadow(2px 3px 4px rgba(154,143,128,0.35))' }}
             />
@@ -166,6 +168,8 @@ const Navigation = () => {
             <img
               src="/logos/elior-olive.webp"
               alt="Elior"
+              width={32}
+              height={32}
               className="h-8 w-auto object-contain"
               style={{ filter: 'drop-shadow(2px 3px 4px rgba(154,143,128,0.32))' }}
             />

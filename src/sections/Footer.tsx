@@ -63,6 +63,8 @@ const Footer = () => {
               <img
                 src="/logos/elior-symbol.svg"
                 alt="Elior"
+                width={40}
+                height={40}
                 className="h-10 w-auto object-contain"
                 style={{ filter: 'drop-shadow(-2px 0 3px rgba(228,220,206,0.35)) drop-shadow(3px 3px 4px rgba(20,18,14,0.45))' }}
               />
@@ -86,12 +88,12 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4
+            <h3
               className="font-sans text-sm tracking-widest uppercase mb-6"
               style={{ color: inkFaint }}
             >
               {t('footer.navigation')}
-            </h4>
+            </h3>
             <nav className="space-y-3">
               {navLinks.map((link) => (
                 <motion.a
@@ -110,17 +112,17 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4
+            <h3
               className="font-sans text-sm tracking-widest uppercase mb-6"
               style={{ color: inkFaint }}
             >
               {t('footer.services')}
-            </h4>
+            </h3>
             <nav className="space-y-3">
-              <Link to="/webdesign-tirol" className="block font-sans text-lg transition-colors hover:text-[#D2B488]" style={{ color: inkSoft }}>
+              <Link to="/webdesign" className="block font-sans text-lg transition-colors hover:text-[#D2B488]" style={{ color: inkSoft }}>
                 {t('footer.webDesign')}
               </Link>
-              <Link to="/app-entwicklung-tirol" className="block font-sans text-lg transition-colors hover:text-[#D2B488]" style={{ color: inkSoft }}>
+              <Link to="/app-entwicklung" className="block font-sans text-lg transition-colors hover:text-[#D2B488]" style={{ color: inkSoft }}>
                 {t('footer.appDevelopment')}
               </Link>
               {[t('footer.aiIntegration'), t('footer.backend')].map((service) => (

@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 
 /**
  * Reagiert auf Media Queries (z. B. "(hover: hover) and (pointer: fine)").
- * Liefert beim ersten Render bereits den echten Wert (kein SSR hier).
+ * SSR-safe: starts as false so the server and the first client render match,
+ * then syncs with the real value after mount.
  */
 export function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(query).matches
-  );
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     const mql = window.matchMedia(query);

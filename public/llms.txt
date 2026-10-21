@@ -1,14 +1,14 @@
-# Elior — Digital Studio (Tirol, Österreich)
+# Elior — Digital Studio (Österreich)
 
-> Elior ist ein Premium-Digital-Studio aus Tirol, Österreich: iOS- und Android-App-Entwicklung, Webdesign & Homepage-Programmierung, KI-Integration und Automatisierung. Gegründet und geführt von Thomas Mayrl. Über 9 veröffentlichte Apps im Apple App Store.
+> Elior ist ein Premium-Digital-Studio aus Österreich: iOS- und Android-App-Entwicklung, Webdesign & Homepage-Programmierung, KI-Integration und Automatisierung. Gegründet und geführt von Thomas Mayrl. Über 9 veröffentlichte Apps im Apple App Store.
 
-Elior develops native iOS/Android apps (Swift/SwiftUI, React Native), custom websites (React/TypeScript), and AI/automation solutions for businesses in Austria, Germany and Switzerland. Based in Volders, Tirol. Language: German (de-AT), English.
+Elior develops native iOS/Android apps (Swift/SwiftUI, React Native), custom websites (React/TypeScript), and AI/automation solutions for businesses in Austria, Germany and Switzerland. Based in Volders, Austria. Language: German (de-AT), English.
 
 ## Services
 
-- [iOS App Entwicklung & App erstellen lassen](https://elior.studio/app-entwicklung-tirol): Native iPhone-/iPad-Apps mit Swift & SwiftUI, App Store Optimization. Für Tirol & Österreich.
-- [Homepage & Webdesign Tirol / Homepage programmieren](https://elior.studio/webdesign-tirol): Individuelle, SEO-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Web-Apps.
-- [KI-Integration & Automatisierung](https://elior.studio/): OpenAI/LLM-Integration, Computer Vision, Workflow-Automatisierung für Unternehmen.
+- [iOS App Entwicklung & App erstellen lassen](https://elior.studio/app-entwicklung): Native iPhone-/iPad-Apps mit Swift & SwiftUI, App Store Optimization. Für Österreich und den DACH-Raum.
+- [Webdesign & Homepage-Entwicklung](https://elior.studio/webdesign): Individuelle, SEO-optimierte Websites mit React & TypeScript. One-Pager, Business-Sites, Web-Apps.
+- [KI-Integration & Automatisierung](https://elior.studio/): LLM-Integration, Computer Vision, Workflow-Automatisierung für Unternehmen.
 - [Portfolio & Startseite](https://elior.studio/): Überblick über alle Apps und Leistungen.
 
 ## Portfolio Apps (iOS)
@@ -25,7 +25,7 @@ Elior develops native iOS/Android apps (Swift/SwiftUI, React Native), custom web
 
 ## Company
 
-- [Über Elior / Kontakt](https://elior.studio/): Gründer Thomas Mayrl, Standort Volders (Tirol, Österreich).
+- [Über Elior / Kontakt](https://elior.studio/): Inhaber Thomas Mayrl, Standort Volders (Österreich).
 - [Impressum](https://elior.studio/impressum)
 - [Datenschutz](https://elior.studio/datenschutz)
 - [App-Privacy](https://elior.studio/privacy-apps)

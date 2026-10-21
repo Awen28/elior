@@ -910,6 +910,7 @@ const CircularCarousel = ({
     if (event.pointerType === 'mouse') {
       state.pointer.inside = true;
       updatePointer(event);
+      state.hover = Boolean((event.target as Element | null)?.closest?.('[data-cc-index]'));
     }
     const press = state.press;
     if (!press || press.id !== event.pointerId) {
@@ -975,9 +976,10 @@ const CircularCarousel = ({
     wakeRef.current();
   };
 
-  const handlePointerEnter = (event: ReactPointerEvent<HTMLDivElement>) => {
+  const handlePointerOver = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== 'mouse') return;
-    stateRef.current.hover = true;
+    const target = event.target as Element | null;
+    stateRef.current.hover = Boolean(target?.closest?.('[data-cc-index]'));
     wakeRef.current();
   };
 
@@ -1057,7 +1059,9 @@ const CircularCarousel = ({
             src={item.src}
             alt=""
             draggable={false}
+            loading="lazy"
             decoding="async"
+            fetchPriority="low"
             style={photoStyle}
           />
           {gone && (
@@ -1067,7 +1071,9 @@ const CircularCarousel = ({
               src={gone.src}
               alt=""
               draggable={false}
+              loading="lazy"
               decoding="async"
+              fetchPriority="low"
               style={{ ...photoStyle, animationDelay: `${Math.round(leaving.delays[index])}ms` }}
             />
           )}
@@ -1103,7 +1109,7 @@ const CircularCarousel = ({
       onPointerMove={handlePointerMove}
       onPointerUp={releasePointer}
       onPointerCancel={releasePointer}
-      onPointerEnter={handlePointerEnter}
+      onPointerOver={handlePointerOver}
       onPointerLeave={handlePointerLeave}
       onClick={handleClick}
       onKeyDown={handleKeyDown}

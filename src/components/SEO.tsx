@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react';
+import { setServerSeo } from '../lib/seoServer';
 
 const SITE_URL = 'https://elior.studio';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/apps/Elior_logo.webp`;
@@ -78,8 +79,8 @@ export const SEO = ({
   ogType = 'website',
   canonical,
   structuredData,
-  author = 'Thomas Mayrl',
-  region = 'Tirol, Österreich',
+  author = 'Elior',
+  region = 'Österreich',
   appName,
   appCategory,
   rating,
@@ -100,6 +101,34 @@ export const SEO = ({
 
   const structuredKey = useMemo(() => JSON.stringify(structuredData ?? null), [structuredData]);
   const altKey = useMemo(() => JSON.stringify(alternateLanguages), [alternateLanguages]);
+
+  if (import.meta.env.SSR) {
+    setServerSeo({
+      docTitle,
+      fullTitle,
+      description,
+      keywords,
+      image,
+      imageAlt,
+      imageType: imageType(image),
+      ogImageWidth,
+      ogImageHeight,
+      ogType,
+      canonical,
+      author,
+      region,
+      appName,
+      appCategory,
+      rating,
+      reviewCount,
+      language,
+      alternates: JSON.parse(altKey) as { hrefLang: string; href: string }[],
+      structuredData: structuredKey === 'null' ? undefined : (JSON.parse(structuredKey) as object | object[]),
+      articlePublished,
+      articleModified,
+      robots,
+    });
+  }
 
   useEffect(() => {
     document.title = docTitle;
@@ -160,7 +189,7 @@ export const SEO = ({
     addMeta({ name: 'ai-content-type', content: appCategory || 'SoftwareApplication' }, 'name');
     addMeta({ name: 'ai-target-audience', content: 'iOS users, app seekers, businesses needing app development, Austria, Germany, Switzerland' }, 'name');
     addMeta({ name: 'ai-generated', content: 'false' }, 'name');
-    addMeta({ name: 'ai-disclosure', content: 'Content created by Thomas Mayrl, human developer' }, 'name');
+    addMeta({ name: 'ai-disclosure', content: 'Content created by Elior' }, 'name');
 
     // Apple
     addMeta({ name: 'apple-itunes-app', content: 'app-id=1728579612' }, 'name');
@@ -276,8 +305,8 @@ export const generateAppStructuredData = (
       "availability": "https://schema.org/InStock"
     },
     "author": {
-      "@type": "Person",
-      "name": "Thomas Mayrl",
+      "@type": "Organization",
+      "name": "Elior",
       "url": "https://elior.studio"
     },
     "publisher": {
@@ -323,7 +352,7 @@ export const generateLocalBusinessData = () => ({
   "@id": "https://elior.studio/#business",
   "name": "Elior Digital Studio",
   "alternateName": ["Elior App Development", "Elior Austria"],
-  "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich. Award-winning mobile apps by Thomas Mayrl. Elior bedeutet „Gott ist mein Licht\" – Built with meaning.",
+  "description": "Premium App- und Webentwicklung aus Österreich. Elior bedeutet „Gott ist mein Licht\" – Built with meaning.",
   "url": "https://elior.studio",
   "email": "info@elior.studio",
   "telephone": "+43-677-64059711",
@@ -342,7 +371,7 @@ export const generateLocalBusinessData = () => ({
   "founder": {
     "@type": "Person",
     "name": "Thomas Mayrl",
-    "jobTitle": "Founder & Lead Developer",
+    "jobTitle": "Founder & Owner",
     "url": "https://elior.studio",
     "sameAs": [
       "https://apps.apple.com/at/developer/thomas-mayrl/id1728579612"
@@ -394,7 +423,7 @@ export const generateLocalBusinessData = () => ({
     "iPhone App Programmierung",
     "Swift Entwicklung",
     "Webentwicklung",
-    "Webdesign Tirol",
+    "Webdesign",
     "Homepage Programmierung",
     "Homepage erstellen",
     "UI/UX Design",
@@ -402,7 +431,7 @@ export const generateLocalBusinessData = () => ({
     "KI-Integration",
     "KI-Agentur",
     "Automatisierung",
-    "Automatisierung Tirol",
+    "Automatisierung",
     "App Store Optimization",
     "B2B2C Plattform Entwicklung"
   ],
@@ -439,7 +468,7 @@ export const generateLocalBusinessData = () => ({
         "itemOffered": {
           "@type": "Service",
           "name": "AI Integration",
-          "description": "OpenAI, DALL-E, machine learning features for apps"
+          "description": "LLM-Integration, Bildgenerierung und Machine Learning für Apps"
         }
       },
       {
@@ -490,7 +519,7 @@ export const generateWebSiteData = () => ({
   "name": "Elior",
   "alternateName": "Elior Digital Studio",
   "url": "https://elior.studio",
-  "description": "Premium iOS App Entwicklung und Webdesign aus Tirol, Österreich",
+  "description": "Premium App- und Webentwicklung aus Österreich",
   "publisher": {
     "@type": "Organization",
     "name": "Elior",

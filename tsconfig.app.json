@@ -12,6 +12,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@pages-registry": [
+        "./src/routes/pages.tsx"
       ]
     },
     /* Bundler mode */
@@ -30,5 +33,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "renderer", "pages"]
 }

@@ -1,32 +1,34 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from './pages/Home';
-import Suremate from './pages/Suremate';
-import SurematePro from './pages/SurematePro';
-import ThreeSixNine from './pages/ThreeSixNine';
-import NumiStellar from './pages/NumiStellar';
-import KiBook from './pages/KiBook';
-import Elow from './pages/Elow';
-import Orbit from './pages/Orbit';
-import OrbitPrivacy from './pages/OrbitPrivacy';
-import StradaHub from './pages/StradaHub';
-import StradaHubPrivacy from './pages/StradaHubPrivacy';
-import Abwun from './pages/Abwun';
-import WebdesignTirol from './pages/WebdesignTirol';
-import AppEntwicklungTirol from './pages/AppEntwicklungTirol';
-import AgentRegister from './pages/AgentRegister';
-import CreateAgent from './pages/CreateAgent';
-import ForgotCode from './pages/ForgotCode';
-import DownloadSurematePro from './pages/DownloadSurematePro';
-import AgentPortal from './pages/AgentPortal';
-import Callback from './pages/Callback';
-import NotFound from './pages/NotFound';
-import Impressum from './pages/Impressum';
-import Datenschutz from './pages/Datenschutz';
-import PrivacyApps from './pages/PrivacyApps';
-import Cookies from './pages/Cookies';
+import {
+  Suremate,
+  SurematePro,
+  ThreeSixNine,
+  NumiStellar,
+  KiBook,
+  Elow,
+  Orbit,
+  OrbitPrivacy,
+  StradaHub,
+  StradaHubPrivacy,
+  Abwun,
+  WebdesignTirol,
+  AppEntwicklungTirol,
+  AgentRegister,
+  CreateAgent,
+  ForgotCode,
+  DownloadSurematePro,
+  AgentPortal,
+  Callback,
+  NotFound,
+  Impressum,
+  Datenschutz,
+  PrivacyApps,
+  Cookies,
+} from '@pages-registry';
 import Navigation from './sections/Navigation';
 import CookieConsent from './components/CookieConsent';
 
@@ -63,6 +65,7 @@ function App() {
   return (
     <div className="relative min-h-screen" style={{ background: '#F5F1EA' }}>
         {!isAppPage && <Navigation />}
+        <Suspense fallback={<div className="min-h-screen" style={{ background: '#F5F1EA' }} aria-hidden />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/suremate" element={<Suremate />} />
@@ -76,8 +79,8 @@ function App() {
           <Route path="/stradahub/privacy" element={<StradaHubPrivacy />} />
           <Route path="/stradahub" element={<StradaHub />} />
           <Route path="/abwun" element={<Abwun />} />
-          <Route path="/webdesign-tirol" element={<WebdesignTirol />} />
-          <Route path="/app-entwicklung-tirol" element={<AppEntwicklungTirol />} />
+          <Route path="/webdesign" element={<WebdesignTirol />} />
+          <Route path="/app-entwicklung" element={<AppEntwicklungTirol />} />
           <Route path="/agentregister" element={<AgentRegister />} />
           <Route path="/createAgent" element={<CreateAgent />} />
           <Route path="/forgotcode" element={<ForgotCode />} />
@@ -90,6 +93,7 @@ function App() {
           <Route path="/cookies" element={<Cookies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
         <CookieConsent />
     </div>
   );

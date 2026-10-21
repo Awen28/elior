@@ -132,9 +132,9 @@
     <priority>0.4</priority>
   </url>
 
-  <!-- Webdesign Tirol -->
+  <!-- Webdesign -->
   <url>
-    <loc>https://elior.studio/webdesign-tirol</loc>
+    <loc>https://elior.studio/webdesign</loc>
     <lastmod>2026-10-18</lastmod>
     <priority>0.9</priority>
     <image:image>
@@ -144,9 +144,9 @@
     </image:image>
   </url>
 
-  <!-- App Entwicklung Tirol -->
+  <!-- App Entwicklung -->
   <url>
-    <loc>https://elior.studio/app-entwicklung-tirol</loc>
+    <loc>https://elior.studio/app-entwicklung</loc>
     <lastmod>2026-10-18</lastmod>
     <priority>0.9</priority>
     <image:image>
